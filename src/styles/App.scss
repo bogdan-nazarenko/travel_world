@@ -1,0 +1,19 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 240px);
+}
+
+img {
+    max-width: 12rem;
+    width: 100%;
+    margin-bottom: 5rem;
+}
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+    color: var(--custom-color);
+}
