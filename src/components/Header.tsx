@@ -58,8 +58,8 @@ const Header = () => {
                 <Logo />
 
                 <nav className="header__navs">
-                    {location.pathname !== "login" &&
-                        location.pathname !== "register" && <HeaderNavList />}
+                    {location.pathname !== "/login" &&
+                        location.pathname !== "/register" && <HeaderNavList />}
 
                     <div className="header__authorization">
                         <Link
