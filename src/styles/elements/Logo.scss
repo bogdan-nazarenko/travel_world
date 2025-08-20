@@ -1,13 +1,18 @@
+@use "../helpers/abstracts.scss" as *;
+
 .logo {
     width: 100%;
-    height: 7.6rem;
-    max-width: 25.5rem;
+
+    @media (min-width: $point3) {
+        height: 7.6rem;
+        max-width: 25.5rem;
+    }
+    @media (max-width: $point4) {
+        height: 5rem;
+        max-width: fit-content;
+    }
 
     .logo__pic {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: center;
+        @extend %contain_img;
     }
 }
