@@ -1,9 +1,11 @@
 import { useLocation, Link } from "react-router-dom";
-import type { CustomLocation } from "./types.tsx";
+import { useState } from "react";
+import type { CustomLocation } from "./helpers/types.tsx";
+import type { ClickProps } from "./helpers/interfaces.tsx";
 import { Logo } from "./elements/Logo.tsx";
 import "../styles/Header.scss";
 
-const HeaderNavList = () => {
+const HeaderNavList = ({ clickFunc }: ClickProps) => {
     const location: CustomLocation = useLocation();
 
     let colorHome: string = "";
@@ -22,13 +24,25 @@ const HeaderNavList = () => {
 
     return (
         <div className="header__nav__links">
-            <Link className={`header__link ${colorHome}`} to="/">
+            <Link
+                className={`header__link ${colorHome}`}
+                to="/"
+                onClick={clickFunc}
+            >
                 Home
             </Link>
-            <Link className={`header__link ${colorAbout}`} to="/about">
+            <Link
+                className={`header__link ${colorAbout}`}
+                to="/about"
+                onClick={clickFunc}
+            >
                 About
             </Link>
-            <Link className={`header__link ${colorTours}`} to="/tours">
+            <Link
+                className={`header__link ${colorTours}`}
+                to="/tours"
+                onClick={clickFunc}
+            >
                 Tours
             </Link>
         </div>
@@ -36,6 +50,26 @@ const HeaderNavList = () => {
 };
 
 const Header = () => {
+    const reset: string = "";
+
+    const [isOpen, setIsOpen] = useState(reset);
+    const [navsOpen, setNavsOpen] = useState(reset);
+
+    function toggleMenu(): void {
+        if (isOpen !== "menu--open") {
+            setIsOpen("menu--open");
+            setNavsOpen("navs--open");
+        } else {
+            setIsOpen(reset);
+            setNavsOpen(reset);
+        }
+    }
+
+    function closeMenu(): void {
+        setIsOpen(reset);
+        setNavsOpen(reset);
+    }
+
     const location: CustomLocation = useLocation();
 
     let bgColorLogin: string = "";
@@ -55,32 +89,39 @@ const Header = () => {
     return (
         <header>
             <div className="container header_menu">
-                <Logo />
+                <Logo clickFunc={closeMenu} />
 
-                <nav className="header__navs">
-                    {location.pathname !== "/login" &&
-                        location.pathname !== "/register" && <HeaderNavList />}
+                <nav className={`header__navs ${navsOpen}`}>
+                    {(location.pathname !== "/login" &&
+                        location.pathname !== "/register" && (
+                            <HeaderNavList clickFunc={closeMenu} />
+                        )) ||
+                        (window.innerWidth < 768 && (
+                            <HeaderNavList clickFunc={closeMenu} />
+                        ))}
 
                     <div className="header__authorization">
                         <Link
                             className={`header__authorization__link ${bgColorLogin}`}
                             to="/login"
+                            onClick={closeMenu}
                         >
                             Login
                         </Link>
                         <Link
                             className={`header__authorization__link ${bgColorRegister} ${secondaryColor}`}
                             to="/register"
+                            onClick={closeMenu}
                         >
                             Register
                         </Link>
                     </div>
                 </nav>
 
-                {location.pathname !== "/login" &&
-                    location.pathname !== "/register" && (
-                        <div className="header__menu__button"></div>
-                    )}
+                <div
+                    className={`header__menu__button ${isOpen}`}
+                    onClick={toggleMenu}
+                ></div>
             </div>
         </header>
     );
