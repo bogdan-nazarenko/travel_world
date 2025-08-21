@@ -1,6 +1,7 @@
 @use "../helpers/abstracts.scss" as *;
 
 .logo {
+    z-index: var(--header-z-index);
     width: 100%;
 
     @media (min-width: $point3) {
