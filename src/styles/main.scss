@@ -1,3 +1,5 @@
+@use "./helpers/abstracts.scss" as *;
+
 html {
     // font-size: calc(100dvw / 1920 * 10);
 
@@ -22,7 +24,13 @@ body {
     flex-direction: column;
     min-height: 100%;
     overflow: hidden;
-    padding-top: var(--header-height);
+
+    @media (min-width: $point3) {
+        padding-top: var(--header-height);
+    }
+    @media (max-width: $point4) {
+        padding-top: var(--header-height-mobile);
+    }
 }
 
 main {
