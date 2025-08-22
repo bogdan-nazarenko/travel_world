@@ -116,6 +116,7 @@ header {
 }
 
 .header__menu__button {
+    position: relative;
     z-index: var(--header-z-index);
 
     @media (min-width: $point3) {
@@ -125,6 +126,19 @@ header {
         display: block;
         height: 4.5rem;
         width: 4.5rem;
+    }
+
+    &:active::before {
+        position: absolute;
+        z-index: -1;
+        top: -5%;
+        left: -5%;
+        content: "";
+        width: 110%;
+        height: 110%;
+        border-radius: 50%;
+        opacity: 20%;
+        background-color: var(--primary-color);
     }
 
     .menu__icon {
