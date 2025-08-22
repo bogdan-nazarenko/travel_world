@@ -108,7 +108,9 @@ const Header = () => {
                         location.pathname !== "/register" && (
                             <HeaderNavList clickFunc={closeMenu} />
                         )) ||
-                        (isMobile && <HeaderNavList clickFunc={closeMenu} />)}
+                        ((isMobile || window.innerWidth < 768) && (
+                            <HeaderNavList clickFunc={closeMenu} />
+                        ))}
 
                     <div className="header__authorization">
                         <Link
