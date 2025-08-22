@@ -121,8 +121,40 @@ header {
     }
     @media (max-width: $point4) {
         display: block;
-        height: 3.5rem;
-        width: 3.5rem;
-        background-color: aqua;
+        height: 4.5rem;
+        width: 4.5rem;
+    }
+
+    .menu__icon {
+        @extend %contain_img;
+
+        path {
+            stroke: var(--secondary-color);
+            transform-origin: 50% 50%;
+            transition:
+                stroke var(--trans),
+                transform var(--trans),
+                opacity var(--trans);
+        }
+    }
+
+    &.menu--open {
+        .menu__icon {
+            @extend %contain_img;
+
+            path {
+                stroke: var(--heading-color);
+            }
+            path:nth-child(1) {
+                transform: rotate(45deg) translate(0, 25%);
+            }
+            path:nth-child(2) {
+                transform: rotate(45deg);
+                opacity: 0;
+            }
+            path:nth-child(3) {
+                transform: rotate(-45deg) translate(0, -25%);
+            }
+        }
     }
 }
