@@ -3,6 +3,7 @@
 .logo {
     z-index: var(--header-z-index);
     width: 100%;
+    cursor: pointer;
 
     @media (min-width: $point3) {
         height: 7.6rem;

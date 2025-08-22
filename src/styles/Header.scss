@@ -68,6 +68,7 @@ header {
 .header__link {
     text-decoration: none;
     color: var(--heading-color);
+    cursor: pointer;
 
     &.color--light {
         color: var(--secondary-color);
@@ -97,6 +98,7 @@ header {
     text-align: center;
     text-decoration: none;
     color: var(--heading-color);
+    cursor: pointer;
 
     &:first-child {
         max-width: 9.5rem;
