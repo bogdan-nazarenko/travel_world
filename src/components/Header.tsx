@@ -52,21 +52,21 @@ const HeaderNavList = ({ clickFunc }: ClickProps) => {
 const Header = () => {
     const reset: string = "";
 
-    const [isOpen, setIsOpen] = useState(reset);
-    const [navsOpen, setNavsOpen] = useState(reset);
+    const [isMenuOpen, setMenuOpen] = useState(reset);
+    const [isNavsOpen, setNavsOpen] = useState(reset);
 
     function toggleMenu(): void {
-        if (isOpen !== "menu--open") {
-            setIsOpen("menu--open");
+        if (isMenuOpen !== "menu--open") {
+            setMenuOpen("menu--open");
             setNavsOpen("navs--open");
         } else {
-            setIsOpen(reset);
+            setMenuOpen(reset);
             setNavsOpen(reset);
         }
     }
 
     function closeMenu(): void {
-        setIsOpen(reset);
+        setMenuOpen(reset);
         setNavsOpen(reset);
     }
 
@@ -103,7 +103,7 @@ const Header = () => {
             <div className="container header_menu">
                 <Logo clickFunc={closeMenu} />
 
-                <nav className={`header__navs ${navsOpen}`}>
+                <nav className={`header__navs ${isNavsOpen}`}>
                     {(location.pathname !== "/login" &&
                         location.pathname !== "/register" && (
                             <HeaderNavList clickFunc={closeMenu} />
@@ -129,7 +129,7 @@ const Header = () => {
                 </nav>
 
                 <div
-                    className={`header__menu__button ${isOpen}`}
+                    className={`header__menu__button ${isMenuOpen}`}
                     onClick={toggleMenu}
                 ></div>
             </div>
