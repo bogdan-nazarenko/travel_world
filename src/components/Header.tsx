@@ -70,6 +70,18 @@ const Header = () => {
         setNavsOpen(reset);
     }
 
+    const [isMobile, setMobile] = useState(false);
+
+    function mobileMenu(): void {
+        if (window.innerWidth < 768) {
+            setMobile(true);
+        } else {
+            setMobile(false);
+        }
+    }
+
+    window.addEventListener("resize", mobileMenu);
+
     const location: CustomLocation = useLocation();
 
     let bgColorLogin: string = "";
@@ -96,9 +108,7 @@ const Header = () => {
                         location.pathname !== "/register" && (
                             <HeaderNavList clickFunc={closeMenu} />
                         )) ||
-                        (window.innerWidth < 768 && (
-                            <HeaderNavList clickFunc={closeMenu} />
-                        ))}
+                        (isMobile && <HeaderNavList clickFunc={closeMenu} />)}
 
                     <div className="header__authorization">
                         <Link
