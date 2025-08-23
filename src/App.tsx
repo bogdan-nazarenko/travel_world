@@ -6,8 +6,9 @@ import Tours from "./components/pages/Tours.tsx";
 import Login from "./components/pages/Login.tsx";
 import Register from "./components/pages/Register.tsx";
 import ErrorPage from "./components/pages/ErrorPage.tsx";
+import Footer from "./components/Footer.tsx";
 
-function App() {
+const App = () => {
     return (
         <BrowserRouter /* basename="/travel_world_site/" */>
             <Header />
@@ -22,8 +23,9 @@ function App() {
 
                 <ErrorPage />
             </main>
+            <Footer />
         </BrowserRouter>
     );
-}
+};
 
 export default App;
