@@ -70,8 +70,18 @@ header {
     color: var(--heading-color);
     cursor: pointer;
 
+    &:hover {
+        color: var(--secondary-color);
+        transition: color var(--trans);
+    }
+
     &.color--light {
         color: var(--secondary-color);
+
+        &:hover {
+            color: var(--primary-color);
+            transition: color var(--trans);
+        }
     }
 }
 
@@ -100,6 +110,11 @@ header {
     color: var(--heading-color);
     cursor: pointer;
 
+    &:hover {
+        color: var(--secondary-color);
+        transition: color var(--trans);
+    }
+
     &:first-child {
         max-width: 9.5rem;
     }
@@ -107,11 +122,21 @@ header {
     &.main--color {
         background-color: var(--secondary-color);
         color: var(--color-contrast);
+
+        &:hover {
+            background-color: var(--primary-color);
+            transition: background-color var(--trans);
+        }
     }
 
     &.bg-color--light {
         background-color: var(--primary-color);
         color: var(--color-contrast);
+
+        &:hover {
+            background-color: var(--secondary-color);
+            transition: background-color var(--trans);
+        }
     }
 }
 
