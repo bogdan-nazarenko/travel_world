@@ -2,9 +2,9 @@
 
 header {
     position: fixed;
+    z-index: var(--header-z-index);
     top: 0;
     width: 100%;
-    z-index: var(--header-z-index);
 
     @media (min-width: $point3) {
         height: var(--header-height);
