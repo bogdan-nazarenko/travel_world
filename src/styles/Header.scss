@@ -118,15 +118,9 @@ header {
 .header__menu__button {
     position: relative;
     z-index: var(--header-z-index);
-
-    @media (min-width: $point3) {
-        display: none;
-    }
-    @media (max-width: $point4) {
-        display: block;
-        height: 4.5rem;
-        width: 4.5rem;
-    }
+    display: block;
+    height: 4.5rem;
+    width: 4.5rem;
 
     &:active::before {
         position: absolute;
