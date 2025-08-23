@@ -1,3 +1,3 @@
 export interface ClickProps {
-    clickFunc: () => void;
+    clickFunc?: () => void;
 }
