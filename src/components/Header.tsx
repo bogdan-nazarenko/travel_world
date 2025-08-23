@@ -5,7 +5,7 @@ import type { ClickProps } from "./helpers/interfaces.tsx";
 import { Logo } from "./elements/Logo.tsx";
 import "../styles/Header.scss";
 
-const HeaderNavList = ({ clickFunc }: ClickProps) => {
+const HeaderNavLinks = ({ clickFunc }: ClickProps) => {
     const location: CustomLocation = useLocation();
 
     let colorHome: string = "";
@@ -106,10 +106,10 @@ const Header = () => {
                 <nav className={`header__navs ${isNavsOpen}`}>
                     {(location.pathname !== "/login" &&
                         location.pathname !== "/register" && (
-                            <HeaderNavList clickFunc={closeMenu} />
+                            <HeaderNavLinks clickFunc={closeMenu} />
                         )) ||
                         ((isMobile || window.innerWidth < 768) && (
-                            <HeaderNavList clickFunc={closeMenu} />
+                            <HeaderNavLinks clickFunc={closeMenu} />
                         ))}
 
                     <div className="header__authorization">
