@@ -1,5 +1,5 @@
 import { useLocation, Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { CustomLocation } from "./helpers/types.tsx";
 import type { ClickProps } from "./helpers/interfaces.tsx";
 import { Logo } from "./elements/Logo.tsx";
@@ -75,7 +75,10 @@ const Header = () => {
         }
     }
 
-    window.addEventListener("resize", mobileMenu);
+    useEffect(() => {
+        mobileMenu();
+        window.addEventListener("resize", mobileMenu);
+    }, []);
 
     const location: CustomLocation = useLocation();
 
@@ -127,7 +130,7 @@ const Header = () => {
                     </div>
                 </nav>
 
-                {(isMobile || window.innerWidth < 768) && (
+                {isMobile && (
                     <div
                         className={`header__menu__button ${isMenuOpen}`}
                         onClick={toggleMenu}
