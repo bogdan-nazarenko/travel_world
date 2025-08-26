@@ -8,38 +8,33 @@ import "../styles/Header.scss";
 const HeaderNavLinks = ({ clickFunc }: ClickProps) => {
     const location: CustomLocation = useLocation();
 
-    let colorHome: string = "";
-    let colorAbout: string = "";
-    let colorTours: string = "";
-
-    if (location.pathname === "/") {
-        colorHome = "color--light";
-    }
-    if (location.pathname === "/about") {
-        colorAbout = "color--light";
-    }
-    if (location.pathname === "/tours") {
-        colorTours = "color--light";
-    }
-
     return (
         <div className="header__nav__links">
             <Link
-                className={`header__link ${colorHome}`}
+                className={
+                    "header__link" +
+                    (location.pathname === "/" ? " color--light" : "")
+                }
                 to="/"
                 onClick={clickFunc}
             >
                 Home
             </Link>
             <Link
-                className={`header__link ${colorAbout}`}
+                className={
+                    "header__link" +
+                    (location.pathname === "/about" ? " color--light" : "")
+                }
                 to="/about"
                 onClick={clickFunc}
             >
                 About
             </Link>
             <Link
-                className={`header__link ${colorTours}`}
+                className={
+                    "header__link" +
+                    (location.pathname === "/tours" ? " color--light" : "")
+                }
                 to="/tours"
                 onClick={clickFunc}
             >
@@ -84,18 +79,10 @@ const Header = () => {
 
     const location: CustomLocation = useLocation();
 
-    let bgColorLogin: string = "";
-    let bgColorRegister: string = "";
     let secondaryColor: string = "";
 
-    if (location.pathname === "/login") {
-        bgColorLogin = "bg-color--light";
-    }
-    if (location.pathname === "/register") {
-        bgColorRegister = "bg-color--light";
-    }
     if (location.pathname !== "/login" && location.pathname !== "/register") {
-        secondaryColor = "main--color";
+        secondaryColor = " main--color";
     }
 
     return (
@@ -114,14 +101,24 @@ const Header = () => {
 
                     <div className="header__authorization">
                         <Link
-                            className={`header__authorization__link ${bgColorLogin}`}
+                            className={
+                                "header__authorization__link" +
+                                (location.pathname === "/login"
+                                    ? " bg-color--light"
+                                    : "")
+                            }
                             to="/login"
                             onClick={closeMenu}
                         >
                             Login
                         </Link>
                         <Link
-                            className={`header__authorization__link ${bgColorRegister} ${secondaryColor}`}
+                            className={
+                                "header__authorization__link" +
+                                (location.pathname === "/register"
+                                    ? " bg-color--light"
+                                    : secondaryColor)
+                            }
                             to="/register"
                             onClick={closeMenu}
                         >
