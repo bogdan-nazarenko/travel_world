@@ -51,9 +51,9 @@ const Header = () => {
     const [isNavsOpen, setNavsOpen] = useState(reset);
 
     function toggleMenu(): void {
-        if (isMenuOpen !== "menu--open") {
-            setMenuOpen("menu--open");
-            setNavsOpen("navs--open");
+        if (isMenuOpen !== " menu--open") {
+            setMenuOpen(" menu--open");
+            setNavsOpen(" navs--open");
         } else {
             setMenuOpen(reset);
             setNavsOpen(reset);
@@ -93,7 +93,7 @@ const Header = () => {
             <div className="container header_menu">
                 <Logo clickFunc={closeMenu} />
 
-                <nav className={`header__navs ${isNavsOpen}`}>
+                <nav className={"header__navs" + isNavsOpen}>
                     {(location.pathname !== "/login" &&
                         location.pathname !== "/register" && (
                             <HeaderNavLinks clickFunc={closeMenu} />
@@ -130,7 +130,7 @@ const Header = () => {
 
                 {isMobile && (
                     <div
-                        className={`header__menu__button ${isMenuOpen}`}
+                        className={"header__menu__button" + isMenuOpen}
                         onClick={toggleMenu}
                     >
                         <svg
