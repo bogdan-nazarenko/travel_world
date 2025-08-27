@@ -94,11 +94,9 @@ const Header = () => {
                 <Logo clickFunc={closeMenu} />
 
                 <nav className={"header__navs" + isNavsOpen}>
-                    {(location.pathname !== "/login" &&
-                        location.pathname !== "/register" && (
-                            <HeaderNavLinks clickFunc={closeMenu} />
-                        )) ||
-                        (isMobile && <HeaderNavLinks clickFunc={closeMenu} />)}
+                    {((location.pathname !== "/login" &&
+                        location.pathname !== "/register") ||
+                        isMobile) && <HeaderNavLinks clickFunc={closeMenu} />}
 
                     <div className="header__authorization">
                         <Link
