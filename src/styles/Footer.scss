@@ -56,10 +56,19 @@ footer {
             fill: var(--secondary-color);
         }
 
-        &:hover {
-            path {
-                fill: var(--primary-color);
-                transition: fill var(--trans);
+        @media (min-width: $point3) {
+            &:hover {
+                path {
+                    fill: var(--primary-color);
+                    transition: fill var(--trans);
+                }
+            }
+        }
+        @media (max-width: $point4) {
+            &:active {
+                path {
+                    fill: var(--primary-color);
+                }
             }
         }
     }
@@ -123,9 +132,16 @@ footer {
     color: var(--text-color);
     cursor: pointer;
 
-    &:hover {
-        color: var(--secondary-color);
-        transition: color var(--trans);
+    @media (min-width: $point3) {
+        &:hover {
+            color: var(--secondary-color);
+            transition: color var(--trans);
+        }
+    }
+    @media (max-width: $point4) {
+        &:active {
+            color: var(--secondary-color);
+        }
     }
 }
 
