@@ -181,14 +181,14 @@ header {
                 stroke: var(--heading-color);
             }
             path:nth-child(1) {
-                transform: rotate(45deg) translate(0, 25%);
+                transform: rotate(-45deg) translate(0, 25%);
             }
             path:nth-child(2) {
-                transform: rotate(45deg);
+                transform: rotate(-45deg);
                 opacity: 0;
             }
             path:nth-child(3) {
-                transform: rotate(-45deg) translate(0, -25%);
+                transform: rotate(45deg) translate(0, -25%);
             }
         }
     }
