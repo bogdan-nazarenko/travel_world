@@ -16,6 +16,7 @@ body {
 
 body {
     font-size: 2rem;
+    color: var(--heading-color);
 }
 
 .wrapper {
@@ -48,8 +49,48 @@ section {
     padding: 0 2rem;
 }
 
-h1,
-h2 {
-    font-size: 4rem;
-    text-align: center;
+.block__suptitle {
+    display: inline-block;
+    height: 3.5rem;
+    background-color: var(--secondary-color);
+    border-radius: 5rem;
+    font-family: var(--font2);
+    font-size: 2.7rem;
+
+    &.suptitle--v1 {
+        padding: 0.2rem 0.8rem;
+    }
+    &.suptitle--v2 {
+        padding: 0.2rem 0.12rem;
+    }
+}
+
+.block__title {
+    &.title--v1 {
+        font-size: 2.5rem;
+    }
+    &.title--v2 {
+        font-size: 2.8rem;
+    }
+    &.title--v3 {
+        font-size: 3.2rem;
+    }
+    &.title--v4 {
+        font-size: 3.5rem;
+    }
+}
+
+.block__text {
+    font-weight: 400;
+    color: var(--text-color);
+
+    &.text--v1 {
+        font-size: 1.6rem;
+    }
+    &.text--v2 {
+        font-size: 1.5rem;
+    }
+    &.text--v3 {
+        font-size: 1.2rem;
+    }
 }
