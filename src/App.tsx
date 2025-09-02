@@ -10,7 +10,7 @@ import Footer from "./components/Footer.tsx";
 
 const App = () => {
     return (
-        <BrowserRouter basename="/travel_world_site/">
+        <BrowserRouter basename="/deploy_travel_world/">
             <Header />
             <main>
                 <Routes>
