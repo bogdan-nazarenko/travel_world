@@ -45,24 +45,22 @@ const HeaderNavLinks = ({ clickFunc }: ClickProps) => {
 };
 
 const Header = () => {
-    const reset: string = "";
-
-    const [isMenuOpen, setMenuOpen] = useState(reset);
-    const [isNavsOpen, setNavsOpen] = useState(reset);
+    const [isMenuOpen, setMenuOpen] = useState("");
+    const [isNavsOpen, setNavsOpen] = useState("");
 
     function toggleMenu(): void {
         if (isMenuOpen !== " menu--open") {
             setMenuOpen(" menu--open");
             setNavsOpen(" navs--open");
         } else {
-            setMenuOpen(reset);
-            setNavsOpen(reset);
+            setMenuOpen("");
+            setNavsOpen("");
         }
     }
 
     function closeMenu(): void {
-        setMenuOpen(reset);
-        setNavsOpen(reset);
+        setMenuOpen("");
+        setNavsOpen("");
     }
 
     const [isMobile, setMobile] = useState(false);
@@ -75,7 +73,7 @@ const Header = () => {
         }
     }
 
-    useEffect(() => {
+    useEffect((): void => {
         mobileMenu();
         window.addEventListener("resize", mobileMenu);
     }, []);
