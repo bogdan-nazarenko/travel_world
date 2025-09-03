@@ -1,4 +1,4 @@
-export const Pin = () => {
+export const PinV2 = () => {
     return (
         <svg
             width="18"

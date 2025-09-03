@@ -5,7 +5,7 @@ import {
     Twitter,
     Facebook,
     Instagram,
-    Pin,
+    PinV2,
     Email,
     Phone,
 } from "./elements/icons.tsx";
@@ -94,7 +94,7 @@ const Footer = () => {
                         <div className="footer__links">
                             <div className="footer__links__wrap">
                                 <span className="footer__icon">
-                                    <Pin />
+                                    <PinV2 />
                                 </span>
                                 <span className="footer__label">Address: </span>
                                 <Link
