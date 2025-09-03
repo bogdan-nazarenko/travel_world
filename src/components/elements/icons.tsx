@@ -1,3 +1,28 @@
+export const PinV1 = () => {
+    return (
+        <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M12 23C17.5 18.6 23 14.66 23 9.8C23 4.93989 18.0751 1 12 1C5.92487 1 1 4.93989 1 9.8C1 14.66 6.5 18.6 12 23Z"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M12 13.2222C14.6037 13.2222 16.7143 11.5807 16.7143 9.55558C16.7143 7.53054 14.6037 5.88892 12 5.88892C9.39632 5.88892 7.28574 7.53054 7.28574 9.55558C7.28574 11.5807 9.39632 13.2222 12 13.2222Z"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    );
+};
+
 export const PinV2 = () => {
     return (
         <svg
