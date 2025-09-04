@@ -1,0 +1,165 @@
+@use "../helpers/abstracts.scss" as *;
+
+.search__bar {
+    display: flex;
+    align-items: center;
+    border-radius: 5rem;
+    box-shadow: 0 0.2rem 1rem 0 #00000026;
+
+    @media (min-width: $point3) {
+        height: 7.8rem;
+        max-width: 81rem;
+    }
+    @media (max-width: $point4) {
+        width: 100%;
+        height: 5rem;
+        max-width: 35.6rem;
+        margin: 0 auto;
+        padding: 0 1.2rem;
+    }
+}
+
+.search__elements {
+    display: flex;
+    width: 100%;
+    max-width: 71rem;
+
+    @media (min-width: $point3) {
+        height: 4.4rem;
+    }
+    @media (max-width: $point4) {
+        height: 3rem;
+    }
+}
+
+.search__item {
+    display: inherit;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    user-select: none;
+
+    @media (min-width: $point3) {
+        width: 100%;
+    }
+
+    &:first-child {
+        @media (min-width: $point3) {
+            max-width: 27rem;
+        }
+        @media (max-width: $point4) {
+            padding-right: 0.5rem;
+        }
+    }
+
+    &:nth-child(2),
+    &:last-child {
+        border-left: 0.2rem solid #dddddd;
+
+        @media (min-width: $point3) {
+            max-width: 22rem;
+        }
+        @media (max-width: $point4) {
+            padding: 0 0.5rem;
+        }
+    }
+}
+
+.search__item__icon {
+    margin-right: 1rem;
+    height: 2.2rem;
+
+    svg {
+        @extend %contain_img;
+
+        path {
+            fill: var(--light-pink-color);
+        }
+    }
+}
+
+.search__item__wrap {
+    display: inline-block;
+}
+
+.search__title {
+    font-weight: 500;
+
+    @media (min-width: $point3) {
+        font-size: 1.6rem;
+    }
+    @media (max-width: $point4) {
+        max-width: 5rem;
+        font-size: 1.1rem;
+    }
+}
+
+.search__description {
+    color: var(--text-color);
+
+    @media (min-width: $point3) {
+        font-size: 1.4rem;
+    }
+    @media (max-width: $point4) {
+        max-width: 5rem;
+        font-size: 0.8rem;
+    }
+}
+
+.search__input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: initial;
+    background-color: initial;
+
+    @media (min-width: $point3) {
+        margin-left: 4rem;
+        font-size: 2rem;
+    }
+    @media (max-width: $point4) {
+        font-size: 1.5rem;
+    }
+}
+
+.search__button__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    max-width: 10rem;
+
+    @media (min-width: $point3) {
+        width: 100%;
+        padding-right: 2.6rem;
+    }
+}
+
+.search__button {
+    display: inherit;
+    align-items: inherit;
+    justify-content: center;
+    border-radius: 1rem 0.4rem;
+    transition: background-color var(--trans);
+    cursor: pointer;
+
+    @media (min-width: $point3) {
+        width: 4.8rem;
+        height: 4.8rem;
+    }
+    @media (max-width: $point4) {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    svg {
+        @media (max-width: $point4) {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        path {
+            fill: var(--color-contrast);
+        }
+    }
+}
