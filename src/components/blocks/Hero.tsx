@@ -100,6 +100,7 @@ export const Hero = () => {
                                 style={{
                                     objectFit: `${view ? "contain" : "cover"}`,
                                 }}
+                                controls={view}
                                 onClick={videoPlay}
                                 onDoubleClick={videoFullScreen}
                             ></video>
