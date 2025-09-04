@@ -5,6 +5,7 @@ header {
     z-index: var(--header-z-index);
     top: 0;
     width: 100%;
+    background-color: var(--color-contrast);
 
     @media (min-width: $point3) {
         height: var(--header-height);
@@ -22,7 +23,6 @@ header {
     height: 100%;
     font-size: 1.8rem;
     font-weight: 600;
-    background-color: var(--color-contrast);
 
     .logo {
         z-index: var(--header-z-index);
