@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { SearchBar } from "../elements/SearchBar.tsx";
 import worldIcon from "../../assets/media/images/icons/world.png";
 import heroImage1 from "../../assets/media/images/hero_img_1.jpg";
@@ -10,46 +10,35 @@ import fullScreen from "../../assets/media/images/icons/full-screen.svg";
 import "../../styles/blocks/Hero.scss";
 
 export const Hero = () => {
+    const videoFile = useRef<HTMLVideoElement>(null!);
     const [isPlay, setPlay] = useState(false);
     const [view, setView] = useState(false);
 
     function videoPlay(): void {
-        const videoFile = document.querySelector(
-            ".hero__video"
-        ) as HTMLVideoElement;
-
         if (!document.fullscreenElement) {
             if (isPlay === false) {
-                videoFile.play();
+                videoFile.current.play();
             } else {
-                videoFile.pause();
+                videoFile.current.pause();
             }
         }
     }
 
     function videoFullScreen(): void {
-        const videoFile = document.querySelector(
-            ".hero__video"
-        ) as HTMLVideoElement;
-
-        videoFile.requestFullscreen();
+        videoFile.current.requestFullscreen();
     }
 
     useEffect((): void => {
-        const videoFile = document.querySelector(
-            ".hero__video"
-        ) as HTMLVideoElement;
-
-        videoFile.addEventListener("play", (): void => {
+        videoFile.current.addEventListener("play", (): void => {
             setPlay(true);
         });
-        videoFile.addEventListener("pause", (): void => {
+        videoFile.current.addEventListener("pause", (): void => {
             setPlay(false);
         });
-        videoFile.addEventListener("ended", (): void => {
+        videoFile.current.addEventListener("ended", (): void => {
             setPlay(false);
         });
-        videoFile.addEventListener("fullscreenchange", (): void => {
+        videoFile.current.addEventListener("fullscreenchange", (): void => {
             if (document.fullscreenElement) {
                 setView(true);
             } else {
@@ -97,6 +86,7 @@ export const Hero = () => {
                             <video
                                 className={"hero__video"}
                                 src={heroVideo}
+                                ref={videoFile}
                                 style={{
                                     objectFit: `${view ? "contain" : "cover"}`,
                                 }}
