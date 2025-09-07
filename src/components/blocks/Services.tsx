@@ -6,12 +6,12 @@ export const Services = ({ suptitleColor }: ServicesProps) => {
         <section className="services_section">
             <div className="container services">
                 <div className="services__info">
-                    <div
+                    <span
                         className="services__suptitle"
                         style={{ color: `var(${suptitleColor})` }}
                     >
                         What we serve
-                    </div>
+                    </span>
                     <h2 className="block__title title--v3">
                         We offer our best services
                     </h2>
