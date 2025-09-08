@@ -82,6 +82,14 @@ const Header = () => {
         };
     }, []);
 
+    useEffect(() => {
+        if (isMenuOpen && isMobile) {
+            document.body.style.overflowY = "hidden";
+        } else {
+            document.body.removeAttribute("style");
+        }
+    }, [isMenuOpen, isMobile]);
+
     const location: CustomLocation = useLocation();
 
     let secondaryColor: string = "";
