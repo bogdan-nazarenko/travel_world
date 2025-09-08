@@ -10,41 +10,56 @@ import fullScreen from "../../assets/media/images/icons/full-screen.svg";
 import "../../styles/blocks/Hero.scss";
 
 export const Hero = () => {
-    const videoFile = useRef<HTMLVideoElement>(null!);
+    const videoFile = useRef<HTMLVideoElement>(null);
     const [isPlay, setPlay] = useState(false);
     const [view, setView] = useState(false);
 
     function videoPlay(): void {
-        if (!document.fullscreenElement) {
+        const video = videoFile.current;
+
+        if (video && !document.fullscreenElement) {
             if (isPlay === false) {
-                videoFile.current.play();
+                video.play();
             } else {
-                videoFile.current.pause();
+                video.pause();
             }
         }
     }
 
     function videoFullScreen(): void {
-        videoFile.current.requestFullscreen();
+        const video = videoFile.current;
+
+        if (video) {
+            video.requestFullscreen();
+        }
     }
 
-    useEffect((): void => {
-        videoFile.current.addEventListener("play", (): void => {
-            setPlay(true);
-        });
-        videoFile.current.addEventListener("pause", (): void => {
-            setPlay(false);
-        });
-        videoFile.current.addEventListener("ended", (): void => {
-            setPlay(false);
-        });
-        videoFile.current.addEventListener("fullscreenchange", (): void => {
+    useEffect(() => {
+        const video = videoFile.current;
+
+        const playSetter = () => setPlay(true);
+        const pauseSetter = () => setPlay(false);
+        const viewSetter = () => {
             if (document.fullscreenElement) {
                 setView(true);
             } else {
                 setView(false);
             }
-        });
+        };
+
+        if (video) {
+            video.addEventListener("play", playSetter);
+            video.addEventListener("pause", pauseSetter);
+            video.addEventListener("ended", pauseSetter);
+            video.addEventListener("fullscreenchange", viewSetter);
+
+            return () => {
+                video.removeEventListener("play", playSetter);
+                video.removeEventListener("pause", pauseSetter);
+                video.removeEventListener("ended", pauseSetter);
+                video.removeEventListener("fullscreenchange", viewSetter);
+            };
+        }
     }, []);
 
     return (

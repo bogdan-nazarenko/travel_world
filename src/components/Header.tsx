@@ -73,9 +73,13 @@ const Header = () => {
         }
     }
 
-    useEffect((): void => {
+    useEffect(() => {
         mobileMenu();
         window.addEventListener("resize", mobileMenu);
+
+        return () => {
+            window.removeEventListener("resize", mobileMenu);
+        };
     }, []);
 
     const location: CustomLocation = useLocation();
