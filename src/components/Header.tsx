@@ -139,7 +139,7 @@ const Header = () => {
                 </nav>
 
                 {isMobile && (
-                    <div
+                    <button
                         className={"header__menu__button" + isMenuOpen}
                         onClick={toggleMenu}
                     >
@@ -164,7 +164,7 @@ const Header = () => {
                                 strokeLinecap="round"
                             />
                         </svg>
-                    </div>
+                    </button>
                 )}
             </div>
         </header>
