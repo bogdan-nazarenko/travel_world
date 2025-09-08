@@ -87,6 +87,8 @@ const Header = () => {
             document.body.style.overflowY = "hidden";
         } else {
             document.body.removeAttribute("style");
+            setMenuOpen("");
+            setNavsOpen("");
         }
     }, [isMenuOpen, isMobile]);
 
