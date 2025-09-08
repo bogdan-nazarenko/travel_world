@@ -52,8 +52,9 @@ section {
 .block__suptitle {
     display: inline-block;
     height: 3.5rem;
-    background-color: var(--secondary-color);
     border-radius: 5rem;
+    margin-bottom: 1rem;
+    background-color: var(--secondary-color);
     font-family: var(--font2);
     font-size: 2.7rem;
 
@@ -61,7 +62,7 @@ section {
         padding: 0.2rem 0.8rem;
     }
     &.suptitle--v2 {
-        padding: 0.2rem 0.12rem;
+        padding: 0.2rem 1.2rem;
     }
 }
 
