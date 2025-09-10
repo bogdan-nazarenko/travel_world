@@ -169,8 +169,11 @@
 .explore__image__title {
     font-weight: 500;
 
-    @media (min-width: $point3) {
+    @media (min-width: $point1) {
         font-size: 2.4rem;
+    }
+    @media (min-width: $point3) and (max-width: $point2) {
+        font-size: 2rem;
     }
     @media (max-width: $point4) {
         font-size: 1.8rem;
