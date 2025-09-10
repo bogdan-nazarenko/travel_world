@@ -1,0 +1,178 @@
+@use "../../styles/helpers/abstracts.scss" as *;
+
+.explore_section {
+    padding: 5rem 0;
+}
+
+.explore {
+    display: block;
+}
+
+.explore__info {
+    margin-bottom: 3.3rem;
+}
+
+.explore__images {
+    display: flex;
+    gap: 1.3rem;
+
+    @media (max-width: $point2) {
+        flex-wrap: wrap;
+    }
+}
+
+.explore__column {
+    display: inherit;
+    gap: inherit;
+    max-height: fit-content;
+
+    @media (min-width: $point1) {
+        flex-wrap: wrap;
+    }
+    @media (max-width: $point2) {
+        width: 100%;
+    }
+
+    &:nth-child(1),
+    &:nth-child(2) {
+        @media (min-width: $point1) {
+            max-width: 26.7rem;
+        }
+    }
+
+    &:nth-child(1) {
+        .explore__image {
+            @media (min-width: $point3) {
+                height: 26.7rem;
+            }
+
+            &:nth-child(1) {
+                .explore__image__title {
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    &:nth-child(2) {
+        .explore__image {
+            .explore__image__title {
+                text-transform: uppercase;
+            }
+        }
+
+        .explore__image:nth-child(1) {
+            @media (min-width: $point1) {
+                height: 33.5rem;
+            }
+        }
+
+        .explore__image:nth-child(2) {
+            @media (min-width: $point1) {
+                height: 21.8rem;
+            }
+        }
+    }
+
+    &:nth-child(3) {
+        @media (min-width: $point1) {
+            max-width: 55.9rem;
+        }
+        @media (max-width: $point4) {
+            flex-wrap: wrap;
+        }
+
+        .explore__image:not(.explore__column__group .explore__image) {
+            @media (min-width: $point1) {
+                width: 100%;
+                height: 26.7rem;
+            }
+        }
+
+        .explore__column__group {
+            display: inherit;
+            gap: inherit;
+
+            .explore__image {
+                .explore__image__title {
+                    text-transform: uppercase;
+                }
+            }
+
+            .explore__image:nth-child(1) {
+                @media (min-width: $point1) {
+                    height: 26.7rem;
+                    max-width: 26.7rem;
+                }
+            }
+
+            .explore__image:nth-child(2) {
+                @media (min-width: $point1) {
+                    height: 28.5rem;
+                    max-width: 27.9rem;
+                }
+            }
+        }
+    }
+}
+
+.explore__image {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    color: var(--color-contrast);
+
+    @media (max-width: $point2) {
+        width: 100%;
+    }
+    @media (max-width: $point4) {
+        height: 20rem;
+    }
+
+    .explore__pic {
+        @extend %cover_img;
+    }
+}
+
+.explore__captions__wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.explore__image__captions {
+    max-width: 16.2rem;
+    text-align: center;
+}
+
+.explore__image__suptitle {
+    font-family: var(--font2);
+    font-weight: 400;
+
+    @media (min-width: $point1) {
+        font-size: 4.8rem;
+    }
+    @media (min-width: $point3) and (max-width: $point2) {
+        font-size: 3.5rem;
+    }
+    @media (max-width: $point4) {
+        font-size: 3rem;
+    }
+}
+
+.explore__image__title {
+    font-weight: 500;
+
+    @media (min-width: $point3) {
+        font-size: 2.4rem;
+    }
+    @media (max-width: $point4) {
+        font-size: 1.8rem;
+    }
+}
