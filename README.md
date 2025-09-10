@@ -33,3 +33,9 @@ npm run lint
 ```bash
 npm run build
 ```
+
+7. **Locally preview production build (dist)**:
+
+```bash
+npm run preview
+```
