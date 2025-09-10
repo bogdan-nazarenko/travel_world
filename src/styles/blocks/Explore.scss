@@ -1,7 +1,9 @@
 @use "../../styles/helpers/abstracts.scss" as *;
 
 .explore_section {
-    padding: 5rem 0;
+    @media (min-width: $point3) {
+        padding: 5rem 0;
+    }
 }
 
 .explore {

@@ -1,9 +1,10 @@
 @use "../../styles/helpers/abstracts.scss" as *;
 
 .hero_section {
-    padding: 11rem 0 5rem;
-
-    @media (max-width: $point2) {
+    @media (min-width: $point3) {
+        padding: 11rem 0 5rem;
+    }
+    @media (min-width: $point3) and (max-width: $point2) {
         padding-top: 3rem;
     }
 }
