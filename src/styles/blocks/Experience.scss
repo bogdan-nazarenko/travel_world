@@ -1,0 +1,99 @@
+@use "../../styles/helpers/abstracts.scss" as *;
+
+.experience_section {
+    @media (min-width: $point3) {
+        padding: 5rem 0;
+    }
+}
+
+.experience {
+    display: flex;
+    gap: 2rem;
+
+    @media (min-width: $point1) {
+        justify-content: space-between;
+    }
+    @media (max-width: $point4) {
+        flex-direction: column;
+    }
+}
+
+.experience__info {
+    max-width: 57.1rem;
+
+    @media (min-width: $point3) and (max-width: $point2) {
+        width: 50%;
+    }
+    @media (max-width: $point4) {
+        order: 1;
+    }
+}
+
+.experience__title {
+    max-width: 37.7rem;
+    margin-bottom: 1rem;
+}
+
+.experience__text {
+    margin-bottom: 3rem;
+    color: var(--text-color);
+
+    @media (max-width: $point2) {
+        font-size: 1.6rem;
+    }
+}
+
+.experience__elements {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 40rem;
+}
+
+.experience__item {
+    height: 9.6rem;
+}
+
+.experience__item__square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    border-radius: 1rem 0.5rem;
+    background-color: var(--secondary-color);
+    color: var(--color-contrast);
+
+    @media (min-width: $point3) {
+        width: 7rem;
+        height: 7rem;
+    }
+    @media (max-width: $point4) {
+        width: 5rem;
+        height: 5rem;
+        font-size: 1.6rem;
+    }
+}
+
+.experience__item__description {
+    font-size: 1.3rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.experience__image {
+    max-width: 49.1rem;
+
+    @media (min-width: $point1) {
+        height: 41.4rem;
+    }
+    @media (min-width: $point3) and (max-width: $point2) {
+        width: 50%;
+    }
+    @media (max-width: $point4) {
+        margin: 0 auto;
+    }
+
+    .experience__pic {
+        @extend %contain_img;
+    }
+}
