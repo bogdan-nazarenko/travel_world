@@ -9,14 +9,6 @@ import galleryImg5 from "../../assets/media/images/gallery_img_5.jpg";
 import galleryImg6 from "../../assets/media/images/gallery_img_6.jpg";
 import galleryImg7 from "../../assets/media/images/gallery_img_7.jpg";
 import galleryImg8 from "../../assets/media/images/gallery_img_8.jpg";
-import galleryThumb1 from "../../assets/media/images/thumbs/gallery_thumb_1.webp";
-import galleryThumb2 from "../../assets/media/images/thumbs/gallery_thumb_2.webp";
-import galleryThumb3 from "../../assets/media/images/thumbs/gallery_thumb_3.webp";
-import galleryThumb4 from "../../assets/media/images/thumbs/gallery_thumb_4.webp";
-import galleryThumb5 from "../../assets/media/images/thumbs/gallery_thumb_5.webp";
-import galleryThumb6 from "../../assets/media/images/thumbs/gallery_thumb_6.webp";
-import galleryThumb7 from "../../assets/media/images/thumbs/gallery_thumb_7.webp";
-import galleryThumb8 from "../../assets/media/images/thumbs/gallery_thumb_8.webp";
 import "../../styles/blocks/Gallery.scss";
 
 export const Gallery = () => {
@@ -58,7 +50,7 @@ export const Gallery = () => {
                             >
                                 <img
                                     className="gallery__pic"
-                                    src={galleryThumb1}
+                                    src={galleryImg1}
                                     alt="Gallery picture 1"
                                 />
                             </a>
@@ -69,7 +61,7 @@ export const Gallery = () => {
                             >
                                 <img
                                     className="gallery__pic"
-                                    src={galleryThumb2}
+                                    src={galleryImg2}
                                     alt="Gallery picture 2"
                                 />
                             </a>
@@ -82,7 +74,7 @@ export const Gallery = () => {
                             >
                                 <img
                                     className="gallery__pic"
-                                    src={galleryThumb3}
+                                    src={galleryImg3}
                                     alt="Gallery picture 3"
                                 />
                             </a>
@@ -93,7 +85,7 @@ export const Gallery = () => {
                             >
                                 <img
                                     className="gallery__pic"
-                                    src={galleryThumb4}
+                                    src={galleryImg4}
                                     alt="Gallery picture 4"
                                 />
                             </a>
@@ -108,7 +100,7 @@ export const Gallery = () => {
                             >
                                 <img
                                     className="gallery__pic"
-                                    src={galleryThumb5}
+                                    src={galleryImg5}
                                     alt="Gallery picture 5"
                                 />
                             </a>
@@ -119,7 +111,7 @@ export const Gallery = () => {
                             >
                                 <img
                                     className="gallery__pic"
-                                    src={galleryThumb6}
+                                    src={galleryImg6}
                                     alt="Gallery picture 6"
                                 />
                             </a>
@@ -132,7 +124,7 @@ export const Gallery = () => {
                             >
                                 <img
                                     className="gallery__pic"
-                                    src={galleryThumb7}
+                                    src={galleryImg7}
                                     alt="Gallery picture 7"
                                 />
                             </a>
@@ -143,7 +135,7 @@ export const Gallery = () => {
                             >
                                 <img
                                     className="gallery__pic"
-                                    src={galleryThumb8}
+                                    src={galleryImg8}
                                     alt="Gallery picture 8"
                                 />
                             </a>
