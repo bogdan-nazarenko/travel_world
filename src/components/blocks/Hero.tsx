@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import { type FancyboxOptions, Fancybox } from "@fancyapps/ui/dist/fancybox/";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import { SearchBar } from "../elements/SearchBar.tsx";
 import worldIcon from "../../assets/media/images/icons/world.png";
 import heroImage1 from "../../assets/media/images/hero_img_1.jpg";
@@ -10,6 +12,23 @@ import fullScreen from "../../assets/media/images/icons/full-screen.svg";
 import "../../styles/blocks/Hero.scss";
 
 export const Hero = () => {
+    function useFancybox(options: Partial<FancyboxOptions> = {}) {
+        const [root, setRoot] = useState<HTMLElement | null>(null);
+
+        useEffect(() => {
+            if (root) {
+                Fancybox.bind(root, "[data-fancybox]", options);
+                return () => Fancybox.unbind(root);
+            }
+        }, [root, options]);
+
+        return [setRoot];
+    }
+
+    const [fancyboxRef] = useFancybox({
+        // custom options
+    });
+
     const videoFile = useRef<HTMLVideoElement>(null);
     const [isPlay, setPlay] = useState(false);
     const [view, setView] = useState(false);
@@ -89,14 +108,18 @@ export const Hero = () => {
                             expedita delectus. Soluta natus porro.
                         </p>
                     </div>
-                    <div className="hero__media">
-                        <div className="hero__media__content">
+                    <div className="hero__media" ref={fancyboxRef}>
+                        <a
+                            className="hero__media__content"
+                            data-fancybox="hero__image"
+                            href={heroImage1}
+                        >
                             <img
                                 className="hero__pic"
                                 src={heroImage1}
                                 alt="Hero image"
                             />
-                        </div>
+                        </a>
                         <div className="hero__media__content">
                             <video
                                 className={"hero__video"}
@@ -124,13 +147,17 @@ export const Hero = () => {
                                 onClick={videoFullScreen}
                             ></button>
                         </div>
-                        <div className="hero__media__content">
+                        <a
+                            className="hero__media__content"
+                            data-fancybox="hero__image"
+                            href={heroImage2}
+                        >
                             <img
                                 className="hero__pic"
                                 src={heroImage2}
                                 alt="Hero image"
                             />
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <SearchBar />
