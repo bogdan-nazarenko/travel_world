@@ -33,6 +33,7 @@ export const Explore = () => {
                                 </div>
                             </div>
                             <img
+                                loading="lazy"
                                 className="explore__pic"
                                 src={london}
                                 alt="London"
@@ -50,6 +51,7 @@ export const Explore = () => {
                                 </div>
                             </div>
                             <img
+                                loading="lazy"
                                 className="explore__pic"
                                 src={dubai}
                                 alt="Dubai"
@@ -69,6 +71,7 @@ export const Explore = () => {
                                 </div>
                             </div>
                             <img
+                                loading="lazy"
                                 className="explore__pic"
                                 src={bali}
                                 alt="Bali"
@@ -86,6 +89,7 @@ export const Explore = () => {
                                 </div>
                             </div>
                             <img
+                                loading="lazy"
                                 className="explore__pic"
                                 src={phetchabun}
                                 alt="Phetchabun"
@@ -105,6 +109,7 @@ export const Explore = () => {
                                 </div>
                             </div>
                             <img
+                                loading="lazy"
                                 className="explore__pic"
                                 src={sydney}
                                 alt="Sydney"
@@ -123,6 +128,7 @@ export const Explore = () => {
                                     </div>
                                 </div>
                                 <img
+                                    loading="lazy"
                                     className="explore__pic"
                                     src={paris}
                                     alt="Paris"
@@ -140,6 +146,7 @@ export const Explore = () => {
                                     </div>
                                 </div>
                                 <img
+                                    loading="lazy"
                                     className="explore__pic"
                                     src={wuxi}
                                     alt="Wuxi"

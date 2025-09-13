@@ -39,6 +39,7 @@ export const Experience = () => {
                 </div>
                 <div className="experience__image">
                     <img
+                        loading="lazy"
                         className="experience__pic"
                         src={experienceImage}
                         alt="Experience"

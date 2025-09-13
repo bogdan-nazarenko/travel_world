@@ -49,6 +49,7 @@ export const Gallery = () => {
                                 href={galleryImg1}
                             >
                                 <img
+                                    loading="lazy"
                                     className="gallery__pic"
                                     src={galleryImg1}
                                     alt="Gallery picture 1"
@@ -60,6 +61,7 @@ export const Gallery = () => {
                                 href={galleryImg2}
                             >
                                 <img
+                                    loading="lazy"
                                     className="gallery__pic"
                                     src={galleryImg2}
                                     alt="Gallery picture 2"
@@ -73,6 +75,7 @@ export const Gallery = () => {
                                 href={galleryImg3}
                             >
                                 <img
+                                    loading="lazy"
                                     className="gallery__pic"
                                     src={galleryImg3}
                                     alt="Gallery picture 3"
@@ -84,6 +87,7 @@ export const Gallery = () => {
                                 href={galleryImg4}
                             >
                                 <img
+                                    loading="lazy"
                                     className="gallery__pic"
                                     src={galleryImg4}
                                     alt="Gallery picture 4"
@@ -99,6 +103,7 @@ export const Gallery = () => {
                                 href={galleryImg5}
                             >
                                 <img
+                                    loading="lazy"
                                     className="gallery__pic"
                                     src={galleryImg5}
                                     alt="Gallery picture 5"
@@ -110,6 +115,7 @@ export const Gallery = () => {
                                 href={galleryImg6}
                             >
                                 <img
+                                    loading="lazy"
                                     className="gallery__pic"
                                     src={galleryImg6}
                                     alt="Gallery picture 6"
@@ -123,6 +129,7 @@ export const Gallery = () => {
                                 href={galleryImg7}
                             >
                                 <img
+                                    loading="lazy"
                                     className="gallery__pic"
                                     src={galleryImg7}
                                     alt="Gallery picture 7"
@@ -134,6 +141,7 @@ export const Gallery = () => {
                                 href={galleryImg8}
                             >
                                 <img
+                                    loading="lazy"
                                     className="gallery__pic"
                                     src={galleryImg8}
                                     alt="Gallery picture 8"
