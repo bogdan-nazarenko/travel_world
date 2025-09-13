@@ -1,1 +1,110 @@
 @use "../../styles/helpers/abstracts.scss" as *;
+
+#gallery_section {
+    @media (min-width: $point3) {
+        padding: 5rem 0 5.7rem;
+    }
+}
+
+.gallery {
+    display: block;
+}
+
+.gallery__info {
+    margin-bottom: 3.3rem;
+}
+
+.gallery__images {
+    display: flex;
+    gap: 1.3rem;
+    width: 100%;
+
+    @media (max-width: $point4) {
+        flex-wrap: wrap;
+    }
+}
+
+.gallery__column__group,
+.gallery__column {
+    display: inherit;
+    gap: inherit;
+    max-height: fit-content;
+}
+
+.gallery__column__group {
+    .gallery__column:not(&:nth-child(2) .gallery__column:nth-child(2)) {
+        @media (min-width: $point3) {
+            max-width: 26.7rem;
+        }
+    }
+
+    &:nth-child(2) .gallery__column:nth-child(2) {
+        @media (min-width: $point3) {
+            max-width: 27.9rem;
+        }
+    }
+
+    &:nth-child(1) {
+        .gallery__column:nth-child(1) {
+            .gallery__image:nth-child(1) {
+                @media (min-width: $point3) {
+                    height: 33.5rem;
+                }
+            }
+            .gallery__image:nth-child(2) {
+                @media (min-width: $point3) {
+                    height: 21.8rem;
+                }
+            }
+        }
+        .gallery__column:nth-child(2) {
+            .gallery__image {
+                @media (min-width: $point3) {
+                    height: 26.7rem;
+                }
+            }
+        }
+    }
+
+    &:nth-child(2) {
+        .gallery__column:nth-child(1) {
+            .gallery__image:nth-child(1) {
+                @media (min-width: $point3) {
+                    height: 21.8rem;
+                }
+            }
+            .gallery__image:nth-child(2) {
+                @media (min-width: $point3) {
+                    height: 33.5rem;
+                }
+            }
+        }
+        .gallery__column:nth-child(2) {
+            .gallery__image {
+                @media (min-width: $point3) {
+                    height: 28.5rem;
+                }
+            }
+        }
+    }
+}
+
+.gallery__column {
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.gallery__image {
+    overflow: hidden;
+    border-radius: 1rem;
+    width: 100%;
+    cursor: pointer;
+
+    @media (max-width: $point4) {
+        height: 20rem;
+    }
+
+    .gallery__pic {
+        @extend %cover_img;
+    }
+}
