@@ -1,4 +1,4 @@
-// import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
+// import { type FancyboxOptions, Fancybox } from "@fancyapps/ui/dist/fancybox/";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import galleryImg1 from "../../assets/media/images/gallery_img_1.jpg";
 import galleryImg2 from "../../assets/media/images/gallery_img_2.jpg";
