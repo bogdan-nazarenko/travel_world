@@ -6,6 +6,7 @@ import worldIcon from "../../assets/media/images/icons/world.png";
 import heroImage1 from "../../assets/media/images/hero_img_1.jpg";
 import heroImage2 from "../../assets/media/images/hero_img_2.jpg";
 import heroVideo from "../../assets/media/videos/hero-video.mp4";
+import videoFrame from "../../assets/media/images/videoframe.webp";
 import play from "../../assets/media/images/icons/play.svg";
 import pause from "../../assets/media/images/icons/pause.svg";
 import fullScreen from "../../assets/media/images/icons/full-screen.svg";
@@ -124,6 +125,7 @@ export const Hero = () => {
                             <video
                                 className={"hero__video"}
                                 src={heroVideo}
+                                poster={videoFrame}
                                 ref={videoFile}
                                 style={{
                                     objectFit: `${view ? "contain" : "cover"}`,
