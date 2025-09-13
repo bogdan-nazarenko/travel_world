@@ -1,4 +1,5 @@
-// import { type FancyboxOptions, Fancybox } from "@fancyapps/ui/dist/fancybox/";
+import { useState, useEffect } from "react";
+import { type FancyboxOptions, Fancybox } from "@fancyapps/ui/dist/fancybox/";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import galleryImg1 from "../../assets/media/images/gallery_img_1.jpg";
 import galleryImg2 from "../../assets/media/images/gallery_img_2.jpg";
@@ -19,6 +20,23 @@ import galleryThumb8 from "../../assets/media/images/thumbs/gallery_thumb_8.webp
 import "../../styles/blocks/Gallery.scss";
 
 export const Gallery = () => {
+    function useFancybox(options: Partial<FancyboxOptions> = {}) {
+        const [root, setRoot] = useState<HTMLElement | null>(null);
+
+        useEffect(() => {
+            if (root) {
+                Fancybox.bind(root, "[data-fancybox]", options);
+                return () => Fancybox.unbind(root);
+            }
+        }, [root, options]);
+
+        return [setRoot];
+    }
+
+    const [fancyboxRef] = useFancybox({
+        // custom options
+    });
+
     return (
         <section id="gallery_section">
             <div className="container gallery">
@@ -30,7 +48,7 @@ export const Gallery = () => {
                         Visit our customers tour gallery
                     </h2>
                 </div>
-                <div className="gallery__images">
+                <div className="gallery__images" ref={fancyboxRef}>
                     <div className="gallery__column__group">
                         <div className="gallery__column">
                             <a
