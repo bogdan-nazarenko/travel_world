@@ -8,6 +8,14 @@ import galleryImg5 from "../../assets/media/images/gallery_img_5.jpg";
 import galleryImg6 from "../../assets/media/images/gallery_img_6.jpg";
 import galleryImg7 from "../../assets/media/images/gallery_img_7.jpg";
 import galleryImg8 from "../../assets/media/images/gallery_img_8.jpg";
+import galleryThumb1 from "../../assets/media/images/thumbs/gallery_thumb_1.webp";
+import galleryThumb2 from "../../assets/media/images/thumbs/gallery_thumb_2.webp";
+import galleryThumb3 from "../../assets/media/images/thumbs/gallery_thumb_3.webp";
+import galleryThumb4 from "../../assets/media/images/thumbs/gallery_thumb_4.webp";
+import galleryThumb5 from "../../assets/media/images/thumbs/gallery_thumb_5.webp";
+import galleryThumb6 from "../../assets/media/images/thumbs/gallery_thumb_6.webp";
+import galleryThumb7 from "../../assets/media/images/thumbs/gallery_thumb_7.webp";
+import galleryThumb8 from "../../assets/media/images/thumbs/gallery_thumb_8.webp";
 import "../../styles/blocks/Gallery.scss";
 
 export const Gallery = () => {
@@ -25,70 +33,102 @@ export const Gallery = () => {
                 <div className="gallery__images">
                     <div className="gallery__column__group">
                         <div className="gallery__column">
-                            <div className="gallery__image">
+                            <a
+                                className="gallery__image"
+                                data-fancybox="gallery"
+                                href={galleryImg1}
+                            >
                                 <img
                                     className="gallery__pic"
-                                    src={galleryImg1}
+                                    src={galleryThumb1}
                                     alt="Gallery picture 1"
                                 />
-                            </div>
-                            <div className="gallery__image">
+                            </a>
+                            <a
+                                className="gallery__image"
+                                data-fancybox="gallery"
+                                href={galleryImg2}
+                            >
                                 <img
                                     className="gallery__pic"
-                                    src={galleryImg2}
+                                    src={galleryThumb2}
                                     alt="Gallery picture 2"
                                 />
-                            </div>
+                            </a>
                         </div>
                         <div className="gallery__column">
-                            <div className="gallery__image">
+                            <a
+                                className="gallery__image"
+                                data-fancybox="gallery"
+                                href={galleryImg3}
+                            >
                                 <img
                                     className="gallery__pic"
-                                    src={galleryImg3}
+                                    src={galleryThumb3}
                                     alt="Gallery picture 3"
                                 />
-                            </div>
-                            <div className="gallery__image">
+                            </a>
+                            <a
+                                className="gallery__image"
+                                data-fancybox="gallery"
+                                href={galleryImg4}
+                            >
                                 <img
                                     className="gallery__pic"
-                                    src={galleryImg4}
+                                    src={galleryThumb4}
                                     alt="Gallery picture 4"
                                 />
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div className="gallery__column__group">
                         <div className="gallery__column">
-                            <div className="gallery__image">
+                            <a
+                                className="gallery__image"
+                                data-fancybox="gallery"
+                                href={galleryImg5}
+                            >
                                 <img
                                     className="gallery__pic"
-                                    src={galleryImg5}
+                                    src={galleryThumb5}
                                     alt="Gallery picture 5"
                                 />
-                            </div>
-                            <div className="gallery__image">
+                            </a>
+                            <a
+                                className="gallery__image"
+                                data-fancybox="gallery"
+                                href={galleryImg6}
+                            >
                                 <img
                                     className="gallery__pic"
-                                    src={galleryImg6}
+                                    src={galleryThumb6}
                                     alt="Gallery picture 6"
                                 />
-                            </div>
+                            </a>
                         </div>
                         <div className="gallery__column">
-                            <div className="gallery__image">
+                            <a
+                                className="gallery__image"
+                                data-fancybox="gallery"
+                                href={galleryImg7}
+                            >
                                 <img
                                     className="gallery__pic"
-                                    src={galleryImg7}
+                                    src={galleryThumb7}
                                     alt="Gallery picture 7"
                                 />
-                            </div>
-                            <div className="gallery__image">
+                            </a>
+                            <a
+                                className="gallery__image"
+                                data-fancybox="gallery"
+                                href={galleryImg8}
+                            >
                                 <img
                                     className="gallery__pic"
-                                    src={galleryImg8}
+                                    src={galleryThumb8}
                                     alt="Gallery picture 8"
                                 />
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
