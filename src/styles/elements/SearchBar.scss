@@ -112,6 +112,7 @@
     border: none;
     padding: initial;
     background-color: initial;
+    color: var(--heading-color);
 
     @media (min-width: $point3) {
         margin-left: 4rem;
