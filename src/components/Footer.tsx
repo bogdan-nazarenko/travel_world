@@ -23,34 +23,34 @@ const Footer = () => {
                         Commodi, enim.
                     </p>
                     <div className="footer__social__links">
-                        <Link
+                        <a
                             className="social__link"
-                            to="https://www.youtube.com/"
+                            href="https://www.youtube.com/"
                             target="_blank"
                         >
                             <Youtube />
-                        </Link>
-                        <Link
+                        </a>
+                        <a
                             className="social__link"
-                            to="https://x.com/"
+                            href="https://x.com/"
                             target="_blank"
                         >
                             <Twitter />
-                        </Link>
-                        <Link
+                        </a>
+                        <a
                             className="social__link"
-                            to="https://www.facebook.com/"
+                            href="https://www.facebook.com/"
                             target="_blank"
                         >
                             <Facebook />
-                        </Link>
-                        <Link
+                        </a>
+                        <a
                             className="social__link"
-                            to="https://www.instagram.com/"
+                            href="https://www.instagram.com/"
                             target="_blank"
                         >
                             <Instagram />
-                        </Link>
+                        </a>
                     </div>
                     <div className="footer__description">
                         © 2024{" "}
@@ -97,37 +97,37 @@ const Footer = () => {
                                     <PinV2 />
                                 </span>
                                 <span className="footer__label">Address: </span>
-                                <Link
+                                <a
                                     className="footer__link"
-                                    to="https://www.google.com/maps/"
+                                    href="https://www.google.com/maps/"
                                     target="_blank"
                                 >
                                     Lorem
-                                </Link>
+                                </a>
                             </div>
                             <div className="footer__links__wrap">
                                 <span className="footer__icon">
                                     <Email />
                                 </span>
                                 <span className="footer__label">Email: </span>
-                                <Link
+                                <a
                                     className="footer__link"
-                                    to="mailto:xyz@mail.com"
+                                    href="mailto:xyz@mail.com"
                                 >
                                     xyz@mail.com
-                                </Link>
+                                </a>
                             </div>
                             <div className="footer__links__wrap">
                                 <span className="footer__icon">
                                     <Phone />
                                 </span>
                                 <span className="footer__label">Phone: </span>
-                                <Link
+                                <a
                                     className="footer__link"
-                                    to="tel:00022200222"
+                                    href="tel:00022200222"
                                 >
                                     00022200222
-                                </Link>
+                                </a>
                             </div>
                         </div>
                     </div>
