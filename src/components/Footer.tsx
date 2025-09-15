@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { Logo } from "./elements/Logo.tsx";
 import {
     Youtube,
@@ -78,9 +79,12 @@ const Footer = () => {
                     <div className="footer__nav__links">
                         <h3 className="footer__nav__title">Quick Links</h3>
                         <div className="footer__links">
-                            <Link className="footer__link" to="/#gallery">
+                            <HashLink
+                                className="footer__link"
+                                to="/#gallery_section"
+                            >
                                 Gallery
-                            </Link>
+                            </HashLink>
                             <Link className="footer__link" to="/login">
                                 Login
                             </Link>
