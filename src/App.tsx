@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header.tsx";
 import Home from "./components/pages/Home.tsx";
 import About from "./components/pages/About.tsx";
@@ -10,7 +10,7 @@ import Footer from "./components/Footer.tsx";
 
 const App = () => {
     return (
-        <BrowserRouter basename="/deploy_travel_world/">
+        <HashRouter>
             <Header />
             <main>
                 <Routes>
@@ -19,12 +19,11 @@ const App = () => {
                     <Route path="/tours" element={<Tours />}></Route>
                     <Route path="/login" element={<Login />}></Route>
                     <Route path="/register" element={<Register />}></Route>
+                    <Route path="*" element={<ErrorPage />}></Route>
                 </Routes>
-
-                <ErrorPage />
             </main>
             <Footer />
-        </BrowserRouter>
+        </HashRouter>
     );
 };
 
