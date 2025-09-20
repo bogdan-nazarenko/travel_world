@@ -1,0 +1,108 @@
+@use "../../styles/helpers/abstracts.scss" as *;
+
+.reviews_section {
+    @media (min-width: $point3) {
+        padding: 5rem 0 5.8rem;
+    }
+}
+
+.reviews {
+    display: block;
+}
+
+.reviews_info {
+    margin-bottom: 3.3rem;
+}
+
+.reviews__slider {
+    max-height: fit-content;
+}
+
+.reviews__slide {
+    user-select: none;
+    cursor: pointer;
+
+    @media (min-width: $point1) {
+        max-width: 34.3rem;
+    }
+}
+
+.reviews__text {
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.reviews__person {
+    display: flex;
+    align-items: center;
+}
+
+.reviews__person__image {
+    overflow: hidden;
+    width: 8.5rem;
+    height: 6.3rem;
+    border-radius: 0.6rem;
+    margin-right: 3rem;
+    background-color: #d9d9d9;
+
+    .reviews__person__pic {
+        @extend %cover_img;
+    }
+}
+
+.reviews__person__info {
+    font-size: 1.6rem;
+}
+
+.reviews__person__name {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.reviews__person__description {
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.reviews__slider__pagination {
+    justify-content: space-between;
+    width: 100%;
+    margin: 4.6rem auto 0;
+
+    @media (min-width: $point1) {
+        max-width: 13.3rem;
+    }
+    @media (min-width: $point3) and (max-width: $point2) {
+        max-width: 20rem;
+    }
+    @media (min-width: $point3) {
+        display: flex;
+    }
+    @media (max-width: $point4) {
+        display: none;
+    }
+}
+
+.reviews__slider__bullet {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+
+    &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        content: "";
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 50%;
+        background-color: #d9d9d9;
+        transition: var(--trans);
+    }
+
+    &.swiper-pagination-bullet-active::before {
+        background-color: var(--text-color);
+    }
+}
