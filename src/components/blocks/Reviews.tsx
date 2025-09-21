@@ -32,6 +32,7 @@ export const Reviews = () => {
                         clickable: true,
                         clickableClass: "reviews__slider__pagination",
                         bulletClass: "reviews__slider__bullet",
+                        bulletActiveClass: "bullet--active",
                     }}
                     breakpoints={{
                         1: {
