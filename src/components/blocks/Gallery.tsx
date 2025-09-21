@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { type FancyboxOptions, Fancybox } from "@fancyapps/ui/dist/fancybox/";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
-import galleryImg1 from "../../assets/media/images/gallery_img_1.jpg";
-import galleryImg2 from "../../assets/media/images/gallery_img_2.jpg";
-import galleryImg3 from "../../assets/media/images/gallery_img_3.jpg";
-import galleryImg4 from "../../assets/media/images/gallery_img_4.jpg";
-import galleryImg5 from "../../assets/media/images/gallery_img_5.jpg";
-import galleryImg6 from "../../assets/media/images/gallery_img_6.jpg";
-import galleryImg7 from "../../assets/media/images/gallery_img_7.jpg";
-import galleryImg8 from "../../assets/media/images/gallery_img_8.jpg";
+import galleryImage1 from "../../assets/media/images/gallery_img_1.jpg";
+import galleryImage2 from "../../assets/media/images/gallery_img_2.jpg";
+import galleryImage3 from "../../assets/media/images/gallery_img_3.jpg";
+import galleryImage4 from "../../assets/media/images/gallery_img_4.jpg";
+import galleryImage5 from "../../assets/media/images/gallery_img_5.jpg";
+import galleryImage6 from "../../assets/media/images/gallery_img_6.jpg";
+import galleryImage7 from "../../assets/media/images/gallery_img_7.jpg";
+import galleryImage8 from "../../assets/media/images/gallery_img_8.jpg";
 import "../../styles/blocks/Gallery.scss";
 
 export const Gallery = () => {
@@ -46,24 +46,24 @@ export const Gallery = () => {
                             <a
                                 className="gallery__image"
                                 data-fancybox="gallery"
-                                href={galleryImg1}
+                                href={galleryImage1}
                             >
                                 <img
                                     loading="lazy"
                                     className="gallery__pic"
-                                    src={galleryImg1}
+                                    src={galleryImage1}
                                     alt="Gallery picture 1"
                                 />
                             </a>
                             <a
                                 className="gallery__image"
                                 data-fancybox="gallery"
-                                href={galleryImg2}
+                                href={galleryImage2}
                             >
                                 <img
                                     loading="lazy"
                                     className="gallery__pic"
-                                    src={galleryImg2}
+                                    src={galleryImage2}
                                     alt="Gallery picture 2"
                                 />
                             </a>
@@ -72,24 +72,24 @@ export const Gallery = () => {
                             <a
                                 className="gallery__image"
                                 data-fancybox="gallery"
-                                href={galleryImg3}
+                                href={galleryImage3}
                             >
                                 <img
                                     loading="lazy"
                                     className="gallery__pic"
-                                    src={galleryImg3}
+                                    src={galleryImage3}
                                     alt="Gallery picture 3"
                                 />
                             </a>
                             <a
                                 className="gallery__image"
                                 data-fancybox="gallery"
-                                href={galleryImg4}
+                                href={galleryImage4}
                             >
                                 <img
                                     loading="lazy"
                                     className="gallery__pic"
-                                    src={galleryImg4}
+                                    src={galleryImage4}
                                     alt="Gallery picture 4"
                                 />
                             </a>
@@ -100,24 +100,24 @@ export const Gallery = () => {
                             <a
                                 className="gallery__image"
                                 data-fancybox="gallery"
-                                href={galleryImg5}
+                                href={galleryImage5}
                             >
                                 <img
                                     loading="lazy"
                                     className="gallery__pic"
-                                    src={galleryImg5}
+                                    src={galleryImage5}
                                     alt="Gallery picture 5"
                                 />
                             </a>
                             <a
                                 className="gallery__image"
                                 data-fancybox="gallery"
-                                href={galleryImg6}
+                                href={galleryImage6}
                             >
                                 <img
                                     loading="lazy"
                                     className="gallery__pic"
-                                    src={galleryImg6}
+                                    src={galleryImage6}
                                     alt="Gallery picture 6"
                                 />
                             </a>
@@ -126,24 +126,24 @@ export const Gallery = () => {
                             <a
                                 className="gallery__image"
                                 data-fancybox="gallery"
-                                href={galleryImg7}
+                                href={galleryImage7}
                             >
                                 <img
                                     loading="lazy"
                                     className="gallery__pic"
-                                    src={galleryImg7}
+                                    src={galleryImage7}
                                     alt="Gallery picture 7"
                                 />
                             </a>
                             <a
                                 className="gallery__image"
                                 data-fancybox="gallery"
-                                href={galleryImg8}
+                                href={galleryImage8}
                             >
                                 <img
                                     loading="lazy"
                                     className="gallery__pic"
-                                    src={galleryImg8}
+                                    src={galleryImage8}
                                     alt="Gallery picture 8"
                                 />
                             </a>
