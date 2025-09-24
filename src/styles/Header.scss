@@ -4,6 +4,8 @@ header {
     position: fixed;
     z-index: var(--header-z-index);
     top: 0;
+    display: flex;
+    justify-content: center;
     width: 100%;
     background-color: var(--color-contrast);
 
@@ -21,6 +23,7 @@ header {
     align-items: center;
     column-gap: 2rem;
     height: 100%;
+    margin: initial;
     font-size: 1.8rem;
     font-weight: 600;
 

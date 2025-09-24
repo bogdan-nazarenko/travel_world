@@ -100,6 +100,45 @@ const Header = () => {
         secondaryColor = " main--color";
     }
 
+    useEffect(() => {
+        const targetElement = document.body;
+        const headerMenu = document.querySelector(
+            ".header_menu"
+        ) as HTMLDivElement;
+
+        const config = {
+            attributes: true,
+        };
+
+        function toggleMargin(): void {
+            if (
+                targetElement.offsetWidth < window.innerWidth &&
+                targetElement.classList.contains("hide-scrollbar")
+            ) {
+                headerMenu.style.marginRight = "1.5rem";
+            } else if (
+                targetElement.offsetWidth < window.innerWidth &&
+                !targetElement.classList.contains("hide-scrollbar") &&
+                headerMenu.hasAttribute("style")
+            ) {
+                headerMenu.removeAttribute("style");
+            } else {
+                if (
+                    targetElement.offsetWidth === window.innerWidth &&
+                    !targetElement.classList.contains("hide-scrollbar") &&
+                    headerMenu.hasAttribute("style")
+                ) {
+                    headerMenu.removeAttribute("style");
+                }
+            }
+        }
+
+        const watcher = new MutationObserver(toggleMargin);
+        watcher.observe(targetElement, config);
+
+        return () => watcher.disconnect();
+    }, []);
+
     return (
         <header>
             <div className="container header_menu">
