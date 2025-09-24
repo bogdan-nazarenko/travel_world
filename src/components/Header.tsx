@@ -1,12 +1,11 @@
 import { useLocation, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import type { CustomLocation } from "./helpers/types.tsx";
 import type { ClickProps } from "./helpers/interfaces.tsx";
 import { Logo } from "./elements/Logo.tsx";
 import "../styles/Header.scss";
 
 const HeaderNavLinks = ({ clickFunc }: ClickProps) => {
-    const location: CustomLocation = useLocation();
+    const location = useLocation();
 
     return (
         <div className="header__nav__links">
@@ -92,7 +91,7 @@ const Header = () => {
         }
     }, [isMenuOpen, isMobile]);
 
-    const location: CustomLocation = useLocation();
+    const location = useLocation();
 
     let secondaryColor: string = "";
 
