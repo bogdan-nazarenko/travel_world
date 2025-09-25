@@ -1,10 +1,9 @@
 import { useLocation, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import type { ClickProps } from "./helpers/interfaces.tsx";
 import { Logo } from "./elements/Logo.tsx";
 import "../styles/Header.scss";
 
-const HeaderNavLinks = ({ clickFunc }: ClickProps) => {
+const HeaderNavLinks = ({ clickFunc }: { clickFunc?: () => void }) => {
     const location = useLocation();
 
     return (
