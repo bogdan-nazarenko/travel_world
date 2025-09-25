@@ -57,8 +57,10 @@ const Header = () => {
     }
 
     function closeMenu(): void {
-        setMenuOpen("");
-        setNavsOpen("");
+        if (isMenuOpen === " menu--open") {
+            setMenuOpen("");
+            setNavsOpen("");
+        }
     }
 
     const [isMobile, setMobile] = useState(false);
