@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header.tsx";
 import Home from "./components/pages/Home.tsx";
 import About from "./components/pages/About.tsx";
@@ -10,7 +10,7 @@ import Footer from "./components/Footer.tsx";
 
 const App = () => {
     return (
-        <BrowserRouter basename="/deploy_travel_world/">
+        <>
             <Header />
             <main>
                 <Routes>
@@ -23,7 +23,7 @@ const App = () => {
                 </Routes>
             </main>
             <Footer />
-        </BrowserRouter>
+        </>
     );
 };
 
