@@ -1,1 +1,106 @@
 @use "../../styles/helpers/abstracts.scss" as *;
+
+.newsletter_section {
+    background-color: var(--light-bg-color);
+
+    @media (min-width: $point3) and (max-width: $point2) {
+        padding: 5rem 0;
+    }
+}
+
+.newsletter {
+    display: flex;
+
+    @media (min-width: $point1) {
+        justify-content: space-between;
+    }
+    @media (max-width: $point2) {
+        justify-content: center;
+    }
+}
+
+.newsletter__subscribe {
+    width: 100%;
+    max-width: 54.4rem;
+
+    @media (min-width: $point1) {
+        padding-top: 5rem;
+    }
+}
+
+.newsletter__title {
+    margin-bottom: 3rem;
+}
+
+.newsletter__form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+    border-radius: 0.6rem;
+    background-color: var(--color-contrast);
+
+    @media (min-width: $point3) {
+        height: 5.4rem;
+    }
+    @media (max-width: $point4) {
+        height: 4rem;
+    }
+}
+
+.newsletter__email__input {
+    width: 100%;
+    border: initial;
+    font-family: var(--font1);
+    font-weight: 400;
+
+    @media (min-width: $point3) {
+        font-size: 1.6rem;
+    }
+    @media (max-width: $point4) {
+        font-size: 1.3rem;
+    }
+
+    &::placeholder {
+        color: var(--text-color);
+    }
+}
+
+.newsletter__subscribe__input {
+    width: 100%;
+    border: initial;
+    border-radius: 0.6rem;
+    background-color: var(--secondary-color);
+    font-family: var(--font1);
+    font-weight: 500;
+    color: var(--color-contrast);
+    cursor: pointer;
+
+    @media (min-width: $point3) {
+        height: 4.2rem;
+        max-width: 11.3rem;
+        font-size: 1.6rem;
+    }
+    @media (max-width: $point4) {
+        height: 3rem;
+        max-width: 8rem;
+        font-size: 1.3rem;
+    }
+
+    &:active {
+        background-color: var(--primary-color);
+    }
+}
+
+.newsletter__text {
+    color: var(--heading-color);
+}
+
+.newsletter__image {
+    width: 100%;
+    max-width: 54.6rem;
+
+    .newsletter__pic {
+        @extend %contain_img;
+    }
+}
