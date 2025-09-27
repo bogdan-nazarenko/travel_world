@@ -6,33 +6,32 @@ import "../styles/Header.scss";
 const HeaderNavLinks = ({ clickFunc }: { clickFunc?: () => void }) => {
     const location = useLocation();
 
+    const homeLink: string = location.pathname === "/" ? "color--light" : "";
+
+    const aboutLink: string =
+        location.pathname === "/about" ? "color--light" : "";
+
+    const toursLink: string =
+        location.pathname === "/tours" ? "color--light" : "";
+
     return (
         <div className="header__nav__links">
             <Link
-                className={
-                    "header__link" +
-                    (location.pathname === "/" ? " color--light" : "")
-                }
+                className={`header__link ${homeLink}`.trim()}
                 to="/"
                 onClick={clickFunc}
             >
                 Home
             </Link>
             <Link
-                className={
-                    "header__link" +
-                    (location.pathname === "/about" ? " color--light" : "")
-                }
+                className={`header__link ${aboutLink}`.trim()}
                 to="/about"
                 onClick={clickFunc}
             >
                 About
             </Link>
             <Link
-                className={
-                    "header__link" +
-                    (location.pathname === "/tours" ? " color--light" : "")
-                }
+                className={`header__link ${toursLink}`.trim()}
                 to="/tours"
                 onClick={clickFunc}
             >
@@ -47,9 +46,9 @@ const Header = () => {
     const [isNavsOpen, setNavsOpen] = useState("");
 
     function toggleMenu(): void {
-        if (isMenuOpen !== " menu--open") {
-            setMenuOpen(" menu--open");
-            setNavsOpen(" navs--open");
+        if (isMenuOpen !== "menu--open") {
+            setMenuOpen("menu--open");
+            setNavsOpen("navs--open");
         } else {
             setMenuOpen("");
             setNavsOpen("");
@@ -57,7 +56,7 @@ const Header = () => {
     }
 
     function closeMenu(): void {
-        if (isMenuOpen === " menu--open") {
+        if (isMenuOpen === "menu--open") {
             setMenuOpen("");
             setNavsOpen("");
         }
@@ -92,11 +91,16 @@ const Header = () => {
 
     const location = useLocation();
 
-    let secondaryColor: string = "";
+    const loginLink: string =
+        location.pathname === "/login" ? "bg-color--light" : "";
 
-    if (location.pathname !== "/login" && location.pathname !== "/register") {
-        secondaryColor = " main--color";
-    }
+    const registerLink: string =
+        location.pathname === "/register" ? "bg-color--light" : "";
+
+    const isMainPages: boolean =
+        location.pathname !== "/login" && location.pathname !== "/register";
+
+    const secondaryColor: string = isMainPages ? "main--color" : "";
 
     useEffect(() => {
         const targetElement = document.body;
@@ -142,31 +146,21 @@ const Header = () => {
             <div className="container header_menu">
                 <Logo clickFunc={closeMenu} />
 
-                <nav className={"header__navs" + isNavsOpen}>
+                <nav className={`header__navs ${isNavsOpen}`.trim()}>
                     {((location.pathname !== "/login" &&
                         location.pathname !== "/register") ||
                         isMobile) && <HeaderNavLinks clickFunc={closeMenu} />}
 
                     <div className="header__authorization">
                         <Link
-                            className={
-                                "header__authorization__link" +
-                                (location.pathname === "/login"
-                                    ? " bg-color--light"
-                                    : "")
-                            }
+                            className={`header__authorization__link ${loginLink}`.trim()}
                             to="/login"
                             onClick={closeMenu}
                         >
                             Login
                         </Link>
                         <Link
-                            className={
-                                "header__authorization__link" +
-                                (location.pathname === "/register"
-                                    ? " bg-color--light"
-                                    : secondaryColor)
-                            }
+                            className={`header__authorization__link ${registerLink || secondaryColor}`.trim()}
                             to="/register"
                             onClick={closeMenu}
                         >
@@ -177,7 +171,7 @@ const Header = () => {
 
                 {isMobile && (
                     <button
-                        className={"header__menu__button" + isMenuOpen}
+                        className={`header__menu__button ${isMenuOpen}`.trim()}
                         onClick={toggleMenu}
                     >
                         <svg
