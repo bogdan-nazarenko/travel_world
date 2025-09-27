@@ -77,9 +77,7 @@ const Header = () => {
         mobileMenu();
         window.addEventListener("resize", mobileMenu);
 
-        return () => {
-            window.removeEventListener("resize", mobileMenu);
-        };
+        return () => window.removeEventListener("resize", mobileMenu);
     }, []);
 
     useEffect(() => {
