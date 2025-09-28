@@ -59,13 +59,8 @@ export const Hero = () => {
 
         const playSetter = () => setPlay(true);
         const pauseSetter = () => setPlay(false);
-        const viewSetter = () => {
-            if (document.fullscreenElement) {
-                setView(true);
-            } else {
-                setView(false);
-            }
-        };
+        const viewSetter = () =>
+            document.fullscreenElement ? setView(true) : setView(false);
 
         if (video) {
             video.addEventListener("play", playSetter);
