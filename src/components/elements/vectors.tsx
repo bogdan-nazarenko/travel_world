@@ -160,6 +160,7 @@ export const Instagram = () => {
 export const Plane = () => {
     return (
         <svg
+            className="plane"
             width="448"
             height="133"
             viewBox="0 0 448 133"
