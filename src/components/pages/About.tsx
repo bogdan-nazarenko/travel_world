@@ -1,5 +1,11 @@
+import { AboutUs } from "../blocks/Panoramas.tsx";
+
 const About = () => {
-    return <h2>About</h2>;
+    return (
+        <>
+            <AboutUs />
+        </>
+    );
 };
 
 export default About;

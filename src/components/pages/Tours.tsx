@@ -1,5 +1,11 @@
+import { AllTours } from "../blocks/Panoramas.tsx";
+
 const Tours = () => {
-    return <h2>Tours</h2>;
+    return (
+        <>
+            <AllTours />
+        </>
+    );
 };
 
 export default Tours;

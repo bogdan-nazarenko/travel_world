@@ -1,0 +1,57 @@
+@use "../../styles/helpers/abstracts.scss" as *;
+
+.panorama_section {
+    padding: initial;
+}
+
+.panorama {
+    position: relative;
+    max-width: 144rem;
+    padding: initial;
+
+    @media (min-width: $point1) {
+        height: 40rem;
+    }
+    @media (min-width: $point3) and (max-width: $point2) {
+        height: 30rem;
+    }
+    @media (max-width: $point4) {
+        height: 20rem;
+    }
+}
+
+.panorama__title__wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.panorama__title {
+    font-weight: 600;
+    text-transform: capitalize;
+    color: var(--color-contrast);
+
+    @media (min-width: $point1) {
+        font-size: 6.4rem;
+    }
+    @media (min-width: $point3) and (max-width: $point2) {
+        font-size: 4.4rem;
+    }
+    @media (max-width: $point4) {
+        font-size: 3.3rem;
+    }
+
+    span {
+        color: var(--primary-color);
+    }
+}
+
+.panoramic__image {
+    @extend %cover_img;
+}
