@@ -5,6 +5,7 @@
     align-items: center;
     border-radius: 5rem;
     box-shadow: 0 0.2rem 1rem 0 #00000026;
+    background-color: var(--color-contrast);
 
     @media (min-width: $point3) {
         height: 7.8rem;
