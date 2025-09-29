@@ -9,7 +9,7 @@ import {
     PinV2,
     Email,
     Phone,
-} from "./elements/icons.tsx";
+} from "./elements/vectors.tsx";
 import "../styles/Footer.scss";
 
 const Footer = () => {

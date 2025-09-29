@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PinV1, PinsDistance, People, Search } from "./icons.tsx";
+import { PinV1, PinsDistance, People, Search } from "./vectors.tsx";
 import "../../styles/elements/SearchBar.scss";
 
 export const SearchBar = () => {
