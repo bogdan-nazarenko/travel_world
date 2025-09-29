@@ -1,0 +1,22 @@
+@use "../../styles/helpers/abstracts.scss" as *;
+
+.tours_search_section {
+    @media (min-width: $point1) {
+        padding: 5rem 0 10rem;
+    }
+    @media (min-width: $point3) and (max-width: $point2) {
+        padding: 5rem 0;
+    }
+}
+
+.tours_search {
+    position: relative;
+
+    .plane {
+        position: absolute;
+        z-index: -1;
+        top: -0.5rem;
+        right: -14rem;
+        fill: var(--secondary-color);
+    }
+}
