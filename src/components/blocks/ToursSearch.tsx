@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { SearchBar } from "../elements/SearchBar.tsx";
+import SearchBar from "../elements/SearchBar.tsx";
 import { Plane } from "../elements/vectors.tsx";
 import "../../styles/blocks/ToursSearch.scss";
 
-export const ToursSearch = () => {
+const ToursSearch = () => {
     const [isDesktop, setDesktop] = useState(true);
 
     function showPlane(): void {
@@ -30,3 +30,5 @@ export const ToursSearch = () => {
         </section>
     );
 };
+
+export default ToursSearch;

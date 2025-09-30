@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { type FancyboxOptions, Fancybox } from "@fancyapps/ui/dist/fancybox/";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
-import { SearchBar } from "../elements/SearchBar.tsx";
+import SearchBar from "../elements/SearchBar.tsx";
 import worldIcon from "../../assets/media/images/icons/world.png";
 import heroImage1 from "../../assets/media/images/hero_img_1.jpg";
 import heroImage2 from "../../assets/media/images/hero_img_2.jpg";
@@ -12,7 +12,7 @@ import pause from "../../assets/media/images/icons/pause.svg";
 import fullScreen from "../../assets/media/images/icons/full-screen.svg";
 import "../../styles/blocks/Hero.scss";
 
-export const Hero = () => {
+const Hero = () => {
     function useFancybox(options: Partial<FancyboxOptions> = {}) {
         const [root, setRoot] = useState<HTMLElement | null>(null);
 
@@ -162,3 +162,5 @@ export const Hero = () => {
         </section>
     );
 };
+
+export default Hero;

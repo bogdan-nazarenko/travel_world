@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import { Logo } from "./elements/Logo.tsx";
+import Logo from "./elements/Logo.tsx";
 import {
     Youtube,
     Twitter,

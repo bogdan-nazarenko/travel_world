@@ -7,7 +7,7 @@ import alex from "../../assets/media/images/alex.webp";
 import person from "../../assets/media/images/icons/person.svg";
 import "../../styles/blocks/Reviews.scss";
 
-export const Reviews = () => {
+const Reviews = () => {
     return (
         <section className="reviews_section">
             <div className="container reviews">
@@ -363,3 +363,5 @@ export const Reviews = () => {
         </section>
     );
 };
+
+export default Reviews;

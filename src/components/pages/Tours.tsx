@@ -1,10 +1,10 @@
-import { AllTours } from "../blocks/Panoramas.tsx";
-import { ToursSearch } from "../blocks/ToursSearch.tsx";
+import Panorama from "../blocks/Panorama.tsx";
+import ToursSearch from "../blocks/ToursSearch.tsx";
 
 const Tours = () => {
     return (
         <>
-            <AllTours />
+            <Panorama />
             <ToursSearch />
         </>
     );

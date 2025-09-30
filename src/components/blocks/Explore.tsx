@@ -7,7 +7,7 @@ import paris from "../../assets/media/images/paris.jpg";
 import wuxi from "../../assets/media/images/wuxi.jpg";
 import "../../styles/blocks/Explore.scss";
 
-export const Explore = () => {
+const Explore = () => {
     return (
         <section className="explore_section">
             <div className="container explore">
@@ -159,3 +159,5 @@ export const Explore = () => {
         </section>
     );
 };
+
+export default Explore;

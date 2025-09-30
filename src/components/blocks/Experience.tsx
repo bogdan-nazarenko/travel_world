@@ -1,7 +1,7 @@
 import experienceImage from "../../assets/media/images/experience.png";
 import "../../styles/blocks/Experience.scss";
 
-export const Experience = () => {
+const Experience = () => {
     return (
         <section className="experience_section">
             <div className="container experience">
@@ -49,3 +49,5 @@ export const Experience = () => {
         </section>
     );
 };
+
+export default Experience;

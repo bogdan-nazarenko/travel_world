@@ -11,7 +11,7 @@ import galleryImage7 from "../../assets/media/images/gallery_img_7.jpg";
 import galleryImage8 from "../../assets/media/images/gallery_img_8.jpg";
 import "../../styles/blocks/Gallery.scss";
 
-export const Gallery = () => {
+const Gallery = () => {
     function useFancybox(options: Partial<FancyboxOptions> = {}) {
         const [root, setRoot] = useState<HTMLElement | null>(null);
 
@@ -154,3 +154,5 @@ export const Gallery = () => {
         </section>
     );
 };
+
+export default Gallery;

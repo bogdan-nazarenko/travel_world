@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import tourist from "../../assets/media/images/tourist.png";
 import "../../styles/blocks/Newsletter.scss";
 
-export const Newsletter = () => {
+const Newsletter = () => {
     const [isDesktop, setDesktop] = useState(true);
 
     function showImage(): void {
@@ -60,3 +60,5 @@ export const Newsletter = () => {
         </section>
     );
 };
+
+export default Newsletter;

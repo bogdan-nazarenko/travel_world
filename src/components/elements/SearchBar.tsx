@@ -2,7 +2,7 @@ import { useState } from "react";
 import { PinV1, PinsDistance, People, Search } from "./vectors.tsx";
 import "../../styles/elements/SearchBar.scss";
 
-export const SearchBar = () => {
+const SearchBar = () => {
     const [isInput, setInput] = useState(false);
 
     function showSearchInput(): void {
@@ -80,3 +80,5 @@ export const SearchBar = () => {
         </div>
     );
 };
+
+export default SearchBar;

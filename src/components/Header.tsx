@@ -1,6 +1,6 @@
 import { useLocation, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Logo } from "./elements/Logo.tsx";
+import Logo from "./elements/Logo.tsx";
 import "../styles/Header.scss";
 
 const HeaderNavLinks = ({ clickFunc }: { clickFunc?: () => void }) => {

@@ -1,6 +1,6 @@
 import "../../styles/blocks/Services.scss";
 
-export const Services = ({ suptitleColor }: { suptitleColor: string }) => {
+const Services = ({ suptitleColor }: { suptitleColor: string }) => {
     return (
         <section className="services_section">
             <div className="container services">
@@ -46,3 +46,5 @@ export const Services = ({ suptitleColor }: { suptitleColor: string }) => {
         </section>
     );
 };
+
+export default Services;

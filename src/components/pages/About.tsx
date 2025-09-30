@@ -1,11 +1,11 @@
-import { AboutUs } from "../blocks/Panoramas.tsx";
+import Panorama from "../blocks/Panorama.tsx";
 
-import { Services } from "../blocks/Services.tsx";
+import Services from "../blocks/Services.tsx";
 
 const About = () => {
     return (
         <>
-            <AboutUs />
+            <Panorama />
             <Services suptitleColor={"--primary-color"} />
         </>
     );

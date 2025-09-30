@@ -6,7 +6,7 @@ import Tours from "./components/pages/Tours.tsx";
 import Login from "./components/pages/Login.tsx";
 import Register from "./components/pages/Register.tsx";
 import ErrorPage from "./components/pages/ErrorPage.tsx";
-import { Newsletter } from "./components/blocks/Newsletter.tsx";
+import Newsletter from "./components/blocks/Newsletter.tsx";
 import Footer from "./components/Footer.tsx";
 
 const App = () => {
