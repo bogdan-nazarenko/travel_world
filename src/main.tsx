@@ -9,7 +9,7 @@ import App from "./App.tsx";
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
-        <BrowserRouter basename="/deploy_travel_world/">
+        <BrowserRouter basename="/travel_world/">
             <App />
         </BrowserRouter>
     </StrictMode>
