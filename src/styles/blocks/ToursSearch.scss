@@ -1,10 +1,7 @@
 @use "../../styles/helpers/abstracts.scss" as *;
 
 .tours_search_section {
-    @media (min-width: $point1) {
-        padding: 5rem 0 10rem;
-    }
-    @media (min-width: $point3) and (max-width: $point2) {
+    @media (min-width: $point3) {
         padding: 5rem 0;
     }
 }
