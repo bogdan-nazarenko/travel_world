@@ -1,0 +1,79 @@
+@use "../../styles/helpers/abstracts.scss" as *;
+
+.overview_section {
+    @media (min-width: $point3) {
+        padding: 10rem 0 5rem;
+    }
+}
+
+.overview {
+    display: flex;
+    gap: 2rem;
+
+    @media (min-width: $point3) {
+        justify-content: space-between;
+    }
+    @media (max-width: $point4) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.overview__info {
+    width: 100%;
+    max-width: 53.8rem;
+}
+
+.overview__info__item:nth-child(1) {
+    @media (min-width: $point1) {
+        margin-bottom: 5rem;
+    }
+    @media (max-width: $point2) {
+        margin-bottom: 2.5rem;
+    }
+}
+
+.overview__title {
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+
+    span {
+        color: var(--secondary-color);
+    }
+}
+
+.overview__text {
+    @media (min-width: $point1) {
+        font-size: 1.8rem;
+        line-height: 3rem;
+    }
+    @media (max-width: $point2) {
+        font-size: 1.5rem;
+        line-height: 1.6;
+    }
+}
+
+.overview__image {
+    width: 100%;
+    max-width: 54.4rem;
+    overflow: hidden;
+    border-radius: 0.6rem;
+
+    @media (min-width: $point1) {
+        height: 38.5rem;
+    }
+    @media (min-width: $point3) and (max-width: $point2) {
+        height: 30rem;
+    }
+    @media (max-width: $point4) {
+        height: 25rem;
+    }
+
+    .overview__pic {
+        @extend %cover_img;
+
+        @media (min-width: $point1) {
+            object-position: bottom;
+        }
+    }
+}
