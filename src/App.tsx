@@ -12,6 +12,10 @@ import Footer from "./components/Footer.tsx";
 const App = () => {
     const location = useLocation();
 
+    const isMainPath: boolean = ["/", "/about", "/tours"].includes(
+        location.pathname
+    );
+
     return (
         <>
             <Header />
@@ -25,8 +29,7 @@ const App = () => {
                     <Route path="*" element={<ErrorPage />}></Route>
                 </Routes>
 
-                {location.pathname !== "/login" &&
-                    location.pathname !== "/register" && <Newsletter />}
+                {isMainPath && <Newsletter />}
             </main>
             <Footer />
         </>
