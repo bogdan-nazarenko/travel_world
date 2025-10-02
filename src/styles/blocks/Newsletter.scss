@@ -94,6 +94,10 @@
 
 .newsletter__text {
     color: var(--heading-color);
+
+    @media (max-width: $point4) {
+        font-size: 1.3rem !important;
+    }
 }
 
 .newsletter__image {
