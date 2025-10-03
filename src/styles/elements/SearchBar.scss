@@ -3,6 +3,7 @@
 .search__bar {
     display: flex;
     align-items: center;
+    overflow: hidden;
     border-radius: 5rem;
     box-shadow: 0 0.2rem 1rem 0 #00000026;
     background-color: var(--color-contrast);
@@ -10,6 +11,7 @@
     @media (min-width: $point3) {
         height: 7.8rem;
         max-width: 81rem;
+        padding: 0 2.6rem;
     }
     @media (max-width: $point4) {
         width: 100%;
@@ -23,44 +25,93 @@
 .search__elements {
     display: flex;
     width: 100%;
-    max-width: 71rem;
-
-    @media (min-width: $point3) {
-        height: 4.4rem;
-    }
-    @media (max-width: $point4) {
-        height: 3rem;
-    }
+    height: inherit;
 }
 
 .search__item {
     display: inherit;
     align-items: center;
-    justify-content: center;
-    height: 100%;
+    width: 100%;
     user-select: none;
 
     @media (min-width: $point3) {
-        width: 100%;
+        justify-content: center;
+    }
+    @media (max-width: $point4) {
+        justify-content: space-around;
+    }
+    @media (min-width: $point3) {
+        transition: background-color var(--trans);
+
+        &:hover {
+            background-color: #f5f5f5;
+        }
+
+        &:nth-child(1) {
+            position: relative;
+        }
+
+        &:nth-child(1)::before {
+            position: absolute;
+            content: "";
+            left: -2.6rem;
+            width: 2.6rem;
+            height: 100%;
+            transition: background-color var(--trans);
+        }
+
+        &:nth-child(1):hover::before {
+            background-color: #f5f5f5;
+        }
+
+        &:nth-child(1):hover + &:nth-child(2)::before {
+            background-color: transparent;
+        }
+
+        &:nth-child(2):hover::before,
+        &:nth-child(2):hover::after {
+            background-color: transparent;
+        }
+
+        &:nth-child(2):has(+ &:nth-child(3):hover)::after {
+            background-color: transparent;
+        }
     }
 
     &:nth-child(1) {
-        @media (min-width: $point3) {
-            max-width: 27rem;
-        }
-        @media (min-width: $point3) and (max-width: $point2) {
-            padding-left: 2.6rem;
+        @media (min-width: $point1) {
+            padding-right: 2.6rem;
         }
         @media (max-width: $point4) {
             padding-right: 0.5rem;
         }
     }
 
+    &:nth-child(2) {
+        position: relative;
+
+        &::before,
+        &::after {
+            position: absolute;
+            content: "";
+            width: 0.2rem;
+            height: 56%;
+            background-color: #dddddd;
+            transition: background-color var(--trans);
+        }
+
+        &::before {
+            left: 0;
+        }
+
+        &::after {
+            right: -0.2rem;
+        }
+    }
+
     &:nth-child(2),
     &:nth-child(3) {
-        border-left: 0.2rem solid #dddddd;
-
-        @media (min-width: $point3) {
+        @media (min-width: $point1) {
             max-width: 22rem;
         }
         @media (max-width: $point4) {
@@ -125,7 +176,6 @@
     color: var(--heading-color);
 
     @media (min-width: $point3) {
-        margin-left: 4rem;
         font-size: 2rem;
     }
     @media (max-width: $point4) {
@@ -142,11 +192,33 @@
     align-items: center;
     justify-content: flex-end;
     height: 100%;
-    max-width: 10rem;
+    max-width: 7.4rem;
 
     @media (min-width: $point3) {
         width: 100%;
-        padding-right: 2.6rem;
+    }
+}
+
+@media (min-width: $point3) {
+    .search__button__wrap {
+        position: relative;
+        transition: background-color var(--trans);
+    }
+
+    .search__button__wrap::after {
+        position: absolute;
+        content: "";
+        right: -2.6rem;
+        width: 2.6rem;
+        height: 100%;
+        transition: background-color var(--trans);
+    }
+
+    .search__bar:has(.search__item:nth-child(3):hover) {
+        .search__button__wrap,
+        .search__button__wrap::after {
+            background-color: #f5f5f5;
+        }
     }
 }
 
