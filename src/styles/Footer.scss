@@ -124,14 +124,15 @@ footer {
 }
 
 .footer__link {
+    max-width: fit-content;
     text-decoration: none;
     color: var(--text-color);
+    transition: color var(--trans);
     cursor: pointer;
 
     @media (min-width: $point3) {
         &:hover {
             color: var(--secondary-color);
-            transition: color var(--trans);
         }
     }
     @media (max-width: $point4) {

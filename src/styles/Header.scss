@@ -76,11 +76,11 @@ header {
     text-decoration: none;
     color: var(--heading-color);
     cursor: pointer;
+    transition: color var(--trans);
 
     @media (min-width: $point3) {
         &:hover {
             color: var(--secondary-color);
-            transition: color var(--trans);
         }
     }
     @media (max-width: $point4) {
@@ -95,7 +95,6 @@ header {
         @media (min-width: $point3) {
             &:hover {
                 color: var(--primary-color);
-                transition: color var(--trans);
             }
         }
         @media (max-width: $point4) {
@@ -129,12 +128,14 @@ header {
     text-align: center;
     text-decoration: none;
     color: var(--heading-color);
+    transition:
+        color var(--trans),
+        background-color var(--trans);
     cursor: pointer;
 
     @media (min-width: $point3) {
         &:hover {
             color: var(--secondary-color);
-            transition: color var(--trans);
         }
     }
     @media (max-width: $point4) {
@@ -154,7 +155,6 @@ header {
         @media (min-width: $point3) {
             &:hover {
                 background-color: var(--primary-color);
-                transition: background-color var(--trans);
             }
         }
         @media (max-width: $point4) {
@@ -171,7 +171,6 @@ header {
         @media (min-width: $point3) {
             &:hover {
                 background-color: var(--secondary-color);
-                transition: background-color var(--trans);
             }
         }
         @media (max-width: $point4) {
@@ -189,7 +188,7 @@ header {
     height: 4.5rem;
     width: 4.5rem;
 
-    &:active::before {
+    &::before {
         position: absolute;
         z-index: -1;
         top: -5%;
@@ -199,6 +198,10 @@ header {
         height: 110%;
         border-radius: 50%;
         opacity: 20%;
+        transition: background-color var(--trans);
+    }
+
+    &:active::before {
         background-color: var(--primary-color);
     }
 
