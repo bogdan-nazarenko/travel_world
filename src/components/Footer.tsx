@@ -25,28 +25,28 @@ const Footer = () => {
                     </p>
                     <div className="footer__social__links">
                         <a
-                            className="social__link"
+                            className="footer__social__link"
                             href="https://www.youtube.com/"
                             target="_blank"
                         >
                             <Youtube />
                         </a>
                         <a
-                            className="social__link"
+                            className="footer__social__link"
                             href="https://x.com/"
                             target="_blank"
                         >
                             <Twitter />
                         </a>
                         <a
-                            className="social__link"
+                            className="footer__social__link"
                             href="https://www.facebook.com/"
                             target="_blank"
                         >
                             <Facebook />
                         </a>
                         <a
-                            className="social__link"
+                            className="footer__social__link"
                             href="https://www.instagram.com/"
                             target="_blank"
                         >

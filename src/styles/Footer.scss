@@ -41,30 +41,30 @@ footer {
     justify-content: space-between;
     width: 100%;
     max-width: 21.5rem;
+}
 
-    .social__link {
-        width: 100%;
-        height: 3.5rem;
-        max-width: 3.5rem;
-        cursor: pointer;
+.footer__social__link {
+    width: 100%;
+    height: 3.5rem;
+    max-width: 3.5rem;
+    cursor: pointer;
 
-        path {
-            fill: var(--secondary-color);
-        }
+    path {
+        fill: var(--secondary-color);
+        transition: fill var(--trans);
+    }
 
-        @media (min-width: $point3) {
-            &:hover {
-                path {
-                    fill: var(--primary-color);
-                    transition: fill var(--trans);
-                }
+    @media (min-width: $point3) {
+        &:hover {
+            path {
+                fill: var(--primary-color);
             }
         }
-        @media (max-width: $point4) {
-            &:active {
-                path {
-                    fill: var(--primary-color);
-                }
+    }
+    @media (max-width: $point4) {
+        &:active {
+            path {
+                fill: var(--primary-color);
             }
         }
     }
