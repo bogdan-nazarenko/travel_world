@@ -79,6 +79,7 @@
     font-family: var(--font1);
     font-weight: 500;
     color: var(--color-contrast);
+    transition: background-color var(--trans);
     cursor: pointer;
 
     @media (min-width: $point3) {
