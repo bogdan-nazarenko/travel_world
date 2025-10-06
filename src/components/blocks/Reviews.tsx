@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/swiper.css";
@@ -8,6 +9,23 @@ import person from "../../assets/media/images/icons/person.svg";
 import "../../styles/blocks/Reviews.scss";
 
 const Reviews = () => {
+    const [isMobile, setMobile] = useState(false);
+
+    function showPagination(): void {
+        if (window.innerWidth < 768) {
+            setMobile(true);
+        } else {
+            setMobile(false);
+        }
+    }
+
+    useEffect(() => {
+        showPagination();
+        window.addEventListener("resize", showPagination);
+
+        return () => window.removeEventListener("resize", showPagination);
+    }, []);
+
     return (
         <section className="reviews_section">
             <div className="container reviews">
@@ -28,12 +46,14 @@ const Reviews = () => {
                         delay: 5000,
                         disableOnInteraction: false,
                     }}
-                    pagination={{
-                        clickable: true,
-                        clickableClass: "reviews__slider__pagination",
-                        bulletClass: "reviews__slider__bullet",
-                        bulletActiveClass: "bullet--active",
-                    }}
+                    pagination={
+                        !isMobile && {
+                            clickable: true,
+                            clickableClass: "reviews__slider__pagination",
+                            bulletClass: "reviews__slider__bullet",
+                            bulletActiveClass: "bullet--active",
+                        }
+                    }
                     breakpoints={{
                         1: {
                             spaceBetween: 20,
