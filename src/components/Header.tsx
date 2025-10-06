@@ -1,5 +1,5 @@
 import { useLocation, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Logo from "./elements/Logo.tsx";
 import "../styles/Header.scss";
 
@@ -103,35 +103,37 @@ const Header = () => {
 
     const secondaryColor: string = isMainPages ? "main--color" : "";
 
+    const headerContainer = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
         const targetElement = document.body;
-        const headerMenu = document.querySelector(
-            ".header_menu"
-        ) as HTMLDivElement;
+        const headerMenu = headerContainer.current;
 
         const config = {
             attributes: true,
         };
 
         function toggleMargin(): void {
-            if (
-                targetElement.offsetWidth < window.innerWidth &&
-                targetElement.classList.contains("hide-scrollbar")
-            ) {
-                headerMenu.style.marginRight = "1.5rem";
-            } else if (
-                targetElement.offsetWidth < window.innerWidth &&
-                !targetElement.classList.contains("hide-scrollbar") &&
-                headerMenu.hasAttribute("style")
-            ) {
-                headerMenu.removeAttribute("style");
-            } else {
+            if (headerMenu) {
                 if (
-                    targetElement.offsetWidth === window.innerWidth &&
+                    targetElement.offsetWidth < window.innerWidth &&
+                    targetElement.classList.contains("hide-scrollbar")
+                ) {
+                    headerMenu.style.marginRight = "1.5rem";
+                } else if (
+                    targetElement.offsetWidth < window.innerWidth &&
                     !targetElement.classList.contains("hide-scrollbar") &&
                     headerMenu.hasAttribute("style")
                 ) {
                     headerMenu.removeAttribute("style");
+                } else {
+                    if (
+                        targetElement.offsetWidth === window.innerWidth &&
+                        !targetElement.classList.contains("hide-scrollbar") &&
+                        headerMenu.hasAttribute("style")
+                    ) {
+                        headerMenu.removeAttribute("style");
+                    }
                 }
             }
         }
@@ -144,7 +146,7 @@ const Header = () => {
 
     return (
         <header>
-            <div className="container header_menu">
+            <div className="container header_menu" ref={headerContainer}>
                 <Logo clickFunc={closeMenu} />
 
                 <nav className={`header__navs ${isNavsOpen}`.trim()}>
