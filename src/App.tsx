@@ -1,6 +1,7 @@
 import { Suspense, lazy } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header.tsx";
+import Loading from "./components/elements/Loading.tsx";
 const Home = lazy(() => import("./components/pages/Home.tsx"));
 const About = lazy(() => import("./components/pages/About.tsx"));
 const Tours = lazy(() => import("./components/pages/Tours.tsx"));
@@ -21,7 +22,7 @@ const App = () => {
         <>
             <Header />
             <main>
-                <Suspense fallback="Loading...">
+                <Suspense fallback={<Loading />}>
                     <Routes>
                         <Route path="/" element={<Home />}></Route>
                         <Route path="/about" element={<About />}></Route>

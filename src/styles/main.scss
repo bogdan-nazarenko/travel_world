@@ -36,6 +36,19 @@ body {
 
 main {
     flex-grow: 1;
+
+    &:has(.loading) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (min-width: $point3) and (max-width: $point2) {
+            height: calc(100dvh - 8.5rem);
+        }
+        @media (max-width: $point4) {
+            height: calc(100dvh - 7rem);
+        }
+    }
 }
 
 section {
