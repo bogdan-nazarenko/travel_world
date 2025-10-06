@@ -32,6 +32,7 @@ const Newsletter = () => {
                             className="newsletter__email__input"
                             type="email"
                             name="email"
+                            autoComplete="email"
                             placeholder="Enter your email"
                             required
                         />
