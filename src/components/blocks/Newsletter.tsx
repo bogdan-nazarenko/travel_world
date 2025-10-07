@@ -36,11 +36,12 @@ const Newsletter = () => {
                             placeholder="Enter your email"
                             required
                         />
-                        <input
-                            className="newsletter__subscribe__input"
+                        <button
+                            className="newsletter__subscribe__button"
                             type="submit"
-                            value="Subscribe"
-                        />
+                        >
+                            Subscribe
+                        </button>
                     </form>
                     <p className="block__text text--v1 newsletter__text">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
