@@ -3,46 +3,45 @@ import { useState, useEffect, useRef } from "react";
 import Logo from "./elements/Logo.tsx";
 import "../styles/Header.scss";
 
+const HeaderNavLinks = ({ clickFunc }: { clickFunc?: () => void }) => {
+    const location = useLocation();
+
+    const homeLink: string = location.pathname === "/" ? "color--light" : "";
+
+    const aboutLink: string =
+        location.pathname === "/about" ? "color--light" : "";
+
+    const toursLink: string =
+        location.pathname === "/tours" ? "color--light" : "";
+
+    return (
+        <div className="header__nav__links">
+            <Link
+                className={`header__link ${homeLink}`.trim()}
+                to="/"
+                onClick={clickFunc}
+            >
+                Home
+            </Link>
+            <Link
+                className={`header__link ${aboutLink}`.trim()}
+                to="/about"
+                onClick={clickFunc}
+            >
+                About
+            </Link>
+            <Link
+                className={`header__link ${toursLink}`.trim()}
+                to="/tours"
+                onClick={clickFunc}
+            >
+                Tours
+            </Link>
+        </div>
+    );
+};
+
 const Header = () => {
-    const HeaderNavLinks = ({ clickFunc }: { clickFunc?: () => void }) => {
-        const location = useLocation();
-
-        const homeLink: string =
-            location.pathname === "/" ? "color--light" : "";
-
-        const aboutLink: string =
-            location.pathname === "/about" ? "color--light" : "";
-
-        const toursLink: string =
-            location.pathname === "/tours" ? "color--light" : "";
-
-        return (
-            <div className="header__nav__links">
-                <Link
-                    className={`header__link ${homeLink}`.trim()}
-                    to="/"
-                    onClick={clickFunc}
-                >
-                    Home
-                </Link>
-                <Link
-                    className={`header__link ${aboutLink}`.trim()}
-                    to="/about"
-                    onClick={clickFunc}
-                >
-                    About
-                </Link>
-                <Link
-                    className={`header__link ${toursLink}`.trim()}
-                    to="/tours"
-                    onClick={clickFunc}
-                >
-                    Tours
-                </Link>
-            </div>
-        );
-    };
-
     const [isMenuOpen, setMenuOpen] = useState("");
     const [isNavsOpen, setNavsOpen] = useState("");
 
