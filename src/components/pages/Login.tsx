@@ -1,5 +1,7 @@
+import Authorization from "../blocks/Authorization.tsx";
+
 const Login = () => {
-    return <h2>Login</h2>;
+    return <Authorization />;
 };
 
 export default Login;

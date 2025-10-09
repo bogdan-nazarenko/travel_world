@@ -1,0 +1,333 @@
+@use "../../styles/helpers/abstracts.scss" as *;
+
+.authorization {
+    display: flex;
+}
+
+.authorization__image {
+    overflow: hidden;
+    width: 100%;
+    height: 66.2rem;
+    max-width: 57.6rem;
+    border-radius: 1.2rem 0 0 1.2rem;
+
+    .authorization__pic {
+        @extend %cover_img;
+    }
+}
+
+.authorization__wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 54.4rem;
+
+    svg {
+        position: absolute;
+        z-index: -1;
+
+        &:nth-of-type(1) {
+            top: 1.4rem;
+            right: -22.4rem;
+        }
+
+        &:nth-of-type(2) {
+            bottom: 0;
+            left: 0;
+        }
+
+        &:nth-of-type(3) {
+            bottom: 0;
+            right: 0;
+        }
+
+        path {
+            fill: var(--secondary-color);
+        }
+    }
+}
+
+.authorization__form {
+    width: 100%;
+    padding: 4.8rem 0 0;
+}
+
+.login__form {
+    max-width: 35.2rem;
+
+    .authorization__title {
+        margin-bottom: 1rem;
+        font-size: 6.4rem;
+        line-height: 4.8rem;
+    }
+
+    .authorization__subtitle {
+        margin-bottom: 2.5rem;
+        font-size: 1.6rem;
+    }
+}
+
+.register__form {
+    max-width: 47.9rem;
+
+    .authorization__title {
+        margin-bottom: -0.1rem;
+        font-size: 3.2rem;
+        text-transform: uppercase;
+    }
+
+    .authorization__subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 2.1rem;
+
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: color var(--trans);
+
+            &:hover {
+                color: var(--primary-color);
+            }
+        }
+    }
+}
+
+.authorization__title {
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.authorization__subtitle {
+    color: var(--text-color);
+    text-align: center;
+}
+
+.login__areas {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2.5rem;
+    margin-bottom: 1.1rem;
+}
+
+.register__areas {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+    margin-bottom: 2.5rem;
+
+    .authorization__area:nth-child(1) {
+        margin-right: auto;
+    }
+
+    .authorization__area:nth-child(1),
+    .authorization__area:nth-child(2) {
+        max-width: 22.4rem;
+    }
+}
+
+.authorization__area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 5.1rem;
+    padding: 0 3rem;
+    border-radius: 0.8rem;
+    border: 0.1rem solid var(--secondary-color);
+    font-size: 1.6rem;
+
+    &:has(#password) {
+        padding-right: 7rem;
+
+        .eye__icon {
+            position: absolute;
+            top: 50%;
+            right: 3rem;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: opacity var(--trans);
+            cursor: pointer;
+        }
+
+        &:focus-within,
+        &:hover {
+            .eye__icon {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.authorization__area__label {
+    position: absolute;
+    top: -1rem;
+    left: 2rem;
+    padding: 0 0.8rem;
+    background-color: var(--color-contrast);
+    opacity: 0;
+    transition: opacity var(--trans);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--text-color);
+
+    &:has(+ .authorization__input:focus) {
+        opacity: 1;
+    }
+}
+
+.authorization__input {
+    width: 100%;
+    border: initial;
+    padding: initial;
+    font-family: var(--font1);
+    font-size: 1.6rem;
+    font-weight: 500;
+
+    &[type="password"] {
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 0.5rem;
+        color: var(--secondary-color);
+    }
+
+    &::placeholder {
+        font-family: var(--font1);
+        font-size: 1.6rem;
+        font-weight: 400;
+        letter-spacing: initial;
+        color: var(--text-color);
+    }
+}
+
+.login__help__link {
+    display: block;
+    margin-bottom: 2.9rem;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    text-align: end;
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: color var(--trans);
+
+    &:hover {
+        color: var(--primary-color);
+    }
+}
+
+.login__wrap {
+    width: 100%;
+    max-width: 22.4rem;
+    margin: 0 auto;
+
+    .authorization__button {
+        margin-bottom: 2.5rem;
+    }
+
+    .authorization__line {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.register__wrap {
+    width: 100%;
+    max-width: 33.7rem;
+    margin: 0 auto;
+
+    .authorization__button {
+        margin-bottom: 1.5rem;
+    }
+
+    .authorization__line {
+        margin-bottom: 1rem;
+    }
+}
+
+.authorization__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 4.2rem;
+    color: var(--color-contrast);
+    background-color: var(--secondary-color);
+    transition: background-color var(--trans);
+    text-transform: uppercase;
+    font-family: var(--font1);
+    font-size: 1.8rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:active {
+        background-color: var(--primary-color);
+    }
+}
+
+.authorization__line {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    color: var(--secondary-color);
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    span {
+        background-color: var(--secondary-color);
+        width: 100%;
+        height: 0.12rem;
+    }
+}
+
+.authorization__socials {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 0.5rem;
+    width: 100%;
+    max-width: 21rem;
+    margin: 0 auto 1.3rem;
+}
+
+.authorization__social__link {
+    width: 100%;
+    height: 3.4rem;
+    max-width: 6rem;
+    border-radius: 0.9rem;
+    border: 0.1rem solid var(--secondary-color);
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-color var(--trans);
+
+    &:hover {
+        background-color: var(--secondary-color);
+    }
+
+    &:nth-child(1) {
+        background-image: url(../../assets/media/images/icons/google.svg);
+    }
+
+    &:nth-child(2) {
+        background-image: url(../../assets/media/images/icons/facebook.svg);
+    }
+
+    &:nth-child(3) {
+        background-image: url(../../assets/media/images/icons/apple.svg);
+    }
+}
+
+.authorization__description {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    text-align: center;
+
+    a {
+        text-decoration: none;
+        color: var(--secondary-color);
+        transition: color var(--trans);
+
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+}

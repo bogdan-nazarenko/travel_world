@@ -1,5 +1,7 @@
+import Authorization from "../blocks/Authorization.tsx";
+
 const Register = () => {
-    return <h2>Register</h2>;
+    return <Authorization />;
 };
 
 export default Register;
