@@ -10,6 +10,36 @@ import phiphi from "../../assets/media/images/phiphi.jpg";
 import elnido from "../../assets/media/images/el_nido.jpg";
 import "../../styles/blocks/FeaturedTours.scss";
 
+interface ToursImageProps {
+    suptitle: string;
+    title: string;
+    image: string;
+    alt: string;
+}
+
+const FeaturedToursImage = (props: ToursImageProps) => {
+    return (
+        <div className="featured_tours__image">
+            <div className="featured_tours__captions__wrap">
+                <div className="featured_tours__image__captions">
+                    <h3 className="featured_tours__image__suptitle">
+                        {props.suptitle}
+                    </h3>
+                    <h3 className="featured_tours__image__title">
+                        {props.title}
+                    </h3>
+                </div>
+            </div>
+            <img
+                loading="lazy"
+                className="featured_tours__pic"
+                src={props.image}
+                alt={props.alt}
+            />
+        </div>
+    );
+};
+
 const FeaturedTours = () => {
     return (
         <section className="featured_tours_section">
@@ -18,186 +48,66 @@ const FeaturedTours = () => {
                     Our featured <span>tours</span>
                 </h2>
                 <div className="featured_tours__images">
-                    <div className="featured_tours__image">
-                        <div className="featured_tours__captions__wrap">
-                            <div className="featured_tours__image__captions">
-                                <h3 className="featured_tours__image__suptitle">
-                                    Dubai
-                                </h3>
-                                <h3 className="featured_tours__image__title">
-                                    UAE
-                                </h3>
-                            </div>
-                        </div>
-                        <img
-                            loading="lazy"
-                            className="featured_tours__pic"
-                            src={dubai}
-                            alt="Dubai"
-                        />
-                    </div>
-                    <div className="featured_tours__image">
-                        <div className="featured_tours__captions__wrap">
-                            <div className="featured_tours__image__captions">
-                                <h3 className="featured_tours__image__suptitle">
-                                    Bali
-                                </h3>
-                                <h3 className="featured_tours__image__title">
-                                    Indonesia
-                                </h3>
-                            </div>
-                        </div>
-                        <img
-                            loading="lazy"
-                            className="featured_tours__pic"
-                            src={bali}
-                            alt="Bali"
-                        />
-                    </div>
-                    <div className="featured_tours__image">
-                        <div className="featured_tours__captions__wrap">
-                            <div className="featured_tours__image__captions">
-                                <h3 className="featured_tours__image__suptitle">
-                                    Sydney
-                                </h3>
-                                <h3 className="featured_tours__image__title">
-                                    Australia
-                                </h3>
-                            </div>
-                        </div>
-                        <img
-                            loading="lazy"
-                            className="featured_tours__pic"
-                            src={sydney}
-                            alt="Sydney"
-                        />
-                    </div>
-                    <div className="featured_tours__image">
-                        <div className="featured_tours__captions__wrap">
-                            <div className="featured_tours__image__captions">
-                                <h3 className="featured_tours__image__suptitle">
-                                    Phetchabun
-                                </h3>
-                                <h3 className="featured_tours__image__title">
-                                    Thailand
-                                </h3>
-                            </div>
-                        </div>
-                        <img
-                            loading="lazy"
-                            className="featured_tours__pic"
-                            src={phetchabun}
-                            alt="Phetchabun"
-                        />
-                    </div>
-                    <div className="featured_tours__image">
-                        <div className="featured_tours__captions__wrap">
-                            <div className="featured_tours__image__captions">
-                                <h3 className="featured_tours__image__suptitle">
-                                    Wuxi
-                                </h3>
-                                <h3 className="featured_tours__image__title">
-                                    China
-                                </h3>
-                            </div>
-                        </div>
-                        <img
-                            loading="lazy"
-                            className="featured_tours__pic"
-                            src={wuxi}
-                            alt="Wuxi"
-                        />
-                    </div>
-                    <div className="featured_tours__image">
-                        <div className="featured_tours__captions__wrap">
-                            <div className="featured_tours__image__captions">
-                                <h3 className="featured_tours__image__suptitle">
-                                    Big Ben
-                                </h3>
-                                <h3 className="featured_tours__image__title">
-                                    London
-                                </h3>
-                            </div>
-                        </div>
-                        <img
-                            loading="lazy"
-                            className="featured_tours__pic"
-                            src={london}
-                            alt="London"
-                        />
-                    </div>
-                    <div className="featured_tours__image">
-                        <div className="featured_tours__captions__wrap">
-                            <div className="featured_tours__image__captions">
-                                <h3 className="featured_tours__image__suptitle">
-                                    Paris
-                                </h3>
-                                <h3 className="featured_tours__image__title">
-                                    France
-                                </h3>
-                            </div>
-                        </div>
-                        <img
-                            loading="lazy"
-                            className="featured_tours__pic"
-                            src={paris}
-                            alt="Paris"
-                        />
-                    </div>
-                    <div className="featured_tours__image">
-                        <div className="featured_tours__captions__wrap">
-                            <div className="featured_tours__image__captions">
-                                <h3 className="featured_tours__image__suptitle">
-                                    Maafushi Island
-                                </h3>
-                                <h3 className="featured_tours__image__title">
-                                    Maldives
-                                </h3>
-                            </div>
-                        </div>
-                        <img
-                            loading="lazy"
-                            className="featured_tours__pic"
-                            src={maafushi}
-                            alt="Maafushi Island"
-                        />
-                    </div>
-                    <div className="featured_tours__image">
-                        <div className="featured_tours__captions__wrap">
-                            <div className="featured_tours__image__captions">
-                                <h3 className="featured_tours__image__suptitle">
-                                    Phi Phi Islands
-                                </h3>
-                                <h3 className="featured_tours__image__title">
-                                    Thailand
-                                </h3>
-                            </div>
-                        </div>
-                        <img
-                            loading="lazy"
-                            className="featured_tours__pic"
-                            src={phiphi}
-                            alt="Phi Phi Islands"
-                        />
-                    </div>
-                    <div className="featured_tours__image">
-                        <div className="featured_tours__captions__wrap">
-                            <div className="featured_tours__image__captions">
-                                <h3 className="featured_tours__image__suptitle">
-                                    El Nido
-                                </h3>
-                                <h3 className="featured_tours__image__title">
-                                    Philippines
-                                </h3>
-                            </div>
-                        </div>
-                        <img
-                            loading="lazy"
-                            className="featured_tours__pic"
-                            src={elnido}
-                            alt="El Nido"
-                        />
-                    </div>
+                    <FeaturedToursImage
+                        suptitle="Dubai"
+                        title="UAE"
+                        image={dubai}
+                        alt="Dubai"
+                    />
+                    <FeaturedToursImage
+                        suptitle="Bali"
+                        title="Indonesia"
+                        image={bali}
+                        alt="Bali"
+                    />
+                    <FeaturedToursImage
+                        suptitle="Sydney"
+                        title="Australia"
+                        image={sydney}
+                        alt="Sydney"
+                    />
+                    <FeaturedToursImage
+                        suptitle="Phetchabun"
+                        title="Thailand"
+                        image={phetchabun}
+                        alt="Phetchabun"
+                    />
+                    <FeaturedToursImage
+                        suptitle="Wuxi"
+                        title="China"
+                        image={wuxi}
+                        alt="Wuxi"
+                    />
+                    <FeaturedToursImage
+                        suptitle="Big Ben"
+                        title="London"
+                        image={london}
+                        alt="London"
+                    />
+                    <FeaturedToursImage
+                        suptitle="Paris"
+                        title="France"
+                        image={paris}
+                        alt="Paris"
+                    />
+                    <FeaturedToursImage
+                        suptitle="Maafushi Island"
+                        title="Maldives"
+                        image={maafushi}
+                        alt="Maafushi Island"
+                    />
+                    <FeaturedToursImage
+                        suptitle="Phi Phi Islands"
+                        title="Thailand"
+                        image={phiphi}
+                        alt="Phi Phi Islands"
+                    />
+                    <FeaturedToursImage
+                        suptitle="El Nido"
+                        title="Philippines"
+                        image={elnido}
+                        alt="El Nido"
+                    />
                 </div>
             </div>
         </section>
