@@ -1,0 +1,50 @@
+@use "../../styles/helpers/abstracts.scss" as *;
+
+.error {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @media (min-width: $point1) {
+        min-height: calc(100dvh - 8.5rem - 28.8rem);
+    }
+    @media (min-width: $point3) {
+        justify-content: center;
+    }
+    @media (min-width: $point3) and (max-width: $point2) {
+        min-height: calc(100dvh - 8.5rem);
+    }
+    @media (max-width: $point4) {
+        min-height: calc(100dvh - 7rem);
+        padding-top: 3rem;
+    }
+}
+
+.error__title {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+
+    @media (min-width: $point1) {
+        font-size: 10rem;
+    }
+    @media (min-width: $point3) and (max-width: $point2) {
+        font-size: 7rem;
+    }
+    @media (max-width: $point4) {
+        font-size: 5rem;
+    }
+}
+
+.error__description {
+    color: var(--text-color);
+
+    @media (min-width: $point1) {
+        font-size: 3rem;
+    }
+    @media (min-width: $point3) and (max-width: $point2) {
+        font-size: 2rem;
+    }
+    @media (max-width: $point4) {
+        font-size: 1.5rem;
+    }
+}

@@ -7,7 +7,7 @@ const About = lazy(() => import("./components/pages/About.tsx"));
 const Tours = lazy(() => import("./components/pages/Tours.tsx"));
 const Login = lazy(() => import("./components/pages/Login.tsx"));
 const Register = lazy(() => import("./components/pages/Register.tsx"));
-const ErrorPage = lazy(() => import("./components/pages/ErrorPage.tsx"));
+const NotFound = lazy(() => import("./components/pages/NotFound.tsx"));
 const Newsletter = lazy(() => import("./components/blocks/Newsletter.tsx"));
 import Footer from "./components/Footer.tsx";
 
@@ -29,7 +29,7 @@ const App = () => {
                         <Route path="/tours" element={<Tours />}></Route>
                         <Route path="/login" element={<Login />}></Route>
                         <Route path="/register" element={<Register />}></Route>
-                        <Route path="*" element={<ErrorPage />}></Route>
+                        <Route path="*" element={<NotFound />}></Route>
                     </Routes>
 
                     {isMainPath && <Newsletter />}
