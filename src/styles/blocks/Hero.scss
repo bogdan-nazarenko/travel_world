@@ -125,14 +125,14 @@
 
             @media (min-width: $point3) {
                 opacity: 0;
+                transition: opacity var(--trans);
             }
         }
 
-        &:hover {
-            @media (min-width: $point3) {
+        @media (min-width: $point3) {
+            &:hover {
                 .mobile__full__screen {
-                    opacity: 100%;
-                    transition: opacity var(--trans);
+                    opacity: 1;
                 }
             }
         }
