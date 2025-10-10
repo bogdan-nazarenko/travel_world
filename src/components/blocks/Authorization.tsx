@@ -169,7 +169,7 @@ const Register = ({ isValueVisible, clickFunc }: FormProps) => {
                     id="first_name"
                     type="text"
                     name="first_name"
-                    autoComplete="first_name"
+                    autoComplete="given-name"
                     placeholder="First Name"
                     required={true}
                 />
