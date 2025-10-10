@@ -1,15 +1,28 @@
 import { useState, useEffect } from "react";
 import { type FancyboxOptions, Fancybox } from "@fancyapps/ui/dist/fancybox/";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
-import galleryImage1 from "../../assets/media/images/gallery_img_1.jpg";
-import galleryImage2 from "../../assets/media/images/gallery_img_2.jpg";
-import galleryImage3 from "../../assets/media/images/gallery_img_3.jpg";
-import galleryImage4 from "../../assets/media/images/gallery_img_4.jpg";
-import galleryImage5 from "../../assets/media/images/gallery_img_5.jpg";
-import galleryImage6 from "../../assets/media/images/gallery_img_6.jpg";
-import galleryImage7 from "../../assets/media/images/gallery_img_7.jpg";
-import galleryImage8 from "../../assets/media/images/gallery_img_8.jpg";
+import manali from "../../assets/media/images/manali.jpg";
+import elnido from "../../assets/media/images/el_nido.jpg";
+import pamukkale from "../../assets/media/images/pamukkale.jpg";
+import maafushi from "../../assets/media/images/maafushi.jpg";
+import mangunan from "../../assets/media/images/mangunan.jpg";
+import krakow from "../../assets/media/images/krakow.jpg";
+import maldives from "../../assets/media/images/maldives.jpg";
+import phiphi from "../../assets/media/images/phiphi.jpg";
 import "../../styles/blocks/Gallery.scss";
+
+const GalleryImage = ({ image, alt }: { image: string; alt: string }) => {
+    return (
+        <a className="gallery__image" data-fancybox="gallery" href={image}>
+            <img
+                loading="lazy"
+                className="gallery__pic"
+                src={image}
+                alt={alt}
+            />
+        </a>
+    );
+};
 
 const Gallery = () => {
     function useFancybox(options: Partial<FancyboxOptions> = {}) {
@@ -43,110 +56,31 @@ const Gallery = () => {
                 <div className="gallery__images" ref={fancyboxRef}>
                     <div className="gallery__column__group">
                         <div className="gallery__column">
-                            <a
-                                className="gallery__image"
-                                data-fancybox="gallery"
-                                href={galleryImage1}
-                            >
-                                <img
-                                    loading="lazy"
-                                    className="gallery__pic"
-                                    src={galleryImage1}
-                                    alt="Gallery picture 1"
-                                />
-                            </a>
-                            <a
-                                className="gallery__image"
-                                data-fancybox="gallery"
-                                href={galleryImage2}
-                            >
-                                <img
-                                    loading="lazy"
-                                    className="gallery__pic"
-                                    src={galleryImage2}
-                                    alt="Gallery picture 2"
-                                />
-                            </a>
+                            <GalleryImage image={manali} alt="Manali" />
+                            <GalleryImage image={elnido} alt="El Nido" />
                         </div>
                         <div className="gallery__column">
-                            <a
-                                className="gallery__image"
-                                data-fancybox="gallery"
-                                href={galleryImage3}
-                            >
-                                <img
-                                    loading="lazy"
-                                    className="gallery__pic"
-                                    src={galleryImage3}
-                                    alt="Gallery picture 3"
-                                />
-                            </a>
-                            <a
-                                className="gallery__image"
-                                data-fancybox="gallery"
-                                href={galleryImage4}
-                            >
-                                <img
-                                    loading="lazy"
-                                    className="gallery__pic"
-                                    src={galleryImage4}
-                                    alt="Gallery picture 4"
-                                />
-                            </a>
+                            <GalleryImage image={pamukkale} alt="Pamukkale" />
+                            <GalleryImage
+                                image={maafushi}
+                                alt="Maafushi Island"
+                            />
                         </div>
                     </div>
                     <div className="gallery__column__group">
                         <div className="gallery__column">
-                            <a
-                                className="gallery__image"
-                                data-fancybox="gallery"
-                                href={galleryImage5}
-                            >
-                                <img
-                                    loading="lazy"
-                                    className="gallery__pic"
-                                    src={galleryImage5}
-                                    alt="Gallery picture 5"
-                                />
-                            </a>
-                            <a
-                                className="gallery__image"
-                                data-fancybox="gallery"
-                                href={galleryImage6}
-                            >
-                                <img
-                                    loading="lazy"
-                                    className="gallery__pic"
-                                    src={galleryImage6}
-                                    alt="Gallery picture 6"
-                                />
-                            </a>
+                            <GalleryImage
+                                image={mangunan}
+                                alt="Mangunan Pines Forests"
+                            />
+                            <GalleryImage image={krakow} alt="Krakow" />
                         </div>
                         <div className="gallery__column">
-                            <a
-                                className="gallery__image"
-                                data-fancybox="gallery"
-                                href={galleryImage7}
-                            >
-                                <img
-                                    loading="lazy"
-                                    className="gallery__pic"
-                                    src={galleryImage7}
-                                    alt="Gallery picture 7"
-                                />
-                            </a>
-                            <a
-                                className="gallery__image"
-                                data-fancybox="gallery"
-                                href={galleryImage8}
-                            >
-                                <img
-                                    loading="lazy"
-                                    className="gallery__pic"
-                                    src={galleryImage8}
-                                    alt="Gallery picture 8"
-                                />
-                            </a>
+                            <GalleryImage image={maldives} alt="Maldives" />
+                            <GalleryImage
+                                image={phiphi}
+                                alt="Phi Phi Islands"
+                            />
                         </div>
                     </div>
                 </div>

@@ -5,9 +5,9 @@ import phetchabun from "../../assets/media/images/phetchabun.jpg";
 import wuxi from "../../assets/media/images/wuxi.jpg";
 import london from "../../assets/media/images/london.jpg";
 import paris from "../../assets/media/images/paris.jpg";
-import maafushi from "../../assets/media/images/gallery_img_4.jpg";
-import phiphi from "../../assets/media/images/gallery_img_8.jpg";
-import elnido from "../../assets/media/images/gallery_img_2.jpg";
+import maafushi from "../../assets/media/images/maafushi.jpg";
+import phiphi from "../../assets/media/images/phiphi.jpg";
+import elnido from "../../assets/media/images/el_nido.jpg";
 import "../../styles/blocks/FeaturedTours.scss";
 
 const FeaturedTours = () => {

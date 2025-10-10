@@ -1,4 +1,4 @@
-import overviewImage from "../../assets/media/images/gallery_img_2.jpg";
+import elnido from "../../assets/media/images/el_nido.jpg";
 import "../../styles/blocks/Overview.scss";
 
 const Overview = () => {
@@ -29,11 +29,7 @@ const Overview = () => {
                     </div>
                 </div>
                 <div className="overview__image">
-                    <img
-                        className="overview__pic"
-                        src={overviewImage}
-                        alt="Overview picture"
-                    />
+                    <img className="overview__pic" src={elnido} alt="El Nido" />
                 </div>
             </div>
         </section>
