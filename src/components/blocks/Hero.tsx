@@ -137,7 +137,7 @@ const Hero = () => {
                                 onClick={videoPlay}
                             ></button>
                             <button
-                                className="mobile__full__screen"
+                                className="video__fullscreen"
                                 style={{
                                     backgroundImage: `url("${fullScreen}")`,
                                 }}

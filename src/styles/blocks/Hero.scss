@@ -112,7 +112,7 @@
             background-position: center;
         }
 
-        .mobile__full__screen {
+        .video__fullscreen {
             position: absolute;
             bottom: 2rem;
             right: 2rem;
@@ -131,7 +131,7 @@
 
         @media (min-width: $point3) {
             &:hover {
-                .mobile__full__screen {
+                .video__fullscreen {
                     opacity: 1;
                 }
             }
