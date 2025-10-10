@@ -19,7 +19,7 @@ const Panorama = () => {
                         <img
                             className="panoramic__image"
                             src={aboutImage}
-                            alt="Panoramic image"
+                            alt=""
                         />
                     </>
                 )}
@@ -34,7 +34,7 @@ const Panorama = () => {
                         <img
                             className="panoramic__image"
                             src={tourImage}
-                            alt="Panoramic image"
+                            alt=""
                         />
                     </>
                 )}

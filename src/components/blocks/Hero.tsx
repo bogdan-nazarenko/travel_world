@@ -113,7 +113,7 @@ const Hero = () => {
                             <img
                                 className="hero__pic"
                                 src={heroImage1}
-                                alt="Hero image"
+                                alt="A man in the mountains"
                             />
                         </a>
                         <div className="hero__media__content">
@@ -152,7 +152,7 @@ const Hero = () => {
                             <img
                                 className="hero__pic"
                                 src={heroImage2}
-                                alt="Hero image"
+                                alt="Louvre"
                             />
                         </a>
                     </div>

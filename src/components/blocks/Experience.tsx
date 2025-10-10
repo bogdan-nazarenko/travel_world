@@ -42,7 +42,7 @@ const Experience = () => {
                         loading="lazy"
                         className="experience__pic"
                         src={experienceImage}
-                        alt="Experience"
+                        alt=""
                     />
                 </div>
             </div>
