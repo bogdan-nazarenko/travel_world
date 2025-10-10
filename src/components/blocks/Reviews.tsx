@@ -8,6 +8,43 @@ import alex from "../../assets/media/images/alex.webp";
 import person from "../../assets/media/images/icons/person.svg";
 import "../../styles/blocks/Reviews.scss";
 
+interface ReviewsContentProps {
+    image?: string;
+    personName?: string;
+    description?: string;
+}
+
+const ReviewsContent = (props: ReviewsContentProps) => {
+    return (
+        <>
+            <p className="block__text text--v2 reviews__text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus
+                sit, explicabo provident hic distinctio molestias voluptates
+                nobis alias placeat suscipt earum debitits recusandae voluptate
+                illum expedita corrupti aliquid doloribus delectus?
+            </p>
+            <div className="reviews__person">
+                <div className="reviews__person__image">
+                    <img
+                        loading="lazy"
+                        className="reviews__person__pic"
+                        src={props.image ? props.image : person}
+                        alt={props.personName ? props.personName : "Person"}
+                    />
+                </div>
+                <div className="reviews__person__info">
+                    <h3 className="reviews__person__name">
+                        {props.personName ? props.personName : "Person"}
+                    </h3>
+                    <div className="reviews__person__description">
+                        {props.description ? props.description : "Lorem"}
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+};
+
 const Reviews = () => {
     const [isMobile, setMobile] = useState(false);
 
@@ -73,310 +110,52 @@ const Reviews = () => {
                     }}
                 >
                     <SwiperSlide className="reviews__slide">
-                        <p className="block__text text--v2 reviews__text">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Minus sit, explicabo provident hic distinctio
-                            molestias voluptates nobis alias placeat suscipt
-                            earum debitits recusandae voluptate illum expedita
-                            corrupti aliquid doloribus delectus?
-                        </p>
-                        <div className="reviews__person">
-                            <div className="reviews__person__image">
-                                <img
-                                    loading="lazy"
-                                    className="reviews__person__pic"
-                                    src={john}
-                                    alt="John Deep"
-                                />
-                            </div>
-                            <div className="reviews__person__info">
-                                <h3 className="reviews__person__name">
-                                    John Deep
-                                </h3>
-                                <div className="reviews__person__description">
-                                    Customer
-                                </div>
-                            </div>
-                        </div>
+                        <ReviewsContent
+                            image={john}
+                            personName="John Deep"
+                            description="Customer"
+                        />
                     </SwiperSlide>
                     <SwiperSlide className="reviews__slide">
-                        <p className="block__text text--v2 reviews__text">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Minus sit, explicabo provident hic distinctio
-                            molestias voluptates nobis alias placeat suscipt
-                            earum debitits recusandae voluptate illum expedita
-                            corrupti aliquid doloribus delectus?
-                        </p>
-                        <div className="reviews__person">
-                            <div className="reviews__person__image">
-                                <img
-                                    loading="lazy"
-                                    className="reviews__person__pic"
-                                    src={ally}
-                                    alt="Ally Gomez"
-                                />
-                            </div>
-                            <div className="reviews__person__info">
-                                <h3 className="reviews__person__name">
-                                    Ally Gomez
-                                </h3>
-                                <div className="reviews__person__description">
-                                    Customer
-                                </div>
-                            </div>
-                        </div>
+                        <ReviewsContent
+                            image={ally}
+                            personName="Ally Gomez"
+                            description="Customer"
+                        />
                     </SwiperSlide>
                     <SwiperSlide className="reviews__slide">
-                        <p className="block__text text--v2 reviews__text">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Minus sit, explicabo provident hic distinctio
-                            molestias voluptates nobis alias placeat suscipt
-                            earum debitits recusandae voluptate illum expedita
-                            corrupti aliquid doloribus delectus?
-                        </p>
-                        <div className="reviews__person">
-                            <div className="reviews__person__image">
-                                <img
-                                    loading="lazy"
-                                    className="reviews__person__pic"
-                                    src={alex}
-                                    alt="Alex Bugg"
-                                />
-                            </div>
-                            <div className="reviews__person__info">
-                                <h3 className="reviews__person__name">
-                                    Alex Bugg
-                                </h3>
-                                <div className="reviews__person__description">
-                                    Customer
-                                </div>
-                            </div>
-                        </div>
+                        <ReviewsContent
+                            image={alex}
+                            personName="Alex Bugg"
+                            description="Customer"
+                        />
                     </SwiperSlide>
                     <SwiperSlide className="reviews__slide">
-                        <p className="block__text text--v2 reviews__text">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Minus sit, explicabo provident hic distinctio
-                            molestias voluptates nobis alias placeat suscipt
-                            earum debitits recusandae voluptate illum expedita
-                            corrupti aliquid doloribus delectus?
-                        </p>
-                        <div className="reviews__person">
-                            <div className="reviews__person__image">
-                                <img
-                                    loading="lazy"
-                                    className="reviews__person__pic"
-                                    src={person}
-                                    alt="Person"
-                                />
-                            </div>
-                            <div className="reviews__person__info">
-                                <h3 className="reviews__person__name">Lorem</h3>
-                                <div className="reviews__person__description">
-                                    Customer
-                                </div>
-                            </div>
-                        </div>
+                        <ReviewsContent />
                     </SwiperSlide>
                     <SwiperSlide className="reviews__slide">
-                        <p className="block__text text--v2 reviews__text">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Minus sit, explicabo provident hic distinctio
-                            molestias voluptates nobis alias placeat suscipt
-                            earum debitits recusandae voluptate illum expedita
-                            corrupti aliquid doloribus delectus?
-                        </p>
-                        <div className="reviews__person">
-                            <div className="reviews__person__image">
-                                <img
-                                    loading="lazy"
-                                    className="reviews__person__pic"
-                                    src={person}
-                                    alt="Person"
-                                />
-                            </div>
-                            <div className="reviews__person__info">
-                                <h3 className="reviews__person__name">Lorem</h3>
-                                <div className="reviews__person__description">
-                                    Customer
-                                </div>
-                            </div>
-                        </div>
+                        <ReviewsContent />
                     </SwiperSlide>
                     <SwiperSlide className="reviews__slide">
-                        <p className="block__text text--v2 reviews__text">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Minus sit, explicabo provident hic distinctio
-                            molestias voluptates nobis alias placeat suscipt
-                            earum debitits recusandae voluptate illum expedita
-                            corrupti aliquid doloribus delectus?
-                        </p>
-                        <div className="reviews__person">
-                            <div className="reviews__person__image">
-                                <img
-                                    loading="lazy"
-                                    className="reviews__person__pic"
-                                    src={person}
-                                    alt="Person"
-                                />
-                            </div>
-                            <div className="reviews__person__info">
-                                <h3 className="reviews__person__name">Lorem</h3>
-                                <div className="reviews__person__description">
-                                    Customer
-                                </div>
-                            </div>
-                        </div>
+                        <ReviewsContent />
                     </SwiperSlide>
                     <SwiperSlide className="reviews__slide">
-                        <p className="block__text text--v2 reviews__text">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Minus sit, explicabo provident hic distinctio
-                            molestias voluptates nobis alias placeat suscipt
-                            earum debitits recusandae voluptate illum expedita
-                            corrupti aliquid doloribus delectus?
-                        </p>
-                        <div className="reviews__person">
-                            <div className="reviews__person__image">
-                                <img
-                                    loading="lazy"
-                                    className="reviews__person__pic"
-                                    src={person}
-                                    alt="Person"
-                                />
-                            </div>
-                            <div className="reviews__person__info">
-                                <h3 className="reviews__person__name">Lorem</h3>
-                                <div className="reviews__person__description">
-                                    Customer
-                                </div>
-                            </div>
-                        </div>
+                        <ReviewsContent />
                     </SwiperSlide>
                     <SwiperSlide className="reviews__slide">
-                        <p className="block__text text--v2 reviews__text">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Minus sit, explicabo provident hic distinctio
-                            molestias voluptates nobis alias placeat suscipt
-                            earum debitits recusandae voluptate illum expedita
-                            corrupti aliquid doloribus delectus?
-                        </p>
-                        <div className="reviews__person">
-                            <div className="reviews__person__image">
-                                <img
-                                    loading="lazy"
-                                    className="reviews__person__pic"
-                                    src={person}
-                                    alt="Person"
-                                />
-                            </div>
-                            <div className="reviews__person__info">
-                                <h3 className="reviews__person__name">Lorem</h3>
-                                <div className="reviews__person__description">
-                                    Customer
-                                </div>
-                            </div>
-                        </div>
+                        <ReviewsContent />
                     </SwiperSlide>
                     <SwiperSlide className="reviews__slide">
-                        <p className="block__text text--v2 reviews__text">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Minus sit, explicabo provident hic distinctio
-                            molestias voluptates nobis alias placeat suscipt
-                            earum debitits recusandae voluptate illum expedita
-                            corrupti aliquid doloribus delectus?
-                        </p>
-                        <div className="reviews__person">
-                            <div className="reviews__person__image">
-                                <img
-                                    loading="lazy"
-                                    className="reviews__person__pic"
-                                    src={person}
-                                    alt="Person"
-                                />
-                            </div>
-                            <div className="reviews__person__info">
-                                <h3 className="reviews__person__name">Lorem</h3>
-                                <div className="reviews__person__description">
-                                    Customer
-                                </div>
-                            </div>
-                        </div>
+                        <ReviewsContent />
                     </SwiperSlide>
                     <SwiperSlide className="reviews__slide">
-                        <p className="block__text text--v2 reviews__text">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Minus sit, explicabo provident hic distinctio
-                            molestias voluptates nobis alias placeat suscipt
-                            earum debitits recusandae voluptate illum expedita
-                            corrupti aliquid doloribus delectus?
-                        </p>
-                        <div className="reviews__person">
-                            <div className="reviews__person__image">
-                                <img
-                                    loading="lazy"
-                                    className="reviews__person__pic"
-                                    src={person}
-                                    alt="Person"
-                                />
-                            </div>
-                            <div className="reviews__person__info">
-                                <h3 className="reviews__person__name">Lorem</h3>
-                                <div className="reviews__person__description">
-                                    Customer
-                                </div>
-                            </div>
-                        </div>
+                        <ReviewsContent />
                     </SwiperSlide>
                     <SwiperSlide className="reviews__slide">
-                        <p className="block__text text--v2 reviews__text">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Minus sit, explicabo provident hic distinctio
-                            molestias voluptates nobis alias placeat suscipt
-                            earum debitits recusandae voluptate illum expedita
-                            corrupti aliquid doloribus delectus?
-                        </p>
-                        <div className="reviews__person">
-                            <div className="reviews__person__image">
-                                <img
-                                    loading="lazy"
-                                    className="reviews__person__pic"
-                                    src={person}
-                                    alt="Person"
-                                />
-                            </div>
-                            <div className="reviews__person__info">
-                                <h3 className="reviews__person__name">Lorem</h3>
-                                <div className="reviews__person__description">
-                                    Customer
-                                </div>
-                            </div>
-                        </div>
+                        <ReviewsContent />
                     </SwiperSlide>
                     <SwiperSlide className="reviews__slide">
-                        <p className="block__text text--v2 reviews__text">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Minus sit, explicabo provident hic distinctio
-                            molestias voluptates nobis alias placeat suscipt
-                            earum debitits recusandae voluptate illum expedita
-                            corrupti aliquid doloribus delectus?
-                        </p>
-                        <div className="reviews__person">
-                            <div className="reviews__person__image">
-                                <img
-                                    loading="lazy"
-                                    className="reviews__person__pic"
-                                    src={person}
-                                    alt="Person"
-                                />
-                            </div>
-                            <div className="reviews__person__info">
-                                <h3 className="reviews__person__name">Lorem</h3>
-                                <div className="reviews__person__description">
-                                    Customer
-                                </div>
-                            </div>
-                        </div>
+                        <ReviewsContent />
                     </SwiperSlide>
                 </Swiper>
             </div>
