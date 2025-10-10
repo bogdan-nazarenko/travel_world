@@ -122,7 +122,7 @@
     position: relative;
     border-radius: 1rem;
     overflow: hidden;
-    color: var(--color-contrast);
+    color: var(--contrast-color);
 
     @media (max-width: $point2) {
         width: 100%;

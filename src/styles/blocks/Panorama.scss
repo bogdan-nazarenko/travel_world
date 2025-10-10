@@ -37,7 +37,7 @@
 .panorama__title {
     font-weight: 600;
     text-transform: capitalize;
-    color: var(--color-contrast);
+    color: var(--contrast-color);
 
     @media (min-width: $point1) {
         font-size: 6.4rem;
