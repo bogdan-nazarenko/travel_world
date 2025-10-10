@@ -17,31 +17,22 @@ interface FormAreaProps {
     children?: ReactNode;
 }
 
-const AuthorizationArea = ({
-    label,
-    id,
-    type,
-    name,
-    autoComplete,
-    placeholder,
-    required,
-    children,
-}: FormAreaProps) => {
+const AuthorizationArea = (props: FormAreaProps) => {
     return (
         <div className="authorization__area">
-            <label className="authorization__area__label" htmlFor={id}>
-                {label}
+            <label className="authorization__area__label" htmlFor={props.id}>
+                {props.label}
             </label>
             <input
                 className="authorization__input"
-                id={id}
-                type={type}
-                name={name}
-                autoComplete={autoComplete}
-                placeholder={placeholder}
-                required={required}
+                id={props.id}
+                type={props.type}
+                name={props.name}
+                autoComplete={props.autoComplete}
+                placeholder={props.placeholder}
+                required={props.required}
             />
-            {children}
+            {props.children}
         </div>
     );
 };
@@ -73,17 +64,11 @@ interface WrapProps {
     descriptionLinkName: string;
 }
 
-const FormWrap = ({
-    wrapName,
-    buttonName,
-    description,
-    descriptionLink,
-    descriptionLinkName,
-}: WrapProps) => {
+const FormWrap = (props: WrapProps) => {
     return (
-        <div className={wrapName}>
+        <div className={props.wrapName}>
             <button className="authorization__button" type="submit">
-                {buttonName}
+                {props.buttonName}
             </button>
             <div className="authorization__line">
                 <span></span>
@@ -94,8 +79,10 @@ const FormWrap = ({
             <AuthorizationSocials />
 
             <div className="authorization__description">
-                {description}{" "}
-                <Link to={descriptionLink}> {descriptionLinkName}</Link>
+                {props.description}{" "}
+                <Link to={props.descriptionLink}>
+                    {props.descriptionLinkName}
+                </Link>
             </div>
         </div>
     );
