@@ -22,15 +22,37 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 54.4rem;
+
+    @media (min-width: $point3) {
+        max-width: 54.4rem;
+        padding-left: 2rem;
+    }
 
     svg {
         position: absolute;
         z-index: -1;
 
+        @media (max-width: $point4) {
+            &:not(:nth-of-type(1)) {
+                max-width: 10rem;
+                max-height: max-content;
+            }
+        }
+
         &:nth-of-type(1) {
-            top: 1.4rem;
-            right: -22.4rem;
+            @media (min-width: $point1) {
+                top: 1.4rem;
+                right: -22.4rem;
+            }
+            @media (min-width: $point3) and (max-width: $point2) {
+                top: 1rem;
+                right: -25rem;
+            }
+            @media (max-width: $point4) {
+                top: -1.8rem;
+                right: -18rem;
+                max-width: 35rem;
+            }
         }
 
         &:nth-of-type(2) {
@@ -55,40 +77,83 @@
 }
 
 .login__form {
-    max-width: 35.2rem;
+    @media (min-width: $point3) {
+        max-width: 35.2rem;
+    }
+    @media (max-width: $point4) {
+        min-height: 53rem;
+        max-width: 32rem;
+    }
 
     .authorization__title {
-        margin-bottom: 1rem;
-        font-size: 6.4rem;
         line-height: 4.8rem;
+
+        @media (min-width: $point1) {
+            font-size: 6.4rem;
+        }
+        @media (min-width: $point3) {
+            margin-bottom: 1rem;
+        }
+        @media (min-width: $point3) and (max-width: $point2) {
+            font-size: 4rem;
+        }
     }
 
     .authorization__subtitle {
         margin-bottom: 2.5rem;
-        font-size: 1.6rem;
+
+        @media (min-width: $point3) {
+            font-size: 1.6rem;
+        }
     }
 }
 
 .register__form {
-    max-width: 47.9rem;
+    @media (min-width: $point1) {
+        max-width: 49.9rem;
+    }
+    @media (max-width: $point4) {
+        min-height: 60rem;
+        max-width: 32rem;
+    }
 
     .authorization__title {
-        margin-bottom: -0.1rem;
-        font-size: 3.2rem;
         text-transform: uppercase;
+
+        @media (min-width: $point1) {
+            font-size: 3.2rem;
+            margin-bottom: -0.1rem;
+        }
+        @media (max-width: $point2) {
+            margin-bottom: 0.5rem;
+            font-size: 2.8rem;
+        }
     }
 
     .authorization__subtitle {
         font-size: 1.2rem;
-        margin-bottom: 2.1rem;
+
+        @media (min-width: $point1) {
+            margin-bottom: 2.1rem;
+        }
+        @media (max-width: $point2) {
+            margin-bottom: 1rem;
+        }
 
         a {
             text-decoration: none;
             color: var(--secondary-color);
             transition: color var(--trans);
 
-            &:hover {
-                color: var(--primary-color);
+            @media (min-width: $point1) {
+                &:hover {
+                    color: var(--primary-color);
+                }
+            }
+            @media (max-width: $point2) {
+                &:active {
+                    color: var(--primary-color);
+                }
             }
         }
     }
@@ -97,33 +162,59 @@
 .authorization__title {
     text-align: center;
     color: var(--secondary-color);
+
+    @media (max-width: $point4) {
+        &:not(.register__form &) {
+            font-size: 2.8rem;
+        }
+    }
 }
 
 .authorization__subtitle {
     color: var(--text-color);
     text-align: center;
+
+    @media (max-width: $point4) {
+        &:not(.register__form &) {
+            font-size: 1.2rem;
+        }
+    }
 }
 
 .login__areas {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 2.5rem;
-    margin-bottom: 1.1rem;
+
+    @media (min-width: $point1) {
+        row-gap: 2.5rem;
+        margin-bottom: 1.1rem;
+    }
+    @media (max-width: $point2) {
+        row-gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
 }
 
 .register__areas {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 2rem;
-    margin-bottom: 2.5rem;
 
-    .authorization__area:nth-child(1) {
-        margin-right: auto;
+    @media (min-width: $point1) {
+        row-gap: 2rem;
+        margin-bottom: 2.5rem;
+
+        .authorization__area:nth-child(1) {
+            margin-right: auto;
+        }
+
+        .authorization__area:nth-child(1),
+        .authorization__area:nth-child(2) {
+            max-width: 22.4rem;
+        }
     }
-
-    .authorization__area:nth-child(1),
-    .authorization__area:nth-child(2) {
-        max-width: 22.4rem;
+    @media (max-width: $point2) {
+        row-gap: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -132,23 +223,44 @@
     display: flex;
     align-items: center;
     width: 100%;
-    height: 5.1rem;
-    padding: 0 3rem;
     border-radius: 0.8rem;
     border: 0.1rem solid var(--secondary-color);
-    font-size: 1.6rem;
+
+    @media (min-width: $point1) {
+        height: 5.1rem;
+        padding: 0 3rem;
+    }
+    @media (min-width: $point3) and (max-width: $point2) {
+        height: 4rem;
+        padding: 0 2rem;
+    }
+    @media (max-width: $point4) {
+        height: 3.5rem;
+        padding: 0 1.5rem;
+    }
 
     &:has(#password) {
-        padding-right: 7rem;
+        @media (min-width: $point1) {
+            padding-right: 7rem;
+        }
+        @media (max-width: $point2) {
+            padding-right: 5rem;
+        }
 
         .eye__icon {
             position: absolute;
             top: 50%;
-            right: 3rem;
             transform: translateY(-50%);
             opacity: 0;
             transition: opacity var(--trans);
             cursor: pointer;
+
+            @media (min-width: $point1) {
+                right: 3rem;
+            }
+            @media (max-width: $point2) {
+                right: 2rem;
+            }
         }
 
         &:focus-within,
@@ -163,14 +275,21 @@
 .authorization__area__label {
     position: absolute;
     top: -1rem;
-    left: 2rem;
     padding: 0 0.8rem;
     background-color: var(--color-contrast);
     opacity: 0;
     transition: opacity var(--trans);
-    font-size: 1.4rem;
     font-weight: 400;
     color: var(--text-color);
+
+    @media (min-width: $point1) {
+        left: 2rem;
+        font-size: 1.4rem;
+    }
+    @media (max-width: $point2) {
+        left: 1.2rem;
+        font-size: 1.2rem;
+    }
 
     &:has(+ .authorization__input:focus) {
         opacity: 1;
@@ -182,27 +301,39 @@
     border: initial;
     padding: initial;
     font-family: var(--font1);
-    font-size: 1.6rem;
     font-weight: 500;
+
+    @media (min-width: $point1) {
+        font-size: 1.6rem;
+    }
+    @media (max-width: $point2) {
+        font-size: 1.3rem;
+    }
 
     &[type="password"] {
         font-family: Arial, Helvetica, sans-serif;
+        font-size: medium;
         letter-spacing: 0.5rem;
         color: var(--secondary-color);
     }
 
     &::placeholder {
         font-family: var(--font1);
-        font-size: 1.6rem;
         font-weight: 400;
         letter-spacing: initial;
         color: var(--text-color);
+
+        @media (min-width: $point1) {
+            font-size: 1.6rem;
+        }
+        @media (max-width: $point2) {
+            font-size: 1.3rem;
+        }
     }
 }
 
 .login__help__link {
     display: block;
-    margin-bottom: 2.9rem;
     font-size: 1.2rem;
     line-height: 1.8rem;
     text-align: end;
@@ -210,8 +341,19 @@
     color: var(--secondary-color);
     transition: color var(--trans);
 
-    &:hover {
-        color: var(--primary-color);
+    @media (min-width: $point1) {
+        margin-bottom: 2.9rem;
+
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+    @media (max-width: $point2) {
+        margin-bottom: 2rem;
+
+        &:active {
+            color: var(--primary-color);
+        }
     }
 }
 
@@ -221,21 +363,36 @@
     margin: 0 auto;
 
     .authorization__button {
-        margin-bottom: 2.5rem;
+        @media (min-width: $point1) {
+            margin-bottom: 2.5rem;
+        }
     }
 
     .authorization__line {
-        margin-bottom: 1.5rem;
+        @media (min-width: $point1) {
+            margin-bottom: 1.5rem;
+        }
+        @media (max-width: $point2) {
+            margin-bottom: 1rem;
+        }
     }
 }
 
 .register__wrap {
     width: 100%;
-    max-width: 33.7rem;
     margin: 0 auto;
 
+    @media (min-width: $point1) {
+        max-width: 33.7rem;
+    }
+    @media (max-width: $point2) {
+        max-width: 22rem;
+    }
+
     .authorization__button {
-        margin-bottom: 1.5rem;
+        @media (min-width: $point1) {
+            margin-bottom: 1.5rem;
+        }
     }
 
     .authorization__line {
@@ -249,15 +406,25 @@
     justify-content: center;
     border-radius: 0.5rem;
     width: 100%;
-    height: 4.2rem;
     color: var(--color-contrast);
     background-color: var(--secondary-color);
     transition: background-color var(--trans);
     text-transform: uppercase;
     font-family: var(--font1);
-    font-size: 1.8rem;
     font-weight: 600;
     cursor: pointer;
+
+    @media (max-width: $point2) {
+        margin-bottom: 1rem;
+    }
+    @media (min-width: $point3) {
+        height: 4.2rem;
+        font-size: 1.8rem;
+    }
+    @media (max-width: $point4) {
+        height: 3.2rem;
+        font-size: 1.4rem;
+    }
 
     &:active {
         background-color: var(--primary-color);
@@ -287,6 +454,10 @@
     width: 100%;
     max-width: 21rem;
     margin: 0 auto 1.3rem;
+
+    @media (max-width: $point2) {
+        margin-bottom: 1rem;
+    }
 }
 
 .authorization__social__link {
@@ -299,8 +470,15 @@
     background-position: center;
     transition: background-color var(--trans);
 
-    &:hover {
-        background-color: var(--secondary-color);
+    @media (min-width: $point1) {
+        &:hover {
+            background-color: var(--secondary-color);
+        }
+    }
+    @media (max-width: $point2) {
+        &:active {
+            background-color: var(--secondary-color);
+        }
     }
 
     &:nth-child(1) {
@@ -326,8 +504,15 @@
         color: var(--secondary-color);
         transition: color var(--trans);
 
-        &:hover {
-            color: var(--primary-color);
+        @media (min-width: $point1) {
+            &:hover {
+                color: var(--primary-color);
+            }
+        }
+        @media (max-width: $point2) {
+            &:active {
+                color: var(--primary-color);
+            }
         }
     }
 }
