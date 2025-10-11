@@ -1,24 +1,9 @@
-import { useState, useEffect } from "react";
+import { useDesktop } from "../helpers/responsive.ts";
 import tourist from "../../assets/media/images/tourist.png";
 import "../../styles/blocks/Newsletter.scss";
 
 const Newsletter = () => {
-    const [isDesktop, setDesktop] = useState(true);
-
-    function showImage(): void {
-        if (window.innerWidth < 1024) {
-            setDesktop(false);
-        } else {
-            setDesktop(true);
-        }
-    }
-
-    useEffect(() => {
-        showImage();
-        window.addEventListener("resize", showImage);
-
-        return () => window.removeEventListener("resize", showImage);
-    }, []);
+    const isDesktop = useDesktop();
 
     return (
         <section className="newsletter_section">

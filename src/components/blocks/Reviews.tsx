@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/swiper.css";
+import { useMobile } from "../helpers/responsive.ts";
 import john from "../../assets/media/images/john.webp";
 import ally from "../../assets/media/images/ally.webp";
 import alex from "../../assets/media/images/alex.webp";
@@ -46,22 +46,7 @@ const ReviewsContent = (props: ReviewsContentProps) => {
 };
 
 const Reviews = () => {
-    const [isMobile, setMobile] = useState(false);
-
-    function showPagination(): void {
-        if (window.innerWidth < 768) {
-            setMobile(true);
-        } else {
-            setMobile(false);
-        }
-    }
-
-    useEffect(() => {
-        showPagination();
-        window.addEventListener("resize", showPagination);
-
-        return () => window.removeEventListener("resize", showPagination);
-    }, []);
+    const isMobile = useMobile();
 
     return (
         <section className="reviews_section">

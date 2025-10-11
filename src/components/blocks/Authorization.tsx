@@ -1,5 +1,6 @@
 import { useLocation, Link } from "react-router-dom";
-import { useState, useEffect, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
+import { useMobile } from "../helpers/responsive.ts";
 import { Plane, TajMahal, SightsOfEurope } from "../elements/vectors.tsx";
 import accountsImage from "../../assets/media/images/accounts_img.webp";
 import hideIcon from "../../assets/media/images/icons/hide.svg";
@@ -216,25 +217,8 @@ const Register = ({ isValueVisible, clickFunc }: FormProps) => {
 };
 
 const Authorization = () => {
+    const isMobile = useMobile();
     const location = useLocation();
-
-    const [isMobile, setMobile] = useState(false);
-
-    function showImage(): void {
-        if (window.innerWidth < 768) {
-            setMobile(true);
-        } else {
-            setMobile(false);
-        }
-    }
-
-    useEffect(() => {
-        showImage();
-        window.addEventListener("resize", showImage);
-
-        return () => window.removeEventListener("resize", showImage);
-    }, []);
-
     const [password, setPassword] = useState(false);
 
     function showPassword(): void {

@@ -1,5 +1,6 @@
 import { useLocation, Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
+import { useMobile } from "./helpers/responsive.ts";
 import Logo from "./elements/Logo.tsx";
 import "../styles/Header.scss";
 
@@ -62,22 +63,7 @@ const Header = () => {
         }
     }
 
-    const [isMobile, setMobile] = useState(false);
-
-    function mobileMenu(): void {
-        if (window.innerWidth < 768) {
-            setMobile(true);
-        } else {
-            setMobile(false);
-        }
-    }
-
-    useEffect(() => {
-        mobileMenu();
-        window.addEventListener("resize", mobileMenu);
-
-        return () => window.removeEventListener("resize", mobileMenu);
-    }, []);
+    const isMobile = useMobile();
 
     useEffect(() => {
         if (isMenuOpen && isMobile) {

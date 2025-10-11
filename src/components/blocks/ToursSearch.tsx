@@ -1,25 +1,10 @@
-import { useState, useEffect } from "react";
+import { useDesktop } from "../helpers/responsive.ts";
 import SearchBar from "../elements/SearchBar.tsx";
 import { Plane } from "../elements/vectors.tsx";
 import "../../styles/blocks/ToursSearch.scss";
 
 const ToursSearch = () => {
-    const [isDesktop, setDesktop] = useState(true);
-
-    function showPlane(): void {
-        if (window.innerWidth < 1024) {
-            setDesktop(false);
-        } else {
-            setDesktop(true);
-        }
-    }
-
-    useEffect(() => {
-        showPlane();
-        window.addEventListener("resize", showPlane);
-
-        return () => window.removeEventListener("resize", showPlane);
-    }, []);
+    const isDesktop = useDesktop();
 
     return (
         <section className="tours_search_section">
