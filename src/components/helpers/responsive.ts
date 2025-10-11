@@ -5,7 +5,7 @@ export function useDesktop(): boolean {
 
     useEffect(() => {
         const result = () =>
-            window.innerWidth > 1024 ? setDesktop(true) : setDesktop(false);
+            window.innerWidth >= 1024 ? setDesktop(true) : setDesktop(false);
 
         result();
         window.addEventListener("resize", result);
