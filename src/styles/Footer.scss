@@ -49,9 +49,13 @@ footer {
     max-width: 3.5rem;
     cursor: pointer;
 
-    path {
-        fill: var(--secondary-color);
-        transition: fill var(--trans);
+    svg {
+        @extend %contain_img;
+
+        path {
+            fill: var(--secondary-color);
+            transition: fill var(--trans);
+        }
     }
 
     @media (min-width: $point3) {
