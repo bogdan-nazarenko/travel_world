@@ -222,7 +222,7 @@ const Authorization = () => {
     const [password, setPassword] = useState(false);
 
     function showPassword(): void {
-        if (password !== true) {
+        if (password === false) {
             setPassword(true);
         } else {
             setPassword(false);

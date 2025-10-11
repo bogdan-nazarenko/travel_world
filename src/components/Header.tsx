@@ -47,7 +47,7 @@ const Header = () => {
     const [isNavsOpen, setNavsOpen] = useState("");
 
     function toggleMenu(): void {
-        if (isMenuOpen !== "menu--open") {
+        if (isMenuOpen === "") {
             setMenuOpen("menu--open");
             setNavsOpen("navs--open");
         } else {
