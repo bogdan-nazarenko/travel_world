@@ -1,0 +1,1 @@
+import{j as r}from"./vendor-DjX7fLhJ.js";const e=()=>r.jsx("section",{children:r.jsxs("div",{className:"container error",children:[r.jsx("h1",{className:"error__title",children:"404"}),r.jsx("div",{className:"error__description",children:"Page not found"})]})}),o=()=>r.jsx(e,{});export{o as default};
