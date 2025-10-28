@@ -1,7 +1,7 @@
 @use "../../styles/helpers/abstracts.scss" as *;
 
 .services_section {
-    @media (min-width: $point3) {
+    @media (min-width: $point1) {
         padding: 6.2rem 0;
     }
 }

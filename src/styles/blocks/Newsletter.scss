@@ -2,10 +2,6 @@
 
 .newsletter_section {
     background-color: var(--light-bg-color);
-
-    @media (min-width: $point3) and (max-width: $point2) {
-        padding: 5rem 0;
-    }
 }
 
 .newsletter {
