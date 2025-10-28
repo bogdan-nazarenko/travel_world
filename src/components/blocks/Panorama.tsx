@@ -7,7 +7,7 @@ const Panorama = () => {
     const location = useLocation();
 
     return (
-        <section className="panorama_section">
+        <section>
             <div className="container panorama">
                 {location.pathname === "/about" && (
                     <>

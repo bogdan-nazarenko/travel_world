@@ -1,11 +1,5 @@
 @use "../../styles/helpers/abstracts.scss" as *;
 
-.panorama_section {
-    @media (max-width: $point4) {
-        padding: initial;
-    }
-}
-
 .panorama {
     position: relative;
     max-width: 144rem;
