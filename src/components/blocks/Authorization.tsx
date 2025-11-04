@@ -276,7 +276,7 @@ const Authorization = () => {
     const location = useLocation();
     const [password, setPassword] = useState(false);
 
-    function showPassword(): void {
+    function togglePasswordVisibility(): void {
         if (password === false) {
             setPassword(true);
         } else {
@@ -301,13 +301,13 @@ const Authorization = () => {
                     {location.pathname === pages.login && (
                         <Login
                             isValueVisible={password}
-                            clickFunc={showPassword}
+                            clickFunc={togglePasswordVisibility}
                         />
                     )}
                     {location.pathname === pages.register && (
                         <Register
                             isValueVisible={password}
-                            clickFunc={showPassword}
+                            clickFunc={togglePasswordVisibility}
                         />
                     )}
 
