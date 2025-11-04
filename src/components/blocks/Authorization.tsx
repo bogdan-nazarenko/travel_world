@@ -1,13 +1,15 @@
 import { useLocation, Link } from "react-router-dom";
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 import { useMobile } from "../helpers/responsive.ts";
+import { pages } from "../helpers/constants.ts";
+import type { ClickProps } from "../helpers/interfaces.ts";
 import { Plane, TajMahal, SightsOfEurope } from "../elements/vectors.tsx";
 import accountsImage from "../../assets/media/images/accounts_img.webp";
 import hideIcon from "../../assets/media/images/icons/hide.svg";
 import showIcon from "../../assets/media/images/icons/show.svg";
 import "../../styles/blocks/Authorization.scss";
 
-interface FormAreaProps {
+interface FormAreaProps extends ClickProps {
     label: string;
     id: string;
     type: string;
@@ -15,7 +17,7 @@ interface FormAreaProps {
     autoComplete?: string;
     placeholder: string;
     required?: boolean;
-    children?: ReactNode;
+    icon?: string;
 }
 
 const AuthorizationArea = (props: FormAreaProps) => {
@@ -33,7 +35,14 @@ const AuthorizationArea = (props: FormAreaProps) => {
                 placeholder={props.placeholder}
                 required={props.required}
             />
-            {props.children}
+            {props.id === "password" && (
+                <img
+                    className="eye__icon"
+                    src={props.icon}
+                    alt=""
+                    onClick={props.clickFunc}
+                />
+            )}
         </div>
     );
 };
@@ -89,42 +98,65 @@ const FormWrap = (props: WrapProps) => {
     );
 };
 
-interface FormProps {
+interface PasswordProps extends ClickProps {
     isValueVisible: boolean;
-    clickFunc: () => void;
 }
 
-const Login = ({ isValueVisible, clickFunc }: FormProps) => {
+const Login = ({ isValueVisible, clickFunc }: PasswordProps) => {
+    const loginValues: FormAreaProps[] = [
+        {
+            label: "Email",
+            id: "email",
+            type: "email",
+            name: "email",
+            autoComplete: "email",
+            placeholder: "Enter Email or Username",
+            required: true,
+        },
+        {
+            label: "Password",
+            id: "password",
+            type: isValueVisible ? "password" : "text",
+            name: "password",
+            placeholder: "Enter Password",
+            required: true,
+            icon: isValueVisible ? showIcon : hideIcon,
+        },
+    ];
+
     return (
         <form className="authorization__form login__form" action="#">
             <h1 className="authorization__title">Welcome</h1>
             <div className="authorization__subtitle">Login with Email</div>
 
             <div className="login__areas">
-                <AuthorizationArea
-                    label="Email"
-                    id="email"
-                    type="email"
-                    name="email"
-                    autoComplete="email"
-                    placeholder="Enter Email or Username"
-                    required={true}
-                />
-                <AuthorizationArea
-                    label="Password"
-                    id="password"
-                    type={isValueVisible ? "text" : "password"}
-                    name="password"
-                    placeholder="Enter Password"
-                    required={true}
-                >
-                    <img
-                        className="eye__icon"
-                        src={isValueVisible ? showIcon : hideIcon}
-                        alt=""
-                        onClick={clickFunc}
-                    />
-                </AuthorizationArea>
+                {loginValues.map((props) => {
+                    const {
+                        label,
+                        id,
+                        type,
+                        name,
+                        autoComplete,
+                        placeholder,
+                        required,
+                        icon,
+                    } = props;
+
+                    return (
+                        <AuthorizationArea
+                            key={id}
+                            label={label}
+                            id={id}
+                            type={type}
+                            name={name}
+                            autoComplete={autoComplete}
+                            placeholder={placeholder}
+                            required={required}
+                            icon={icon}
+                            clickFunc={clickFunc}
+                        />
+                    );
+                })}
             </div>
 
             <a className="login__help__link" href="#">
@@ -135,14 +167,61 @@ const Login = ({ isValueVisible, clickFunc }: FormProps) => {
                 wrapName="login__wrap"
                 buttonName="Login"
                 description="Don’t have account?"
-                descriptionLink="/register"
+                descriptionLink={pages.register}
                 descriptionLinkName="Register Now"
             />
         </form>
     );
 };
 
-const Register = ({ isValueVisible, clickFunc }: FormProps) => {
+const Register = ({ isValueVisible, clickFunc }: PasswordProps) => {
+    const registerValues: FormAreaProps[] = [
+        {
+            label: "First Name",
+            id: "first_name",
+            type: "text",
+            name: "first_name",
+            autoComplete: "given-name",
+            placeholder: "First Name",
+            required: true,
+        },
+        {
+            label: "Last Name",
+            id: "last_name",
+            type: "text",
+            name: "last_name",
+            placeholder: "Last Name",
+            required: true,
+        },
+        {
+            label: "Email",
+            id: "email",
+            type: "email",
+            name: "email",
+            autoComplete: "email",
+            placeholder: "Enter Email",
+            required: true,
+        },
+        {
+            label: "Password",
+            id: "password",
+            type: isValueVisible ? "password" : "text",
+            name: "password",
+            placeholder: "Enter Password",
+            required: true,
+            icon: isValueVisible ? showIcon : hideIcon,
+        },
+        {
+            label: "Mobile Number",
+            id: "tel",
+            type: "tel",
+            name: "tel",
+            autoComplete: "tel",
+            placeholder: "Mobile Number",
+            required: true,
+        },
+    ];
+
     return (
         <form className="authorization__form register__form" action="#">
             <h1 className="authorization__title">Create an account</h1>
@@ -152,64 +231,40 @@ const Register = ({ isValueVisible, clickFunc }: FormProps) => {
             </div>
 
             <div className="register__areas">
-                <AuthorizationArea
-                    label="First Name"
-                    id="first_name"
-                    type="text"
-                    name="first_name"
-                    autoComplete="given-name"
-                    placeholder="First Name"
-                    required={true}
-                />
-                <AuthorizationArea
-                    label="Last Name"
-                    id="last_name"
-                    type="text"
-                    name="last_name"
-                    placeholder="Last Name"
-                    required={true}
-                />
-                <AuthorizationArea
-                    label="Email"
-                    id="email"
-                    type="email"
-                    name="email"
-                    autoComplete="email"
-                    placeholder="Enter Email"
-                    required={true}
-                />
-                <AuthorizationArea
-                    label="Password"
-                    id="password"
-                    type={isValueVisible ? "text" : "password"}
-                    name="password"
-                    placeholder="Enter Password"
-                    required={true}
-                >
-                    <img
-                        className="eye__icon"
-                        src={isValueVisible ? showIcon : hideIcon}
-                        alt=""
-                        onClick={clickFunc}
-                    />
-                </AuthorizationArea>
+                {registerValues.map((props) => {
+                    const {
+                        label,
+                        id,
+                        type,
+                        name,
+                        autoComplete,
+                        placeholder,
+                        required,
+                        icon,
+                    } = props;
 
-                <AuthorizationArea
-                    label="Mobile Number"
-                    id="tel"
-                    type="tel"
-                    name="tel"
-                    autoComplete="tel"
-                    placeholder="Mobile Number"
-                    required={true}
-                />
+                    return (
+                        <AuthorizationArea
+                            key={id}
+                            label={label}
+                            id={id}
+                            type={type}
+                            name={name}
+                            autoComplete={autoComplete}
+                            placeholder={placeholder}
+                            required={required}
+                            icon={icon}
+                            clickFunc={clickFunc}
+                        />
+                    );
+                })}
             </div>
 
             <FormWrap
                 wrapName="register__wrap"
                 buttonName="Create account"
                 description="Already have an account?"
-                descriptionLink="/login"
+                descriptionLink={pages.login}
                 descriptionLinkName="Login"
             />
         </form>
@@ -243,13 +298,13 @@ const Authorization = () => {
                 )}
 
                 <div className="authorization__wrap">
-                    {location.pathname === "/login" && (
+                    {location.pathname === pages.login && (
                         <Login
                             isValueVisible={password}
                             clickFunc={showPassword}
                         />
                     )}
-                    {location.pathname === "/register" && (
+                    {location.pathname === pages.register && (
                         <Register
                             isValueVisible={password}
                             clickFunc={showPassword}
