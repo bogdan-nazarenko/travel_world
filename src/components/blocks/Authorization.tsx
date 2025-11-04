@@ -2,7 +2,7 @@ import { useLocation, Link } from "react-router-dom";
 import { useState } from "react";
 import { useMobile } from "../helpers/responsive.ts";
 import { pages } from "../helpers/constants.ts";
-import type { ClickProps } from "../helpers/interfaces.ts";
+import type { ClickProps, AnchorValues } from "../helpers/interfaces.ts";
 import { Plane, TajMahal, SightsOfEurope } from "../elements/vectors.tsx";
 import accountsImage from "../../assets/media/images/accounts_img.webp";
 import hideIcon from "../../assets/media/images/icons/hide.svg";
@@ -66,17 +66,15 @@ const AuthorizationSocials = () => {
     );
 };
 
-interface WrapProps {
-    wrapName: string;
+interface WrapProps extends AnchorValues {
+    wrapClass: string;
     buttonName: string;
     description: string;
-    descriptionLink: string;
-    descriptionLinkName: string;
 }
 
 const FormWrap = (props: WrapProps) => {
     return (
-        <div className={props.wrapName}>
+        <div className={props.wrapClass}>
             <button className="authorization__button" type="submit">
                 {props.buttonName}
             </button>
@@ -89,10 +87,7 @@ const FormWrap = (props: WrapProps) => {
             <AuthorizationSocials />
 
             <div className="authorization__description">
-                {props.description}{" "}
-                <Link to={props.descriptionLink}>
-                    {props.descriptionLinkName}
-                </Link>
+                {props.description} <Link to={props.url}>{props.linkName}</Link>
             </div>
         </div>
     );
@@ -164,11 +159,11 @@ const Login = ({ isValueVisible, clickFunc }: PasswordProps) => {
             </a>
 
             <FormWrap
-                wrapName="login__wrap"
+                wrapClass="login__wrap"
                 buttonName="Login"
                 description="Don’t have account?"
-                descriptionLink={pages.register}
-                descriptionLinkName="Register Now"
+                url={pages.register}
+                linkName="Register Now"
             />
         </form>
     );
@@ -261,11 +256,11 @@ const Register = ({ isValueVisible, clickFunc }: PasswordProps) => {
             </div>
 
             <FormWrap
-                wrapName="register__wrap"
+                wrapClass="register__wrap"
                 buttonName="Create account"
                 description="Already have an account?"
-                descriptionLink={pages.login}
-                descriptionLinkName="Login"
+                url={pages.login}
+                linkName="Login"
             />
         </form>
     );
