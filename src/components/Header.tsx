@@ -2,11 +2,11 @@ import { useLocation, Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { useMobile } from "./helpers/responsive.ts";
 import { pages, active, open } from "./helpers/constants.ts";
-import type { AnchorValues } from "./helpers/interfaces.ts";
+import type { ClickProps, AnchorValues } from "./helpers/interfaces.ts";
 import Logo from "./elements/Logo.tsx";
 import "../styles/Header.scss";
 
-const HeaderNavLinks = ({ clickFunc }: { clickFunc?: () => void }) => {
+const HeaderNavLinks = ({ clickFunc }: ClickProps) => {
     const location = useLocation();
     const headerLink: string = "header__link";
 
