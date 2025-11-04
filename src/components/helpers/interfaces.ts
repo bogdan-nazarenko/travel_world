@@ -11,7 +11,7 @@ export interface ClickProps {
 }
 
 export interface AnchorValues {
-    linkClass: string;
+    linkClass?: string;
     url: string;
     linkName: string;
 }
