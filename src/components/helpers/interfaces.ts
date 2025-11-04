@@ -5,3 +5,9 @@ export interface PagePaths {
     login: string;
     register: string;
 }
+
+export interface AnchorValues {
+    linkClass: string;
+    url: string;
+    linkName: string;
+}

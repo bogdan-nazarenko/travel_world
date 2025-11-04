@@ -1,93 +1,43 @@
 import { useLocation, Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { useMobile } from "./helpers/responsive.ts";
+import { pages, active, open } from "./helpers/constants.ts";
+import type { AnchorValues } from "./helpers/interfaces.ts";
 import Logo from "./elements/Logo.tsx";
 import "../styles/Header.scss";
 
 const HeaderNavLinks = ({ clickFunc }: { clickFunc?: () => void }) => {
     const location = useLocation();
+    const headerLink: string = "header__link";
 
-    const homeLink: string = location.pathname === "/" ? "color--light" : "";
-
-    const aboutLink: string =
-        location.pathname === "/about" ? "color--light" : "";
-
-    const toursLink: string =
-        location.pathname === "/tours" ? "color--light" : "";
+    const linkValues: AnchorValues[] = [
+        { linkClass: `${headerLink}`, url: pages.home, linkName: "Home" },
+        { linkClass: `${headerLink}`, url: pages.about, linkName: "About" },
+        { linkClass: `${headerLink}`, url: pages.tours, linkName: "Tours" },
+    ];
 
     return (
         <div className="header__nav__links">
-            <Link
-                className={`header__link ${homeLink}`.trim()}
-                to="/"
-                onClick={clickFunc}
-            >
-                Home
-            </Link>
-            <Link
-                className={`header__link ${aboutLink}`.trim()}
-                to="/about"
-                onClick={clickFunc}
-            >
-                About
-            </Link>
-            <Link
-                className={`header__link ${toursLink}`.trim()}
-                to="/tours"
-                onClick={clickFunc}
-            >
-                Tours
-            </Link>
+            {linkValues.map(({ linkClass, url, linkName }) => {
+                const isActive: string =
+                    location.pathname === url ? active : "";
+
+                return (
+                    <Link
+                        key={url}
+                        className={`${linkClass} ${isActive}`.trim()}
+                        to={url}
+                        onClick={clickFunc}
+                    >
+                        {linkName}
+                    </Link>
+                );
+            })}
         </div>
     );
 };
 
 const Header = () => {
-    const [isMenuOpen, setMenuOpen] = useState("");
-    const [isNavsOpen, setNavsOpen] = useState("");
-
-    function toggleMenu(): void {
-        if (isMenuOpen === "") {
-            setMenuOpen("menu--open");
-            setNavsOpen("navs--open");
-        } else {
-            setMenuOpen("");
-            setNavsOpen("");
-        }
-    }
-
-    function closeMenu(): void {
-        if (isMenuOpen === "menu--open") {
-            setMenuOpen("");
-            setNavsOpen("");
-        }
-    }
-
-    const isMobile = useMobile();
-
-    useEffect(() => {
-        if (isMenuOpen && isMobile) {
-            document.body.style.overflowY = "hidden";
-        } else {
-            document.body.removeAttribute("style");
-            setMenuOpen("");
-            setNavsOpen("");
-        }
-    }, [isMenuOpen, isMobile]);
-
-    const location = useLocation();
-
-    const loginLink: string =
-        location.pathname === "/login" ? "bg-color--light" : "";
-
-    const registerLink: string =
-        location.pathname === "/register" ? "bg-color--light" : "";
-
-    const isMainPages: boolean =
-        location.pathname !== "/login" && location.pathname !== "/register";
-
-    const secondaryColor: string = isMainPages ? "main--color" : "";
-
     const headerContainer = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -129,37 +79,86 @@ const Header = () => {
         return () => watcher.disconnect();
     }, []);
 
+    const [isMenuOpen, setMenuOpen] = useState(false);
+
+    function closeMenu(): void {
+        if (isMenuOpen === true) {
+            setMenuOpen(false);
+        }
+    }
+
+    const location = useLocation();
+    const isAuthorization: boolean =
+        location.pathname !== pages.login &&
+        location.pathname !== pages.register;
+    const isMobile = useMobile();
+
+    const headerAuthorizationLink: string = "header__authorization__link";
+
+    const linkValues: AnchorValues[] = [
+        {
+            linkClass: `${headerAuthorizationLink}`,
+            url: pages.login,
+            linkName: "Login",
+        },
+        {
+            linkClass: `${headerAuthorizationLink}`,
+            url: pages.register,
+            linkName: "Register",
+        },
+    ];
+
+    useEffect(() => {
+        if (isMenuOpen && isMobile) {
+            document.body.style.overflowY = "hidden";
+        } else {
+            document.body.removeAttribute("style");
+            setMenuOpen(false);
+        }
+    }, [isMenuOpen, isMobile]);
+
+    function toggleMenu(): void {
+        if (isMenuOpen === false) {
+            setMenuOpen(true);
+        } else {
+            setMenuOpen(false);
+        }
+    }
+
     return (
         <header>
             <div className="container header_menu" ref={headerContainer}>
                 <Logo clickFunc={closeMenu} />
 
-                <nav className={`header__navs ${isNavsOpen}`.trim()}>
-                    {((location.pathname !== "/login" &&
-                        location.pathname !== "/register") ||
-                        isMobile) && <HeaderNavLinks clickFunc={closeMenu} />}
+                <nav
+                    className={`header__navs ${isMenuOpen ? open : ""}`.trim()}
+                >
+                    {(isAuthorization || isMobile) && (
+                        <HeaderNavLinks clickFunc={closeMenu} />
+                    )}
 
                     <div className="header__authorization">
-                        <Link
-                            className={`header__authorization__link ${loginLink}`.trim()}
-                            to="/login"
-                            onClick={closeMenu}
-                        >
-                            Login
-                        </Link>
-                        <Link
-                            className={`header__authorization__link ${registerLink || secondaryColor}`.trim()}
-                            to="/register"
-                            onClick={closeMenu}
-                        >
-                            Register
-                        </Link>
+                        {linkValues.map(({ linkClass, url, linkName }) => {
+                            const isActive: string =
+                                location.pathname === url ? active : "";
+
+                            return (
+                                <Link
+                                    key={url}
+                                    className={`${linkClass} ${isActive}`.trim()}
+                                    to={url}
+                                    onClick={closeMenu}
+                                >
+                                    {linkName}
+                                </Link>
+                            );
+                        })}
                     </div>
                 </nav>
 
                 {isMobile && (
                     <button
-                        className={`header__menu__button ${isMenuOpen}`.trim()}
+                        className={`header__menu__button ${isMenuOpen ? open : ""}`.trim()}
                         onClick={toggleMenu}
                     >
                         <svg

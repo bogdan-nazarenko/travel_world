@@ -55,7 +55,7 @@ header {
         height: 100dvh;
         background-color: bisque;
 
-        &.navs--open {
+        &#{$open} {
             left: 0;
         }
     }
@@ -89,7 +89,7 @@ header {
         }
     }
 
-    &.color--light {
+    &#{$active} {
         color: var(--secondary-color);
 
         @media (min-width: $point3) {
@@ -144,11 +144,11 @@ header {
         }
     }
 
-    &:first-child {
+    &:nth-child(1) {
         max-width: 9.5rem;
     }
 
-    &.main--color {
+    &:nth-child(1):not(#{$active}) + &:nth-child(2):not(#{$active}) {
         background-color: var(--secondary-color);
         color: var(--contrast-color);
 
@@ -164,7 +164,7 @@ header {
         }
     }
 
-    &.bg-color--light {
+    &#{$active} {
         background-color: var(--primary-color);
         color: var(--contrast-color);
 
@@ -218,7 +218,7 @@ header {
         }
     }
 
-    &.menu--open {
+    &#{$open} {
         .menu__icon {
             @extend %contain_img;
 
