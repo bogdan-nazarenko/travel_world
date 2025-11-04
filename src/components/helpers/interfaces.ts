@@ -6,6 +6,10 @@ export interface PagePaths {
     register: string;
 }
 
+export interface ClickProps {
+    clickFunc?: () => void;
+}
+
 export interface AnchorValues {
     linkClass: string;
     url: string;
