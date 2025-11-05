@@ -13,5 +13,5 @@ export interface ClickProps {
 export interface LinkProps {
     linkClass?: string;
     url: string;
-    linkName: string;
+    linkName?: string;
 }
