@@ -2,6 +2,21 @@ import experienceImage from "../../assets/media/images/experience.png";
 import "../../styles/blocks/Experience.scss";
 
 const Experience = () => {
+    const itemProps: { quantityText: string; description: string }[] = [
+        {
+            quantityText: "12k+",
+            description: "Successful trip",
+        },
+        {
+            quantityText: "2k+",
+            description: "Regular clients",
+        },
+        {
+            quantityText: "15",
+            description: "Year experience",
+        },
+    ];
+
     return (
         <section className="experience_section">
             <div className="container experience">
@@ -17,24 +32,21 @@ const Experience = () => {
                         elit. Quas aliquam, hic tempora inventore suscipit unde.
                     </p>
                     <div className="experience__elements">
-                        <div className="experience__item">
-                            <div className="experience__item__square">12k+</div>
-                            <div className="experience__item__description">
-                                Successful trip
-                            </div>
-                        </div>
-                        <div className="experience__item">
-                            <div className="experience__item__square">2k+</div>
-                            <div className="experience__item__description">
-                                Regular clients
-                            </div>
-                        </div>
-                        <div className="experience__item">
-                            <div className="experience__item__square">15</div>
-                            <div className="experience__item__description">
-                                Year experience
-                            </div>
-                        </div>
+                        {itemProps.map(({ quantityText, description }) => {
+                            return (
+                                <div
+                                    key={description}
+                                    className="experience__item"
+                                >
+                                    <div className="experience__item__square">
+                                        {quantityText}
+                                    </div>
+                                    <div className="experience__item__description">
+                                        {description}
+                                    </div>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
                 <div className="experience__image">

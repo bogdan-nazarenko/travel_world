@@ -10,43 +10,57 @@ import "../../styles/blocks/Reviews.scss";
 
 interface ReviewsContentProps {
     image?: string;
-    personName?: string;
+    personName: string;
     description?: string;
 }
 
-const ReviewsContent = (props: ReviewsContentProps) => {
-    return (
-        <>
-            <p className="block__text text--v2 reviews__text">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus
-                sit, explicabo provident hic distinctio molestias voluptates
-                nobis alias placeat suscipt earum debitits recusandae voluptate
-                illum expedita corrupti aliquid doloribus delectus?
-            </p>
-            <div className="reviews__person">
-                <div className="reviews__person__image">
-                    <img
-                        loading="lazy"
-                        className="reviews__person__pic"
-                        src={props.image ? props.image : person}
-                        alt={props.personName ? props.personName : "Person"}
-                    />
-                </div>
-                <div className="reviews__person__info">
-                    <h3 className="reviews__person__name">
-                        {props.personName ? props.personName : "Person"}
-                    </h3>
-                    <div className="reviews__person__description">
-                        {props.description ? props.description : "Lorem"}
-                    </div>
-                </div>
-            </div>
-        </>
-    );
-};
-
 const Reviews = () => {
     const isMobile = useMobile();
+
+    const contentProps: ReviewsContentProps[] = [
+        {
+            image: john,
+            personName: "John Deep",
+            description: "Customer",
+        },
+        {
+            image: ally,
+            personName: "Ally Gomez",
+            description: "Customer",
+        },
+        {
+            image: alex,
+            personName: "Alex Bugg",
+            description: "Customer",
+        },
+        {
+            personName: "Person 4",
+        },
+        {
+            personName: "Person 5",
+        },
+        {
+            personName: "Person 6",
+        },
+        {
+            personName: "Person 7",
+        },
+        {
+            personName: "Person 8",
+        },
+        {
+            personName: "Person 9",
+        },
+        {
+            personName: "Person 10",
+        },
+        {
+            personName: "Person 11",
+        },
+        {
+            personName: "Person 12",
+        },
+    ];
 
     return (
         <section className="reviews_section">
@@ -94,54 +108,43 @@ const Reviews = () => {
                         },
                     }}
                 >
-                    <SwiperSlide className="reviews__slide">
-                        <ReviewsContent
-                            image={john}
-                            personName="John Deep"
-                            description="Customer"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide className="reviews__slide">
-                        <ReviewsContent
-                            image={ally}
-                            personName="Ally Gomez"
-                            description="Customer"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide className="reviews__slide">
-                        <ReviewsContent
-                            image={alex}
-                            personName="Alex Bugg"
-                            description="Customer"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide className="reviews__slide">
-                        <ReviewsContent />
-                    </SwiperSlide>
-                    <SwiperSlide className="reviews__slide">
-                        <ReviewsContent />
-                    </SwiperSlide>
-                    <SwiperSlide className="reviews__slide">
-                        <ReviewsContent />
-                    </SwiperSlide>
-                    <SwiperSlide className="reviews__slide">
-                        <ReviewsContent />
-                    </SwiperSlide>
-                    <SwiperSlide className="reviews__slide">
-                        <ReviewsContent />
-                    </SwiperSlide>
-                    <SwiperSlide className="reviews__slide">
-                        <ReviewsContent />
-                    </SwiperSlide>
-                    <SwiperSlide className="reviews__slide">
-                        <ReviewsContent />
-                    </SwiperSlide>
-                    <SwiperSlide className="reviews__slide">
-                        <ReviewsContent />
-                    </SwiperSlide>
-                    <SwiperSlide className="reviews__slide">
-                        <ReviewsContent />
-                    </SwiperSlide>
+                    {contentProps.map((props) => {
+                        const { image, personName, description } = props;
+
+                        return (
+                            <SwiperSlide
+                                key={personName}
+                                className="reviews__slide"
+                            >
+                                <p className="block__text text--v2 reviews__text">
+                                    Lorem ipsum dolor sit amet consectetur,
+                                    adipisicing elit. Minus sit, explicabo
+                                    provident hic distinctio molestias
+                                    voluptates nobis alias placeat suscipt earum
+                                    debitits recusandae voluptate illum expedita
+                                    corrupti aliquid doloribus delectus?
+                                </p>
+                                <div className="reviews__person">
+                                    <div className="reviews__person__image">
+                                        <img
+                                            loading="lazy"
+                                            className="reviews__person__pic"
+                                            src={image || person}
+                                            alt={personName}
+                                        />
+                                    </div>
+                                    <div className="reviews__person__info">
+                                        <h3 className="reviews__person__name">
+                                            {personName}
+                                        </h3>
+                                        <div className="reviews__person__description">
+                                            {description || "Lorem"}
+                                        </div>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                        );
+                    })}
                 </Swiper>
             </div>
         </section>
