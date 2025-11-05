@@ -10,7 +10,7 @@ export interface ClickProps {
     clickFunc?: () => void;
 }
 
-export interface AnchorValues {
+export interface LinkProps {
     linkClass?: string;
     url: string;
     linkName: string;

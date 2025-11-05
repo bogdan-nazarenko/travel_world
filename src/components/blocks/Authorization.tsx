@@ -2,7 +2,7 @@ import { useLocation, Link } from "react-router-dom";
 import { useState } from "react";
 import { useMobile } from "../helpers/responsive.ts";
 import { pages } from "../helpers/constants.ts";
-import type { ClickProps, AnchorValues } from "../helpers/interfaces.ts";
+import type { ClickProps, LinkProps } from "../helpers/interfaces.ts";
 import { Plane, TajMahal, SightsOfEurope } from "../elements/vectors.tsx";
 import accountsImage from "../../assets/media/images/accounts_img.webp";
 import hideIcon from "../../assets/media/images/icons/hide.svg";
@@ -66,7 +66,7 @@ const AuthorizationSocials = () => {
     );
 };
 
-interface WrapProps extends AnchorValues {
+interface WrapProps extends LinkProps {
     wrapClass: string;
     buttonName: string;
     description: string;
@@ -98,7 +98,7 @@ interface PasswordProps extends ClickProps {
 }
 
 const Login = ({ isValueVisible, clickFunc }: PasswordProps) => {
-    const loginValues: FormAreaProps[] = [
+    const loginProps: FormAreaProps[] = [
         {
             label: "Email",
             id: "email",
@@ -125,7 +125,7 @@ const Login = ({ isValueVisible, clickFunc }: PasswordProps) => {
             <div className="authorization__subtitle">Login with Email</div>
 
             <div className="login__areas">
-                {loginValues.map((props) => {
+                {loginProps.map((props) => {
                     const {
                         label,
                         id,
@@ -170,7 +170,7 @@ const Login = ({ isValueVisible, clickFunc }: PasswordProps) => {
 };
 
 const Register = ({ isValueVisible, clickFunc }: PasswordProps) => {
-    const registerValues: FormAreaProps[] = [
+    const registerProps: FormAreaProps[] = [
         {
             label: "First Name",
             id: "first_name",
@@ -226,7 +226,7 @@ const Register = ({ isValueVisible, clickFunc }: PasswordProps) => {
             </div>
 
             <div className="register__areas">
-                {registerValues.map((props) => {
+                {registerProps.map((props) => {
                     const {
                         label,
                         id,

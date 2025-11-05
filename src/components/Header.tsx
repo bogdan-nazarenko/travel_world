@@ -2,7 +2,7 @@ import { useLocation, Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { useMobile } from "./helpers/responsive.ts";
 import { pages, active, open } from "./helpers/constants.ts";
-import type { ClickProps, AnchorValues } from "./helpers/interfaces.ts";
+import type { ClickProps, LinkProps } from "./helpers/interfaces.ts";
 import Logo from "./elements/Logo.tsx";
 import "../styles/Header.scss";
 
@@ -10,7 +10,7 @@ const HeaderNavLinks = ({ clickFunc }: ClickProps) => {
     const location = useLocation();
     const headerLink: string = "header__link";
 
-    const linkValues: AnchorValues[] = [
+    const linkProps: LinkProps[] = [
         { linkClass: `${headerLink}`, url: pages.home, linkName: "Home" },
         { linkClass: `${headerLink}`, url: pages.about, linkName: "About" },
         { linkClass: `${headerLink}`, url: pages.tours, linkName: "Tours" },
@@ -18,7 +18,7 @@ const HeaderNavLinks = ({ clickFunc }: ClickProps) => {
 
     return (
         <div className="header__nav__links">
-            {linkValues.map(({ linkClass, url, linkName }) => {
+            {linkProps.map(({ linkClass, url, linkName }) => {
                 const isActive: string =
                     location.pathname === url ? active : "";
 
@@ -95,7 +95,7 @@ const Header = () => {
 
     const headerAuthorizationLink: string = "header__authorization__link";
 
-    const linkValues: AnchorValues[] = [
+    const linkProps: LinkProps[] = [
         {
             linkClass: `${headerAuthorizationLink}`,
             url: pages.login,
@@ -138,7 +138,7 @@ const Header = () => {
                     )}
 
                     <div className="header__authorization">
-                        {linkValues.map(({ linkClass, url, linkName }) => {
+                        {linkProps.map(({ linkClass, url, linkName }) => {
                             const isActive: string =
                                 location.pathname === url ? active : "";
 
