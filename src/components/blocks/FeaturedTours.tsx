@@ -16,60 +16,60 @@ interface ToursImageProps {
     image: string;
 }
 
-const FeaturedTours = () => {
-    const imageProps: ToursImageProps[] = [
-        {
-            suptitle: "Dubai",
-            title: "UAE",
-            image: dubai,
-        },
-        {
-            suptitle: "Bali",
-            title: "Indonesia",
-            image: bali,
-        },
-        {
-            suptitle: "Sydney",
-            title: "Australia",
-            image: sydney,
-        },
-        {
-            suptitle: "Phetchabun",
-            title: "Thailand",
-            image: phetchabun,
-        },
-        {
-            suptitle: "Wuxi",
-            title: "China",
-            image: wuxi,
-        },
-        {
-            suptitle: "Big Ben",
-            title: "London",
-            image: london,
-        },
-        {
-            suptitle: "Paris",
-            title: "France",
-            image: paris,
-        },
-        {
-            suptitle: "Maafushi Island",
-            title: "Maldives",
-            image: maafushi,
-        },
-        {
-            suptitle: "Phi Phi Islands",
-            title: "Thailand",
-            image: phiphi,
-        },
-        {
-            suptitle: "El Nido",
-            title: "Philippines",
-            image: elnido,
-        },
-    ];
+const toursImageProps: ToursImageProps[] = [
+    {
+        suptitle: "Dubai",
+        title: "UAE",
+        image: dubai,
+    },
+    {
+        suptitle: "Bali",
+        title: "Indonesia",
+        image: bali,
+    },
+    {
+        suptitle: "Sydney",
+        title: "Australia",
+        image: sydney,
+    },
+    {
+        suptitle: "Phetchabun",
+        title: "Thailand",
+        image: phetchabun,
+    },
+    {
+        suptitle: "Wuxi",
+        title: "China",
+        image: wuxi,
+    },
+    {
+        suptitle: "Big Ben",
+        title: "London",
+        image: london,
+    },
+    {
+        suptitle: "Paris",
+        title: "France",
+        image: paris,
+    },
+    {
+        suptitle: "Maafushi Island",
+        title: "Maldives",
+        image: maafushi,
+    },
+    {
+        suptitle: "Phi Phi Islands",
+        title: "Thailand",
+        image: phiphi,
+    },
+    {
+        suptitle: "El Nido",
+        title: "Philippines",
+        image: elnido,
+    },
+];
 
+const FeaturedTours = () => {
     return (
         <section className="featured_tours_section">
             <div className="container featured_tours">
@@ -77,7 +77,7 @@ const FeaturedTours = () => {
                     Our featured <span>tours</span>
                 </h2>
                 <div className="featured_tours__images">
-                    {imageProps.map(({ suptitle, title, image }) => {
+                    {toursImageProps.map(({ suptitle, title, image }) => {
                         return (
                             <div
                                 key={suptitle}

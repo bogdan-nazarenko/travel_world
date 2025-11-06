@@ -1,12 +1,12 @@
 import "../../styles/blocks/Services.scss";
 
-const Services = ({ suptitleColor }: { suptitleColor: string }) => {
-    const titles: string[] = [
-        "Calculate Weather",
-        "Best Tour Guide",
-        "Customization",
-    ];
+const servicesTitles: string[] = [
+    "Calculate Weather",
+    "Best Tour Guide",
+    "Customization",
+];
 
+const Services = ({ suptitleColor }: { suptitleColor: string }) => {
     return (
         <section className="services_section">
             <div className="container services">
@@ -22,7 +22,7 @@ const Services = ({ suptitleColor }: { suptitleColor: string }) => {
                     </h2>
                 </div>
                 <div className="services__elements">
-                    {titles.map((title) => {
+                    {servicesTitles.map((title) => {
                         return (
                             <div key={title} className="services__item">
                                 <div className="services__item__image"></div>

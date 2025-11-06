@@ -9,28 +9,28 @@ interface SearchItemProps {
     description: string;
 }
 
-const SearchItemsGroup = () => {
-    const itemProps: SearchItemProps[] = [
-        {
-            icon: <PinV1 />,
-            title: "Location",
-            description: "Where are you going?",
-        },
-        {
-            icon: <PinsDistance />,
-            title: "Distance",
-            description: "Distance k/m",
-        },
-        {
-            icon: <People />,
-            title: "Max People",
-            description: "0",
-        },
-    ];
+const searchItemProps: SearchItemProps[] = [
+    {
+        icon: <PinV1 />,
+        title: "Location",
+        description: "Where are you going?",
+    },
+    {
+        icon: <PinsDistance />,
+        title: "Distance",
+        description: "Distance k/m",
+    },
+    {
+        icon: <People />,
+        title: "Max People",
+        description: "0",
+    },
+];
 
+const SearchItemsGroup = () => {
     return (
         <>
-            {itemProps.map((props) => {
+            {searchItemProps.map((props) => {
                 const { icon, title, description } = props;
 
                 return (

@@ -14,53 +14,53 @@ interface ReviewsContentProps {
     description?: string;
 }
 
+const reviewsContentProps: ReviewsContentProps[] = [
+    {
+        image: john,
+        personName: "John Deep",
+        description: "Customer",
+    },
+    {
+        image: ally,
+        personName: "Ally Gomez",
+        description: "Customer",
+    },
+    {
+        image: alex,
+        personName: "Alex Bugg",
+        description: "Customer",
+    },
+    {
+        personName: "Person 4",
+    },
+    {
+        personName: "Person 5",
+    },
+    {
+        personName: "Person 6",
+    },
+    {
+        personName: "Person 7",
+    },
+    {
+        personName: "Person 8",
+    },
+    {
+        personName: "Person 9",
+    },
+    {
+        personName: "Person 10",
+    },
+    {
+        personName: "Person 11",
+    },
+    {
+        personName: "Person 12",
+    },
+];
+
 const Reviews = () => {
     const isMobile = useMobile();
-
-    const contentProps: ReviewsContentProps[] = [
-        {
-            image: john,
-            personName: "John Deep",
-            description: "Customer",
-        },
-        {
-            image: ally,
-            personName: "Ally Gomez",
-            description: "Customer",
-        },
-        {
-            image: alex,
-            personName: "Alex Bugg",
-            description: "Customer",
-        },
-        {
-            personName: "Person 4",
-        },
-        {
-            personName: "Person 5",
-        },
-        {
-            personName: "Person 6",
-        },
-        {
-            personName: "Person 7",
-        },
-        {
-            personName: "Person 8",
-        },
-        {
-            personName: "Person 9",
-        },
-        {
-            personName: "Person 10",
-        },
-        {
-            personName: "Person 11",
-        },
-        {
-            personName: "Person 12",
-        },
-    ];
 
     return (
         <section className="reviews_section">
@@ -108,7 +108,7 @@ const Reviews = () => {
                         },
                     }}
                 >
-                    {contentProps.map((props) => {
+                    {reviewsContentProps.map((props) => {
                         const { image, personName, description } = props;
 
                         return (

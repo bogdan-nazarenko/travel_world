@@ -12,7 +12,7 @@ import "../../styles/blocks/Authorization.scss";
 interface FormAreaProps extends ClickProps {
     label: string;
     id: string;
-    type: string;
+    type?: string;
     name: string;
     autoComplete?: string;
     placeholder: string;
@@ -93,32 +93,30 @@ const FormWrap = (props: WrapProps) => {
     );
 };
 
+const loginProps: FormAreaProps[] = [
+    {
+        label: "Email",
+        id: "email",
+        type: "email",
+        name: "email",
+        autoComplete: "email",
+        placeholder: "Enter Email or Username",
+        required: true,
+    },
+    {
+        label: "Password",
+        id: "password",
+        name: "password",
+        placeholder: "Enter Password",
+        required: true,
+    },
+];
+
 interface PasswordProps extends ClickProps {
     isValueVisible: boolean;
 }
 
 const Login = ({ isValueVisible, clickFunc }: PasswordProps) => {
-    const loginProps: FormAreaProps[] = [
-        {
-            label: "Email",
-            id: "email",
-            type: "email",
-            name: "email",
-            autoComplete: "email",
-            placeholder: "Enter Email or Username",
-            required: true,
-        },
-        {
-            label: "Password",
-            id: "password",
-            type: isValueVisible ? "password" : "text",
-            name: "password",
-            placeholder: "Enter Password",
-            required: true,
-            icon: isValueVisible ? showIcon : hideIcon,
-        },
-    ];
-
     return (
         <form className="authorization__form login__form" action="#">
             <h1 className="authorization__title">Welcome</h1>
@@ -134,7 +132,6 @@ const Login = ({ isValueVisible, clickFunc }: PasswordProps) => {
                         autoComplete,
                         placeholder,
                         required,
-                        icon,
                     } = props;
 
                     return (
@@ -142,12 +139,14 @@ const Login = ({ isValueVisible, clickFunc }: PasswordProps) => {
                             key={id}
                             label={label}
                             id={id}
-                            type={type}
+                            type={
+                                type || (isValueVisible ? "text" : "password")
+                            }
                             name={name}
                             autoComplete={autoComplete}
                             placeholder={placeholder}
                             required={required}
-                            icon={icon}
+                            icon={isValueVisible ? showIcon : hideIcon}
                             clickFunc={clickFunc}
                         />
                     );
@@ -169,54 +168,52 @@ const Login = ({ isValueVisible, clickFunc }: PasswordProps) => {
     );
 };
 
-const Register = ({ isValueVisible, clickFunc }: PasswordProps) => {
-    const registerProps: FormAreaProps[] = [
-        {
-            label: "First Name",
-            id: "first_name",
-            type: "text",
-            name: "first_name",
-            autoComplete: "given-name",
-            placeholder: "First Name",
-            required: true,
-        },
-        {
-            label: "Last Name",
-            id: "last_name",
-            type: "text",
-            name: "last_name",
-            placeholder: "Last Name",
-            required: true,
-        },
-        {
-            label: "Email",
-            id: "email",
-            type: "email",
-            name: "email",
-            autoComplete: "email",
-            placeholder: "Enter Email",
-            required: true,
-        },
-        {
-            label: "Password",
-            id: "password",
-            type: isValueVisible ? "password" : "text",
-            name: "password",
-            placeholder: "Enter Password",
-            required: true,
-            icon: isValueVisible ? showIcon : hideIcon,
-        },
-        {
-            label: "Mobile Number",
-            id: "tel",
-            type: "tel",
-            name: "tel",
-            autoComplete: "tel",
-            placeholder: "Mobile Number",
-            required: true,
-        },
-    ];
+const registerProps: FormAreaProps[] = [
+    {
+        label: "First Name",
+        id: "first_name",
+        type: "text",
+        name: "first_name",
+        autoComplete: "given-name",
+        placeholder: "First Name",
+        required: true,
+    },
+    {
+        label: "Last Name",
+        id: "last_name",
+        type: "text",
+        name: "last_name",
+        placeholder: "Last Name",
+        required: true,
+    },
+    {
+        label: "Email",
+        id: "email",
+        type: "email",
+        name: "email",
+        autoComplete: "email",
+        placeholder: "Enter Email",
+        required: true,
+    },
+    {
+        label: "Password",
+        id: "password",
+        name: "password",
+        placeholder: "Enter Password",
+        required: true,
+    },
+    {
+        label: "Mobile Number",
+        id: "tel",
+        type: "tel",
+        name: "tel",
+        autoComplete: "tel",
+        placeholder: "Mobile Number",
+        required: true,
+    },
+];
 
+const Register = ({ isValueVisible, clickFunc }: PasswordProps) => {
     return (
         <form className="authorization__form register__form" action="#">
             <h1 className="authorization__title">Create an account</h1>
@@ -235,7 +232,6 @@ const Register = ({ isValueVisible, clickFunc }: PasswordProps) => {
                         autoComplete,
                         placeholder,
                         required,
-                        icon,
                     } = props;
 
                     return (
@@ -243,12 +239,14 @@ const Register = ({ isValueVisible, clickFunc }: PasswordProps) => {
                             key={id}
                             label={label}
                             id={id}
-                            type={type}
+                            type={
+                                type || (isValueVisible ? "text" : "password")
+                            }
                             name={name}
                             autoComplete={autoComplete}
                             placeholder={placeholder}
                             required={required}
-                            icon={icon}
+                            icon={isValueVisible ? showIcon : hideIcon}
                             clickFunc={clickFunc}
                         />
                     );

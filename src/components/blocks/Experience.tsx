@@ -1,22 +1,22 @@
 import experienceImage from "../../assets/media/images/experience.png";
 import "../../styles/blocks/Experience.scss";
 
-const Experience = () => {
-    const itemProps: { quantityText: string; description: string }[] = [
-        {
-            quantityText: "12k+",
-            description: "Successful trip",
-        },
-        {
-            quantityText: "2k+",
-            description: "Regular clients",
-        },
-        {
-            quantityText: "15",
-            description: "Year experience",
-        },
-    ];
+const experienceItemProps: { quantityText: string; description: string }[] = [
+    {
+        quantityText: "12k+",
+        description: "Successful trip",
+    },
+    {
+        quantityText: "2k+",
+        description: "Regular clients",
+    },
+    {
+        quantityText: "15",
+        description: "Year experience",
+    },
+];
 
+const Experience = () => {
     return (
         <section className="experience_section">
             <div className="container experience">
@@ -32,7 +32,9 @@ const Experience = () => {
                         elit. Quas aliquam, hic tempora inventore suscipit unde.
                     </p>
                     <div className="experience__elements">
-                        {itemProps.map(({ quantityText, description }) => {
+                        {experienceItemProps.map((props) => {
+                            const { quantityText, description } = props;
+
                             return (
                                 <div
                                     key={description}

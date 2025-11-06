@@ -6,19 +6,19 @@ import type { ClickProps, LinkProps } from "./helpers/interfaces.ts";
 import Logo from "./elements/Logo.tsx";
 import "../styles/Header.scss";
 
+const headerLink: string = "header__link";
+const headerNavProps: LinkProps[] = [
+    { linkClass: headerLink, url: pages.home, linkName: "Home" },
+    { linkClass: headerLink, url: pages.about, linkName: "About" },
+    { linkClass: headerLink, url: pages.tours, linkName: "Tours" },
+];
+
 const HeaderNavLinks = ({ clickFunc }: ClickProps) => {
     const location = useLocation();
-    const headerLink: string = "header__link";
-
-    const linkProps: LinkProps[] = [
-        { linkClass: headerLink, url: pages.home, linkName: "Home" },
-        { linkClass: headerLink, url: pages.about, linkName: "About" },
-        { linkClass: headerLink, url: pages.tours, linkName: "Tours" },
-    ];
 
     return (
         <div className="header__nav__links">
-            {linkProps.map(({ linkClass, url, linkName }) => {
+            {headerNavProps.map(({ linkClass, url, linkName }) => {
                 const isActive: string =
                     location.pathname === url ? active : "";
 
@@ -36,6 +36,20 @@ const HeaderNavLinks = ({ clickFunc }: ClickProps) => {
         </div>
     );
 };
+
+const headerAuthorizationLink: string = "header__authorization__link";
+const authorizationProps: LinkProps[] = [
+    {
+        linkClass: headerAuthorizationLink,
+        url: pages.login,
+        linkName: "Login",
+    },
+    {
+        linkClass: headerAuthorizationLink,
+        url: pages.register,
+        linkName: "Register",
+    },
+];
 
 const Header = () => {
     const headerContainer = useRef<HTMLDivElement>(null);
@@ -93,21 +107,6 @@ const Header = () => {
         location.pathname !== pages.register;
     const isMobile = useMobile();
 
-    const headerAuthorizationLink: string = "header__authorization__link";
-
-    const linkProps: LinkProps[] = [
-        {
-            linkClass: headerAuthorizationLink,
-            url: pages.login,
-            linkName: "Login",
-        },
-        {
-            linkClass: headerAuthorizationLink,
-            url: pages.register,
-            linkName: "Register",
-        },
-    ];
-
     useEffect(() => {
         if (isMenuOpen && isMobile) {
             document.body.style.overflowY = "hidden";
@@ -138,7 +137,8 @@ const Header = () => {
                     )}
 
                     <div className="header__authorization">
-                        {linkProps.map(({ linkClass, url, linkName }) => {
+                        {authorizationProps.map((props) => {
+                            const { linkClass, url, linkName } = props;
                             const isActive: string =
                                 location.pathname === url ? active : "";
 

@@ -19,47 +19,47 @@ interface FooterLinkProps extends LinkProps {
     label?: string;
 }
 
+const footerSocialProps: FooterLinkProps[] = [
+    {
+        url: "https://www.youtube.com/",
+        icon: <Youtube />,
+    },
+    {
+        url: "https://x.com/",
+        icon: <Twitter />,
+    },
+    {
+        url: "https://www.facebook.com/",
+        icon: <Facebook />,
+    },
+    {
+        url: "https://www.instagram.com/",
+        icon: <Instagram />,
+    },
+];
+
+const footerNavProps: FooterLinkProps[] = [
+    {
+        icon: <PinV2 />,
+        label: "Address: ",
+        url: "https://www.google.com/maps/",
+        linkName: "Lorem",
+    },
+    {
+        icon: <Email />,
+        label: "Email: ",
+        url: "mailto:xyz@mail.com",
+        linkName: "xyz@mail.com",
+    },
+    {
+        icon: <Phone />,
+        label: "Phone: ",
+        url: "tel:00022200222",
+        linkName: "tel:00022200222",
+    },
+];
+
 const Footer = () => {
-    const socialLinkProps: FooterLinkProps[] = [
-        {
-            url: "https://www.youtube.com/",
-            icon: <Youtube />,
-        },
-        {
-            url: "https://x.com/",
-            icon: <Twitter />,
-        },
-        {
-            url: "https://www.facebook.com/",
-            icon: <Facebook />,
-        },
-        {
-            url: "https://www.instagram.com/",
-            icon: <Instagram />,
-        },
-    ];
-
-    const navLinkProps: FooterLinkProps[] = [
-        {
-            icon: <PinV2 />,
-            label: "Address: ",
-            url: "https://www.google.com/maps/",
-            linkName: "Lorem",
-        },
-        {
-            icon: <Email />,
-            label: "Email: ",
-            url: "mailto:xyz@mail.com",
-            linkName: "xyz@mail.com",
-        },
-        {
-            icon: <Phone />,
-            label: "Phone: ",
-            url: "tel:00022200222",
-            linkName: "tel:00022200222",
-        },
-    ];
-
     return (
         <footer>
             <div className="container footer_menu">
@@ -71,7 +71,7 @@ const Footer = () => {
                         Commodi, enim.
                     </p>
                     <div className="footer__social__links">
-                        {socialLinkProps.map(({ url, icon }) => {
+                        {footerSocialProps.map(({ url, icon }) => {
                             return (
                                 <a
                                     key={url}
@@ -127,7 +127,7 @@ const Footer = () => {
                     <div className="footer__nav__links">
                         <h3 className="footer__nav__title">Contact</h3>
                         <div className="footer__links">
-                            {navLinkProps.map((props) => {
+                            {footerNavProps.map((props) => {
                                 const { icon, label, url, linkName } = props;
 
                                 return (
