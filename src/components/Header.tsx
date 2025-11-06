@@ -11,9 +11,9 @@ const HeaderNavLinks = ({ clickFunc }: ClickProps) => {
     const headerLink: string = "header__link";
 
     const linkProps: LinkProps[] = [
-        { linkClass: `${headerLink}`, url: pages.home, linkName: "Home" },
-        { linkClass: `${headerLink}`, url: pages.about, linkName: "About" },
-        { linkClass: `${headerLink}`, url: pages.tours, linkName: "Tours" },
+        { linkClass: headerLink, url: pages.home, linkName: "Home" },
+        { linkClass: headerLink, url: pages.about, linkName: "About" },
+        { linkClass: headerLink, url: pages.tours, linkName: "Tours" },
     ];
 
     return (
@@ -97,12 +97,12 @@ const Header = () => {
 
     const linkProps: LinkProps[] = [
         {
-            linkClass: `${headerAuthorizationLink}`,
+            linkClass: headerAuthorizationLink,
             url: pages.login,
             linkName: "Login",
         },
         {
-            linkClass: `${headerAuthorizationLink}`,
+            linkClass: headerAuthorizationLink,
             url: pages.register,
             linkName: "Register",
         },
