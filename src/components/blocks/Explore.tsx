@@ -19,7 +19,7 @@ const ExploreImage = ({ suptitle, title, image, alt }: ExploreImageProps) => {
         <div className="explore__image">
             <div className="explore__captions__wrap">
                 <div className="explore__image__captions">
-                    <h3 className="explore__image__suptitle">{suptitle}</h3>
+                    <h4 className="explore__image__suptitle">{suptitle}</h4>
                     <h3 className="explore__image__title">{title}</h3>
                 </div>
             </div>
