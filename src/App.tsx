@@ -1,5 +1,6 @@
 import { Suspense, lazy } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+import { pages } from "./components/helpers/constants.ts";
 import Header from "./components/Header.tsx";
 import Loading from "./components/elements/Loading.tsx";
 const Home = lazy(() => import("./components/pages/Home.tsx"));
@@ -14,7 +15,7 @@ import Footer from "./components/Footer.tsx";
 const App = () => {
     const location = useLocation();
 
-    const isMainPath: boolean = ["/", "/about", "/tours"].includes(
+    const isMainPath: boolean = [pages.home, pages.about, pages.tours].includes(
         location.pathname
     );
 
@@ -24,12 +25,12 @@ const App = () => {
             <main>
                 <Suspense fallback={<Loading />}>
                     <Routes>
-                        <Route path="/" element={<Home />}></Route>
-                        <Route path="/about" element={<About />}></Route>
-                        <Route path="/tours" element={<Tours />}></Route>
-                        <Route path="/login" element={<Login />}></Route>
-                        <Route path="/register" element={<Register />}></Route>
-                        <Route path="*" element={<NotFound />}></Route>
+                        <Route path={pages.home} element={<Home />} />
+                        <Route path={pages.about} element={<About />} />
+                        <Route path={pages.tours} element={<Tours />} />
+                        <Route path={pages.login} element={<Login />} />
+                        <Route path={pages.register} element={<Register />} />
+                        <Route path="*" element={<NotFound />} />
                     </Routes>
 
                     {isMainPath && <Newsletter />}
