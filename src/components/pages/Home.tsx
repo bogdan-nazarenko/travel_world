@@ -4,12 +4,13 @@ import Explore from "../blocks/Explore.tsx";
 import Experience from "../blocks/Experience.tsx";
 import Gallery from "../blocks/Gallery.tsx";
 import Reviews from "../blocks/Reviews.tsx";
+import { lightPinkColor } from "../helpers/constants.ts";
 
 const Home = () => {
     return (
         <>
             <Hero />
-            <Services suptitleColor={"--light-pink-color"} />
+            <Services suptitleColor={lightPinkColor} />
             <Explore />
             <Experience />
             <Gallery />

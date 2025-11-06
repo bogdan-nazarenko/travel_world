@@ -4,6 +4,11 @@ import type { PagePaths } from "./interfaces.ts";
 export const active: string = "active";
 export const open: string = "open";
 
+// colors
+export const secondaryColor: string = "--secondary-color";
+export const primaryColor: string = "--primary-color";
+export const lightPinkColor: string = "--light-pink-color";
+
 // objects
 export const pages: PagePaths = {
     home: "/",

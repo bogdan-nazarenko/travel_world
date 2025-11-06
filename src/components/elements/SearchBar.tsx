@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { secondaryColor, primaryColor } from "../helpers/constants.ts";
 import { PinV1, PinsDistance, People, Search } from "./vectors.tsx";
 import "../../styles/elements/SearchBar.scss";
 
@@ -80,7 +81,7 @@ const SearchBar = () => {
                 <button
                     className="search__button"
                     style={{
-                        backgroundColor: `var(${isInput ? "--primary-color" : "--secondary-color"})`,
+                        backgroundColor: `var(${isInput ? primaryColor : secondaryColor})`,
                     }}
                     onClick={showSearchInput}
                 >
