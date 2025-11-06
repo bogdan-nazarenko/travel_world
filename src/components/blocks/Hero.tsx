@@ -34,7 +34,7 @@ const Hero = () => {
     const [isPlay, setPlay] = useState(false);
     const [view, setView] = useState(false);
 
-    function videoPlay(): void {
+    function toggleVideoPlayback(): void {
         const video = videoFile.current;
 
         if (video && !document.fullscreenElement) {
@@ -126,7 +126,7 @@ const Hero = () => {
                                     objectFit: `${view ? "contain" : "cover"}`,
                                 }}
                                 controls={view}
-                                onClick={videoPlay}
+                                onClick={toggleVideoPlayback}
                                 onDoubleClick={videoFullScreen}
                             ></video>
                             <button
@@ -134,7 +134,7 @@ const Hero = () => {
                                 style={{
                                     backgroundImage: `url("${isPlay ? play : pause}")`,
                                 }}
-                                onClick={videoPlay}
+                                onClick={toggleVideoPlayback}
                             ></button>
                             <button
                                 className="video__fullscreen"
