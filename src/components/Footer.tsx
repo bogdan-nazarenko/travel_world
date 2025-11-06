@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { pages } from "./helpers/constants.ts";
+import type { LinkProps } from "./helpers/interfaces.ts";
 import Logo from "./elements/Logo.tsx";
 import {
     Youtube,
@@ -12,7 +14,52 @@ import {
 } from "./elements/vectors.tsx";
 import "../styles/Footer.scss";
 
+interface FooterLinkProps extends LinkProps {
+    icon: React.ReactElement;
+    label?: string;
+}
+
 const Footer = () => {
+    const socialLinkProps: FooterLinkProps[] = [
+        {
+            url: "https://www.youtube.com/",
+            icon: <Youtube />,
+        },
+        {
+            url: "https://x.com/",
+            icon: <Twitter />,
+        },
+        {
+            url: "https://www.facebook.com/",
+            icon: <Facebook />,
+        },
+        {
+            url: "https://www.instagram.com/",
+            icon: <Instagram />,
+        },
+    ];
+
+    const navLinkProps: FooterLinkProps[] = [
+        {
+            icon: <PinV2 />,
+            label: "Address: ",
+            url: "https://www.google.com/maps/",
+            linkName: "Lorem",
+        },
+        {
+            icon: <Email />,
+            label: "Email: ",
+            url: "mailto:xyz@mail.com",
+            linkName: "xyz@mail.com",
+        },
+        {
+            icon: <Phone />,
+            label: "Phone: ",
+            url: "tel:00022200222",
+            linkName: "tel:00022200222",
+        },
+    ];
+
     return (
         <footer>
             <div className="container footer_menu">
@@ -24,34 +71,18 @@ const Footer = () => {
                         Commodi, enim.
                     </p>
                     <div className="footer__social__links">
-                        <a
-                            className="footer__social__link"
-                            href="https://www.youtube.com/"
-                            target="_blank"
-                        >
-                            <Youtube />
-                        </a>
-                        <a
-                            className="footer__social__link"
-                            href="https://x.com/"
-                            target="_blank"
-                        >
-                            <Twitter />
-                        </a>
-                        <a
-                            className="footer__social__link"
-                            href="https://www.facebook.com/"
-                            target="_blank"
-                        >
-                            <Facebook />
-                        </a>
-                        <a
-                            className="footer__social__link"
-                            href="https://www.instagram.com/"
-                            target="_blank"
-                        >
-                            <Instagram />
-                        </a>
+                        {socialLinkProps.map(({ url, icon }) => {
+                            return (
+                                <a
+                                    key={url}
+                                    className="footer__social__link"
+                                    href={url}
+                                    target="_blank"
+                                >
+                                    {icon}
+                                </a>
+                            );
+                        })}
                     </div>
                     <div className="footer__description">
                         © 2024{" "}
@@ -65,13 +96,13 @@ const Footer = () => {
                     <div className="footer__nav__links">
                         <h3 className="footer__nav__title">Discover</h3>
                         <div className="footer__links">
-                            <Link className="footer__link" to="/">
+                            <Link className="footer__link" to={pages.home}>
                                 Home
                             </Link>
-                            <Link className="footer__link" to="/about">
+                            <Link className="footer__link" to={pages.about}>
                                 About
                             </Link>
-                            <Link className="footer__link" to="/tours">
+                            <Link className="footer__link" to={pages.tours}>
                                 Tours
                             </Link>
                         </div>
@@ -85,10 +116,10 @@ const Footer = () => {
                             >
                                 Gallery
                             </HashLink>
-                            <Link className="footer__link" to="/login">
+                            <Link className="footer__link" to={pages.login}>
                                 Login
                             </Link>
-                            <Link className="footer__link" to="/register">
+                            <Link className="footer__link" to={pages.register}>
                                 Register
                             </Link>
                         </div>
@@ -96,43 +127,35 @@ const Footer = () => {
                     <div className="footer__nav__links">
                         <h3 className="footer__nav__title">Contact</h3>
                         <div className="footer__links">
-                            <div className="footer__links__wrap">
-                                <span className="footer__icon">
-                                    <PinV2 />
-                                </span>
-                                <span className="footer__label">Address: </span>
-                                <a
-                                    className="footer__link"
-                                    href="https://www.google.com/maps/"
-                                    target="_blank"
-                                >
-                                    Lorem
-                                </a>
-                            </div>
-                            <div className="footer__links__wrap">
-                                <span className="footer__icon">
-                                    <Email />
-                                </span>
-                                <span className="footer__label">Email: </span>
-                                <a
-                                    className="footer__link"
-                                    href="mailto:xyz@mail.com"
-                                >
-                                    xyz@mail.com
-                                </a>
-                            </div>
-                            <div className="footer__links__wrap">
-                                <span className="footer__icon">
-                                    <Phone />
-                                </span>
-                                <span className="footer__label">Phone: </span>
-                                <a
-                                    className="footer__link"
-                                    href="tel:00022200222"
-                                >
-                                    00022200222
-                                </a>
-                            </div>
+                            {navLinkProps.map((props) => {
+                                const { icon, label, url, linkName } = props;
+
+                                return (
+                                    <div
+                                        key={url}
+                                        className="footer__links__wrap"
+                                    >
+                                        <span className="footer__icon">
+                                            {icon}
+                                        </span>
+                                        <span className="footer__label">
+                                            {label}
+                                        </span>
+                                        <a
+                                            className="footer__link"
+                                            href={url}
+                                            target={
+                                                url ===
+                                                "https://www.google.com/maps/"
+                                                    ? "_blank"
+                                                    : "_self"
+                                            }
+                                        >
+                                            {linkName}
+                                        </a>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </nav>
