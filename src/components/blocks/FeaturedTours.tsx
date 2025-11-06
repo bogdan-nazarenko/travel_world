@@ -79,7 +79,10 @@ const FeaturedTours = () => {
                 <div className="featured_tours__images">
                     {imageProps.map(({ suptitle, title, image }) => {
                         return (
-                            <div key={title} className="featured_tours__image">
+                            <div
+                                key={suptitle}
+                                className="featured_tours__image"
+                            >
                                 <div className="featured_tours__captions__wrap">
                                     <div className="featured_tours__image__captions">
                                         <h3 className="featured_tours__image__suptitle">
