@@ -112,7 +112,7 @@ const Footer = () => {
                         <div className="footer__links">
                             <HashLink
                                 className="footer__link"
-                                to="/#gallery_section"
+                                to={pages.home + "#gallery_section"}
                             >
                                 Gallery
                             </HashLink>
