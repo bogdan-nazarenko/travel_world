@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { pages } from "./components/helpers/constants.ts";
 import Header from "./components/Header.tsx";
@@ -14,6 +14,10 @@ import Footer from "./components/Footer.tsx";
 
 const App = () => {
     const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "instant" });
+    }, [location.pathname]);
 
     const isMainPath: boolean = [pages.home, pages.about, pages.tours].includes(
         location.pathname
