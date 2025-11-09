@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-import { type FancyboxOptions, Fancybox } from "@fancyapps/ui/dist/fancybox/";
-import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import useFancybox from "../libs/fancybox.ts";
 import manali from "../../assets/media/images/manali.jpg";
 import elnido from "../../assets/media/images/el_nido.jpg";
 import pamukkale from "../../assets/media/images/pamukkale.jpg";
@@ -25,19 +23,6 @@ const GalleryImage = ({ image, alt }: { image: string; alt: string }) => {
 };
 
 const Gallery = () => {
-    function useFancybox(options: Partial<FancyboxOptions> = {}) {
-        const [root, setRoot] = useState<HTMLElement | null>(null);
-
-        useEffect(() => {
-            if (root) {
-                Fancybox.bind(root, "[data-fancybox]", options);
-                return () => Fancybox.unbind(root);
-            }
-        }, [root, options]);
-
-        return [setRoot];
-    }
-
     const [fancyboxRef] = useFancybox({
         // custom options
     });

@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { type FancyboxOptions, Fancybox } from "@fancyapps/ui/dist/fancybox/";
-import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import useFancybox from "../libs/fancybox.ts";
 import SearchBar from "../elements/SearchBar.tsx";
 import worldIcon from "../../assets/media/images/icons/world.png";
 import heroImage1 from "../../assets/media/images/hero_img_1.jpg";
@@ -13,19 +12,6 @@ import fullScreen from "../../assets/media/images/icons/full-screen.svg";
 import "../../styles/blocks/Hero.scss";
 
 const Hero = () => {
-    function useFancybox(options: Partial<FancyboxOptions> = {}) {
-        const [root, setRoot] = useState<HTMLElement | null>(null);
-
-        useEffect(() => {
-            if (root) {
-                Fancybox.bind(root, "[data-fancybox]", options);
-                return () => Fancybox.unbind(root);
-            }
-        }, [root, options]);
-
-        return [setRoot];
-    }
-
     const [fancyboxRef] = useFancybox({
         // custom options
     });
