@@ -9,7 +9,12 @@ import hideIcon from "../../assets/media/images/icons/hide.svg";
 import showIcon from "../../assets/media/images/icons/show.svg";
 import "../../styles/blocks/Authorization.scss";
 
-interface FormAreaProps extends ClickProps {
+interface PasswordProps extends ClickProps {
+    valueVisibility?: string;
+    icon?: string;
+}
+
+interface FormAreaProps extends PasswordProps {
     label: string;
     id: string;
     type?: string;
@@ -17,7 +22,6 @@ interface FormAreaProps extends ClickProps {
     autoComplete?: string;
     placeholder: string;
     required?: boolean;
-    icon?: string;
 }
 
 const AuthorizationArea = (props: FormAreaProps) => {
@@ -112,11 +116,7 @@ const loginProps: FormAreaProps[] = [
     },
 ];
 
-interface PasswordProps extends ClickProps {
-    isValueVisible: boolean;
-}
-
-const Login = ({ isValueVisible, clickFunc }: PasswordProps) => {
+const Login = ({ valueVisibility, icon, clickFunc }: PasswordProps) => {
     return (
         <form className="authorization__form login__form" action="#">
             <h1 className="authorization__title">Welcome</h1>
@@ -139,14 +139,12 @@ const Login = ({ isValueVisible, clickFunc }: PasswordProps) => {
                             key={id}
                             label={label}
                             id={id}
-                            type={
-                                type || (isValueVisible ? "text" : "password")
-                            }
+                            type={type || valueVisibility}
                             name={name}
                             autoComplete={autoComplete}
                             placeholder={placeholder}
                             required={required}
-                            icon={isValueVisible ? showIcon : hideIcon}
+                            icon={icon}
                             clickFunc={clickFunc}
                         />
                     );
@@ -213,7 +211,7 @@ const registerProps: FormAreaProps[] = [
     },
 ];
 
-const Register = ({ isValueVisible, clickFunc }: PasswordProps) => {
+const Register = ({ valueVisibility, icon, clickFunc }: PasswordProps) => {
     return (
         <form className="authorization__form register__form" action="#">
             <h1 className="authorization__title">Create an account</h1>
@@ -239,14 +237,12 @@ const Register = ({ isValueVisible, clickFunc }: PasswordProps) => {
                             key={id}
                             label={label}
                             id={id}
-                            type={
-                                type || (isValueVisible ? "text" : "password")
-                            }
+                            type={type || valueVisibility}
                             name={name}
                             autoComplete={autoComplete}
                             placeholder={placeholder}
                             required={required}
-                            icon={isValueVisible ? showIcon : hideIcon}
+                            icon={icon}
                             clickFunc={clickFunc}
                         />
                     );
@@ -277,6 +273,9 @@ const Authorization = () => {
         }
     }
 
+    const passwordValueType: string = password ? "text" : "password";
+    const toggleIcon: string = password ? showIcon : hideIcon;
+
     return (
         <section>
             <div className="container authorization">
@@ -293,13 +292,15 @@ const Authorization = () => {
                 <div className="authorization__wrap">
                     {location.pathname === pages.login && (
                         <Login
-                            isValueVisible={password}
+                            valueVisibility={passwordValueType}
+                            icon={toggleIcon}
                             clickFunc={togglePasswordVisibility}
                         />
                     )}
                     {location.pathname === pages.register && (
                         <Register
-                            isValueVisible={password}
+                            valueVisibility={passwordValueType}
+                            icon={toggleIcon}
                             clickFunc={togglePasswordVisibility}
                         />
                     )}
