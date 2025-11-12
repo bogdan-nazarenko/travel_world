@@ -16,8 +16,10 @@ const App = () => {
     const location = useLocation();
 
     useEffect(() => {
-        window.scrollTo({ top: 0, behavior: "instant" });
-    }, [location.pathname]);
+        if (window.pageYOffset > 0 && location.hash === "") {
+            window.scrollTo(0, 0);
+        }
+    }, [location.pathname, location.hash]);
 
     const isMainPath: boolean = [pages.home, pages.about, pages.tours].includes(
         location.pathname
