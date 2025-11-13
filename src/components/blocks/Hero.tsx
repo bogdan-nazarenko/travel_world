@@ -16,7 +16,7 @@ const Hero = () => {
         // custom options
     });
 
-    const videoFile = useRef<HTMLVideoElement>(null);
+    const videoFile = useRef<HTMLVideoElement | null>(null);
     const [isPlay, setPlay] = useState(false);
     const [view, setView] = useState(false);
 

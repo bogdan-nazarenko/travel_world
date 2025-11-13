@@ -52,7 +52,7 @@ const authorizationProps: LinkProps[] = [
 ];
 
 const Header = () => {
-    const headerContainer = useRef<HTMLDivElement>(null);
+    const headerContainer = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
         const targetElement = document.body;
