@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect } from "react";
+import { Suspense, lazy, useEffect, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { pages } from "./components/helpers/constants.ts";
 import Header from "./components/Header.tsx";
@@ -20,6 +20,26 @@ const App = () => {
             window.scrollTo(0, 0);
         }
     }, [location.pathname, location.hash]);
+
+    const hashOnLoad = useRef<string>(location.hash);
+    const awaitElement = useRef<number | undefined>(undefined);
+
+    useEffect(() => {
+        if (hashOnLoad.current !== "") {
+            function scrollToElement(): void {
+                const idElement = document.querySelector(hashOnLoad.current);
+
+                if (idElement) {
+                    idElement.scrollIntoView({ behavior: "smooth" });
+                    clearInterval(awaitElement.current);
+                }
+            }
+
+            awaitElement.current = setInterval(scrollToElement, 500);
+
+            return () => clearInterval(awaitElement.current);
+        }
+    }, []);
 
     const isMainPath: boolean = [pages.home, pages.about, pages.tours].includes(
         location.pathname
