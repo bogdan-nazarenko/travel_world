@@ -113,6 +113,7 @@ const Footer = () => {
                             <HashLink
                                 className="footer__link"
                                 to={pages.home + "#gallery_section"}
+                                smooth={true}
                             >
                                 Gallery
                             </HashLink>
