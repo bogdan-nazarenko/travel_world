@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useRef } from "react";
+import { Suspense, lazy, useEffect, useLayoutEffect, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { pages } from "./components/helpers/constants.ts";
 import Header from "./components/Header.tsx";
@@ -20,6 +20,16 @@ const App = () => {
             window.scrollTo(0, 0);
         }
     }, [location.pathname, location.hash]);
+
+    useLayoutEffect(() => {
+        const isSmoothScroll = document.documentElement.hasAttribute("style");
+
+        if (location.hash !== "" && !isSmoothScroll) {
+            document.documentElement.style.scrollBehavior = "smooth";
+        } else if (location.hash === "" && isSmoothScroll) {
+            document.documentElement.removeAttribute("style");
+        }
+    }, [location.hash]);
 
     const hashOnLoad = useRef<string>(location.hash);
     const awaitElement = useRef<number | undefined>(undefined);
