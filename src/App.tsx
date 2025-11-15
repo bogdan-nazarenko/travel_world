@@ -32,7 +32,6 @@ const App = () => {
     }, [location.hash]);
 
     const hashOnLoad = useRef<string>(location.hash);
-    const awaitElement = useRef<number | undefined>(undefined);
 
     useEffect(() => {
         if (hashOnLoad.current !== "") {
@@ -40,14 +39,15 @@ const App = () => {
                 const idElement = document.querySelector(hashOnLoad.current);
 
                 if (idElement) {
-                    idElement.scrollIntoView({ behavior: "smooth" });
-                    clearInterval(awaitElement.current);
+                    idElement.scrollIntoView();
+                    watcher.disconnect();
                 }
             }
 
-            awaitElement.current = setInterval(scrollToElement, 500);
+            const watcher = new MutationObserver(scrollToElement);
+            watcher.observe(document.body, { childList: true, subtree: true });
 
-            return () => clearInterval(awaitElement.current);
+            return () => watcher.disconnect();
         }
     }, []);
 
