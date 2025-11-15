@@ -58,10 +58,6 @@ const Header = () => {
         const targetElement = document.body;
         const headerMenu = headerContainer.current;
 
-        const config = {
-            attributes: true,
-        };
-
         function toggleMargin(): void {
             if (headerMenu) {
                 if (
@@ -88,7 +84,7 @@ const Header = () => {
         }
 
         const watcher = new MutationObserver(toggleMargin);
-        watcher.observe(targetElement, config);
+        watcher.observe(targetElement, { attributes: true });
 
         return () => watcher.disconnect();
     }, []);
