@@ -13,29 +13,29 @@ const Newsletter = lazy(() => import("./components/blocks/Newsletter.tsx"));
 import Footer from "./components/Footer.tsx";
 
 const App = () => {
-    const location = useLocation();
+    const { pathname, hash } = useLocation();
 
     useEffect(() => {
-        if (window.pageYOffset > 0 && location.hash === "") {
+        if (window.pageYOffset > 0 && hash === "") {
             window.scrollTo(0, 0);
         }
-    }, [location.pathname, location.hash]);
+    }, [pathname, hash]);
 
     useLayoutEffect(() => {
         const isSmoothScroll: boolean =
             document.documentElement.hasAttribute("style");
 
-        if (location.hash !== "" && !isSmoothScroll) {
+        if (hash !== "" && !isSmoothScroll) {
             document.documentElement.style.scrollBehavior = "smooth";
-        } else if (location.hash === "" && isSmoothScroll) {
+        } else if (hash === "" && isSmoothScroll) {
             document.documentElement.removeAttribute("style");
         }
-    }, [location.hash]);
+    }, [hash]);
 
     useEffect(() => {
-        if (location.hash !== "") {
+        if (hash !== "") {
             const watcher = new MutationObserver((): void => {
-                const idElement = document.querySelector(location.hash);
+                const idElement = document.querySelector(hash);
 
                 if (idElement) {
                     idElement.scrollIntoView();
@@ -47,10 +47,10 @@ const App = () => {
 
             return () => watcher.disconnect();
         }
-    }, [location.hash]);
+    }, [hash]);
 
     const isMainPath: boolean = [pages.home, pages.about, pages.tours].includes(
-        location.pathname
+        pathname
     );
 
     return (

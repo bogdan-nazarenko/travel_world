@@ -262,7 +262,7 @@ const Register = ({ valueVisibility, icon, clickFunc }: PasswordProps) => {
 
 const Authorization = () => {
     const isMobile = useMobile();
-    const location = useLocation();
+    const { pathname } = useLocation();
     const [password, setPassword] = useState(false);
 
     function togglePasswordVisibility(): void {
@@ -290,14 +290,14 @@ const Authorization = () => {
                 )}
 
                 <div className="authorization__wrap">
-                    {location.pathname === pages.login && (
+                    {pathname === pages.login && (
                         <Login
                             valueVisibility={passwordValueType}
                             icon={toggleIcon}
                             clickFunc={togglePasswordVisibility}
                         />
                     )}
-                    {location.pathname === pages.register && (
+                    {pathname === pages.register && (
                         <Register
                             valueVisibility={passwordValueType}
                             icon={toggleIcon}

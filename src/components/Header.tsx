@@ -14,13 +14,12 @@ const headerNavProps: LinkProps[] = [
 ];
 
 const HeaderNavLinks = ({ clickFunc }: ClickProps) => {
-    const location = useLocation();
+    const { pathname } = useLocation();
 
     return (
         <div className="header__nav__links">
             {headerNavProps.map(({ linkClass, url, linkName }) => {
-                const isActive: string =
-                    location.pathname === url ? active : "";
+                const isActive: string = pathname === url ? active : "";
 
                 return (
                     <Link
@@ -97,10 +96,9 @@ const Header = () => {
         }
     }
 
-    const location = useLocation();
+    const { pathname } = useLocation();
     const isAuthorization: boolean =
-        location.pathname !== pages.login &&
-        location.pathname !== pages.register;
+        pathname !== pages.login && pathname !== pages.register;
     const isMobile = useMobile();
 
     useEffect(() => {
@@ -136,7 +134,7 @@ const Header = () => {
                         {authorizationProps.map((props) => {
                             const { linkClass, url, linkName } = props;
                             const isActive: string =
-                                location.pathname === url ? active : "";
+                                pathname === url ? active : "";
 
                             return (
                                 <Link

@@ -5,12 +5,12 @@ import tourImage from "../../assets/media/images/tour_img.jpg";
 import "../../styles/blocks/Panorama.scss";
 
 const Panorama = () => {
-    const location = useLocation();
+    const { pathname } = useLocation();
 
     return (
         <section>
             <div className="container panorama_block">
-                {location.pathname === pages.about && (
+                {pathname === pages.about && (
                     <>
                         <div className="panorama__title__wrap">
                             <h1 className="panorama__title">
@@ -25,7 +25,7 @@ const Panorama = () => {
                     </>
                 )}
 
-                {location.pathname === pages.tours && (
+                {pathname === pages.tours && (
                     <>
                         <div className="panorama__title__wrap">
                             <h1 className="panorama__title">
