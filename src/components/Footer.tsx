@@ -115,6 +115,11 @@ const Footer = () => {
                             <Link
                                 className="footer__link"
                                 to={`${home}#${gallery}`}
+                                onClick={() =>
+                                    document
+                                        .getElementById(gallery)
+                                        ?.scrollIntoView({ behavior: "smooth" })
+                                }
                             >
                                 Gallery
                             </Link>
