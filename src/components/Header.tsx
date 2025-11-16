@@ -63,7 +63,8 @@ const Header = () => {
                     targetElement.offsetWidth < window.innerWidth &&
                     targetElement.classList.contains("hide-scrollbar")
                 ) {
-                    headerMenu.style.marginRight = "1.5rem";
+                    headerMenu.style.marginRight =
+                        "var(--f-scrollbar-compensate)";
                 } else if (
                     targetElement.offsetWidth < window.innerWidth &&
                     !targetElement.classList.contains("hide-scrollbar") &&
