@@ -37,6 +37,7 @@ const Newsletter = () => {
                 {isDesktop && (
                     <div className="newsletter__image">
                         <img
+                            loading="lazy"
                             className="newsletter__pic"
                             src={tourist}
                             alt="Tourist"
