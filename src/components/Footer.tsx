@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 import { pages } from "./helpers/constants.ts";
 import type { LinkProps } from "./helpers/interfaces.ts";
 import Logo from "./elements/Logo.tsx";
@@ -110,13 +109,12 @@ const Footer = () => {
                     <div className="footer__nav__links">
                         <h3 className="footer__nav__title">Quick Links</h3>
                         <div className="footer__links">
-                            <HashLink
+                            <Link
                                 className="footer__link"
                                 to={pages.home + "#gallery_section"}
-                                smooth={true}
                             >
                                 Gallery
-                            </HashLink>
+                            </Link>
                             <Link className="footer__link" to={pages.login}>
                                 Login
                             </Link>
