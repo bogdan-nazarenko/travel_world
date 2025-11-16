@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { pages } from "./helpers/constants.ts";
+import { pages, identifiers } from "./helpers/constants.ts";
 import type { LinkProps } from "./helpers/interfaces.ts";
 import Logo from "./elements/Logo.tsx";
 import {
@@ -59,6 +59,9 @@ const footerNavProps: FooterLinkProps[] = [
 ];
 
 const Footer = () => {
+    const { home } = pages;
+    const { gallery } = identifiers;
+
     return (
         <footer>
             <div className="container footer_menu">
@@ -111,7 +114,7 @@ const Footer = () => {
                         <div className="footer__links">
                             <Link
                                 className="footer__link"
-                                to={pages.home + "#gallery_section"}
+                                to={`${home}#${gallery}`}
                             >
                                 Gallery
                             </Link>

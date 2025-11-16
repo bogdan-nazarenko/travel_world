@@ -1,4 +1,5 @@
 import useFancybox from "../libs/fancybox.ts";
+import { identifiers } from "../helpers/constants.ts";
 import manali from "../../assets/media/images/manali.jpg";
 import elnido from "../../assets/media/images/el_nido.jpg";
 import pamukkale from "../../assets/media/images/pamukkale.jpg";
@@ -31,8 +32,10 @@ const Gallery = () => {
         // custom options
     });
 
+    const { gallery } = identifiers;
+
     return (
-        <section id="gallery">
+        <section id={gallery}>
             <div className="container gallery_block">
                 <div className="gallery__info">
                     <span className="block__suptitle suptitle--v2">
