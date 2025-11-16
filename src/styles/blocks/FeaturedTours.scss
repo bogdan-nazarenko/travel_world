@@ -1,12 +1,12 @@
 @use "../../styles/helpers/abstracts.scss" as *;
 
-.featured_tours_section {
+.featured_tours {
     @media (min-width: $point1) {
         padding: 5rem 0 9.2rem;
     }
 }
 
-.featured_tours {
+.featured_tours_block {
     display: block;
 }
 

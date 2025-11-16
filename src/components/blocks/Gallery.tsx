@@ -28,8 +28,8 @@ const Gallery = () => {
     });
 
     return (
-        <section id="gallery_section">
-            <div className="container gallery">
+        <section id="gallery">
+            <div className="container gallery_block">
                 <div className="gallery__info">
                     <span className="block__suptitle suptitle--v2">
                         Gallery

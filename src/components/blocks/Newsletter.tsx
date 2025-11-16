@@ -6,8 +6,8 @@ const Newsletter = () => {
     const isDesktop = useDesktop();
 
     return (
-        <section className="newsletter_section">
-            <div className="container newsletter">
+        <section className="newsletter">
+            <div className="container newsletter_block">
                 <div className="newsletter__subscribe">
                     <h2 className="block__title title--v2 newsletter__title">
                         Subscribe now to get useful traveling information

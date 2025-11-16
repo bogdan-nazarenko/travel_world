@@ -1,12 +1,12 @@
 @use "../../styles/helpers/abstracts.scss" as *;
 
-#gallery_section {
+#gallery {
     @media (min-width: $point1) {
         padding: 5rem 0 5.7rem;
     }
 }
 
-.gallery {
+.gallery_block {
     display: block;
 }
 

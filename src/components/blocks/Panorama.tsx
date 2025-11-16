@@ -9,7 +9,7 @@ const Panorama = () => {
 
     return (
         <section>
-            <div className="container panorama">
+            <div className="container panorama_block">
                 {location.pathname === pages.about && (
                     <>
                         <div className="panorama__title__wrap">

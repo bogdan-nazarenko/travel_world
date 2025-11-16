@@ -1,12 +1,12 @@
 @use "../../styles/helpers/abstracts.scss" as *;
 
-.overview_section {
+.overview {
     @media (min-width: $point1) {
         padding: 10rem 0 5rem;
     }
 }
 
-.overview {
+.overview_block {
     display: flex;
     gap: 2rem;
 

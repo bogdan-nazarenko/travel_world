@@ -1,12 +1,12 @@
 @use "../../styles/helpers/abstracts.scss" as *;
 
-.experience_section {
+.experience {
     @media (min-width: $point1) {
         padding: 5rem 0;
     }
 }
 
-.experience {
+.experience_block {
     display: flex;
     gap: 2rem;
 

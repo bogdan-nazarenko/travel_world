@@ -35,8 +35,8 @@ const ExploreImage = ({ suptitle, title, image, alt }: ExploreImageProps) => {
 
 const Explore = () => {
     return (
-        <section className="explore_section">
-            <div className="container explore">
+        <section className="explore">
+            <div className="container explore_block">
                 <div className="explore__info">
                     <span className="block__suptitle suptitle--v2">
                         Explore

@@ -63,8 +63,8 @@ const Reviews = () => {
     const isMobile = useMobile();
 
     return (
-        <section className="reviews_section">
-            <div className="container reviews">
+        <section className="reviews">
+            <div className="container reviews_block">
                 <div className="reviews_info">
                     <span className="block__suptitle suptitle--v2">
                         Fans Love

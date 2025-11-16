@@ -1,12 +1,12 @@
 @use "../../styles/helpers/abstracts.scss" as *;
 
-.services_section {
+.services {
     @media (min-width: $point1) {
         padding: 6.2rem 0;
     }
 }
 
-.services {
+.services_block {
     display: flex;
     flex-wrap: wrap;
     row-gap: 2rem;

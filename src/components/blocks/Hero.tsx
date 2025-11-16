@@ -64,8 +64,8 @@ const Hero = () => {
     }, []);
 
     return (
-        <section className="hero_section">
-            <div className="container hero">
+        <section className="hero">
+            <div className="container hero_block">
                 <div className="hero__content">
                     <div className="hero__info">
                         <span className="block__suptitle suptitle--v1 hero__suptitle">

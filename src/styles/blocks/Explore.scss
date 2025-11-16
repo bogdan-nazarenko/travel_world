@@ -1,12 +1,12 @@
 @use "../../styles/helpers/abstracts.scss" as *;
 
-.explore_section {
+.explore {
     @media (min-width: $point1) {
         padding: 5rem 0;
     }
 }
 
-.explore {
+.explore_block {
     display: block;
 }
 

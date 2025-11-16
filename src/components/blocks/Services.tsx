@@ -8,8 +8,8 @@ const servicesTitles: string[] = [
 
 const Services = ({ suptitleColor }: { suptitleColor: string }) => {
     return (
-        <section className="services_section">
-            <div className="container services">
+        <section className="services">
+            <div className="container services_block">
                 <div className="services__info">
                     <span
                         className="services__suptitle"

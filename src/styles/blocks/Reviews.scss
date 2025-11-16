@@ -1,12 +1,12 @@
 @use "../../styles/helpers/abstracts.scss" as *;
 
-.reviews_section {
+.reviews {
     @media (min-width: $point1) {
         padding: 5rem 0 5.8rem;
     }
 }
 
-.reviews {
+.reviews_block {
     display: block;
 }
 

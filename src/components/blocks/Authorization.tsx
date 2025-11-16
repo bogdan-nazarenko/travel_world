@@ -278,7 +278,7 @@ const Authorization = () => {
 
     return (
         <section>
-            <div className="container authorization">
+            <div className="container authorization_block">
                 {!isMobile && (
                     <div className="authorization__image">
                         <img

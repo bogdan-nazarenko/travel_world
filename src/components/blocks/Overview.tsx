@@ -3,8 +3,8 @@ import "../../styles/blocks/Overview.scss";
 
 const Overview = () => {
     return (
-        <section className="overview_section">
-            <div className="container overview">
+        <section className="overview">
+            <div className="container overview_block">
                 <div className="overview__info">
                     <div className="overview__info__item">
                         <h2 className="block__title title--v4 overview__title">

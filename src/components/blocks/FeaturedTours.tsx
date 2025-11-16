@@ -71,8 +71,8 @@ const toursImageProps: ToursImageProps[] = [
 
 const FeaturedTours = () => {
     return (
-        <section className="featured_tours_section">
-            <div className="container featured_tours">
+        <section className="featured_tours">
+            <div className="container featured_tours_block">
                 <h2 className="featured_tours__title">
                     Our featured <span>tours</span>
                 </h2>

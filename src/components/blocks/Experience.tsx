@@ -18,8 +18,8 @@ const experienceItemProps: { quantityText: string; description: string }[] = [
 
 const Experience = () => {
     return (
-        <section className="experience_section">
-            <div className="container experience">
+        <section className="experience">
+            <div className="container experience_block">
                 <div className="experience__info">
                     <span className="block__suptitle suptitle--v1 ">
                         Experience
