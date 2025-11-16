@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useLayoutEffect, useRef } from "react";
+import { Suspense, lazy, useEffect, useLayoutEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { pages } from "./components/helpers/constants.ts";
 import Header from "./components/Header.tsx";
@@ -31,25 +31,22 @@ const App = () => {
         }
     }, [location.hash]);
 
-    const hashOnLoad = useRef<string>(location.hash);
-
     useEffect(() => {
-        if (hashOnLoad.current !== "") {
-            function scrollToElement(): void {
-                const idElement = document.querySelector(hashOnLoad.current);
+        if (location.hash !== "") {
+            const watcher = new MutationObserver((): void => {
+                const idElement = document.querySelector(location.hash);
 
                 if (idElement) {
                     idElement.scrollIntoView();
                     watcher.disconnect();
                 }
-            }
+            });
 
-            const watcher = new MutationObserver(scrollToElement);
             watcher.observe(document.body, { childList: true, subtree: true });
 
             return () => watcher.disconnect();
         }
-    }, []);
+    }, [location.hash]);
 
     const isMainPath: boolean = [pages.home, pages.about, pages.tours].includes(
         location.pathname
