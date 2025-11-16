@@ -11,7 +11,11 @@ import "../../styles/blocks/Gallery.scss";
 
 const GalleryImage = ({ image, alt }: { image: string; alt: string }) => {
     return (
-        <a className="gallery__image" data-fancybox="gallery" href={image}>
+        <a
+            className="gallery__image"
+            data-fancybox="gallery-photo"
+            href={image}
+        >
             <img
                 loading="lazy"
                 className="gallery__pic"

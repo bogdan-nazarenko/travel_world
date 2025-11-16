@@ -93,7 +93,7 @@ const Hero = () => {
                     <div className="hero__media" ref={fancyboxRef}>
                         <a
                             className="hero__media__content"
-                            data-fancybox="hero__image"
+                            data-fancybox="hero-photo"
                             href={heroImage1}
                         >
                             <img
@@ -132,7 +132,7 @@ const Hero = () => {
                         </div>
                         <a
                             className="hero__media__content"
-                            data-fancybox="hero__image"
+                            data-fancybox="hero-photo"
                             href={heroImage2}
                         >
                             <img
