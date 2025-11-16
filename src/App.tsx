@@ -22,7 +22,8 @@ const App = () => {
     }, [location.pathname, location.hash]);
 
     useLayoutEffect(() => {
-        const isSmoothScroll = document.documentElement.hasAttribute("style");
+        const isSmoothScroll: boolean =
+            document.documentElement.hasAttribute("style");
 
         if (location.hash !== "" && !isSmoothScroll) {
             document.documentElement.style.scrollBehavior = "smooth";
