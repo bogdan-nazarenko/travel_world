@@ -1,9 +1,13 @@
 export interface PagePaths {
-    home: string;
-    about: string;
-    tours: string;
-    login: string;
-    register: string;
+    main: {
+        home: string;
+        about: string;
+        tours: string;
+    };
+    auth: {
+        login: string;
+        register: string;
+    };
 }
 
 export interface IDValues {

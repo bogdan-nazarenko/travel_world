@@ -10,13 +10,20 @@ export const primaryColor: string = "--primary-color";
 export const lightPinkColor: string = "--light-pink-color";
 
 // objects
-export const pages: PagePaths = {
-    home: "/",
-    about: "/about",
-    tours: "/tours",
-    login: "/login",
-    register: "/register",
+const pages: PagePaths = {
+    main: {
+        home: "/",
+        about: "/about",
+        tours: "/tours",
+    },
+    auth: {
+        login: "/login",
+        register: "/register",
+    },
 };
+
+export const main = pages.main;
+export const auth = pages.auth;
 
 export const identifiers: IDValues = {
     gallery: "gallery",
