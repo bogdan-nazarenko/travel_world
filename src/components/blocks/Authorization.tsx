@@ -1,7 +1,7 @@
 import { useLocation, Link } from "react-router-dom";
 import { useState } from "react";
 import { useMobile } from "../helpers/responsive.ts";
-import { pages } from "../helpers/constants.ts";
+import { auth } from "../helpers/constants.ts";
 import type { ClickProps, LinkProps } from "../helpers/interfaces.ts";
 import { Plane, TajMahal, SightsOfEurope } from "../elements/vectors.tsx";
 import accountsImage from "../../assets/media/images/accounts_img.webp";
@@ -159,7 +159,7 @@ const Login = ({ valueVisibility, icon, clickFunc }: PasswordProps) => {
                 wrapClass="login__wrap"
                 buttonName="Login"
                 description="Don’t have account?"
-                url={pages.register}
+                url={auth.register}
                 linkName="Register Now"
             />
         </form>
@@ -253,7 +253,7 @@ const Register = ({ valueVisibility, icon, clickFunc }: PasswordProps) => {
                 wrapClass="register__wrap"
                 buttonName="Create account"
                 description="Already have an account?"
-                url={pages.login}
+                url={auth.login}
                 linkName="Login"
             />
         </form>
@@ -290,14 +290,14 @@ const Authorization = () => {
                 )}
 
                 <div className="authorization__wrap">
-                    {pathname === pages.login && (
+                    {pathname === auth.login && (
                         <Login
                             valueVisibility={passwordValueType}
                             icon={toggleIcon}
                             clickFunc={togglePasswordVisibility}
                         />
                     )}
-                    {pathname === pages.register && (
+                    {pathname === auth.register && (
                         <Register
                             valueVisibility={passwordValueType}
                             icon={toggleIcon}

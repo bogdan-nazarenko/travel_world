@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { pages, identifiers } from "./helpers/constants.ts";
+import { main, auth, identifiers } from "./helpers/constants.ts";
 import type { LinkProps } from "./helpers/interfaces.ts";
 import Logo from "./elements/Logo.tsx";
 import {
@@ -59,7 +59,7 @@ const footerNavProps: FooterLinkProps[] = [
 ];
 
 const Footer = () => {
-    const { home } = pages;
+    const { home } = main;
     const { gallery } = identifiers;
 
     return (
@@ -98,13 +98,13 @@ const Footer = () => {
                     <div className="footer__nav__links">
                         <h3 className="footer__nav__title">Discover</h3>
                         <div className="footer__links">
-                            <Link className="footer__link" to={pages.home}>
+                            <Link className="footer__link" to={main.home}>
                                 Home
                             </Link>
-                            <Link className="footer__link" to={pages.about}>
+                            <Link className="footer__link" to={main.about}>
                                 About
                             </Link>
-                            <Link className="footer__link" to={pages.tours}>
+                            <Link className="footer__link" to={main.tours}>
                                 Tours
                             </Link>
                         </div>
@@ -123,10 +123,10 @@ const Footer = () => {
                             >
                                 Gallery
                             </Link>
-                            <Link className="footer__link" to={pages.login}>
+                            <Link className="footer__link" to={auth.login}>
                                 Login
                             </Link>
-                            <Link className="footer__link" to={pages.register}>
+                            <Link className="footer__link" to={auth.register}>
                                 Register
                             </Link>
                         </div>

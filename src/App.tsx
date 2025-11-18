@@ -1,6 +1,6 @@
 import { Suspense, lazy, useEffect, useLayoutEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { pages } from "./components/helpers/constants.ts";
+import { main, auth } from "./components/helpers/constants.ts";
 import Header from "./components/Header.tsx";
 import Loading from "./components/elements/Loading.tsx";
 const Home = lazy(() => import("./components/pages/Home.tsx"));
@@ -49,7 +49,7 @@ const App = () => {
         }
     }, [hash]);
 
-    const isMainPath: boolean = [pages.home, pages.about, pages.tours].includes(
+    const isMainPath: boolean = [main.home, main.about, main.tours].includes(
         pathname
     );
 
@@ -59,11 +59,11 @@ const App = () => {
             <main>
                 <Suspense fallback={<Loading />}>
                     <Routes>
-                        <Route path={pages.home} element={<Home />} />
-                        <Route path={pages.about} element={<About />} />
-                        <Route path={pages.tours} element={<Tours />} />
-                        <Route path={pages.login} element={<Login />} />
-                        <Route path={pages.register} element={<Register />} />
+                        <Route path={main.home} element={<Home />} />
+                        <Route path={main.about} element={<About />} />
+                        <Route path={main.tours} element={<Tours />} />
+                        <Route path={auth.login} element={<Login />} />
+                        <Route path={auth.register} element={<Register />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
 

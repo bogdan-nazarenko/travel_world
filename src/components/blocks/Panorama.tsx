@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { pages } from "../helpers/constants.ts";
+import { main } from "../helpers/constants.ts";
 import aboutImage from "../../assets/media/images/about_img.jpg";
 import tourImage from "../../assets/media/images/tour_img.jpg";
 import "../../styles/blocks/Panorama.scss";
@@ -10,7 +10,7 @@ const Panorama = () => {
     return (
         <section>
             <div className="container panorama_block">
-                {pathname === pages.about && (
+                {pathname === main.about && (
                     <>
                         <div className="panorama__title__wrap">
                             <h1 className="panorama__title">
@@ -25,7 +25,7 @@ const Panorama = () => {
                     </>
                 )}
 
-                {pathname === pages.tours && (
+                {pathname === main.tours && (
                     <>
                         <div className="panorama__title__wrap">
                             <h1 className="panorama__title">

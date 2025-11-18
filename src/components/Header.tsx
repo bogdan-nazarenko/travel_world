@@ -1,16 +1,16 @@
 import { useLocation, Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { useMobile } from "./helpers/responsive.ts";
-import { pages, active, open } from "./helpers/constants.ts";
+import { main, auth, active, open } from "./helpers/constants.ts";
 import type { ClickProps, LinkProps } from "./helpers/interfaces.ts";
 import Logo from "./elements/Logo.tsx";
 import "../styles/Header.scss";
 
 const headerLink: string = "header__link";
 const headerNavProps: LinkProps[] = [
-    { linkClass: headerLink, url: pages.home, linkName: "Home" },
-    { linkClass: headerLink, url: pages.about, linkName: "About" },
-    { linkClass: headerLink, url: pages.tours, linkName: "Tours" },
+    { linkClass: headerLink, url: main.home, linkName: "Home" },
+    { linkClass: headerLink, url: main.about, linkName: "About" },
+    { linkClass: headerLink, url: main.tours, linkName: "Tours" },
 ];
 
 const HeaderNavLinks = ({ clickFunc }: ClickProps) => {
@@ -40,12 +40,12 @@ const headerAuthorizationLink: string = "header__authorization__link";
 const authorizationProps: LinkProps[] = [
     {
         linkClass: headerAuthorizationLink,
-        url: pages.login,
+        url: auth.login,
         linkName: "Login",
     },
     {
         linkClass: headerAuthorizationLink,
-        url: pages.register,
+        url: auth.register,
         linkName: "Register",
     },
 ];
@@ -99,7 +99,7 @@ const Header = () => {
 
     const { pathname } = useLocation();
     const isAuthorization: boolean =
-        pathname !== pages.login && pathname !== pages.register;
+        pathname !== auth.login && pathname !== auth.register;
     const isMobile = useMobile();
 
     useEffect(() => {
