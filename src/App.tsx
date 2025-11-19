@@ -49,9 +49,7 @@ const App = () => {
         }
     }, [hash]);
 
-    const isMainPath: boolean = [main.home, main.about, main.tours].includes(
-        pathname
-    );
+    const isMainPath: boolean = Object.values(main).includes(pathname);
 
     return (
         <>
