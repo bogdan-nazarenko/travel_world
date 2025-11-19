@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useLayoutEffect } from "react";
+import { Suspense, lazy, useEffect, useLayoutEffect, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { main, auth } from "./components/helpers/constants.ts";
 import Header from "./components/Header.tsx";
@@ -32,10 +32,14 @@ const App = () => {
         }
     }, [hash]);
 
+    const hashOnLoad = useRef<string>(hash);
+
     useEffect(() => {
-        if (hash !== "") {
+        if (hashOnLoad.current !== "") {
             const watcher = new MutationObserver((): void => {
-                const idElement: Element | null = document.querySelector(hash);
+                const idElement: Element | null = document.querySelector(
+                    hashOnLoad.current
+                );
 
                 if (idElement) {
                     idElement.scrollIntoView();
@@ -47,7 +51,7 @@ const App = () => {
 
             return () => watcher.disconnect();
         }
-    }, [hash]);
+    }, []);
 
     const isMainPath: boolean = Object.values(main).includes(pathname);
 
