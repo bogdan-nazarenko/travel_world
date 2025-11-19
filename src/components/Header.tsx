@@ -57,7 +57,7 @@ const Header = () => {
         const targetElement = document.body;
         const headerMenu = headerContainer.current;
 
-        function toggleMargin(): void {
+        const watcher = new MutationObserver((): void => {
             if (headerMenu) {
                 if (
                     targetElement.offsetWidth < window.innerWidth &&
@@ -81,9 +81,7 @@ const Header = () => {
                     }
                 }
             }
-        }
-
-        const watcher = new MutationObserver(toggleMargin);
+        });
         watcher.observe(targetElement, { attributes: true });
 
         return () => watcher.disconnect();
