@@ -370,8 +370,11 @@
 
 .login__wrap {
     width: 100%;
-    max-width: 22.4rem;
     margin: 0 auto;
+
+    @media (min-width: $point3) {
+        max-width: 22.4rem;
+    }
 
     .authorization__button {
         @media (min-width: $point1) {
