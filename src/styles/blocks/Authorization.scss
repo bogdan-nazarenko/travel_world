@@ -425,12 +425,17 @@
     font-weight: 600;
     cursor: pointer;
 
-    @media (max-width: $point2) {
-        margin-bottom: 1rem;
+    @media (min-width: $point1) {
+        height: 4.2rem;
+    }
+    @media (min-width: $point3) and (max-width: $point2) {
+        height: 3.6rem;
     }
     @media (min-width: $point3) {
-        height: 4.2rem;
         font-size: 1.8rem;
+    }
+    @media (max-width: $point2) {
+        margin-bottom: 1rem;
     }
     @media (max-width: $point4) {
         height: 3.2rem;
