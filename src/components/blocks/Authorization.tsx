@@ -66,6 +66,7 @@ const AuthorizationSocials = () => {
                         key={url}
                         className="authorization__social__link"
                         href={url}
+                        target="_blank"
                     ></a>
                 );
             })}
