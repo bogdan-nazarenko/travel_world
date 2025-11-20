@@ -56,7 +56,7 @@ const footerNavProps: FooterLinkProps[] = [
         icon: <Phone />,
         label: "Phone: ",
         url: "tel:00022200222",
-        linkName: "tel:00022200222",
+        linkName: "00022200222",
     },
 ];
 
