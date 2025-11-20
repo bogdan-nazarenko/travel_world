@@ -53,6 +53,12 @@ const App = () => {
         }
     }, []);
 
+    useEffect(() => {
+        if (hash !== "") {
+            document.querySelector(hash)?.scrollIntoView();
+        }
+    }, [hash]);
+
     const isMainPath: boolean = Object.values(main).includes(pathname);
 
     return (
