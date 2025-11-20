@@ -51,21 +51,24 @@ const AuthorizationArea = (props: FormAreaProps) => {
     );
 };
 
+const authSocialLinkProps: string[] = [
+    "https://www.google.com/",
+    "https://www.facebook.com/",
+    "https://www.apple.com/",
+];
+
 const AuthorizationSocials = () => {
     return (
         <div className="authorization__socials">
-            <a
-                className="authorization__social__link"
-                href="https://www.google.com/"
-            ></a>
-            <a
-                className="authorization__social__link"
-                href="https://www.facebook.com/"
-            ></a>
-            <a
-                className="authorization__social__link"
-                href="https://www.apple.com/"
-            ></a>
+            {authSocialLinkProps.map((url) => {
+                return (
+                    <a
+                        key={url}
+                        className="authorization__social__link"
+                        href={url}
+                    ></a>
+                );
+            })}
         </div>
     );
 };
