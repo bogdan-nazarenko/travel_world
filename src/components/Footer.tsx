@@ -16,6 +16,7 @@ import "../styles/Footer.scss";
 interface FooterLinkProps extends LinkProps {
     icon: React.ReactElement;
     label?: string;
+    target?: string;
 }
 
 const footerSocialProps: FooterLinkProps[] = [
@@ -42,6 +43,7 @@ const footerNavProps: FooterLinkProps[] = [
         icon: <PinV2 />,
         label: "Address: ",
         url: "https://www.google.com/maps/",
+        target: "_blank",
         linkName: "Lorem",
     },
     {
@@ -135,7 +137,8 @@ const Footer = () => {
                         <h3 className="footer__nav__title">Contact</h3>
                         <div className="footer__links">
                             {footerNavProps.map((props) => {
-                                const { icon, label, url, linkName } = props;
+                                const { icon, label, url, target, linkName } =
+                                    props;
 
                                 return (
                                     <div
@@ -151,12 +154,7 @@ const Footer = () => {
                                         <a
                                             className="footer__link"
                                             href={url}
-                                            target={
-                                                url ===
-                                                "https://www.google.com/maps/"
-                                                    ? "_blank"
-                                                    : "_self"
-                                            }
+                                            target={target}
                                         >
                                             {linkName}
                                         </a>
