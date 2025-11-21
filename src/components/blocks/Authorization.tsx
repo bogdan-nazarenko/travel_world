@@ -51,7 +51,7 @@ const AuthorizationArea = (props: FormAreaProps) => {
     );
 };
 
-const authSocialLinkProps: string[] = [
+const authSocialLinks: string[] = [
     "https://www.google.com/",
     "https://www.facebook.com/",
     "https://www.apple.com/",
@@ -60,7 +60,7 @@ const authSocialLinkProps: string[] = [
 const AuthorizationSocials = () => {
     return (
         <div className="authorization__socials">
-            {authSocialLinkProps.map((url) => {
+            {authSocialLinks.map((url) => {
                 return (
                     <a
                         key={url}
