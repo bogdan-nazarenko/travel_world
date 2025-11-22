@@ -150,6 +150,9 @@
     @media (max-width: $point4) {
         font-size: 1.1rem;
     }
+    @media (max-width: 403px) {
+        max-width: min-content;
+    }
 }
 
 .search__description {
