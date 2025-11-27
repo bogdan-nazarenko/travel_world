@@ -65,20 +65,8 @@ const Header = () => {
                 ) {
                     headerMenu.style.marginRight =
                         "var(--f-scrollbar-compensate)";
-                } else if (
-                    targetElement.offsetWidth < window.innerWidth &&
-                    !targetElement.classList.contains("hide-scrollbar") &&
-                    headerMenu.hasAttribute("style")
-                ) {
+                } else if (headerMenu.hasAttribute("style")) {
                     headerMenu.removeAttribute("style");
-                } else {
-                    if (
-                        targetElement.offsetWidth === window.innerWidth &&
-                        !targetElement.classList.contains("hide-scrollbar") &&
-                        headerMenu.hasAttribute("style")
-                    ) {
-                        headerMenu.removeAttribute("style");
-                    }
                 }
             }
         });
