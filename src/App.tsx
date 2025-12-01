@@ -41,10 +41,8 @@ const App = () => {
                     hashOnLoad.current
                 );
 
-                if (idElement) {
-                    idElement.scrollIntoView();
-                    watcher.disconnect();
-                }
+                idElement?.scrollIntoView();
+                watcher.disconnect();
             });
 
             watcher.observe(document.body, { childList: true, subtree: true });
