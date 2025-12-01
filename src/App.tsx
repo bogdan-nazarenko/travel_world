@@ -37,11 +37,7 @@ const App = () => {
     useEffect(() => {
         if (hashOnLoad.current !== "") {
             const watcher = new MutationObserver((): void => {
-                const idElement: Element | null = document.querySelector(
-                    hashOnLoad.current
-                );
-
-                idElement?.scrollIntoView();
+                document.querySelector(hashOnLoad.current)?.scrollIntoView();
                 watcher.disconnect();
             });
 
