@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useLayoutEffect, useRef } from "react";
+import { Suspense, lazy, useEffect, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { main, auth } from "./components/helpers/constants.ts";
 import Header from "./components/Header.tsx";
@@ -20,17 +20,6 @@ const App = () => {
             window.scrollTo(0, 0);
         }
     }, [pathname, hash]);
-
-    useLayoutEffect(() => {
-        const isSmoothScroll: boolean =
-            document.documentElement.hasAttribute("style");
-
-        if (hash !== "" && !isSmoothScroll) {
-            document.documentElement.style.scrollBehavior = "smooth";
-        } else if (hash === "" && isSmoothScroll) {
-            document.documentElement.removeAttribute("style");
-        }
-    }, [hash]);
 
     const hashOnLoad = useRef<string>(hash);
 
