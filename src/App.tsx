@@ -26,7 +26,9 @@ const App = () => {
     useEffect(() => {
         if (hashOnLoad.current !== "") {
             const watcher = new MutationObserver((): void => {
-                document.querySelector(hashOnLoad.current)?.scrollIntoView();
+                document
+                    .querySelector(hashOnLoad.current)
+                    ?.scrollIntoView({ behavior: "smooth" });
                 watcher.disconnect();
             });
 
@@ -38,7 +40,9 @@ const App = () => {
 
     useEffect(() => {
         if (hash !== "") {
-            document.querySelector(hash)?.scrollIntoView();
+            document
+                .querySelector(hash)
+                ?.scrollIntoView({ behavior: "smooth" });
         }
     }, [hash]);
 
