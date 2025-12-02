@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useRef } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { main, auth } from "./components/helpers/constants.ts";
 import Header from "./components/Header.tsx";
@@ -20,23 +20,6 @@ const App = () => {
             window.scrollTo(0, 0);
         }
     }, [pathname, hash]);
-
-    const hashOnLoad = useRef<string>(hash);
-
-    useEffect(() => {
-        if (hashOnLoad.current !== "") {
-            const watcher = new MutationObserver((): void => {
-                document
-                    .querySelector(hashOnLoad.current)
-                    ?.scrollIntoView({ behavior: "smooth" });
-                watcher.disconnect();
-            });
-
-            watcher.observe(document.body, { childList: true, subtree: true });
-
-            return () => watcher.disconnect();
-        }
-    }, []);
 
     useEffect(() => {
         if (hash !== "") {
