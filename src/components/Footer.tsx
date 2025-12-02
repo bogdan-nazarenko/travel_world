@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { main, auth, identifiers } from "./helpers/constants.ts";
 import type { LinkProps } from "./helpers/interfaces.ts";
 import Logo from "./elements/Logo.tsx";
@@ -61,6 +61,7 @@ const footerNavProps: FooterLinkProps[] = [
 ];
 
 const Footer = () => {
+    const { hash } = useLocation();
     const { home } = main;
     const { gallery } = identifiers;
 
@@ -117,11 +118,15 @@ const Footer = () => {
                             <Link
                                 className="footer__link"
                                 to={`${home}#${gallery}`}
-                                onClick={() =>
-                                    document
-                                        .getElementById(gallery)
-                                        ?.scrollIntoView({ behavior: "smooth" })
-                                }
+                                onClick={() => {
+                                    if (hash === `#${gallery}`) {
+                                        document
+                                            .getElementById(gallery)
+                                            ?.scrollIntoView({
+                                                behavior: "smooth",
+                                            });
+                                    }
+                                }}
                             >
                                 Gallery
                             </Link>
