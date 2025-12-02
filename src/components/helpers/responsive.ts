@@ -4,7 +4,7 @@ export function useDesktop(): boolean {
     const [desktop, setDesktop] = useState(false);
 
     useEffect(() => {
-        const result = () =>
+        const result = (): void =>
             window.innerWidth >= 1024 ? setDesktop(true) : setDesktop(false);
 
         result();
@@ -20,7 +20,7 @@ export function useMobile(): boolean {
     const [mobile, setMobile] = useState(false);
 
     useEffect(() => {
-        const result = () =>
+        const result = (): void =>
             window.innerWidth < 768 ? setMobile(true) : setMobile(false);
 
         result();
