@@ -23,9 +23,16 @@ const App = () => {
 
     useEffect(() => {
         if (hash !== "") {
-            document
-                .querySelector(hash)
-                ?.scrollIntoView({ behavior: "smooth" });
+            const scrollToId = setInterval(() => {
+                const idElement: Element | null = document.querySelector(hash);
+
+                if (idElement) {
+                    idElement.scrollIntoView({ behavior: "smooth" });
+                    clearInterval(scrollToId);
+                }
+            }, 100);
+
+            return () => clearInterval(scrollToId);
         }
     }, [hash]);
 
