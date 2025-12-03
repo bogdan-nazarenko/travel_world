@@ -54,14 +54,13 @@ const Header = () => {
     const headerContainer = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-        const targetElement = document.body;
         const headerMenu = headerContainer.current;
 
-        const watcher = new MutationObserver((): void => {
+        const watcher = new MutationObserver(() => {
             if (headerMenu) {
                 if (
-                    targetElement.offsetWidth < window.innerWidth &&
-                    targetElement.classList.contains("hide-scrollbar")
+                    document.body.offsetWidth < window.innerWidth &&
+                    document.body.classList.contains("hide-scrollbar")
                 ) {
                     headerMenu.style.marginRight =
                         "var(--f-scrollbar-compensate)";
@@ -70,7 +69,7 @@ const Header = () => {
                 }
             }
         });
-        watcher.observe(targetElement, { attributes: true });
+        watcher.observe(document.body, { attributes: true });
 
         return () => watcher.disconnect();
     }, []);
