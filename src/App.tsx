@@ -36,7 +36,7 @@ const App = () => {
         }
     }, [hash]);
 
-    const isMainPath: boolean = Object.values(main).includes(pathname);
+    const isPathFromMain: boolean = Object.values(main).includes(pathname);
 
     return (
         <>
@@ -52,7 +52,7 @@ const App = () => {
                         <Route path="*" element={<NotFound />} />
                     </Routes>
 
-                    {isMainPath && <Newsletter />}
+                    {isPathFromMain && <Newsletter />}
                 </Suspense>
             </main>
             <Footer />
