@@ -24,6 +24,10 @@ body {
     color: var(--heading-color);
 }
 
+body.hide-scrollbar .header_menu {
+    margin-right: var(--f-scrollbar-compensate);
+}
+
 .wrapper {
     width: 100%;
     display: flex;

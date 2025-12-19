@@ -1,5 +1,5 @@
 import { useLocation, Link } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useMobile } from "./helpers/responsive.ts";
 import { main, auth, active, open } from "./helpers/constants.ts";
 import type { ClickProps, LinkProps } from "./helpers/interfaces.ts";
@@ -51,29 +51,6 @@ const authorizationProps: LinkProps[] = [
 ];
 
 const Header = () => {
-    const headerContainer = useRef<HTMLDivElement | null>(null);
-
-    useEffect(() => {
-        const headerMenu = headerContainer.current;
-
-        const watcher = new MutationObserver(() => {
-            if (headerMenu) {
-                if (
-                    document.body.offsetWidth < window.innerWidth &&
-                    document.body.classList.contains("hide-scrollbar")
-                ) {
-                    headerMenu.style.marginRight =
-                        "var(--f-scrollbar-compensate)";
-                } else if (headerMenu.hasAttribute("style")) {
-                    headerMenu.removeAttribute("style");
-                }
-            }
-        });
-        watcher.observe(document.body, { attributes: true });
-
-        return () => watcher.disconnect();
-    }, []);
-
     const [isMenuOpen, setMenuOpen] = useState(false);
 
     function closeMenu(): void {
@@ -106,7 +83,7 @@ const Header = () => {
 
     return (
         <header>
-            <div className="container header_menu" ref={headerContainer}>
+            <div className="container header_menu">
                 <Logo clickFunc={closeMenu} />
 
                 <nav
