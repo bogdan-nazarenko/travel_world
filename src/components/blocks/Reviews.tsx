@@ -91,6 +91,9 @@ const Reviews = () => {
                             spaceBetween: 20,
                             slidesPerView: 1,
                             slidesPerGroup: 1,
+                            pagination: {
+                                dynamicBullets: true,
+                            },
                         },
                         768: {
                             spaceBetween: 30,
