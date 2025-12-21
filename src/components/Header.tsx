@@ -60,8 +60,7 @@ const Header = () => {
     }
 
     const { pathname } = useLocation();
-    const isAuthorization: boolean =
-        pathname !== auth.login && pathname !== auth.register;
+    const isPathFromMain: boolean = Object.values(main).includes(pathname);
     const isMobile = useMobile();
 
     useEffect(() => {
@@ -89,7 +88,7 @@ const Header = () => {
                 <nav
                     className={`header__navs ${isMenuOpen ? open : ""}`.trim()}
                 >
-                    {(isAuthorization || isMobile) && (
+                    {(isPathFromMain || isMobile) && (
                         <HeaderNavLinks clickFunc={closeMenu} />
                     )}
 
