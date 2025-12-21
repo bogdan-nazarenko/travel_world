@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/swiper.css";
-import { useMobile } from "../helpers/responsive.ts";
+import { active } from "../helpers/constants.ts";
 import john from "../../assets/media/images/john.webp";
 import ally from "../../assets/media/images/ally.webp";
 import alex from "../../assets/media/images/alex.webp";
@@ -60,8 +60,6 @@ const reviewsContentProps: ReviewsContentProps[] = [
 ];
 
 const Reviews = () => {
-    const isMobile = useMobile();
-
     return (
         <section className="reviews">
             <div className="container reviews_block">
@@ -82,14 +80,12 @@ const Reviews = () => {
                         delay: 5000,
                         disableOnInteraction: false,
                     }}
-                    pagination={
-                        !isMobile && {
-                            clickable: true,
-                            clickableClass: "reviews__slider__pagination",
-                            bulletClass: "reviews__slider__bullet",
-                            bulletActiveClass: "bullet--active",
-                        }
-                    }
+                    pagination={{
+                        clickable: true,
+                        clickableClass: "reviews__slider__pagination",
+                        bulletClass: "reviews__slider__bullet",
+                        bulletActiveClass: active,
+                    }}
                     breakpoints={{
                         1: {
                             spaceBetween: 20,

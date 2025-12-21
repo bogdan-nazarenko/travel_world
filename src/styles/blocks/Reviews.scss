@@ -97,7 +97,7 @@
         transition: var(--trans);
     }
 
-    &.bullet--active::before {
+    &#{$active}::before {
         background-color: var(--text-color);
     }
 }
