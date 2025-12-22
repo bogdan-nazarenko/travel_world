@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/swiper.css";
+import { useMobile } from "../helpers/responsive.ts";
 import { active } from "../helpers/constants.ts";
 import john from "../../assets/media/images/john.webp";
 import ally from "../../assets/media/images/ally.webp";
@@ -60,6 +62,18 @@ const reviewsContentProps: ReviewsContentProps[] = [
 ];
 
 const Reviews = () => {
+    const isMobile = useMobile();
+
+    useEffect(() => {
+        const pagination: HTMLDivElement | null = document.querySelector(
+            ".reviews__slider__pagination"
+        );
+
+        if (!isMobile && pagination?.hasAttribute("style")) {
+            pagination.removeAttribute("style");
+        }
+    }, [isMobile]);
+
     return (
         <section className="reviews">
             <div className="container reviews_block">
@@ -85,15 +99,13 @@ const Reviews = () => {
                         clickableClass: "reviews__slider__pagination",
                         bulletClass: "reviews__slider__bullet",
                         bulletActiveClass: active,
+                        dynamicBullets: isMobile,
                     }}
                     breakpoints={{
                         1: {
                             spaceBetween: 20,
                             slidesPerView: 1,
                             slidesPerGroup: 1,
-                            pagination: {
-                                dynamicBullets: true,
-                            },
                         },
                         768: {
                             spaceBetween: 30,
