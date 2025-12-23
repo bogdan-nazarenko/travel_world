@@ -4,8 +4,7 @@ export function useDesktop(): boolean {
     const [desktop, setDesktop] = useState(false);
 
     useEffect(() => {
-        const result = (): void =>
-            window.innerWidth >= 1024 ? setDesktop(true) : setDesktop(false);
+        const result = (): void => setDesktop(window.innerWidth >= 1024);
 
         result();
         window.addEventListener("resize", result);
@@ -20,8 +19,7 @@ export function useMobile(): boolean {
     const [mobile, setMobile] = useState(false);
 
     useEffect(() => {
-        const result = (): void =>
-            window.innerWidth < 768 ? setMobile(true) : setMobile(false);
+        const result = (): void => setMobile(window.innerWidth < 768);
 
         result();
         window.addEventListener("resize", result);

@@ -72,14 +72,6 @@ const Header = () => {
         }
     }, [isMenuOpen, isMobile]);
 
-    function toggleMenu(): void {
-        if (isMenuOpen === false) {
-            setMenuOpen(true);
-        } else {
-            setMenuOpen(false);
-        }
-    }
-
     return (
         <header>
             <div className="container header_menu">
@@ -115,7 +107,7 @@ const Header = () => {
                 {isMobile && (
                     <button
                         className={`header__menu__button ${isMenuOpen ? open : ""}`.trim()}
-                        onClick={toggleMenu}
+                        onClick={() => setMenuOpen(!isMenuOpen)}
                     >
                         <svg
                             className="menu__icon"

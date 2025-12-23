@@ -63,14 +63,6 @@ const SearchInput = () => {
 const SearchBar = () => {
     const [isInput, setInput] = useState(false);
 
-    function toggleSearchComponent(): void {
-        if (isInput === false) {
-            setInput(true);
-        } else {
-            setInput(false);
-        }
-    }
-
     return (
         <div className="search__bar">
             <div className="search__elements">
@@ -83,7 +75,7 @@ const SearchBar = () => {
                     style={{
                         backgroundColor: `var(${isInput ? primaryColor : secondaryColor})`,
                     }}
-                    onClick={toggleSearchComponent}
+                    onClick={() => setInput(!isInput)}
                 >
                     <Search />
                 </button>

@@ -270,11 +270,7 @@ const Authorization = () => {
     const [password, setPassword] = useState(false);
 
     function togglePasswordVisibility(): void {
-        if (password === false) {
-            setPassword(true);
-        } else {
-            setPassword(false);
-        }
+        setPassword(!password);
     }
 
     const passwordValueType: string = password ? "text" : "password";

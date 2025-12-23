@@ -35,9 +35,7 @@ const Hero = () => {
     function videoFullScreen(): void {
         const video = videoFile.current;
 
-        if (video) {
-            video.requestFullscreen();
-        }
+        video?.requestFullscreen();
     }
 
     useEffect(() => {
@@ -45,8 +43,7 @@ const Hero = () => {
 
         const playSetter = () => setPlay(true);
         const pauseSetter = () => setPlay(false);
-        const viewSetter = () =>
-            document.fullscreenElement ? setView(true) : setView(false);
+        const viewSetter = () => setView(document.fullscreenElement !== null);
 
         if (video) {
             video.addEventListener("play", playSetter);
