@@ -10,10 +10,6 @@ export interface PagePaths {
     };
 }
 
-export interface IDValues {
-    gallery: string;
-}
-
 export interface ClickProps {
     clickFunc?: () => void;
 }

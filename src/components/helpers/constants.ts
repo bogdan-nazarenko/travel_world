@@ -1,4 +1,4 @@
-import type { PagePaths, IDValues } from "./interfaces.ts";
+import type { PagePaths } from "./interfaces.ts";
 
 // modifiers
 export const active: string = "active";
@@ -24,7 +24,3 @@ const pages: PagePaths = {
 
 export const main = pages.main;
 export const auth = pages.auth;
-
-export const identifiers: IDValues = {
-    gallery: "gallery",
-};

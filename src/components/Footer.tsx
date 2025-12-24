@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { main, auth, identifiers } from "./helpers/constants.ts";
+import { main, auth } from "./helpers/constants.ts";
 import type { LinkProps } from "./helpers/interfaces.ts";
 import Logo from "./elements/Logo.tsx";
 import {
@@ -63,7 +63,6 @@ const footerNavProps: FooterLinkProps[] = [
 const Footer = () => {
     const { hash } = useLocation();
     const { home } = main;
-    const { gallery } = identifiers;
 
     return (
         <footer>
@@ -117,11 +116,11 @@ const Footer = () => {
                         <div className="footer__links">
                             <Link
                                 className="footer__link"
-                                to={`${home}#${gallery}`}
+                                to={`${home}#gallery`}
                                 onClick={() => {
-                                    if (hash === `#${gallery}`) {
+                                    if (hash === "#gallery") {
                                         document
-                                            .getElementById(gallery)
+                                            .getElementById("gallery")
                                             ?.scrollIntoView({
                                                 behavior: "smooth",
                                             });
