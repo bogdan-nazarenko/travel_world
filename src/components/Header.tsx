@@ -75,13 +75,17 @@ const Header = () => {
     return (
         <header>
             <div className="container header_menu">
-                <Logo clickFunc={closeMenu} />
+                <Logo
+                    clickFunc={isMobile && isMenuOpen ? closeMenu : undefined}
+                />
 
                 <nav
                     className={`header__navs ${isMenuOpen ? open : ""}`.trim()}
                 >
                     {(isPathFromMain || isMobile) && (
-                        <HeaderNavLinks clickFunc={closeMenu} />
+                        <HeaderNavLinks
+                            clickFunc={isMobile ? closeMenu : undefined}
+                        />
                     )}
 
                     <div className="header__authorization">
@@ -95,7 +99,7 @@ const Header = () => {
                                     key={url}
                                     className={`${linkClass} ${isActive}`.trim()}
                                     to={url}
-                                    onClick={closeMenu}
+                                    onClick={isMobile ? closeMenu : undefined}
                                 >
                                     {linkName}
                                 </Link>
