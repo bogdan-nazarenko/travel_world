@@ -117,15 +117,17 @@ const Footer = () => {
                             <Link
                                 className="footer__link"
                                 to={`${home}#gallery`}
-                                onClick={() => {
-                                    if (hash === "#gallery") {
-                                        document
-                                            .getElementById("gallery")
-                                            ?.scrollIntoView({
-                                                behavior: "smooth",
-                                            });
-                                    }
-                                }}
+                                onClick={
+                                    hash === "#gallery"
+                                        ? () => {
+                                              document
+                                                  .getElementById("gallery")
+                                                  ?.scrollIntoView({
+                                                      behavior: "smooth",
+                                                  });
+                                          }
+                                        : undefined
+                                }
                             >
                                 Gallery
                             </Link>
