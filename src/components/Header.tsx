@@ -54,9 +54,7 @@ const Header = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
 
     function closeMenu(): void {
-        if (isMenuOpen === true) {
-            setMenuOpen(false);
-        }
+        setMenuOpen(false);
     }
 
     const { pathname } = useLocation();
