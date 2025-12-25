@@ -103,7 +103,7 @@
             transform: scale(0.66);
         }
 
-        &:not(&#{$active}, &:has(+ &#{$active}), &#{$active} + &)::before {
+        &:not(&:has(+ &#{$active}), &#{$active}, &#{$active} + &)::before {
             transform: scale(0.33);
         }
     }
