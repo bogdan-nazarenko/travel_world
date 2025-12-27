@@ -1,8 +1,7 @@
-import { useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { useEffect, useRef } from "react";
+import { Swiper, SwiperSlide, type SwiperRef } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/swiper.css";
-import { useMobile } from "../helpers/responsive.ts";
 import { active } from "../helpers/constants.ts";
 import john from "../../assets/media/images/john.webp";
 import ally from "../../assets/media/images/ally.webp";
@@ -62,17 +61,33 @@ const reviewsContentProps: ReviewsContentProps[] = [
 ];
 
 const Reviews = () => {
-    const isMobile = useMobile();
+    const slider = useRef<SwiperRef | null>(null);
+    const paginationMod: string = "swiper-pagination-bullets-dynamic";
 
     useEffect(() => {
         const pagination: HTMLDivElement | null = document.querySelector(
             ".reviews__slider__pagination"
         );
 
-        if (!isMobile && pagination?.hasAttribute("style")) {
-            pagination.removeAttribute("style");
+        function updatePagination(): void {
+            slider.current?.swiper.pagination.destroy();
+            slider.current?.swiper.pagination.init();
+            slider.current?.swiper.pagination.update();
+
+            if (window.innerWidth >= 768) {
+                if (pagination?.classList.contains(paginationMod)) {
+                    pagination.classList.remove(paginationMod);
+                }
+                if (pagination?.hasAttribute("style")) {
+                    pagination.removeAttribute("style");
+                }
+            }
         }
-    }, [isMobile]);
+
+        window.addEventListener("resize", updatePagination);
+
+        return () => window.removeEventListener("resize", updatePagination);
+    }, []);
 
     return (
         <section className="reviews">
@@ -88,6 +103,7 @@ const Reviews = () => {
 
                 <Swiper
                     className="reviews__slider"
+                    ref={slider}
                     modules={[Autoplay, Pagination]}
                     loop={true}
                     autoplay={{
@@ -99,23 +115,31 @@ const Reviews = () => {
                         clickableClass: "reviews__slider__pagination",
                         bulletClass: "reviews__slider__bullet",
                         bulletActiveClass: active,
-                        dynamicBullets: isMobile,
                     }}
                     breakpoints={{
                         1: {
                             spaceBetween: 20,
                             slidesPerView: 1,
                             slidesPerGroup: 1,
+                            pagination: {
+                                dynamicBullets: true,
+                            },
                         },
                         768: {
                             spaceBetween: 30,
                             slidesPerView: 2,
                             slidesPerGroup: 2,
+                            pagination: {
+                                dynamicBullets: false,
+                            },
                         },
                         1024: {
                             spaceBetween: 46,
                             slidesPerView: 3,
                             slidesPerGroup: 3,
+                            pagination: {
+                                dynamicBullets: false,
+                            },
                         },
                     }}
                 >
