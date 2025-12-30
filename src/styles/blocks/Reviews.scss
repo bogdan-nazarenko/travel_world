@@ -21,10 +21,6 @@
 .reviews__slide {
     user-select: none;
     cursor: pointer;
-
-    @media (min-width: $point1) {
-        max-width: 34.3rem;
-    }
 }
 
 .reviews__text {
