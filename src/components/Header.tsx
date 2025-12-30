@@ -37,7 +37,7 @@ const HeaderNavLinks = ({ clickFunc }: ClickProps) => {
 };
 
 const headerAuthLink: string = "header__authorization__link";
-const authorizationProps: LinkProps[] = [
+const headerAuthProps: LinkProps[] = [
     { linkClass: headerAuthLink, url: auth.login, linkName: "Login" },
     { linkClass: headerAuthLink, url: auth.register, linkName: "Register" },
 ];
@@ -79,7 +79,7 @@ const Header = () => {
                     )}
 
                     <div className="header__authorization">
-                        {authorizationProps.map((props) => {
+                        {headerAuthProps.map((props) => {
                             const { linkClass, url, linkName } = props;
                             const isActive: string =
                                 pathname === url ? active : "";

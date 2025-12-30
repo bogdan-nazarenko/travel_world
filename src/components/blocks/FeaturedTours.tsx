@@ -10,13 +10,13 @@ import phiphi from "../../assets/media/images/phiphi.jpg";
 import elnido from "../../assets/media/images/el_nido.jpg";
 import "../../styles/blocks/FeaturedTours.scss";
 
-interface ToursImageProps {
+interface TourImageProps {
     suptitle: string;
     title: string;
     image: string;
 }
 
-const toursImageProps: ToursImageProps[] = [
+const tourImageProps: TourImageProps[] = [
     { suptitle: "Dubai", title: "UAE", image: dubai },
     { suptitle: "Bali", title: "Indonesia", image: bali },
     { suptitle: "Sydney", title: "Australia", image: sydney },
@@ -37,7 +37,7 @@ const FeaturedTours = () => {
                     Our featured <span>tours</span>
                 </h2>
                 <div className="featured_tours__images">
-                    {toursImageProps.map(({ suptitle, title, image }) => {
+                    {tourImageProps.map(({ suptitle, title, image }) => {
                         return (
                             <div
                                 key={suptitle}
