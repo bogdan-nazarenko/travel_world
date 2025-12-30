@@ -36,18 +36,10 @@ const HeaderNavLinks = ({ clickFunc }: ClickProps) => {
     );
 };
 
-const headerAuthorizationLink: string = "header__authorization__link";
+const headerAuthLink: string = "header__authorization__link";
 const authorizationProps: LinkProps[] = [
-    {
-        linkClass: headerAuthorizationLink,
-        url: auth.login,
-        linkName: "Login",
-    },
-    {
-        linkClass: headerAuthorizationLink,
-        url: auth.register,
-        linkName: "Register",
-    },
+    { linkClass: headerAuthLink, url: auth.login, linkName: "Login" },
+    { linkClass: headerAuthLink, url: auth.register, linkName: "Register" },
 ];
 
 const Header = () => {
