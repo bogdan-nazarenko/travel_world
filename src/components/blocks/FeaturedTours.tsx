@@ -17,56 +17,16 @@ interface ToursImageProps {
 }
 
 const toursImageProps: ToursImageProps[] = [
-    {
-        suptitle: "Dubai",
-        title: "UAE",
-        image: dubai,
-    },
-    {
-        suptitle: "Bali",
-        title: "Indonesia",
-        image: bali,
-    },
-    {
-        suptitle: "Sydney",
-        title: "Australia",
-        image: sydney,
-    },
-    {
-        suptitle: "Phetchabun",
-        title: "Thailand",
-        image: phetchabun,
-    },
-    {
-        suptitle: "Wuxi",
-        title: "China",
-        image: wuxi,
-    },
-    {
-        suptitle: "Big Ben",
-        title: "London",
-        image: london,
-    },
-    {
-        suptitle: "Paris",
-        title: "France",
-        image: paris,
-    },
-    {
-        suptitle: "Maafushi Island",
-        title: "Maldives",
-        image: maafushi,
-    },
-    {
-        suptitle: "Phi Phi Islands",
-        title: "Thailand",
-        image: phiphi,
-    },
-    {
-        suptitle: "El Nido",
-        title: "Philippines",
-        image: elnido,
-    },
+    { suptitle: "Dubai", title: "UAE", image: dubai },
+    { suptitle: "Bali", title: "Indonesia", image: bali },
+    { suptitle: "Sydney", title: "Australia", image: sydney },
+    { suptitle: "Phetchabun", title: "Thailand", image: phetchabun },
+    { suptitle: "Wuxi", title: "China", image: wuxi },
+    { suptitle: "Big Ben", title: "London", image: london },
+    { suptitle: "Paris", title: "France", image: paris },
+    { suptitle: "Maafushi Island", title: "Maldives", image: maafushi },
+    { suptitle: "Phi Phi Islands", title: "Thailand", image: phiphi },
+    { suptitle: "El Nido", title: "Philippines", image: elnido },
 ];
 
 const FeaturedTours = () => {

@@ -2,18 +2,9 @@ import experienceImage from "../../assets/media/images/experience.png";
 import "../../styles/blocks/Experience.scss";
 
 const experienceItemProps: { quantityText: string; description: string }[] = [
-    {
-        quantityText: "12k+",
-        description: "Successful trip",
-    },
-    {
-        quantityText: "2k+",
-        description: "Regular clients",
-    },
-    {
-        quantityText: "15",
-        description: "Year experience",
-    },
+    { quantityText: "12k+", description: "Successful trip" },
+    { quantityText: "2k+", description: "Regular clients" },
+    { quantityText: "15", description: "Year experience" },
 ];
 
 const Experience = () => {

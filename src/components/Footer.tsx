@@ -20,22 +20,10 @@ interface FooterLinkProps extends LinkProps {
 }
 
 const footerSocialProps: FooterLinkProps[] = [
-    {
-        url: "https://www.youtube.com/",
-        icon: <Youtube />,
-    },
-    {
-        url: "https://x.com/",
-        icon: <Twitter />,
-    },
-    {
-        url: "https://www.facebook.com/",
-        icon: <Facebook />,
-    },
-    {
-        url: "https://www.instagram.com/",
-        icon: <Instagram />,
-    },
+    { url: "https://www.youtube.com/", icon: <Youtube /> },
+    { url: "https://x.com/", icon: <Twitter /> },
+    { url: "https://www.facebook.com/", icon: <Facebook /> },
+    { url: "https://www.instagram.com/", icon: <Instagram /> },
 ];
 
 const footerNavProps: FooterLinkProps[] = [

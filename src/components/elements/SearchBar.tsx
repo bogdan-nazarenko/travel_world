@@ -10,21 +10,9 @@ interface SearchItemProps {
 }
 
 const searchItemProps: SearchItemProps[] = [
-    {
-        icon: <PinV1 />,
-        title: "Location",
-        description: "Where are you going?",
-    },
-    {
-        icon: <PinsDistance />,
-        title: "Distance",
-        description: "Distance k/m",
-    },
-    {
-        icon: <People />,
-        title: "Max People",
-        description: "0",
-    },
+    { icon: <PinV1 />, title: "Location", description: "Where are you going?" },
+    { icon: <PinsDistance />, title: "Distance", description: "Distance k/m" },
+    { icon: <People />, title: "Max People", description: "0" },
 ];
 
 const SearchItemsGroup = () => {
