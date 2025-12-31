@@ -94,12 +94,12 @@
         min-width: 3rem;
         height: 3rem;
 
-        &:has(+ &#{$active})::before,
+        &:has(+ #{$active})::before,
         &#{$active} + &::before {
             transform: scale(0.66);
         }
 
-        &:not(&:has(+ &#{$active}), &#{$active}, &#{$active} + &)::before {
+        &:not(:has(+ #{$active}), #{$active})::before {
             transform: scale(0.33);
         }
     }

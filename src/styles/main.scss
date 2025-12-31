@@ -63,7 +63,7 @@ main {
 section {
     width: 100%;
 
-    &:not(section:has(.panorama_block), section:has(.authorization_block)) {
+    &:not(:has(.panorama_block), :has(.authorization_block)) {
         @media (min-width: $point3) and (max-width: $point2) {
             padding: 4rem 0;
         }
