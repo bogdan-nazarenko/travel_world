@@ -1,3 +1,4 @@
+import { lightPinkColor } from "../helpers/constants.ts";
 import "../../styles/blocks/Services.scss";
 
 const servicesTitles: string[] = [
@@ -6,14 +7,16 @@ const servicesTitles: string[] = [
     "Customization",
 ];
 
-const Services = ({ suptitleColor }: { suptitleColor: string }) => {
+const Services = ({ suptitleColor }: { suptitleColor?: string }) => {
     return (
         <section className="services">
             <div className="container services_block">
                 <div className="services__info">
                     <span
                         className="services__suptitle"
-                        style={{ color: `var(${suptitleColor})` }}
+                        style={{
+                            color: `var(${suptitleColor ? suptitleColor : lightPinkColor})`,
+                        }}
                     >
                         What we serve
                     </span>
