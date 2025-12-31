@@ -24,7 +24,7 @@ const Hero = () => {
         const video = videoFile.current;
 
         if (video && !document.fullscreenElement) {
-            if (isPlay === false) {
+            if (!isPlay) {
                 video.play();
             } else {
                 video.pause();
@@ -41,20 +41,12 @@ const Hero = () => {
     useEffect(() => {
         const video = videoFile.current;
 
-        const playSetter = () => setPlay(true);
-        const pauseSetter = () => setPlay(false);
         const viewSetter = () => setView(document.fullscreenElement !== null);
 
         if (video) {
-            video.addEventListener("play", playSetter);
-            video.addEventListener("pause", pauseSetter);
-            video.addEventListener("ended", pauseSetter);
             video.addEventListener("fullscreenchange", viewSetter);
 
             return () => {
-                video.removeEventListener("play", playSetter);
-                video.removeEventListener("pause", pauseSetter);
-                video.removeEventListener("ended", pauseSetter);
                 video.removeEventListener("fullscreenchange", viewSetter);
             };
         }
@@ -111,6 +103,9 @@ const Hero = () => {
                                 controls={view}
                                 onClick={toggleVideoPlayback}
                                 onDoubleClick={videoFullScreen}
+                                onPlay={() => setPlay(true)}
+                                onPause={() => setPlay(false)}
+                                onEnded={() => setPlay(false)}
                             ></video>
                             <button
                                 className="video__control"
