@@ -41,10 +41,10 @@ const Reviews = () => {
     const slider = useRef<SwiperRef | null>(null);
 
     useEffect(() => {
+        const swiper: SwiperClass | undefined = slider.current?.swiper;
         const pagination: HTMLDivElement | null = document.querySelector(
             ".reviews__slider__pagination"
         );
-        const swiper: SwiperClass | undefined = slider.current?.swiper;
 
         function updatePagination(): void {
             swiper?.pagination.destroy();
