@@ -182,6 +182,7 @@
     }
 
     &::placeholder {
+        font-family: var(--font1);
         color: var(--text-color);
     }
 }
