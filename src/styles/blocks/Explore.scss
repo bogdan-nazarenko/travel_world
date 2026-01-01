@@ -84,7 +84,7 @@
             flex-wrap: wrap;
         }
 
-        .explore__image:not(.explore__column__group .explore__image) {
+        & > .explore__image {
             @media (min-width: $point1) {
                 width: 100%;
                 height: 26.7rem;
