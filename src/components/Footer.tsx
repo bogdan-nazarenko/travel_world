@@ -86,7 +86,7 @@ const Footer = () => {
                 </div>
                 <nav className="footer__navs">
                     <div className="footer__nav__links">
-                        <h3 className="footer__nav__title">Discover</h3>
+                        <div className="footer__nav__title">Discover</div>
                         <div className="footer__links">
                             <Link className="footer__link" to={main.home}>
                                 Home
@@ -100,7 +100,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="footer__nav__links">
-                        <h3 className="footer__nav__title">Quick Links</h3>
+                        <div className="footer__nav__title">Quick Links</div>
                         <div className="footer__links">
                             <Link
                                 className="footer__link"
@@ -128,7 +128,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="footer__nav__links">
-                        <h3 className="footer__nav__title">Contact</h3>
+                        <div className="footer__nav__title">Contact</div>
                         <div className="footer__links">
                             {footerNavProps.map((props) => {
                                 const { icon, label, url, target, linkName } =

@@ -45,12 +45,12 @@ const FeaturedTours = () => {
                             >
                                 <div className="featured_tours__captions__wrap">
                                     <div className="featured_tours__image__captions">
-                                        <h4 className="featured_tours__image__suptitle">
+                                        <h3 className="featured_tours__image__suptitle">
                                             {suptitle}
-                                        </h4>
-                                        <h3 className="featured_tours__image__title">
-                                            {title}
                                         </h3>
+                                        <h4 className="featured_tours__image__title">
+                                            {title}
+                                        </h4>
                                     </div>
                                 </div>
                                 <img

@@ -25,7 +25,7 @@ const SearchItemsGroup = () => {
                     <div key={title} className="search__item">
                         <div className="search__item__icon">{icon}</div>
                         <div className="search__item__wrap">
-                            <h3 className="search__title">{title}</h3>
+                            <h2 className="search__title">{title}</h2>
                             <div className="search__description">
                                 {description}
                             </div>
