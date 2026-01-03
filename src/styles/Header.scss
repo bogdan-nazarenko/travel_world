@@ -26,10 +26,6 @@ header {
     margin: initial;
     font-size: 1.8rem;
     font-weight: 600;
-
-    .logo {
-        z-index: var(--header-z-index);
-    }
 }
 
 .header__navs {
@@ -44,7 +40,7 @@ header {
 
     @media (max-width: $point4) {
         position: fixed;
-        z-index: 998;
+        z-index: -1;
         top: 0;
         left: -100dvw;
         flex-direction: column;
@@ -183,7 +179,6 @@ header {
 
 .header__menu__button {
     position: relative;
-    z-index: var(--header-z-index);
     display: block;
     height: 4.5rem;
     width: 4.5rem;
