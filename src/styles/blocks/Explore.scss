@@ -26,7 +26,7 @@
 .explore__column {
     display: inherit;
     gap: inherit;
-    max-height: fit-content;
+    height: fit-content;
 
     @media (min-width: $point1) {
         flex-wrap: wrap;
