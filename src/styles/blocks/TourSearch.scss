@@ -1,12 +1,12 @@
 @use "../../styles/helpers/abstracts.scss" as *;
 
-.tours_search {
+.tour_search {
     @media (min-width: $point1) {
         padding: 5rem 0;
     }
 }
 
-.tours_search_block {
+.tour_search_block {
     position: relative;
 
     & > svg {

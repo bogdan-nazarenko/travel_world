@@ -1,14 +1,14 @@
 import { useDesktop } from "../helpers/responsive.ts";
 import SearchBar from "../elements/SearchBar.tsx";
 import { Plane } from "../elements/vectors.tsx";
-import "../../styles/blocks/ToursSearch.scss";
+import "../../styles/blocks/TourSearch.scss";
 
-const ToursSearch = () => {
+const TourSearch = () => {
     const isDesktop = useDesktop();
 
     return (
-        <section className="tours_search">
-            <div className="container tours_search_block">
+        <section className="tour_search">
+            <div className="container tour_search_block">
                 <SearchBar />
                 {isDesktop && <Plane />}
             </div>
@@ -16,4 +16,4 @@ const ToursSearch = () => {
     );
 };
 
-export default ToursSearch;
+export default TourSearch;
