@@ -9,6 +9,9 @@
     box-shadow: 0 0.2rem 1rem 0 #00000026;
     background-color: var(--contrast-color);
 
+    @media (min-width: 850px) and (max-width: $point2) {
+        margin: 0 auto;
+    }
     @media (min-width: $point3) {
         height: 7.8rem;
         max-width: 81rem;
