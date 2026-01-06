@@ -29,27 +29,21 @@ header {
 }
 
 .header__navs {
-    display: flex;
-    column-gap: 4rem;
-    transition: left var(--trans);
-
     @media (min-width: $point3) {
+        display: flex;
         justify-content: flex-end;
+        column-gap: 4rem;
         width: 100%;
     }
-
     @media (max-width: $point4) {
         position: fixed;
         z-index: -1;
         top: 0;
         left: -100dvw;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        row-gap: 3.5rem;
         width: 100dvw;
         height: 100dvh;
         background-color: bisque;
+        transition: left var(--trans);
 
         &#{$open} {
             left: 0;
@@ -65,6 +59,7 @@ header {
     @media (max-width: $point4) {
         flex-direction: column;
         row-gap: 5rem;
+        margin: 60% 0 3.5rem;
     }
 }
 
@@ -104,9 +99,11 @@ header {
 .header__authorization {
     display: flex;
     column-gap: 0.5rem;
-    max-width: 22rem;
     width: 100%;
 
+    @media (min-width: $point3) {
+        max-width: 22rem;
+    }
     @media (max-width: $point4) {
         flex-direction: column;
         align-items: center;
