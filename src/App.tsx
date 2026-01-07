@@ -16,10 +16,10 @@ const App = () => {
     const { pathname, hash } = useLocation();
 
     useEffect(() => {
-        if (window.pageYOffset > 0 && hash === "") {
+        if (window.pageYOffset > 0) {
             window.scrollTo(0, 0);
         }
-    }, [pathname, hash]);
+    }, [pathname]);
 
     useEffect(() => {
         if (hash !== "") {
