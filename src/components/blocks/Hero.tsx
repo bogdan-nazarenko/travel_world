@@ -41,7 +41,7 @@ const Hero = () => {
     useEffect(() => {
         const video = videoFile.current;
 
-        const viewSetter = () => setView(document.fullscreenElement !== null);
+        const viewSetter = (): void => setView(!!document.fullscreenElement);
 
         if (video) {
             video.addEventListener("fullscreenchange", viewSetter);
