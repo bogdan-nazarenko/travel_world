@@ -22,7 +22,7 @@ const App = () => {
     }, [pathname]);
 
     useEffect(() => {
-        if (hash !== "") {
+        if (hash) {
             const scrollToId = setInterval(() => {
                 const idElement: Element | null = document.querySelector(hash);
 
