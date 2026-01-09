@@ -29,11 +29,9 @@ body.hide-scrollbar .header_menu {
 }
 
 .wrapper {
-    width: 100%;
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    overflow: hidden;
 
     @media (min-width: $point3) {
         padding-top: var(--header-height);
@@ -46,7 +44,7 @@ body.hide-scrollbar .header_menu {
 main {
     flex-grow: 1;
 
-    &:has(.loading) {
+    &:has(> .loading) {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -61,7 +59,7 @@ main {
 }
 
 section {
-    width: 100%;
+    overflow: hidden;
 
     &:not(:has(.panorama_block), :has(.authorization_block)) {
         @media (min-width: $point3) and (max-width: $point2) {
