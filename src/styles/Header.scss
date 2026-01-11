@@ -44,8 +44,10 @@ header {
         flex-direction: column;
         justify-content: center;
         row-gap: 3.5rem;
+        overflow: auto;
         width: 100dvw;
         height: 100dvh;
+        padding: 25rem 0;
         background-color: bisque;
         transition: left var(--trans);
 
