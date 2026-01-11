@@ -60,6 +60,14 @@ const Header = () => {
         }
     }, [isMenuOpen, isMobile]);
 
+    useEffect(() => {
+        if (isMenuOpen && isMobile) {
+            window.addEventListener("popstate", closeMenu);
+
+            return () => window.removeEventListener("popstate", closeMenu);
+        }
+    }, [isMenuOpen, isMobile]);
+
     return (
         <header>
             <div className="container header_menu">
