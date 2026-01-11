@@ -19,12 +19,10 @@ const HeaderNavLinks = ({ clickFunc }: ClickProps) => {
     return (
         <div className="header__nav__links">
             {headerNavProps.map(({ linkClass, url, linkName }) => {
-                const isActive: string = pathname === url ? active : "";
-
                 return (
                     <Link
                         key={url}
-                        className={`${linkClass} ${isActive}`.trim()}
+                        className={`${linkClass} ${pathname === url ? active : ""}`.trim()}
                         to={url}
                         onClick={clickFunc}
                     >
@@ -66,7 +64,7 @@ const Header = () => {
         <header>
             <div className="container header_menu">
                 <Logo
-                    clickFunc={isMobile && isMenuOpen ? closeMenu : undefined}
+                    clickFunc={isMenuOpen && isMobile ? closeMenu : undefined}
                 />
 
                 <nav className={`header__nav ${isMenuOpen ? open : ""}`.trim()}>
@@ -79,13 +77,11 @@ const Header = () => {
                     <div className="header__authorization">
                         {headerAuthProps.map((props) => {
                             const { linkClass, url, linkName } = props;
-                            const isActive: string =
-                                pathname === url ? active : "";
 
                             return (
                                 <Link
                                     key={url}
-                                    className={`${linkClass} ${isActive}`.trim()}
+                                    className={`${linkClass} ${pathname === url ? active : ""}`.trim()}
                                     to={url}
                                     onClick={isMobile ? closeMenu : undefined}
                                 >
