@@ -49,6 +49,7 @@ header {
         height: 100dvh;
         padding: 25rem 0;
         background-color: bisque;
+        scrollbar-width: none;
         transition: left var(--trans);
 
         &#{$open} {
