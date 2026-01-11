@@ -69,9 +69,7 @@ const Header = () => {
                     clickFunc={isMobile && isMenuOpen ? closeMenu : undefined}
                 />
 
-                <nav
-                    className={`header__navs ${isMenuOpen ? open : ""}`.trim()}
-                >
+                <nav className={`header__nav ${isMenuOpen ? open : ""}`.trim()}>
                     {(isPathFromMain || isMobile) && (
                         <HeaderNavLinks
                             clickFunc={isMobile ? closeMenu : undefined}
