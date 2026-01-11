@@ -2,7 +2,7 @@ import { useLocation, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useMobile } from "./helpers/responsive.ts";
 import { main, auth, active, open } from "./helpers/constants.ts";
-import type { ClickProps, LinkProps } from "./helpers/interfaces.ts";
+import type { LinkProps } from "./helpers/interfaces.ts";
 import Logo from "./elements/Logo.tsx";
 import "../styles/Header.scss";
 
@@ -12,27 +12,6 @@ const headerNavProps: LinkProps[] = [
     { linkClass: headerLink, url: main.about, linkName: "About" },
     { linkClass: headerLink, url: main.tours, linkName: "Tours" },
 ];
-
-const HeaderNavLinks = ({ clickFunc }: ClickProps) => {
-    const { pathname } = useLocation();
-
-    return (
-        <div className="header__nav__links">
-            {headerNavProps.map(({ linkClass, url, linkName }) => {
-                return (
-                    <Link
-                        key={url}
-                        className={`${linkClass} ${pathname === url ? active : ""}`.trim()}
-                        to={url}
-                        onClick={clickFunc}
-                    >
-                        {linkName}
-                    </Link>
-                );
-            })}
-        </div>
-    );
-};
 
 const headerAuthLink: string = "header__authorization__link";
 const headerAuthProps: LinkProps[] = [
@@ -77,9 +56,24 @@ const Header = () => {
 
                 <nav className={`header__nav ${isMenuOpen ? open : ""}`.trim()}>
                     {(isPathFromMain || isMobile) && (
-                        <HeaderNavLinks
-                            clickFunc={isMobile ? closeMenu : undefined}
-                        />
+                        <div className="header__nav__links">
+                            {headerNavProps.map((props) => {
+                                const { linkClass, url, linkName } = props;
+
+                                return (
+                                    <Link
+                                        key={url}
+                                        className={`${linkClass} ${pathname === url ? active : ""}`.trim()}
+                                        to={url}
+                                        onClick={
+                                            isMobile ? closeMenu : undefined
+                                        }
+                                    >
+                                        {linkName}
+                                    </Link>
+                                );
+                            })}
+                        </div>
                     )}
 
                     <div className="header__authorization">
