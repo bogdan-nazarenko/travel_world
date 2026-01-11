@@ -29,8 +29,9 @@ header {
 }
 
 .header__navs {
+    display: flex;
+
     @media (min-width: $point3) {
-        display: flex;
         justify-content: flex-end;
         column-gap: 4rem;
         width: 100%;
@@ -40,6 +41,9 @@ header {
         z-index: -1;
         top: 0;
         left: -100dvw;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 3.5rem;
         width: 100dvw;
         height: 100dvh;
         background-color: bisque;
@@ -59,7 +63,6 @@ header {
     @media (max-width: $point4) {
         flex-direction: column;
         row-gap: 5rem;
-        margin: 60% 0 3.5rem;
     }
 }
 
