@@ -55,9 +55,30 @@ const Header = () => {
                 />
 
                 <nav className={`header__nav ${isMenuOpen ? open : ""}`.trim()}>
-                    {(isPathFromMain || isMobile) && (
-                        <div className="header__nav__links">
-                            {headerNavProps.map((props) => {
+                    <div className="header__nav__content">
+                        {(isPathFromMain || isMobile) && (
+                            <div className="header__nav__links">
+                                {headerNavProps.map((props) => {
+                                    const { linkClass, url, linkName } = props;
+
+                                    return (
+                                        <Link
+                                            key={url}
+                                            className={`${linkClass} ${pathname === url ? active : ""}`.trim()}
+                                            to={url}
+                                            onClick={
+                                                isMobile ? closeMenu : undefined
+                                            }
+                                        >
+                                            {linkName}
+                                        </Link>
+                                    );
+                                })}
+                            </div>
+                        )}
+
+                        <div className="header__authorization">
+                            {headerAuthProps.map((props) => {
                                 const { linkClass, url, linkName } = props;
 
                                 return (
@@ -74,23 +95,6 @@ const Header = () => {
                                 );
                             })}
                         </div>
-                    )}
-
-                    <div className="header__authorization">
-                        {headerAuthProps.map((props) => {
-                            const { linkClass, url, linkName } = props;
-
-                            return (
-                                <Link
-                                    key={url}
-                                    className={`${linkClass} ${pathname === url ? active : ""}`.trim()}
-                                    to={url}
-                                    onClick={isMobile ? closeMenu : undefined}
-                                >
-                                    {linkName}
-                                </Link>
-                            );
-                        })}
                     </div>
                 </nav>
 
