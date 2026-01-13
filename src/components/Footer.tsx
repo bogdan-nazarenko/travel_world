@@ -84,7 +84,7 @@ const Footer = () => {
                         . All Rights Reserved
                     </div>
                 </div>
-                <nav className="footer__navs">
+                <nav className="footer__nav">
                     <div className="footer__nav__links">
                         <div className="footer__nav__title">Discover</div>
                         <div className="footer__links">
