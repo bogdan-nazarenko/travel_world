@@ -6,16 +6,16 @@
     flex-direction: column;
 
     @media (min-width: $point1) {
-        min-height: calc(100dvh - 8.5rem - 28.8rem);
+        min-height: calc(100vh - 8.5rem - 28.8rem);
     }
     @media (min-width: $point3) {
         justify-content: center;
     }
     @media (min-width: $point3) and (max-width: $point2) {
-        min-height: calc(100dvh - 8.5rem);
+        min-height: calc(100vh - 8.5rem);
     }
     @media (max-width: $point4) {
-        min-height: calc(100dvh - 7rem - 6rem);
+        min-height: calc(100vh - 7rem - 6rem);
         padding-top: 3rem;
     }
 }
