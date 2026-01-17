@@ -67,9 +67,7 @@ const Hero = () => {
                         </span>
                         <h1 className="hero__title">
                             Traveling opens the door to creating{" "}
-                            <span className="hero__title--highlight">
-                                memories
-                            </span>
+                            <span>memories</span>
                         </h1>
                         <p className="block__text text--v1">
                             Lorem ipsum dolor sit amet consectetur, adipisicing
