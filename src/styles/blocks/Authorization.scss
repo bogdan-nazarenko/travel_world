@@ -331,17 +331,9 @@
     }
 
     &::placeholder {
-        font-family: var(--font1);
         font-weight: 400;
         letter-spacing: initial;
         color: var(--text-color);
-
-        @media (min-width: $point1) {
-            font-size: 1.6rem;
-        }
-        @media (max-width: $point2) {
-            font-size: 1.3rem;
-        }
     }
 }
 

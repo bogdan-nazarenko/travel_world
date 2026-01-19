@@ -65,8 +65,8 @@
     }
 
     &::placeholder {
-        color: var(--text-color);
         font-weight: 400;
+        color: var(--text-color);
     }
 }
 
