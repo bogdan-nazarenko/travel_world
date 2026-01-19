@@ -76,7 +76,7 @@
     border-radius: 0.6rem;
     background-color: var(--secondary-color);
     font-family: var(--font1);
-    font-weight: 500;
+    font-weight: inherit;
     color: var(--contrast-color);
     transition: background-color var(--trans);
     cursor: pointer;
