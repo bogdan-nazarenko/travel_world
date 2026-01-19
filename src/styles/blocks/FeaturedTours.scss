@@ -154,6 +154,9 @@
         }
 
         .featured_tours__image__title {
+            @media (min-width: $point3) {
+                font-size: inherit;
+            }
             @media (max-width: $point4) {
                 font-size: 1.5rem;
             }
