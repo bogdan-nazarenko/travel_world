@@ -176,6 +176,7 @@
     padding: initial;
     background-color: initial;
     color: var(--heading-color);
+    font-weight: inherit;
 
     @media (min-width: $point3) {
         font-size: 2rem;
@@ -186,6 +187,7 @@
 
     &::placeholder {
         font-family: var(--font1);
+        font-weight: 400;
         color: var(--text-color);
     }
 }

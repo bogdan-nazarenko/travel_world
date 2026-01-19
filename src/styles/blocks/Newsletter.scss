@@ -55,7 +55,7 @@
     padding: initial;
     margin-right: 1rem;
     font-family: var(--font1);
-    font-weight: 500;
+    font-weight: inherit;
 
     @media (min-width: $point3) {
         font-size: 1.6rem;

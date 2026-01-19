@@ -315,7 +315,7 @@
     border: initial;
     padding: initial;
     font-family: var(--font1);
-    font-weight: 500;
+    font-weight: inherit;
 
     @media (min-width: $point1) {
         font-size: 1.6rem;
