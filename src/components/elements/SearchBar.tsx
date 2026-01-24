@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { secondaryColor, primaryColor } from "../helpers/constants.ts";
 import { PinV1, PinsDistance, People, Search } from "./vectors.tsx";
 import "../../styles/elements/SearchBar.scss";
@@ -38,13 +38,35 @@ const SearchItemsGroup = () => {
 };
 
 const SearchInput = () => {
+    const searchRef = useRef<HTMLInputElement | null>(null);
+    const [inputValue, setInputValue] = useState("");
+
+    function clearInput(): void {
+        const search = searchRef.current;
+
+        if (search) {
+            search.value = "";
+            setInputValue("");
+        }
+    }
+
     return (
-        <input
-            className="search__input"
-            type="search"
-            name="search"
-            placeholder="Search..."
-        />
+        <>
+            <input
+                className="search__input"
+                ref={searchRef}
+                type="search"
+                name="search"
+                placeholder="Search..."
+                onChange={(event) => setInputValue(event.target.value)}
+            />
+            {inputValue && (
+                <button
+                    className="search__clear__button"
+                    onClick={clearInput}
+                ></button>
+            )}
+        </>
     );
 };
 

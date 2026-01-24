@@ -24,6 +24,7 @@
 }
 
 .search__elements {
+    position: relative;
     display: flex;
     width: 100%;
     height: inherit;
@@ -172,9 +173,7 @@
 .search__input {
     width: 100%;
     height: 100%;
-    border: none;
-    padding: initial;
-    background-color: initial;
+    margin-right: 4rem;
     color: var(--heading-color);
     font-family: var(--font1);
     font-weight: inherit;
@@ -189,6 +188,51 @@
     &::placeholder {
         font-weight: 400;
         color: var(--text-color);
+    }
+
+    &::-webkit-search-cancel-button {
+        display: none;
+    }
+}
+
+.search__clear__button {
+    position: absolute;
+    top: 50%;
+    right: 0.8rem;
+    transform: translateY(-50%);
+    width: 2.4rem;
+    height: 2.4rem;
+    cursor: pointer;
+
+    &:hover::before,
+    &:hover::after {
+        background-color: var(--secondary-color);
+    }
+
+    &::before,
+    &::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        width: 0.3rem;
+        border-radius: 0.15rem;
+        background-color: var(--primary-color);
+
+        @media (min-width: $point3) {
+            height: 2rem;
+        }
+        @media (max-width: $point4) {
+            height: 1.5rem;
+        }
+    }
+
+    &::before {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &::after {
+        transform: translate(-50%, -50%) rotate(45deg);
     }
 }
 
