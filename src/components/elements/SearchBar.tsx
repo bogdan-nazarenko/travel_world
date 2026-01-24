@@ -41,7 +41,7 @@ const SearchInput = () => {
     return (
         <input
             className="search__input"
-            type="text"
+            type="search"
             name="search"
             placeholder="Search..."
         />
