@@ -7,12 +7,12 @@ const TourSearch = () => {
     const isDesktop = useDesktop();
 
     return (
-        <section className="tour_search">
+        <div className="tour_search">
             <div className="container tour_search_block">
                 <SearchBar />
                 {isDesktop && <Plane />}
             </div>
-        </section>
+        </div>
     );
 };
 

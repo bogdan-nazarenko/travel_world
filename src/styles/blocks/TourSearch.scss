@@ -1,8 +1,16 @@
 @use "../../styles/helpers/abstracts.scss" as *;
 
 .tour_search {
+    overflow: hidden;
+
     @media (min-width: $point1) {
         padding: 5rem 0;
+    }
+    @media (min-width: $point3) and (max-width: $point2) {
+        padding: 4rem 0;
+    }
+    @media (max-width: $point4) {
+        padding: 3rem 0;
     }
 }
 
