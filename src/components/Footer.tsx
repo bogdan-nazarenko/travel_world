@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router";
 import { main, auth } from "./helpers/constants.ts";
 import type { LinkProps } from "./helpers/interfaces.ts";
 import Logo from "./elements/Logo.tsx";

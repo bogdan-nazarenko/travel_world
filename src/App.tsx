@@ -1,5 +1,5 @@
 import { Suspense, lazy, useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router";
 import { main, auth } from "./components/helpers/constants.ts";
 import Header from "./components/Header.tsx";
 import Loading from "./components/elements/Loading.tsx";

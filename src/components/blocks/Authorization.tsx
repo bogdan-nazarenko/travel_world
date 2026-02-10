@@ -1,4 +1,4 @@
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link } from "react-router";
 import { useState } from "react";
 import { useMobile } from "../helpers/responsive.ts";
 import { auth } from "../helpers/constants.ts";

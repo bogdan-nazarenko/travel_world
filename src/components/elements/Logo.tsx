@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import type { ClickProps } from "../helpers/interfaces.ts";
 import logo from "../../assets/media/images/logo.png";
 import "../../styles/elements/Logo.scss";

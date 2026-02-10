@@ -1,4 +1,4 @@
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link } from "react-router";
 import { useState, useEffect } from "react";
 import { useMobile } from "./helpers/responsive.ts";
 import { main, auth, active, open } from "./helpers/constants.ts";

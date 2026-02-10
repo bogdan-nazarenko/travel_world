@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router";
 import { main } from "../helpers/constants.ts";
 import aboutImage from "../../assets/media/images/about_img.jpg";
 import tourImage from "../../assets/media/images/tour_img.jpg";
