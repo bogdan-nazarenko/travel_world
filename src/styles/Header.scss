@@ -1,13 +1,13 @@
 @use "./helpers/abstracts.scss" as *;
 
 header {
-    position: fixed;
-    z-index: var(--header-z-index);
-    top: 0;
     display: flex;
+    position: fixed;
+    top: 0;
     justify-content: center;
-    width: 100%;
+    z-index: var(--header-z-index);
     background-color: var(--contrast-color);
+    width: 100%;
 
     @media (min-width: $point3) {
         height: var(--header-height);
@@ -19,13 +19,13 @@ header {
 
 .header_menu {
     display: flex;
+    column-gap: 2rem;
     justify-content: space-between;
     align-items: center;
-    column-gap: 2rem;
-    height: 100%;
     margin: initial;
-    font-size: 1.8rem;
+    height: 100%;
     font-weight: 600;
+    font-size: 1.8rem;
 }
 
 .header__nav {
@@ -34,15 +34,15 @@ header {
     }
     @media (max-width: $point4) {
         position: fixed;
-        z-index: -1;
         top: 0;
         left: -100vw;
-        overflow: auto;
+        z-index: -1;
+        transition: left var(--trans);
+        background-color: bisque;
         width: 100vw;
         height: 100vh;
-        background-color: bisque;
+        overflow: auto;
         scrollbar-width: none;
-        transition: left var(--trans);
 
         &#{$open} {
             left: 0;
@@ -54,35 +54,35 @@ header {
     display: flex;
 
     @media (min-width: $point3) {
-        justify-content: flex-end;
         column-gap: 4rem;
+        justify-content: flex-end;
     }
     @media (max-width: $point4) {
+        row-gap: 3.5rem;
         flex-direction: column;
         justify-content: center;
-        row-gap: 3.5rem;
-        min-height: 64rem;
-        height: 100%;
         padding-top: var(--header-height-mobile);
+        height: 100%;
+        min-height: 64rem;
     }
 }
 
 .header__nav__links {
     display: flex;
-    align-items: center;
     column-gap: 3rem;
+    align-items: center;
 
     @media (max-width: $point4) {
-        flex-direction: column;
         row-gap: 5rem;
+        flex-direction: column;
     }
 }
 
 .header__link {
-    text-decoration: none;
-    color: var(--heading-color);
-    cursor: pointer;
     transition: color var(--trans);
+    cursor: pointer;
+    color: var(--heading-color);
+    text-decoration: none;
 
     @media (min-width: $point3) {
         &:hover {
@@ -120,26 +120,26 @@ header {
         max-width: 22rem;
     }
     @media (max-width: $point4) {
+        row-gap: 1rem;
         flex-direction: column;
         align-items: center;
-        row-gap: 1rem;
     }
 }
 
 .header__authorization__link {
     display: block;
-    max-width: 12rem;
-    width: 100%;
-    height: 4.2rem;
-    border-radius: 5rem;
-    line-height: 4.2rem;
-    text-align: center;
-    text-decoration: none;
-    color: var(--heading-color);
     transition:
         color var(--trans),
         background-color var(--trans);
     cursor: pointer;
+    border-radius: 5rem;
+    width: 100%;
+    max-width: 12rem;
+    height: 4.2rem;
+    color: var(--heading-color);
+    line-height: 4.2rem;
+    text-align: center;
+    text-decoration: none;
 
     @media (min-width: $point3) {
         &:hover {
@@ -190,22 +190,22 @@ header {
 }
 
 .header__menu__button {
-    position: relative;
     display: block;
-    height: 4.5rem;
+    position: relative;
     width: 4.5rem;
+    height: 4.5rem;
 
     &::before {
         position: absolute;
-        z-index: -1;
         top: -5%;
         left: -5%;
-        content: "";
+        opacity: 20%;
+        z-index: -1;
+        transition: background-color var(--trans);
+        border-radius: 50%;
         width: 110%;
         height: 110%;
-        border-radius: 50%;
-        opacity: 20%;
-        transition: background-color var(--trans);
+        content: "";
     }
 
     &:active::before {
@@ -216,12 +216,12 @@ header {
         @extend %contain_img;
 
         path {
-            stroke: var(--secondary-color);
             transform-origin: 50% 50%;
             transition:
                 stroke var(--trans),
                 transform var(--trans),
                 opacity var(--trans);
+            stroke: var(--secondary-color);
         }
     }
 

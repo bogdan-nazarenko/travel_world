@@ -8,8 +8,8 @@
 
 .hero_block {
     display: flex;
-    flex-direction: column;
     row-gap: 5.5rem;
+    flex-direction: column;
 }
 
 .hero__content {
@@ -17,8 +17,8 @@
     column-gap: 3.4rem;
 
     @media (max-width: $point2) {
-        flex-direction: column;
         row-gap: 2rem;
+        flex-direction: column;
     }
 }
 
@@ -75,15 +75,15 @@
 
 .hero__media__content {
     position: relative;
-    overflow: hidden;
-    width: 100%;
+    cursor: pointer;
     border: 0.2rem solid var(--secondary-color);
     border-radius: 2rem;
-    cursor: pointer;
+    width: 100%;
+    overflow: hidden;
 
     @media (min-width: $point1) {
-        height: 35rem;
         max-width: 16.6rem;
+        height: 35rem;
     }
     @media (min-width: $point3) and (max-width: $point2) {
         height: 30rem;
@@ -102,23 +102,23 @@
             bottom: 2rem;
             left: 2rem;
             cursor: pointer;
-            width: 3rem;
-            height: 3rem;
+            background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
-            background-position: center;
+            width: 3rem;
+            height: 3rem;
         }
 
         .video__fullscreen {
             position: absolute;
-            bottom: 2rem;
             right: 2rem;
+            bottom: 2rem;
             cursor: pointer;
-            width: 3rem;
-            height: 3rem;
+            background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
-            background-position: center;
+            width: 3rem;
+            height: 3rem;
 
             @media (min-width: $point3) {
                 opacity: 0;

@@ -22,14 +22,14 @@ footer {
 
 .footer__socials {
     display: flex;
-    flex-direction: column;
     row-gap: 1.5rem;
+    flex-direction: column;
+    margin: 3rem 0 2.7rem;
     width: 100%;
     max-width: 32.6rem;
-    margin: 3rem 0 2.7rem;
-    font-size: 1.6rem;
-    font-weight: 400;
     color: var(--text-color);
+    font-weight: 400;
+    font-size: 1.6rem;
 }
 
 .footer__text {
@@ -44,17 +44,17 @@ footer {
 }
 
 .footer__social__link {
-    width: 100%;
-    height: 3.5rem;
-    max-width: 3.5rem;
     cursor: pointer;
+    width: 100%;
+    max-width: 3.5rem;
+    height: 3.5rem;
 
     svg {
         @extend %contain_img;
 
         path {
-            fill: var(--secondary-color);
             transition: fill var(--trans);
+            fill: var(--secondary-color);
         }
     }
 
@@ -98,8 +98,8 @@ footer {
         justify-content: space-between;
     }
     @media (max-width: $point4) {
-        flex-wrap: wrap;
         column-gap: 2rem;
+        flex-wrap: wrap;
         font-size: 1.6rem;
     }
 }
@@ -121,16 +121,16 @@ footer {
 
 .footer__links {
     display: flex;
-    flex-direction: column;
     row-gap: 2.5rem;
+    flex-direction: column;
 }
 
 .footer__link {
-    width: fit-content;
-    text-decoration: none;
-    color: var(--text-color);
     transition: color var(--trans);
     cursor: pointer;
+    width: fit-content;
+    color: var(--text-color);
+    text-decoration: none;
 
     @media (min-width: $point3) {
         &:hover {
@@ -150,9 +150,9 @@ footer {
 
 .footer__icon {
     display: inline-block;
+    margin-right: 1.3rem;
     width: 1.8rem;
     height: 1.5rem;
-    margin-right: 1.3rem;
 
     svg {
         @extend %contain_img;

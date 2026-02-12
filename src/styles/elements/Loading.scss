@@ -1,7 +1,7 @@
 .loading {
+    animation: spin 3s linear infinite;
     width: 10rem;
     height: 9rem;
-    animation: spin 3s linear infinite;
 
     circle {
         fill: var(--secondary-color);

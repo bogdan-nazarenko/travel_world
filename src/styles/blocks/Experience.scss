@@ -30,8 +30,8 @@
 }
 
 .experience__title {
-    max-width: 37.7rem;
     margin-bottom: 1rem;
+    max-width: 37.7rem;
 }
 
 .experience__text {
@@ -56,8 +56,8 @@
 
 .experience__item__square {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     margin: 0 auto 1rem;
     border-radius: 1rem 0.5rem;
     background-color: var(--secondary-color);
@@ -75,9 +75,9 @@
 }
 
 .experience__item__description {
+    color: var(--text-color);
     font-size: 1.3rem;
     text-align: center;
-    color: var(--text-color);
 }
 
 .experience__image {

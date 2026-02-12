@@ -2,8 +2,8 @@
 
 .error_block {
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
 
     @media (min-width: $point1) {
         min-height: calc(100vh - 8.5rem - 28.8rem);
@@ -15,15 +15,15 @@
         min-height: calc(100vh - 8.5rem);
     }
     @media (max-width: $point4) {
-        min-height: calc(100vh - 7rem - 6rem);
         padding-top: 3rem;
+        min-height: calc(100vh - 7rem - 6rem);
     }
 }
 
 .error__title {
     margin-bottom: 1rem;
-    font-weight: 600;
     color: var(--secondary-color);
+    font-weight: 600;
 
     @media (min-width: $point1) {
         font-size: 10rem;

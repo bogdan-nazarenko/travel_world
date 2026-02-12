@@ -32,9 +32,9 @@
     display: flex;
     align-items: center;
     margin-bottom: 1.5rem;
-    padding: 0 1rem;
     border-radius: 0.6rem;
     background-color: var(--contrast-color);
+    padding: 0 1rem;
 
     @media (min-width: $point3) {
         height: 5.4rem;
@@ -49,13 +49,13 @@
 }
 
 .newsletter__email__input {
-    width: 100%;
-    height: 100%;
+    margin-right: 1rem;
     border: initial;
     padding: initial;
-    margin-right: 1rem;
-    font-family: var(--font1);
+    width: 100%;
+    height: 100%;
     font-weight: inherit;
+    font-family: var(--font1);
 
     @media (min-width: $point3) {
         font-size: 1.6rem;
@@ -65,30 +65,30 @@
     }
 
     &::placeholder {
-        font-weight: 400;
         color: var(--text-color);
+        font-weight: 400;
     }
 }
 
 .newsletter__subscribe__button {
-    width: 100%;
+    transition: background-color var(--trans);
+    cursor: pointer;
     border: initial;
     border-radius: 0.6rem;
     background-color: var(--secondary-color);
-    font-family: var(--font1);
-    font-weight: inherit;
+    width: 100%;
     color: var(--contrast-color);
-    transition: background-color var(--trans);
-    cursor: pointer;
+    font-weight: inherit;
+    font-family: var(--font1);
 
     @media (min-width: $point3) {
-        height: 4.2rem;
         max-width: 11.3rem;
+        height: 4.2rem;
         font-size: 1.6rem;
     }
     @media (max-width: $point4) {
-        height: 3rem;
         max-width: 8rem;
+        height: 3rem;
         font-size: 1.3rem;
     }
 

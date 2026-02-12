@@ -19,11 +19,11 @@
 
     & > svg {
         position: absolute;
-        z-index: -1;
         top: -0.5rem;
         right: -14rem;
+        z-index: -1;
+        fill: var(--secondary-color);
         width: 44.8rem;
         height: 13.3rem;
-        fill: var(--secondary-color);
     }
 }

@@ -56,9 +56,9 @@
 }
 
 .overview__image {
+    border-radius: 0.6rem;
     width: 100%;
     overflow: hidden;
-    border-radius: 0.6rem;
 
     @media (min-width: $point1) {
         height: 38.5rem;

@@ -95,10 +95,10 @@
 }
 
 .gallery__image {
-    overflow: hidden;
+    cursor: pointer;
     border-radius: 1rem;
     width: 100%;
-    cursor: pointer;
+    overflow: hidden;
 
     @media (max-width: $point4) {
         height: 20rem;
