@@ -1,0 +1,1 @@
+import{j as t}from"./react-CXdV2iK6.js";import{A as r}from"./Authorization-DH22fwP_.js";import"./react-router-DJtQJsUg.js";import"./index-B8Dqwwhx.js";import"./react-dom-DZmIeAj2.js";import"./scheduler-7OC5HNn7.js";const a=()=>t.jsx(r,{});export{a as default};

@@ -1,0 +1,1 @@
+import{j as r}from"./react-CXdV2iK6.js";const e=()=>r.jsx("section",{children:r.jsxs("div",{className:"container error_block",children:[r.jsx("h1",{className:"error__title",children:"404"}),r.jsx("div",{className:"error__description",children:"Page not found"})]})}),o=()=>r.jsx(e,{});export{o as default};
