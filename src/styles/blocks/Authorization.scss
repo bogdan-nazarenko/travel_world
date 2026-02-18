@@ -36,6 +36,7 @@
     svg {
         position: absolute;
         z-index: -1;
+        fill: var(--secondary-color);
 
         @media (max-width: $point4) {
             height: auto;
@@ -84,10 +85,6 @@
             @media (min-width: $point3) {
                 height: 10.4rem;
             }
-        }
-
-        path {
-            fill: var(--secondary-color);
         }
     }
 }

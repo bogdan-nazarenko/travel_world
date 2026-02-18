@@ -49,28 +49,21 @@ footer {
     max-width: 3.5rem;
     height: 3.5rem;
 
-    svg {
-        @extend %contain_img;
-
-        path {
-            transition: fill var(--trans);
-            fill: var(--secondary-color);
-        }
-    }
-
     @media (min-width: $point3) {
-        &:hover {
-            path {
-                fill: var(--primary-color);
-            }
+        &:hover svg {
+            fill: var(--primary-color);
         }
     }
     @media (max-width: $point4) {
-        &:active {
-            path {
-                fill: var(--primary-color);
-            }
+        &:active svg {
+            fill: var(--primary-color);
         }
+    }
+
+    svg {
+        transition: fill var(--trans);
+        fill: var(--secondary-color);
+        @extend %contain_img;
     }
 }
 
@@ -155,11 +148,8 @@ footer {
     height: 1.5rem;
 
     svg {
+        fill: var(--secondary-color);
         @extend %contain_img;
-
-        path {
-            fill: var(--secondary-color);
-        }
     }
 }
 
