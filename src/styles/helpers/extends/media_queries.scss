@@ -1,0 +1,10 @@
+@use "./breakpoints.scss" as *;
+
+%section_mq {
+    @media (min-width: $point3) and (max-width: $point2) {
+        padding: 4rem 0;
+    }
+    @media (max-width: $point4) {
+        padding: 3rem 0;
+    }
+}

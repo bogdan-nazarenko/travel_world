@@ -62,12 +62,7 @@ section {
     overflow: hidden;
 
     &:not(:has(.panorama_block), :has(.authorization_block)) {
-        @media (min-width: $point3) and (max-width: $point2) {
-            padding: 4rem 0;
-        }
-        @media (max-width: $point4) {
-            padding: 3rem 0;
-        }
+        @extend %section_mq;
     }
 }
 
