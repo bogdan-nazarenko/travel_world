@@ -127,10 +127,8 @@
         }
 
         @media (min-width: $point3) {
-            &:hover {
-                .video__fullscreen {
-                    opacity: 1;
-                }
+            &:hover .video__fullscreen {
+                opacity: 1;
             }
         }
     }

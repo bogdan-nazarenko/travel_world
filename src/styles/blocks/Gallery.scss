@@ -51,17 +51,17 @@
                     height: 33.5rem;
                 }
             }
+
             .gallery__image:nth-child(2) {
                 @media (min-width: $point3) {
                     height: 21.8rem;
                 }
             }
         }
-        .gallery__column:nth-child(2) {
-            .gallery__image {
-                @media (min-width: $point3) {
-                    height: 26.7rem;
-                }
+
+        .gallery__column:nth-child(2) .gallery__image {
+            @media (min-width: $point3) {
+                height: 26.7rem;
             }
         }
     }
@@ -73,17 +73,17 @@
                     height: 21.8rem;
                 }
             }
+
             .gallery__image:nth-child(2) {
                 @media (min-width: $point3) {
                     height: 33.5rem;
                 }
             }
         }
-        .gallery__column:nth-child(2) {
-            .gallery__image {
-                @media (min-width: $point3) {
-                    height: 28.5rem;
-                }
+
+        .gallery__column:nth-child(2) .gallery__image {
+            @media (min-width: $point3) {
+                height: 28.5rem;
             }
         }
     }

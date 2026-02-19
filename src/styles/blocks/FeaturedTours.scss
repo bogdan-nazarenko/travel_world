@@ -107,10 +107,8 @@
     }
 
     @media (min-width: $point1) {
-        &:nth-child(6) {
-            .featured_tours__image__suptitle {
-                margin-bottom: -1.4rem;
-            }
+        &:nth-child(6) .featured_tours__image__suptitle {
+            margin-bottom: -1.4rem;
         }
     }
 
@@ -164,13 +162,10 @@
     }
 
     @media (min-width: $point1) {
-        &:nth-child(10) {
-            .featured_tours__pic {
-                object-position: bottom;
-            }
+        &:nth-child(10) .featured_tours__pic {
+            object-position: bottom;
         }
     }
-
     @media (max-width: $point4) {
         &:nth-child(3),
         &:nth-child(8) {

@@ -42,37 +42,31 @@
         }
     }
 
-    &:nth-child(1) {
-        .explore__image {
-            @media (min-width: $point3) {
-                height: 26.7rem;
-            }
+    &:nth-child(1) .explore__image {
+        @media (min-width: $point3) {
+            height: 26.7rem;
+        }
 
-            &:nth-child(1) {
-                .explore__image__title {
-                    text-transform: uppercase;
-                }
-            }
+        &:nth-child(1) .explore__image__title {
+            text-transform: uppercase;
         }
     }
 
-    &:nth-child(2) {
-        .explore__image {
-            .explore__image__title {
-                text-transform: uppercase;
-            }
-        }
-
-        .explore__image:nth-child(1) {
+    &:nth-child(2) .explore__image {
+        &:nth-child(1) {
             @media (min-width: $point1) {
                 height: 33.5rem;
             }
         }
 
-        .explore__image:nth-child(2) {
+        &:nth-child(2) {
             @media (min-width: $point1) {
                 height: 21.8rem;
             }
+        }
+
+        .explore__image__title {
+            text-transform: uppercase;
         }
     }
 
@@ -96,22 +90,22 @@
             gap: inherit;
 
             .explore__image {
+                &:nth-child(1) {
+                    @media (min-width: $point1) {
+                        max-width: 26.7rem;
+                        height: 26.7rem;
+                    }
+                }
+
+                &:nth-child(2) {
+                    @media (min-width: $point1) {
+                        max-width: 27.9rem;
+                        height: 28.5rem;
+                    }
+                }
+
                 .explore__image__title {
                     text-transform: uppercase;
-                }
-            }
-
-            .explore__image:nth-child(1) {
-                @media (min-width: $point1) {
-                    max-width: 26.7rem;
-                    height: 26.7rem;
-                }
-            }
-
-            .explore__image:nth-child(2) {
-                @media (min-width: $point1) {
-                    max-width: 27.9rem;
-                    height: 28.5rem;
                 }
             }
         }
