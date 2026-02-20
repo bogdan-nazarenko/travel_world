@@ -201,11 +201,6 @@
     width: 2.4rem;
     height: 2.4rem;
 
-    &:hover::before,
-    &:hover::after {
-        background-color: var(--secondary-color);
-    }
-
     &::before,
     &::after {
         position: absolute;
@@ -230,6 +225,11 @@
 
     &::after {
         transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &:hover::before,
+    &:hover::after {
+        background-color: var(--secondary-color);
     }
 }
 
