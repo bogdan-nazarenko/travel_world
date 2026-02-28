@@ -403,9 +403,6 @@
 }
 
 .authorization__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition: background-color var(--trans);
     cursor: pointer;
     border-radius: 0.5rem;
