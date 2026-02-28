@@ -129,8 +129,8 @@ header {
 .header__authorization__link {
     display: block;
     transition:
-        color var(--trans),
-        background-color var(--trans);
+        background-color var(--trans),
+        color var(--trans);
     cursor: pointer;
     border-radius: 5rem;
     width: 100%;
@@ -190,7 +190,6 @@ header {
 }
 
 .header__menu__button {
-    display: block;
     position: relative;
     width: 4.5rem;
     height: 4.5rem;
@@ -218,33 +217,29 @@ header {
         path {
             transform-origin: 50% 50%;
             transition:
-                stroke var(--trans),
                 transform var(--trans),
-                opacity var(--trans);
+                opacity var(--trans),
+                stroke var(--trans);
             stroke: var(--secondary-color);
         }
     }
 
-    &#{$open} {
-        .menu__icon {
-            @extend %contain_img;
+    &#{$open} .menu__icon {
+        path {
+            stroke: var(--heading-color);
+        }
 
-            path {
-                stroke: var(--heading-color);
-            }
+        path:nth-child(1) {
+            transform: rotate(-45deg) translate(0, 25%);
+        }
 
-            path:nth-child(1) {
-                transform: rotate(-45deg) translate(0, 25%);
-            }
+        path:nth-child(2) {
+            transform: rotate(-45deg);
+            opacity: 0;
+        }
 
-            path:nth-child(2) {
-                transform: rotate(-45deg);
-                opacity: 0;
-            }
-
-            path:nth-child(3) {
-                transform: rotate(45deg) translate(0, -25%);
-            }
+        path:nth-child(3) {
+            transform: rotate(45deg) translate(0, -25%);
         }
     }
 }
