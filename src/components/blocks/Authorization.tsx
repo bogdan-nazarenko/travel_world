@@ -14,7 +14,7 @@ interface PasswordProps extends ClickProps {
     icon?: string;
 }
 
-interface FormAreaProps extends PasswordProps {
+interface FormFieldProps extends PasswordProps {
     label: string;
     id: string;
     type?: string;
@@ -24,10 +24,10 @@ interface FormAreaProps extends PasswordProps {
     required?: boolean;
 }
 
-const AuthorizationArea = (props: FormAreaProps) => {
+const AuthorizationField = (props: FormFieldProps) => {
     return (
-        <div className="authorization__area">
-            <label className="authorization__area__label" htmlFor={props.id}>
+        <div className="authorization__field">
+            <label className="authorization__field__label" htmlFor={props.id}>
                 {props.label}
             </label>
             <input
@@ -40,12 +40,11 @@ const AuthorizationArea = (props: FormAreaProps) => {
                 required={props.required}
             />
             {props.id === "password" && (
-                <img
+                <span
                     className="eye__icon"
-                    src={props.icon}
-                    alt=""
+                    style={{ backgroundImage: `url("${props.icon}")` }}
                     onClick={props.clickFunc}
-                />
+                ></span>
             )}
         </div>
     );
@@ -101,7 +100,7 @@ const FormWrap = (props: WrapProps) => {
     );
 };
 
-const loginProps: FormAreaProps[] = [
+const loginProps: FormFieldProps[] = [
     {
         label: "Email",
         id: "email",
@@ -126,7 +125,7 @@ const Login = ({ valueVisibility, icon, clickFunc }: PasswordProps) => {
             <h1 className="authorization__title">Welcome</h1>
             <div className="authorization__subtitle">Login with Email</div>
 
-            <div className="login__areas">
+            <div className="login__fields">
                 {loginProps.map((props) => {
                     const {
                         label,
@@ -139,7 +138,7 @@ const Login = ({ valueVisibility, icon, clickFunc }: PasswordProps) => {
                     } = props;
 
                     return (
-                        <AuthorizationArea
+                        <AuthorizationField
                             key={id}
                             label={label}
                             id={id}
@@ -170,7 +169,7 @@ const Login = ({ valueVisibility, icon, clickFunc }: PasswordProps) => {
     );
 };
 
-const registerProps: FormAreaProps[] = [
+const registerProps: FormFieldProps[] = [
     {
         label: "First Name",
         id: "first_name",
@@ -224,7 +223,7 @@ const Register = ({ valueVisibility, icon, clickFunc }: PasswordProps) => {
                 <a href="#">Privacy policy</a> and <a href="#">Terms of use.</a>
             </div>
 
-            <div className="register__areas">
+            <div className="register__fields">
                 {registerProps.map((props) => {
                     const {
                         label,
@@ -237,7 +236,7 @@ const Register = ({ valueVisibility, icon, clickFunc }: PasswordProps) => {
                     } = props;
 
                     return (
-                        <AuthorizationArea
+                        <AuthorizationField
                             key={id}
                             label={label}
                             id={id}
