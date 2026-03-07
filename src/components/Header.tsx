@@ -31,23 +31,17 @@ const Header = () => {
     const isMobile = useMobile();
 
     useEffect(() => {
-        const resetMenuOpen = (): void => setMenuOpen(false);
+        const resetMenuOpen = (): void => closeMenu();
 
         if (isMenuOpen && isMobile) {
             document.body.style.overflowY = "hidden";
-        } else {
-            document.body.removeAttribute("style");
-            resetMenuOpen();
-        }
-    }, [isMenuOpen, isMobile]);
 
-    useEffect(() => {
-        const resetMenuOpen = (): void => setMenuOpen(false);
-
-        if (isMenuOpen && isMobile) {
             window.addEventListener("popstate", resetMenuOpen);
 
             return () => window.removeEventListener("popstate", resetMenuOpen);
+        } else {
+            document.body.removeAttribute("style");
+            resetMenuOpen();
         }
     }, [isMenuOpen, isMobile]);
 
