@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import useFancybox from "../libs/fancybox.ts";
 import SearchBar from "../elements/SearchBar.tsx";
 import worldIcon from "../../assets/media/images/icons/world.png";

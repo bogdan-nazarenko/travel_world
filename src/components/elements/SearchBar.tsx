@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useRef, useState } from "react";
 import { secondaryColor, primaryColor } from "../helpers/constants.ts";
 import { PinV1, PinsDistance, People, Search } from "./vectors.tsx";
 import "../../styles/elements/SearchBar.scss";
