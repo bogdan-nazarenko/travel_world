@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export function useDesktop(): boolean {
-    const [desktop, setDesktop] = useState(false);
+    const [desktop, setDesktop] = useState<boolean>(false);
 
     useEffect(() => {
         const result = (): void => setDesktop(window.innerWidth >= 1024);
@@ -16,7 +16,7 @@ export function useDesktop(): boolean {
 }
 
 export function useMobile(): boolean {
-    const [mobile, setMobile] = useState(false);
+    const [mobile, setMobile] = useState<boolean>(false);
 
     useEffect(() => {
         const result = (): void => setMobile(window.innerWidth < 768);

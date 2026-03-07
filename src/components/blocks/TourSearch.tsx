@@ -4,7 +4,7 @@ import { Plane } from "../elements/vectors.tsx";
 import "../../styles/blocks/TourSearch.scss";
 
 const TourSearch = () => {
-    const isDesktop = useDesktop();
+    const isDesktop: boolean = useDesktop();
 
     return (
         <div className="tour_search">

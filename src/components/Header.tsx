@@ -20,7 +20,7 @@ const headerAuthProps: LinkProps[] = [
 ];
 
 const Header = () => {
-    const [isMenuOpen, setMenuOpen] = useState(false);
+    const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
 
     function closeMenu(): void {
         setMenuOpen(false);
@@ -28,7 +28,7 @@ const Header = () => {
 
     const { pathname } = useLocation();
     const isPathFromMain: boolean = Object.values(main).includes(pathname);
-    const isMobile = useMobile();
+    const isMobile: boolean = useMobile();
 
     useEffect(() => {
         const resetMenuOpen = (): void => closeMenu();

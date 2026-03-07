@@ -39,7 +39,7 @@ const SearchItemsGroup = () => {
 
 const SearchInput = () => {
     const searchRef = useRef<HTMLInputElement | null>(null);
-    const [inputValue, setInputValue] = useState("");
+    const [inputValue, setInputValue] = useState<string>("");
 
     function clearInput(): void {
         const search = searchRef.current;
@@ -71,7 +71,7 @@ const SearchInput = () => {
 };
 
 const SearchBar = () => {
-    const [isInput, setInput] = useState(false);
+    const [isInput, setInput] = useState<boolean>(false);
 
     return (
         <div className="search__bar">

@@ -17,8 +17,8 @@ const Hero = () => {
     });
 
     const videoFile = useRef<HTMLVideoElement | null>(null);
-    const [isPlay, setPlay] = useState(false);
-    const [view, setView] = useState(false);
+    const [isPlay, setPlay] = useState<boolean>(false);
+    const [view, setView] = useState<boolean>(false);
 
     function toggleVideoPlayback(): void {
         const video = videoFile.current;

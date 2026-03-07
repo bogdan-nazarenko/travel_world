@@ -3,7 +3,7 @@ import tourist from "../../assets/media/images/tourist.png";
 import "../../styles/blocks/Newsletter.scss";
 
 const Newsletter = () => {
-    const isDesktop = useDesktop();
+    const isDesktop: boolean = useDesktop();
 
     return (
         <section className="newsletter">

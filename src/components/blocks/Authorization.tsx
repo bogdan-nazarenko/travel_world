@@ -264,9 +264,9 @@ const Register = ({ valueVisibility, icon, clickFunc }: PasswordProps) => {
 };
 
 const Authorization = () => {
-    const isMobile = useMobile();
+    const isMobile: boolean = useMobile();
     const { pathname } = useLocation();
-    const [password, setPassword] = useState(false);
+    const [password, setPassword] = useState<boolean>(false);
 
     function togglePasswordVisibility(): void {
         setPassword(!password);
