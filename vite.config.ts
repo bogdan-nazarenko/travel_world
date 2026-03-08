@@ -1,6 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
+const exceptions: string[] = ["cookie", "set-cookie-parser"];
+
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [react()],
@@ -8,12 +10,18 @@ export default defineConfig({
     build: {
         rollupOptions: {
             output: {
-                manualChunks(id) {
+                manualChunks(id: string) {
                     if (id.includes("node_modules")) {
-                        return "vendor";
-                    }
+                        const module: string = id
+                            .split("node_modules/")[1]
+                            .split("/")[0];
 
-                    return null;
+                        if (exceptions.includes(module)) {
+                            return null;
+                        }
+
+                        return module;
+                    }
                 },
             },
         },
