@@ -29,10 +29,20 @@ const App = () => {
                 if (idElement) {
                     idElement.scrollIntoView({ behavior: "smooth" });
                     clearInterval(scrollToId);
+                    clearTimeout(checkAfterDelay);
                 }
             }, 100);
 
-            return () => clearInterval(scrollToId);
+            const checkAfterDelay: number = setTimeout(() => {
+                if (document.querySelector(hash) === null) {
+                    clearInterval(scrollToId);
+                }
+            }, 3000);
+
+            return () => {
+                clearInterval(scrollToId);
+                clearTimeout(checkAfterDelay);
+            };
         }
     }, [hash]);
 
