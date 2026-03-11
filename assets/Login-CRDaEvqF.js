@@ -1,0 +1,1 @@
+import{j as o}from"./react-CXdV2iK6.js";import{A as t}from"./Authorization-7lYmeyeU.js";import"./react-router-D1ppkrwB.js";import"./index-BhPNWsjm.js";import"./react-dom-DZmIeAj2.js";import"./scheduler-7OC5HNn7.js";const n=()=>o.jsx(t,{});export{n as default};
