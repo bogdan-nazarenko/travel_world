@@ -6,17 +6,17 @@
     align-items: center;
 
     @media (min-width: $point1) {
-        min-height: calc(100vh - 8.5rem - 28.8rem);
+        min-height: calc(100vh - var(--header-height) - 28.8rem);
     }
     @media (min-width: $point3) {
         justify-content: center;
     }
     @media (min-width: $point3) and (max-width: $point2) {
-        min-height: calc(100vh - 8.5rem - 8rem);
+        min-height: calc(100vh - var(--header-height) - 8rem);
     }
     @media (max-width: $point4) {
         padding-top: 3rem;
-        min-height: calc(100vh - 7rem - 6rem);
+        min-height: calc(100vh - var(--header-height-mobile) - 6rem);
     }
 }
 
