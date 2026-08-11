@@ -1,0 +1,18 @@
+@use "abstracts" as *;
+
+html {
+    // font-size: calc(100dvw / 1920 * 10);
+
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+section {
+    overflow: hidden;
+}
+
+h1 {
+    color: var(--custom-color);
+    font-size: 10rem;
+    text-align: center;
+}
