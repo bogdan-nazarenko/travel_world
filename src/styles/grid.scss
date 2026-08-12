@@ -1,9 +1,18 @@
 @use "abstracts" as *;
 
-.container {
+.wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    padding-top: var(--header-height);
+    min-height: inherit;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.container {
+    margin: 0 auto;
     padding: 0 2rem;
-    height: 100dvh;
+    max-width: 116rem;
 }
