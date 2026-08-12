@@ -1,18 +1,21 @@
 @use "abstracts" as *;
 
 html {
-    // font-size: calc(100dvw / 1920 * 10);
-
+    color: var(--heading-color);
+    font-weight: 500;
     font-size: 10px;
-    font-family: sans-serif;
+    line-height: 1;
+    font-family: var(--montserrat-font);
+
+    @media (1920px > width >= $desktop) {
+        font-size: calc(100dvw / 1920 * 10);
+    }
 }
 
-section {
-    overflow: hidden;
-}
+body {
+    font-size: 2rem;
 
-h1 {
-    color: var(--custom-color);
-    font-size: 10rem;
-    text-align: center;
+    @media (width < $desktop) {
+        font-size: 1.5rem;
+    }
 }
