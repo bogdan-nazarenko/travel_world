@@ -1,0 +1,21 @@
+@use "@styles/abstracts" as *;
+
+.home-link {
+    display: block;
+    width: 100%;
+    max-width: 25.5rem;
+    height: 7.6rem;
+
+    @media (width < $desktop) {
+        width: fit-content;
+        height: 5rem;
+    }
+
+    @media (width < $tablet) {
+        height: 4rem;
+    }
+}
+
+.logo {
+    @extend %contain-media;
+}
