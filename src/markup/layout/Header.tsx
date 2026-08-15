@@ -38,7 +38,7 @@ const Header = () => {
 
         document.body.classList.toggle(
             "page-layout_non-scrollable",
-            isMobile && isMenuOpen
+            isMenuOpen
         );
 
         if (!mainRef.current && !footerRef.current) {
