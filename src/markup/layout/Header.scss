@@ -127,8 +127,7 @@
 }
 
 .header__menu-icon {
-    width: 100%;
-    height: 100%;
+    @extend %contain-media;
 
     path {
         transform-origin: 50% 50%;
