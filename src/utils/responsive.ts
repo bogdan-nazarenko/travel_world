@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 
 export default function useMediaQuery(bp: string): boolean {
-    const initial = (): boolean => window.matchMedia(`(${bp})`).matches;
-    const [matches, setMatches] = useState<boolean>(initial);
+    const [matches, setMatches] = useState<boolean>(() => {
+        return window.matchMedia(`(${bp})`).matches;
+    });
 
     useEffect(() => {
-        const mql = window.matchMedia(`(${bp})`) as MediaQueryList;
+        const mql = window.matchMedia(`(${bp})`);
         const handler = () => setMatches(mql.matches);
 
         mql.addEventListener("change", handler);
