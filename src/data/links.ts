@@ -10,12 +10,6 @@ export const mainLinks: NavLink[] = [
 ];
 
 export const authLinks: NavLink[] = [
-    {
-        url: "/login",
-        name: "Login",
-    },
-    {
-        url: "/register",
-        name: "Register",
-    },
+    { url: "/login", name: "Login" },
+    { url: "/register", name: "Register" },
 ];
