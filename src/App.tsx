@@ -1,7 +1,12 @@
-import Section from "@markup/Section";
+import Header from "@markup/layout/Header";
 
 const App = () => {
-    return <Section />;
+    return (
+        <>
+            <Header />
+            <main className="main"></main>
+        </>
+    );
 };
 
 export default App;
