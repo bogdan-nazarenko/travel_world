@@ -25,3 +25,15 @@
         color: var(--secondary-color);
     }
 }
+
+%link-svg-fill {
+    .vector-image {
+        transition: var(--duration);
+    }
+
+    @include hover-active {
+        .vector-image {
+            fill: var(--primary-color);
+        }
+    }
+}
