@@ -1,0 +1,93 @@
+@use "@styles/abstracts" as *;
+
+.footer {
+    padding: 3rem 0 2.7rem;
+    overflow: hidden;
+}
+
+.footer__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4rem;
+
+    @media (width < $tablet) {
+        flex-direction: column;
+    }
+}
+
+.footer__text {
+    margin-block: 1.4rem;
+    max-width: 30rem;
+}
+
+.footer__social-list {
+    display: flex;
+    gap: 2.5rem;
+    margin-bottom: 1.8rem;
+    width: fit-content;
+}
+
+.footer__social-link {
+    display: block;
+    width: 3.5rem;
+    height: 3.5rem;
+
+    .vector-image {
+        @extend %contain-media;
+    }
+
+    @extend %link-svg-fill;
+}
+
+.footer__description {
+    color: var(--text-color);
+    font-size: 1.4rem;
+
+    span {
+        color: var(--secondary-color);
+    }
+}
+
+.footer__nav {
+    @media (width >= $desktop) {
+        padding-top: 2rem;
+    }
+}
+
+.footer__title {
+    margin-bottom: 3.4rem;
+}
+
+.footer__list {
+    color: var(--text-color);
+}
+
+.footer__list-item:not(:last-child) {
+    margin-bottom: 2.9rem;
+}
+
+.footer__link {
+    @extend %link;
+}
+
+.footer__contacts {
+    @extend .footer__nav;
+}
+
+.footer__list-item_contact {
+    .vector-image {
+        width: 1.8rem;
+        height: 1.5rem;
+    }
+
+    span {
+        margin: 0 1.4rem 0 1rem;
+        color: var(--heading-color);
+        font-size: 1.6rem;
+
+        @media (width < $desktop) {
+            font-size: inherit;
+        }
+    }
+}
