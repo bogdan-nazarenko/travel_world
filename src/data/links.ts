@@ -1,4 +1,5 @@
 export interface NavLink {
+    targetId?: string;
     url: string;
     name: string;
 }
