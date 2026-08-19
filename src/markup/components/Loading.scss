@@ -1,0 +1,19 @@
+.loading {
+    animation: 3s linear infinite spin;
+    width: 10rem;
+    height: 9rem;
+
+    circle {
+        fill: var(--secondary-color);
+    }
+
+    g {
+        stroke: var(--secondary-color);
+    }
+}
+
+@keyframes spin {
+    to {
+        rotate: 360deg;
+    }
+}
