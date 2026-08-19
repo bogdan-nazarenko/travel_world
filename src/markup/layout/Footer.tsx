@@ -77,26 +77,22 @@ const Footer = () => {
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Commodi, enim.
                     </p>
-                    <ul className="footer__social-list">
+                    <div className="footer__social-group">
                         {socialLinks.map((link) => {
                             const { url, name, icon } = link;
 
                             return (
-                                <li
-                                    className="footer__social-list-item"
+                                <a
+                                    className="footer__social-link"
+                                    href={url}
+                                    aria-label={name}
                                     key={url}
                                 >
-                                    <a
-                                        className="footer__social-link"
-                                        href={url}
-                                        aria-label={name}
-                                    >
-                                        {icon}
-                                    </a>
-                                </li>
+                                    {icon}
+                                </a>
                             );
                         })}
-                    </ul>
+                    </div>
                     <p className="footer__description">
                         © 2024 <span>Vipin_uidesigns</span>. All Rights Reserved
                     </p>
