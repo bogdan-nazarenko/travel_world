@@ -1,5 +1,11 @@
+import Hero from "@markup/sections/Hero";
+
 const Home = () => {
-    return <></>;
+    return (
+        <>
+            <Hero />
+        </>
+    );
 };
 
 export default Home;
