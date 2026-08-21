@@ -1,0 +1,56 @@
+@use "@styles/abstracts" as *;
+
+.video-player {
+    position: relative;
+    border: 0.2rem solid var(--secondary-color);
+    border-radius: 2rem;
+    width: 100%;
+    max-width: 32rem;
+    height: 20rem;
+    overflow: hidden;
+}
+
+.video-player__video {
+    @extend %cover-media;
+    @extend %cursor-pointer;
+}
+
+.video-player__video_contain {
+    object-fit: contain;
+}
+
+.video-player__play-button,
+.video-player__fullscreen-button {
+    --left-right-position: 1.8rem;
+
+    position: absolute;
+    bottom: 1.9rem;
+    outline-color: var(--secondary-color);
+    width: 3rem;
+    height: 3rem;
+}
+
+.video-player__play-button {
+    left: var(--left-right-position);
+    @include background("@media/images/icons/play.svg");
+}
+
+.video-player__play-button_active {
+    background-image: url(@media/images/icons/pause.svg);
+}
+
+.video-player__fullscreen-button {
+    right: var(--left-right-position);
+    transition: var(--duration);
+    @include background("@media/images/icons/fullscreen.svg");
+
+    @media (hover: hover) {
+        opacity: 0;
+
+        .video-player__video:hover ~ &,
+        &:hover,
+        &:focus {
+            opacity: 1;
+        }
+    }
+}
