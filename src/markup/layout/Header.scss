@@ -5,7 +5,8 @@
     top: 0;
     z-index: 1000;
     background-color: var(--white-color);
-    padding: 0.5rem 0;
+    padding-right: var(--f-scrollbar-compensate);
+    padding-block: 0.5rem;
     width: 100%;
     overflow: hidden;
     font-weight: 600;
