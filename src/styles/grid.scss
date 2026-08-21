@@ -25,6 +25,21 @@
     }
 }
 
+.section {
+    --section-padding: 5rem 0;
+
+    padding: var(--section-padding);
+    overflow: hidden;
+
+    @media (width < $desktop) {
+        padding: 4rem 0;
+    }
+
+    @media (width < $tablet) {
+        padding: 3rem 0;
+    }
+}
+
 .container {
     margin: 0 auto;
     padding: 0 2rem;
