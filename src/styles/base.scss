@@ -31,3 +31,11 @@ h5,
 h6 {
     font-weight: 500;
 }
+
+input:where([type="number"]) {
+    appearance: textfield;
+}
+
+::-webkit-inner-spin-button {
+    display: none;
+}
