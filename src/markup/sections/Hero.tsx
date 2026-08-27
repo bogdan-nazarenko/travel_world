@@ -1,5 +1,6 @@
 import useFancybox from "@libs/fancybox";
 import VideoPlayer from "@markup/components/VideoPlayer";
+import SearchWidget from "@markup/components/SearchWidget";
 import mountainTourism from "@media/images/mountain-tourism.jpg";
 import video from "@media/videos/fortaleza-de-santa-cruz-da-barra.mp4";
 import poster from "@media/images/fortaleza-de-santa-cruz-da-barra.webp";
@@ -57,6 +58,8 @@ const Hero = () => {
                         />
                     </a>
                 </div>
+
+                <SearchWidget />
             </div>
         </section>
     );
