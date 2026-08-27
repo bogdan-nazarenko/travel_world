@@ -7,7 +7,11 @@ interface VideoPlayerProps {
     poster?: string;
 }
 
-const VideoPlayer = ({ className, videoUrl, poster }: VideoPlayerProps) => {
+const VideoPlayer = ({
+    className = "",
+    videoUrl,
+    poster,
+}: VideoPlayerProps) => {
     const [play, setPlay] = useState<boolean>(false);
     const [fullscreen, setFullscreen] = useState<boolean>(false);
     const videoRef = useRef<HTMLVideoElement | null>(null);

@@ -7,10 +7,10 @@ interface HomeLink {
     onClick?: () => void;
 }
 
-const HomeLink = ({ className, onClick }: HomeLink) => {
+const HomeLink = ({ className = "", onClick }: HomeLink) => {
     return (
         <Link
-            className={`${className || ""} home-link`.trim()}
+            className={`${className} home-link`.trim()}
             to="/"
             onClick={onClick}
         >
