@@ -43,7 +43,7 @@ const searchItems: SearchItem[] = [
 const SearchWidget = ({ className = "" }: { className?: string }) => {
     const navigate = useNavigate();
 
-    function formHandler(event: React.SubmitEvent<HTMLFormElement>): void {
+    function searchByKeys(event: React.SubmitEvent<HTMLFormElement>): void {
         event.preventDefault();
 
         const data = new FormData(event.currentTarget);
@@ -61,7 +61,7 @@ const SearchWidget = ({ className = "" }: { className?: string }) => {
 
     return (
         <search className={`${className} search-widget`.trim()}>
-            <form className="search-widget__form" onSubmit={formHandler}>
+            <form className="search-widget__form" onSubmit={searchByKeys}>
                 {searchItems.map((item) => {
                     const { icon, label, id, type, min, max, placeholder } =
                         item;
