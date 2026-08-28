@@ -1,0 +1,33 @@
+@use "@styles/abstracts" as *;
+
+.feature {
+    border-right: var(--border);
+    border-bottom: var(--border);
+    border-radius: 1.6rem;
+    padding: 2.1rem 2rem 2.9rem;
+    width: 100%;
+
+    @media (width >= $tablet) {
+        max-width: 26.2rem;
+    }
+}
+
+.feature__icon {
+    margin-bottom: 2.7rem;
+    border-radius: 50%;
+    background-position: center;
+    background-size: 68%;
+    background-repeat: no-repeat;
+    background-color: var(--secondary-color);
+    width: 5rem;
+    height: 5rem;
+}
+
+.feature__title {
+    margin-bottom: 0.7rem;
+    font-size: 1.8rem;
+}
+
+.feature__text {
+    font-size: 1.2rem;
+}
