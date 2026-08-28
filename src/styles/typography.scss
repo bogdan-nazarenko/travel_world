@@ -19,6 +19,11 @@
 
 .title {
     font-size: 3.2rem;
+    line-height: 1.21;
+
+    @media (width < $desktop) {
+        font-size: 2.5rem;
+    }
 }
 
 .title_v2 {
