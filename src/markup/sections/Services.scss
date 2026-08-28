@@ -1,0 +1,49 @@
+@use "@styles/abstracts" as *;
+
+.services {
+    --section-padding: 6.1rem 0;
+}
+
+.services__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.3rem;
+}
+
+.services__info {
+    @media (width >= $desktop) {
+        padding-top: 0.4rem;
+        max-width: 28.1rem;
+    }
+}
+
+.services__superscription {
+    display: block;
+    margin-bottom: 1.3rem;
+    color: var(--pink-color);
+    font-size: 3.2rem;
+    font-family: var(--island-moments-font);
+}
+
+.services__superscription_v2 {
+    color: var(--primary-color);
+}
+
+.services__feature-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.feature__icon_weather {
+    background-image: url(@media/images/icons/weather.png);
+}
+
+.feature__icon_guide {
+    background-image: url(@media/images/icons/guide.png);
+}
+
+.feature__icon_custom {
+    background-image: url(@media/images/icons/custom.png);
+}
