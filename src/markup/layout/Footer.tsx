@@ -140,27 +140,29 @@ const Footer = () => {
                     </ul>
                 </nav>
 
-                <address className="footer__contacts">
+                <div className="footer__column">
                     <h2 className="footer__title">Contact</h2>
-                    <ul className="footer__list">
-                        {contactLinks.map((link) => {
-                            const { icon, label, url, name } = link;
+                    <address className="footer__contacts">
+                        <ul className="footer__list">
+                            {contactLinks.map((link) => {
+                                const { icon, label, url, name } = link;
 
-                            return (
-                                <li
-                                    className="footer__list-item footer__list-item_contact"
-                                    key={url}
-                                >
-                                    {icon}
-                                    <span>{label}</span>
-                                    <a className="footer__link" href={url}>
-                                        {name}
-                                    </a>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </address>
+                                return (
+                                    <li
+                                        className="footer__list-item footer__list-item_contact"
+                                        key={url}
+                                    >
+                                        {icon}
+                                        <span>{label}</span>
+                                        <a className="footer__link" href={url}>
+                                            {name}
+                                        </a>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </address>
+                </div>
             </div>
         </footer>
     );
