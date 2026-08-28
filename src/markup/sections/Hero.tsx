@@ -59,7 +59,7 @@ const Hero = () => {
                     </a>
                 </div>
 
-                <SearchWidget />
+                <SearchWidget className="hero__search-widget" />
             </div>
         </section>
     );

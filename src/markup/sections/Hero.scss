@@ -12,6 +12,7 @@
 
     @media (width < $desktop) {
         flex-direction: column;
+        gap: 3rem;
     }
 }
 
@@ -100,4 +101,10 @@
 
 .hero__image {
     @extend %cover-media;
+}
+
+.hero__search-widget {
+    @media (width < $desktop) {
+        margin: 0 auto;
+    }
 }
