@@ -11,7 +11,7 @@ export interface TourLinkProps {
 
 const TourLink = ({
     className = "",
-    url = "#",
+    url,
     image,
     title,
     location,
