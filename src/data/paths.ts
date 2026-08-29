@@ -1,4 +1,4 @@
 import { mainLinks, authLinks } from "./links";
 
-export const mainPaths: string[] = mainLinks.map((link) => link.url);
-export const authPaths: string[] = authLinks.map((link) => link.url);
+export const mainPaths: readonly string[] = mainLinks.map((link) => link.url);
+export const authPaths: readonly string[] = authLinks.map((link) => link.url);

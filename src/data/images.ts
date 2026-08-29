@@ -30,4 +30,4 @@ export const tourCatalog = {
     krakow,
     paris,
     london,
-};
+} as const;
