@@ -4,12 +4,19 @@
     display: block;
     position: relative;
     outline-color: var(--secondary-color);
+    outline-width: 0.2rem;
     border-radius: 1rem;
     width: 100%;
     max-width: 25rem;
     height: 25rem;
     overflow: hidden;
     color: var(--white-color);
+
+    &:not(:focus-visible) {
+        @include hover-active {
+            outline-style: solid;
+        }
+    }
 }
 
 .tour-link__image {
