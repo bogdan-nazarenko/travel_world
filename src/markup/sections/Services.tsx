@@ -41,7 +41,6 @@ const Services = () => {
                         return (
                             <Feature
                                 key={title}
-                                className="services__feature"
                                 iconModifier={iconModifier}
                                 title={title}
                                 text={text}
