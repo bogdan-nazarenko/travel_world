@@ -16,17 +16,17 @@ import "./Footer.scss";
 interface SocialLink {
     url: string;
     name: string;
-    icon: React.ReactNode;
+    icon: () => React.ReactNode;
 }
 
 const socialLinks: SocialLink[] = [
-    { url: "https://www.youtube.com/", name: "Youtube", icon: <Youtube /> },
-    { url: "https://x.com/", name: "X", icon: <Twitter /> },
-    { url: "https://www.facebook.com/", name: "Facebook", icon: <Facebook /> },
+    { url: "https://www.youtube.com/", name: "Youtube", icon: Youtube },
+    { url: "https://x.com/", name: "X", icon: Twitter },
+    { url: "https://www.facebook.com/", name: "Facebook", icon: Facebook },
     {
         url: "https://www.instagram.com/",
         name: "Instagram",
-        icon: <Instagram />,
+        icon: Instagram,
     },
 ];
 
@@ -47,19 +47,19 @@ interface ContactLink extends SocialLink {
 
 const contactLinks: ContactLink[] = [
     {
-        icon: <PinV2 />,
+        icon: PinV2,
         label: "Address:",
         url: "https://www.google.com/maps",
         name: "Lorem",
     },
     {
-        icon: <Email />,
+        icon: Email,
         label: "Email:",
         url: "mailto:xyz@mail.com",
         name: "xyz@mail.com",
     },
     {
-        icon: <Phone />,
+        icon: Phone,
         label: "Phone:",
         url: "tel:00022200222",
         name: "00022200222",
@@ -79,7 +79,8 @@ const Footer = () => {
                     </p>
                     <div className="footer__social-group">
                         {socialLinks.map((link) => {
-                            const { url, name, icon } = link;
+                            const { url, name } = link;
+                            const Icon = link.icon;
 
                             return (
                                 <a
@@ -88,7 +89,7 @@ const Footer = () => {
                                     aria-label={name}
                                     key={url}
                                 >
-                                    {icon}
+                                    <Icon />
                                 </a>
                             );
                         })}
@@ -145,14 +146,15 @@ const Footer = () => {
                     <address className="footer__contacts">
                         <ul className="footer__list">
                             {contactLinks.map((link) => {
-                                const { icon, label, url, name } = link;
+                                const Icon = link.icon;
+                                const { label, url, name } = link;
 
                                 return (
                                     <li
                                         className="footer__list-item footer__list-item_contact"
                                         key={url}
                                     >
-                                        {icon}
+                                        <Icon />
                                         <span>{label}</span>
                                         <a className="footer__link" href={url}>
                                             {name}

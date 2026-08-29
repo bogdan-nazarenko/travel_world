@@ -3,7 +3,7 @@ import { PinV1, PinDistance, People, Search } from "./vectors";
 import "./SearchWidget.scss";
 
 interface SearchItem {
-    icon: React.ReactNode;
+    icon: () => React.ReactNode;
     label: string;
     id: string;
     type: string;
@@ -14,14 +14,14 @@ interface SearchItem {
 
 const searchItems: SearchItem[] = [
     {
-        icon: <PinV1 />,
+        icon: PinV1,
         label: "Location",
         id: "location",
         type: "text",
         placeholder: "Where are you going?",
     },
     {
-        icon: <PinDistance />,
+        icon: PinDistance,
         label: "Distance",
         id: "distance",
         type: "number",
@@ -30,7 +30,7 @@ const searchItems: SearchItem[] = [
         placeholder: "Distance k/m",
     },
     {
-        icon: <People />,
+        icon: People,
         label: "Max People",
         id: "max-people",
         type: "number",
@@ -63,12 +63,12 @@ const SearchWidget = ({ className = "" }: { className?: string }) => {
         <search className={`${className} search-widget`.trim()}>
             <form className="search-widget__form" onSubmit={searchByKeys}>
                 {searchItems.map((item) => {
-                    const { icon, label, id, type, min, max, placeholder } =
-                        item;
+                    const Icon = item.icon;
+                    const { label, id, type, min, max, placeholder } = item;
 
                     return (
                         <div className="search-widget__item" key={id}>
-                            {icon}
+                            <Icon />
                             <div className="search-widget__content">
                                 <label
                                     className="search-widget__label"
