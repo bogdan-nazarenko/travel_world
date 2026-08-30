@@ -8,7 +8,7 @@
     border-radius: 1rem;
     width: 100%;
     max-width: 25rem;
-    height: 25rem;
+    min-height: 25rem;
     overflow: hidden;
     color: var(--white-color);
 
@@ -21,18 +21,19 @@
 
 .tour-link__image {
     position: absolute;
+    z-index: -1;
     @extend %cover-media;
 }
 
 .tour-link__content {
     display: flex;
-    position: absolute;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     background-color: rgba(0, 0, 0, 0.6);
-    width: 100%;
+    padding: 1rem;
     height: 100%;
+    min-height: inherit;
+    text-align: center;
 }
 
 .tour-link__title {
