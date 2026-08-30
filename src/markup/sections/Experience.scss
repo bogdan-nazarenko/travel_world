@@ -1,0 +1,94 @@
+@use "@styles/abstracts" as *;
+
+.experience {
+    --section-padding: 4.9rem 0;
+}
+
+.experience__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+
+    @media (width < $tablet) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.experience__info {
+    max-width: 57.1rem;
+
+    @media (width < $desktop) {
+        max-width: 50%;
+    }
+
+    @media (width < $tablet) {
+        max-width: 100%;
+    }
+}
+
+.experience__superscription {
+    margin-bottom: 1.1rem;
+    padding-inline: 0.8rem;
+}
+
+.experience__title {
+    margin-bottom: 0.9rem;
+    max-width: 37.7rem;
+}
+
+.experience__text {
+    margin-bottom: 3rem;
+    font-weight: 500;
+    font-size: inherit;
+    line-height: 1.2;
+}
+
+.experience__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5.1rem;
+    width: fit-content;
+    color: var(--text-color);
+    text-align: center;
+    overflow-wrap: anywhere;
+
+    @media (width < $desktop) {
+        gap: 3rem;
+    }
+
+    @media (width < $tablet) {
+        gap: 2.5rem;
+    }
+}
+
+.experience__square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 0.6rem;
+    border-radius: 1rem 0.5rem;
+    background-color: var(--secondary-color);
+    padding: 0.5rem;
+    max-width: 7rem;
+    min-height: 7rem;
+    color: var(--white-color);
+    font-weight: 600;
+
+    @media (width < $desktop) {
+        max-width: 5rem;
+        min-height: 5rem;
+    }
+}
+
+.experience__list-item span {
+    font-size: 1.3rem;
+}
+
+.experience__image-wrapper {
+    max-width: 49.1rem;
+}
+
+.experience__image {
+    @extend %contain-media;
+}
