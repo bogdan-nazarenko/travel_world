@@ -18,7 +18,7 @@ const Explore = () => {
                     <span className="superscription">Explore</span>
                     <h2 className="title title_v2">Our featured tours</h2>
                 </div>
-                <div className="explore__catalog">
+                <div className="catalog">
                     <div className="explore__column">
                         <TourLink
                             className="explore__tour-link"

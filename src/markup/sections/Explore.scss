@@ -12,73 +12,45 @@
     }
 }
 
-.explore__catalog {
-    --catalog-gap: 1.3rem;
-
-    display: flex;
-    gap: var(--catalog-gap);
-
-    @media (width < $desktop) {
-        flex-direction: column;
-    }
-}
-
-.explore__column {
-    --column-max-width: 26.7rem;
-
-    display: flex;
-    gap: inherit;
-    width: 100%;
-    height: fit-content;
-
+.explore__column:nth-child(3) {
     @media (width >= $desktop) {
-        flex-direction: column;
-        max-width: var(--column-max-width);
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 55.9rem;
     }
 
-    &:nth-child(3) {
-        @media (width >= $desktop) {
-            flex-direction: row;
-            flex-wrap: wrap;
-            max-width: 55.9rem;
-        }
-
-        @media (width < $tablet) {
-            flex-wrap: wrap;
-        }
+    @media (width < $tablet) {
+        flex-wrap: wrap;
     }
 }
 
 .explore__tour-link {
     max-width: 100%;
-    min-height: var(--column-max-width);
+    min-height: var(--item-height);
 
-    @media (width >= $desktop) {
-        .explore__column:nth-child(2) & {
-            min-height: 33.5rem;
+    .explore__column:nth-child(2) & {
+        min-height: var(--item-height-v2);
 
-            &:nth-child(2) {
-                min-height: 21.8rem;
-            }
+        &:nth-child(2) {
+            min-height: var(--item-height-v3);
         }
+    }
 
-        .explore__column:nth-child(3) &:nth-child(2) {
+    .explore__column:nth-child(3) & {
+        &:nth-child(2) {
             max-width: var(--column-max-width);
         }
 
-        .explore__column:nth-child(3) &:nth-child(3) {
-            max-width: 27.9rem;
-            min-height: 28.5rem;
+        &:nth-child(3) {
+            max-width: var(--column-max-width-v2);
+            min-height: var(--item-height-v4);
         }
-    }
 
-    @media (width < $desktop) {
-        min-height: 20rem;
-    }
-
-    @media (width < $tablet) {
-        .explore__tour-link_sydney ~ & {
-            max-width: calc(50% - var(--catalog-gap) / 2);
+        &:nth-child(2),
+        &:nth-child(3) {
+            @media (width < $tablet) {
+                max-width: calc(50% - var(--catalog-gap) / 2);
+            }
         }
     }
 
