@@ -32,7 +32,12 @@ const Experience = () => {
                     </ul>
                 </div>
                 <div className="experience__image-wrapper">
-                    <img className="experience__image" src={image} alt="" />
+                    <img
+                        className="experience__image"
+                        src={image}
+                        alt=""
+                        loading="lazy"
+                    />
                 </div>
             </div>
         </section>
