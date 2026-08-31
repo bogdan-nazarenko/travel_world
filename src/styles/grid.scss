@@ -46,6 +46,15 @@
     max-width: 116rem;
 }
 
+.info {
+    margin-bottom: 3.3rem;
+    width: fit-content;
+
+    @media (width < $desktop) {
+        margin-bottom: 2rem;
+    }
+}
+
 .catalog {
     --catalog-gap: 1.3rem;
     --column-max-width: 26.7rem;
