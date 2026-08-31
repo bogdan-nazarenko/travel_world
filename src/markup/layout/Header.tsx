@@ -17,9 +17,6 @@ const Header = () => {
     const isMobileRef = useRef<boolean>(isMobile);
     const isMenuOpenRef = useRef<boolean>(isMenuOpen);
 
-    isMobileRef.current = isMobile;
-    isMenuOpenRef.current = isMenuOpen;
-
     useEffect(() => {
         function handler(): void {
             if (isMobileRef.current && isMenuOpenRef.current) closeMenu();
@@ -34,7 +31,10 @@ const Header = () => {
     const footerRef = useRef<HTMLElement | null>(null);
 
     useEffect(() => {
-        if (!isMobile && isMenuOpen) closeMenu();
+        isMobileRef.current = isMobile;
+        isMenuOpenRef.current = isMenuOpen;
+
+        if (!isMobile && isMenuOpen) queueMicrotask(closeMenu);
 
         document.body.classList.toggle(
             "page-layout_non-scrollable",
