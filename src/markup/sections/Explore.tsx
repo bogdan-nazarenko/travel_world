@@ -14,7 +14,7 @@ const Explore = () => {
     return (
         <section className="explore section">
             <div className="container">
-                <div className="explore__info">
+                <div className="info">
                     <span className="superscription">Explore</span>
                     <h2 className="title title_v2">Our featured tours</h2>
                 </div>
