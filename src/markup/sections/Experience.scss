@@ -47,6 +47,7 @@
 .experience__list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 5.1rem;
     width: fit-content;
     color: var(--text-color);
@@ -83,6 +84,10 @@
 
 .experience__list-item span {
     font-size: 1.3rem;
+
+    @media (width < $tablet) {
+        font-size: 1.1rem;
+    }
 }
 
 .experience__image-wrapper {
