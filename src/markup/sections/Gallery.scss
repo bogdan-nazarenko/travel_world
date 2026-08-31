@@ -1,0 +1,36 @@
+@use "@styles/abstracts" as *;
+
+.gallery__column:last-child {
+    --column-max-width: var(--column-max-width-v2);
+}
+
+.gallery__image-link {
+    border-radius: 1rem;
+    width: 100%;
+    height: var(--item-height);
+    overflow: hidden;
+
+    .gallery__column:nth-child(1) & {
+        height: var(--item-height-v2);
+
+        &:nth-child(2) {
+            height: var(--item-height-v3);
+        }
+    }
+
+    .gallery__column:nth-child(3) & {
+        height: var(--item-height-v3);
+
+        &:nth-child(2) {
+            height: var(--item-height-v2);
+        }
+    }
+
+    .gallery__column:nth-child(4) & {
+        height: var(--item-height-v4);
+    }
+}
+
+.gallery__image {
+    @extend %cover-media;
+}
