@@ -54,8 +54,6 @@
     min-height: var(--column-max-width);
 
     @media (width >= $desktop) {
-        height: 100%;
-
         .explore__column:nth-child(2) & {
             min-height: 33.5rem;
 
