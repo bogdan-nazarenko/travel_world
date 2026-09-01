@@ -28,7 +28,7 @@ const Services = () => {
             <div className="services__container container">
                 <div className="services__info">
                     <span
-                        className={`services__superscription ${pathname !== "/" ? "services__superscription_v2" : ""}`.trim()}
+                        className={`services__superscription ${pathname !== "/" ? "services__superscription_v_2" : ""}`.trim()}
                     >
                         What we serve
                     </span>

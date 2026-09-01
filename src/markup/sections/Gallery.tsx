@@ -16,7 +16,7 @@ const Gallery = () => {
             <div className="container">
                 <div className="info">
                     <span className="superscription">Gallery</span>
-                    <h2 className="title title_v2">
+                    <h2 className="title title_v_2">
                         Visit our customers tour gallery
                     </h2>
                 </div>
