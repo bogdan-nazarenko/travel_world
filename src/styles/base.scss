@@ -39,3 +39,8 @@ input:where([type="number"]) {
 ::-webkit-inner-spin-button {
     display: none;
 }
+
+::placeholder {
+    color: var(--text-color);
+    font-weight: 400;
+}
