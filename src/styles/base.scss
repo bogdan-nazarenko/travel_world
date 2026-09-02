@@ -32,6 +32,10 @@ h6 {
     font-weight: 500;
 }
 
+input {
+    text-overflow: ellipsis;
+}
+
 input:where([type="number"]) {
     appearance: textfield;
 }
