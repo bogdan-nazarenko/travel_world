@@ -132,6 +132,10 @@
     @media (width < $tablet) {
         font-size: 1.3rem;
     }
+
+    &::placeholder {
+        font-weight: inherit;
+    }
 }
 
 .search-widget__submition {
