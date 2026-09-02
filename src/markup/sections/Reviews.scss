@@ -1,0 +1,106 @@
+@use "@styles/abstracts" as *;
+
+.reviews {
+    --section-padding: 5.7rem 0 5.2rem;
+}
+
+.reviews__item {
+    user-select: none;
+}
+
+.reviews__comment {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+.reviews__profile {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.reviews__avatar-wrapper {
+    border-radius: 0.6rem;
+    width: 100%;
+    max-width: 8.5rem;
+    height: 6.3rem;
+    overflow: hidden;
+}
+
+.reviews__avatar {
+    @extend %cover-media;
+}
+
+.reviews__author-name {
+    margin-bottom: 0.8rem;
+    font-size: 1.6rem;
+}
+
+.reviews__author-role {
+    display: block;
+    width: fit-content;
+    line-height: 1;
+}
+
+.reviews__pagination {
+    display: flex;
+    gap: 1.8rem;
+    margin: 4.6rem auto 0;
+    width: fit-content;
+    overflow: hidden;
+
+    @media (width < $desktop) {
+        margin-top: 4rem;
+    }
+
+    @media (width < $tablet) {
+        gap: 0;
+        margin-top: 3rem;
+    }
+}
+
+.reviews__bullet {
+    transition: var(--duration);
+    outline-offset: -0.1rem;
+    padding: 0.6rem;
+    @extend %cursor-pointer;
+
+    @media (width < $tablet) {
+        position: relative;
+        margin-inline: 0.2rem;
+    }
+
+    &:before {
+        display: block;
+        transition: inherit;
+        border-radius: 50%;
+        background-color: #d9d9d9;
+        width: 0.8rem;
+        height: 0.8rem;
+        content: "";
+
+        @media (width < $tablet) {
+            transform: scale(0.33);
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+}
+
+.reviews__bullet_active::before {
+    background-color: var(--text-color);
+}
+
+.reviews__bullet_active-prev::before,
+.reviews__bullet_active-next::before {
+    @media (width < $tablet) {
+        transform: scale(0.66);
+    }
+}
+
+.reviews__bullet_active-main::before {
+    @media (width < $tablet) {
+        transform: scale(1);
+    }
+}
