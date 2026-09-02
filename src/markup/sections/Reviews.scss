@@ -4,6 +4,10 @@
     --section-padding: 5.7rem 0 5.2rem;
 }
 
+.reviews__carousel {
+    --carousel-fill-color: #d9d9d9;
+}
+
 .reviews__item {
     user-select: none;
 }
@@ -22,6 +26,7 @@
 
 .reviews__avatar-wrapper {
     border-radius: 0.6rem;
+    background-color: var(--carousel-fill-color);
     width: 100%;
     max-width: 8.5rem;
     height: 6.3rem;
@@ -75,7 +80,7 @@
         display: block;
         transition: inherit;
         border-radius: 50%;
-        background-color: #d9d9d9;
+        background-color: var(--carousel-fill-color);
         width: 0.8rem;
         height: 0.8rem;
         content: "";
