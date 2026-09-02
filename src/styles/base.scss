@@ -40,11 +40,11 @@ input:where([type="number"]) {
     appearance: textfield;
 }
 
-::-webkit-inner-spin-button {
-    display: none;
-}
-
 ::placeholder {
     color: var(--text-color);
     font-weight: 400;
+}
+
+::-webkit-inner-spin-button {
+    display: none;
 }
