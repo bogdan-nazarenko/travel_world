@@ -46,6 +46,16 @@
     max-width: 116rem;
 }
 
+.container_flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+
+    @media (width < $tablet) {
+        flex-direction: column;
+    }
+}
+
 .info {
     margin-bottom: 3.3rem;
     width: fit-content;
