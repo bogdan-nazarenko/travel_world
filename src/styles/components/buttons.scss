@@ -1,0 +1,13 @@
+@use "../abstracts" as *;
+
+.button {
+    transition: var(--duration);
+    border-radius: 0.6rem;
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    color: var(--white-color);
+
+    @include hover-active {
+        background-color: var(--primary-color);
+    }
+}
