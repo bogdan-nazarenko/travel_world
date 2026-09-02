@@ -4,7 +4,7 @@ import "./Experience.scss";
 const Experience = () => {
     return (
         <section className="experience section">
-            <div className="experience__container container">
+            <div className="experience__container container container_flex">
                 <div className="experience__info">
                     <span className="experience__superscription superscription">
                         Experience

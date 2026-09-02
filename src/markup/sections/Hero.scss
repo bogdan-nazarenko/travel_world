@@ -5,13 +5,10 @@
 }
 
 .hero__container {
-    display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     gap: 1.5rem 2rem;
 
     @media (width < $desktop) {
-        flex-direction: column;
         gap: 3rem;
     }
 }

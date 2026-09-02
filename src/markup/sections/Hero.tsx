@@ -12,7 +12,7 @@ const Hero = () => {
 
     return (
         <section className="hero section">
-            <div className="hero__container container">
+            <div className="hero__container container container_flex">
                 <div className="hero__info">
                     <span className="hero__superscription superscription">
                         Know before you go
