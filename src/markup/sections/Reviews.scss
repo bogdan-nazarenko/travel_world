@@ -37,8 +37,14 @@
     @extend %cover-media;
 }
 
+.reviews__author {
+    @media (width >= $desktop) {
+        padding-top: 0.3rem;
+    }
+}
+
 .reviews__author-name {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.9rem;
     font-size: 1.6rem;
 }
 
