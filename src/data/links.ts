@@ -71,7 +71,7 @@ export const tourLinkData: TourLinkProps[] = [
         url: "#",
         image: tourCatalog.phiphi,
         title: "Phi Phi Island",
-        location: "Maldives",
+        location: "Thailand",
     },
     {
         url: "#",
