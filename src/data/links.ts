@@ -1,4 +1,4 @@
-import { type TourLinkProps } from "@markup/components/TourLink";
+import { type TourLinkProps } from "@ui/components/TourLink";
 import { tourCatalog } from "@data/images";
 
 export interface NavLink {

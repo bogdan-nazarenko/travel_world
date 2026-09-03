@@ -1,5 +1,5 @@
 import { useLocation } from "react-router";
-import Feature, { type FeatureProps } from "@markup/components/Feature";
+import Feature, { type FeatureProps } from "@ui/components/Feature";
 import "./Services.scss";
 
 const features: FeatureProps[] = [

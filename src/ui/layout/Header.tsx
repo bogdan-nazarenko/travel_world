@@ -3,7 +3,7 @@ import { useLocation, Link } from "react-router";
 import useMediaQuery from "@utils/responsive";
 import { mainPaths } from "@data/paths";
 import { mainLinks, authLinks } from "@data/links";
-import HomeLink from "@markup/components/HomeLink";
+import HomeLink from "@ui/components/HomeLink";
 import "./Header.scss";
 
 const Header = () => {

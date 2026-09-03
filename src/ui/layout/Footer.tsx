@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { mainLinks, authLinks, type NavLink } from "@data/links";
 import { scrollToId } from "@utils/functions";
-import HomeLink from "@markup/components/HomeLink";
+import HomeLink from "@ui/components/HomeLink";
 import {
     Youtube,
     Twitter,
@@ -10,7 +10,7 @@ import {
     PinV2,
     Email,
     Phone,
-} from "@markup/components/vectors";
+} from "@ui/components/vectors";
 import "./Footer.scss";
 
 interface SocialLink {

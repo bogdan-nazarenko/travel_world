@@ -21,8 +21,8 @@ export default defineConfig({
                 replacement: path.resolve("src/libs"),
             },
             {
-                find: "@markup",
-                replacement: path.resolve("src/markup"),
+                find: "@ui",
+                replacement: path.resolve("src/ui"),
             },
             {
                 find: "@media",

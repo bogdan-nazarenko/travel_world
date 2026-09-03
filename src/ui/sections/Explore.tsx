@@ -1,5 +1,5 @@
 import { tourLinkData } from "@data/links";
-import TourLink from "@markup/components/TourLink";
+import TourLink from "@ui/components/TourLink";
 import "./Explore.scss";
 
 const bigBen = tourLinkData.find((link) => link.title === "Big Ben");
