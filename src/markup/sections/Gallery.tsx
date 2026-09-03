@@ -14,7 +14,7 @@ const Gallery = () => {
     return (
         <section className="gallery section" id="gallery">
             <div className="container">
-                <div className="info">
+                <div className="gallery__info info">
                     <span className="superscription">Gallery</span>
                     <h2 className="title title_v_2">
                         Visit our customers tour gallery

@@ -1,5 +1,9 @@
 @use "@styles/abstracts" as *;
 
+.gallery__info {
+    margin-bottom: 3.2rem;
+}
+
 .gallery__column:last-child {
     --column-max-width: var(--column-max-width-v2);
 }
