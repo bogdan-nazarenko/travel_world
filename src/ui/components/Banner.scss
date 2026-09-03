@@ -1,0 +1,36 @@
+@use "@styles/abstracts" as *;
+
+.banner {
+    position: relative;
+    margin: 0 auto;
+    max-width: 144rem;
+}
+
+.banner__image {
+    position: absolute;
+    z-index: -1;
+    @extend %cover-media;
+}
+
+.banner__inner {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 16.8rem 2rem;
+
+    @media (width < $desktop) {
+        padding-block: 10rem;
+    }
+
+    @media (width < $tablet) {
+        padding-block: 6.5rem;
+    }
+}
+
+.banner__title {
+    color: var(--white-color);
+    text-align: center;
+    text-transform: capitalize;
+
+    span {
+        color: var(--primary-color);
+    }
+}
