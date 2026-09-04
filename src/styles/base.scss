@@ -1,6 +1,7 @@
 @use "abstracts" as *;
 
 html {
+    min-width: 30rem;
     color: var(--heading-color);
     font-weight: 500;
     font-size: 62.5%;
