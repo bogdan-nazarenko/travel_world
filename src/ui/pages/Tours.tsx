@@ -1,4 +1,5 @@
 import Banner from "@ui/components/Banner";
+import FeaturedTours from "@ui/sections/FeaturedTours";
 import background from "@media/images/maldives-2.webp";
 
 const Tours = () => {
@@ -12,6 +13,7 @@ const Tours = () => {
                     </>
                 }
             />
+            <FeaturedTours />
         </>
     );
 };
