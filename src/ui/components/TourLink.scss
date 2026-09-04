@@ -44,8 +44,25 @@
 .tour-link__title {
     font-size: 4.8rem;
     font-family: var(--island-moments-font);
+
+    @media (width < $desktop) {
+        font-size: 3.6rem;
+    }
+
+    @media (width < $tablet) {
+        font-size: 3.2rem;
+    }
 }
 
 .tour-link__location {
+    font-size: 2.4rem;
     text-transform: uppercase;
+
+    @media (width < $desktop) {
+        font-size: 2rem;
+    }
+
+    @media (width < $tablet) {
+        font-size: inherit;
+    }
 }
