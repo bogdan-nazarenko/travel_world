@@ -3,7 +3,11 @@ import { tourCatalog } from "@data/images";
 import "./Gallery.scss";
 
 const GalleryImageLink = ({ image, alt }: { image: string; alt: string }) => (
-    <a className="gallery__image-link" href={image} data-fancybox="gallery">
+    <a
+        className="gallery__image-link"
+        href={image}
+        data-fancybox="catalog-gallery"
+    >
         <img loading="lazy" className="gallery__image" src={image} alt={alt} />
     </a>
 );
