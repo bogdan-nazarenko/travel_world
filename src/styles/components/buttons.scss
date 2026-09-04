@@ -11,3 +11,16 @@
         background-color: var(--primary-color);
     }
 }
+
+.outlined-button {
+    transition: var(--duration);
+    border: 0.1rem solid var(--heading-color);
+    border-radius: 0.6rem;
+    padding: 1.1rem 2rem;
+    font-weight: 600;
+
+    @include hover-active {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+    }
+}
