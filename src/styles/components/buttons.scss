@@ -1,11 +1,15 @@
 @use "../abstracts" as *;
 
-.button {
+%button-style {
     transition: var(--duration);
     border-radius: 0.6rem;
-    background-color: var(--secondary-color);
     padding: 1rem;
+}
+
+.button {
+    background-color: var(--secondary-color);
     color: var(--white-color);
+    @extend %button-style;
 
     @include hover-active {
         background-color: var(--primary-color);
@@ -13,11 +17,8 @@
 }
 
 .outlined-button {
-    transition: var(--duration);
     border: 0.1rem solid var(--heading-color);
-    border-radius: 0.6rem;
-    padding: 1.1rem 2rem;
-    font-weight: 600;
+    @extend %button-style;
 
     @include hover-active {
         border-color: var(--primary-color);
