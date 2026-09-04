@@ -28,6 +28,10 @@
     max-width: 100%;
     min-height: var(--item-height);
 
+    @media (width < $desktop) {
+        height: auto;
+    }
+
     .explore__column:nth-child(2) & {
         min-height: var(--item-height-v2);
 
