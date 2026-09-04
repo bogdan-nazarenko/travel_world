@@ -61,28 +61,6 @@
     .tour-link__content {
         gap: 0.7rem;
     }
-
-    .tour-link__title {
-        @media (width < $desktop) {
-            font-size: 3.6rem;
-        }
-
-        @media (width < $tablet) {
-            font-size: 3.2rem;
-        }
-    }
-
-    .tour-link__location {
-        font-size: 2.4rem;
-
-        @media (width < $desktop) {
-            font-size: 2rem;
-        }
-
-        @media (width < $tablet) {
-            font-size: inherit;
-        }
-    }
 }
 
 .explore__tour-link_sydney .tour-link__location {
