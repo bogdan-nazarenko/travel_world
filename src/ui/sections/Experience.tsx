@@ -33,10 +33,10 @@ const Experience = () => {
                 </div>
                 <div className="experience__image-wrapper">
                     <img
+                        loading="lazy"
                         className="experience__image"
                         src={image}
                         alt=""
-                        loading="lazy"
                     />
                 </div>
             </div>

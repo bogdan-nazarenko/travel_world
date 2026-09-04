@@ -25,10 +25,10 @@ const TourLink = ({
             }
         >
             <img
+                loading="lazy"
                 className="tour-link__image"
                 src={image}
                 alt=""
-                loading="lazy"
             />
             <div className="tour-link__content">
                 <span className="tour-link__title">{title}</span>
