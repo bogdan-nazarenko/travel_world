@@ -9,7 +9,7 @@ const Experience = () => {
                     <span className="experience__superscription superscription">
                         Experience
                     </span>
-                    <h2 className="experience__title title">
+                    <h2 className="experience__title primary-title">
                         With our all experience we will serve you
                     </h2>
                     <p className="experience__text text">

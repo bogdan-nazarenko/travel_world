@@ -32,7 +32,9 @@ const Services = () => {
                     >
                         What we serve
                     </span>
-                    <h2 className="title">We offer our best services</h2>
+                    <h2 className="primary-title">
+                        We offer our best services
+                    </h2>
                 </div>
                 <div className="services__feature-group">
                     {features.map((props) => {

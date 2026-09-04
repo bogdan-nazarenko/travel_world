@@ -16,7 +16,7 @@ const Explore = () => {
             <div className="container">
                 <div className="info">
                     <span className="superscription">Explore</span>
-                    <h2 className="title title_v_2">Our featured tours</h2>
+                    <h2 className="secondary-title">Our featured tours</h2>
                 </div>
                 <div className="catalog">
                     <div className="explore__column">

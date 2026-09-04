@@ -11,7 +11,7 @@ const Newsletter = () => {
                 className={`container ${isDesktop ? "container_flex" : ""}`.trim()}
             >
                 <div className="newsletter__info">
-                    <h2 className="newsletter__title title">
+                    <h2 className="newsletter__title primary-title">
                         Subscribe now to get useful traveling information
                     </h2>
                     <form

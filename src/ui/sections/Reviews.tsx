@@ -52,7 +52,7 @@ const Reviews = () => {
             <div className="container">
                 <div className="info">
                     <span className="superscription">Fans love</span>
-                    <h2 className="title title_v_2">
+                    <h2 className="secondary-title">
                         What our fans say about us
                     </h2>
                 </div>
