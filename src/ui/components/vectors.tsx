@@ -161,7 +161,7 @@ export const Instagram = () => (
 
 export const Plane = () => (
     <svg
-        className="vector-image"
+        className="plane vector-image"
         width="448"
         height="133"
         viewBox="0 0 448 133"
@@ -189,7 +189,7 @@ export const Plane = () => (
 
 export const TajMahal = () => (
     <svg
-        className="vector-image"
+        className="taj-mahal vector-image"
         width="166"
         height="105"
         viewBox="0 0 166 105"
@@ -207,7 +207,7 @@ export const TajMahal = () => (
 
 export const WorldSights = () => (
     <svg
-        className="vector-image"
+        className="world-sights vector-image"
         width="174"
         height="104"
         viewBox="0 0 174 104"
