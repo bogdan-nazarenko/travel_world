@@ -1,4 +1,5 @@
 import Banner from "@ui/components/Banner";
+import Overview from "@ui/sections/Overview";
 import background from "@media/images/maldives-3.webp";
 
 const About = () => {
@@ -12,6 +13,7 @@ const About = () => {
                     </>
                 }
             />
+            <Overview />
         </>
     );
 };
