@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { useLocation, Routes, Route } from "react-router";
 import { mainPaths } from "@data/paths";
 import Header from "@ui/layout/Header";
@@ -11,6 +11,35 @@ import Footer from "@ui/layout/Footer";
 
 const App = () => {
     const { pathname } = useLocation();
+
+    useEffect(() => {
+        const windowHash = window.location.hash;
+
+        window.scrollTo(0, 0);
+
+        if (!windowHash) return;
+
+        const id = windowHash.slice(1);
+
+        const scrollingToTarget = setInterval(() => {
+            const target = document.getElementById(id);
+
+            if (!target) return;
+
+            clearInterval(scrollingToTarget);
+            clearTimeout(stopAfterDelay);
+            target.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+
+        const stopAfterDelay = setTimeout(() => {
+            clearInterval(scrollingToTarget);
+        }, 3000);
+
+        return () => {
+            clearInterval(scrollingToTarget);
+            clearTimeout(stopAfterDelay);
+        };
+    }, [pathname]);
 
     return (
         <>
