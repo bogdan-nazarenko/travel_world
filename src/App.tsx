@@ -6,6 +6,7 @@ import Loading from "@ui/components/Loading";
 const Home = lazy(() => import("@ui/pages/Home"));
 const Tours = lazy(() => import("@ui/pages/Tours"));
 const About = lazy(() => import("@ui/pages/About"));
+const Error = lazy(() => import("@ui/pages/Error"));
 import Newsletter from "@ui/sections/Newsletter";
 import Footer from "@ui/layout/Footer";
 
@@ -50,6 +51,7 @@ const App = () => {
                         <Route path="/" element={<Home />} />
                         <Route path="/tours" element={<Tours />} />
                         <Route path="/about" element={<About />} />
+                        <Route path="*" element={<Error />} />
                     </Routes>
 
                     {mainPaths.includes(pathname) && <Newsletter />}
