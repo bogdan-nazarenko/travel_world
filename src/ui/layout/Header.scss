@@ -10,10 +10,9 @@
     width: 100%;
     overflow: hidden;
     font-weight: 600;
-    font-size: 1.8rem;
 
-    @media (width < $desktop) {
-        font-size: inherit;
+    @media (width >= $desktop) {
+        font-size: 1.8rem;
     }
 }
 

@@ -108,11 +108,10 @@
 
 .search-widget__label {
     display: inline-block;
-    font-size: 1.6rem;
     overflow-wrap: anywhere;
 
-    @media (width < $desktop) {
-        font-size: inherit;
+    @media (width >= $desktop) {
+        font-size: 1.6rem;
     }
 
     @media (width < $tablet) {

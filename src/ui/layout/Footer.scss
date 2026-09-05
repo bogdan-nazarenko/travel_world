@@ -83,10 +83,9 @@
     span {
         margin: 0 1.4rem 0 1rem;
         color: var(--heading-color);
-        font-size: 1.6rem;
 
-        @media (width < $desktop) {
-            font-size: inherit;
+        @media (width >= $desktop) {
+            font-size: 1.6rem;
         }
     }
 }
