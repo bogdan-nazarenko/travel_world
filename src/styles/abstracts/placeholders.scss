@@ -26,6 +26,14 @@
     }
 }
 
+%link-invert {
+    transition: var(--duration);
+
+    @include hover-active {
+        color: var(--primary-color);
+    }
+}
+
 %link-svg-fill {
     .vector-image {
         transition: var(--duration);
