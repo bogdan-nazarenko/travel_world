@@ -100,7 +100,7 @@ const Footer = () => {
                 </div>
 
                 <nav className="footer__nav">
-                    <h2 className="footer__title">Discover</h2>
+                    <span className="footer__title">Discover</span>
                     <ul className="footer__list">
                         {mainLinks.map((link) => {
                             const { url, name } = link;
@@ -117,7 +117,7 @@ const Footer = () => {
                 </nav>
 
                 <nav className="footer__nav">
-                    <h2 className="footer__title">Quick Links</h2>
+                    <span className="footer__title">Quick Links</span>
                     <ul className="footer__list">
                         {quickLinks.map((link) => {
                             const { targetId, url, name } = link;
@@ -142,7 +142,7 @@ const Footer = () => {
                 </nav>
 
                 <div className="footer__column">
-                    <h2 className="footer__title">Contact</h2>
+                    <span className="footer__title">Contact</span>
                     <address className="footer__contacts">
                         <ul className="footer__list">
                             {contactLinks.map((link) => {
