@@ -267,13 +267,13 @@
 
 .auth__link {
     color: var(--secondary-color);
-    font-size: 1.2rem;
     @extend %link-invert;
 
     .auth__field-set + & {
         display: block;
         margin: 0 0 3.3rem auto;
         width: fit-content;
+        font-size: 1.2rem;
     }
 }
 
