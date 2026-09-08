@@ -349,6 +349,7 @@
     border: var(--border);
     border-radius: 0.9rem;
     background-position: center;
+    background-size: 1.6rem;
     background-repeat: no-repeat;
     width: 100%;
     max-width: 6rem;
@@ -369,4 +370,5 @@
 
 .auth__social-link_apple {
     background-image: url(@media/images/icons/apple.svg);
+    background-size: 1.4rem;
 }
