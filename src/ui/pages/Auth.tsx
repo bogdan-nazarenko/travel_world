@@ -116,7 +116,7 @@ const Auth = () => {
 
                         <form className="auth__form">
                             <fieldset
-                                className={`auth__field-set ${(isLogin && !isMobile && "auth__field-set_type_login") || (isDesktop && "auth__field-set_type_register") || ""}`.trim()}
+                                className={`auth__field-set ${isDesktop ? (isLogin && "auth__field-set_type_login") || "auth__field-set_type_register" : ""}`.trim()}
                             >
                                 {fields.map((field) => {
                                     const {
