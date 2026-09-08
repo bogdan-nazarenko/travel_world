@@ -21,7 +21,8 @@
     @extend %button-style;
 
     @include hover-active {
-        border-color: var(--primary-color);
-        color: var(--primary-color);
+        border-color: var(--secondary-color);
+        background-color: var(--secondary-color);
+        color: var(--white-color);
     }
 }
