@@ -224,15 +224,15 @@
 
 #password,
 .auth__password-button {
-    --password-right-padding: 8.2rem;
+    --field-padding-right: 8.2rem;
 
     @media (width < $desktop) {
-        --password-right-padding: 5rem;
+        --field-padding-right: 5rem;
     }
 }
 
 #password {
-    padding-right: var(--password-right-padding);
+    padding-right: var(--field-padding-right);
 }
 
 .auth__password-button {
@@ -240,7 +240,7 @@
     right: 0;
     opacity: 0;
     transition: var(--duration);
-    width: var(--password-right-padding);
+    width: var(--field-padding-right);
     height: 100%;
     @include background(
         $url: "@media/images/icons/eye-hide.svg",
