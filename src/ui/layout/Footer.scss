@@ -42,10 +42,11 @@
 .footer__description {
     color: var(--text-color);
     font-size: 1.4rem;
+}
 
-    span {
-        color: var(--secondary-color);
-    }
+.footer__author-link {
+    color: var(--secondary-color);
+    @extend %link-invert;
 }
 
 .footer__nav {

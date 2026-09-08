@@ -95,7 +95,14 @@ const Footer = () => {
                         })}
                     </div>
                     <p className="footer__description">
-                        © 2024 <span>Vipin_uidesigns</span>. All Rights Reserved
+                        © 2024{" "}
+                        <a
+                            className="footer__author-link"
+                            href="https://www.figma.com/@vipin_uidesigns"
+                        >
+                            Vipin_uidesigns
+                        </a>
+                        . All Rights Reserved
                     </p>
                 </div>
 
