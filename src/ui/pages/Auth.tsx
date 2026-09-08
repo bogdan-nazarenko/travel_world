@@ -183,7 +183,7 @@ const Auth = () => {
                                 </button>
 
                                 <div
-                                    className={`auth__divider ${isLogin && !isMobile ? "auth__login-divider" : ""}`.trim()}
+                                    className={`auth__divider ${isLogin && isDesktop ? "auth__divider_view_custom" : ""}`.trim()}
                                     role="separator"
                                 >
                                     <span>or</span>
