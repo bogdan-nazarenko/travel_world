@@ -182,7 +182,7 @@
         font-size: 1.2rem;
     }
 
-    .auth__label:focus-within & {
+    .auth__field-wrapper:focus-within & {
         opacity: 1;
     }
 }
