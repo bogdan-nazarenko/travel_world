@@ -59,6 +59,9 @@
     gap: 2.3rem;
 
     @media (width >= $desktop) {
+        width: 100%;
+        max-width: 54.4rem;
+
         & > *:nth-child(2) {
             margin-top: 2rem;
         }
