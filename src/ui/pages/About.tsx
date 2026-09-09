@@ -10,7 +10,7 @@ const About = () => {
                 image={background}
                 title={
                     <>
-                        <span>About</span> us
+                        About <span>us</span>
                     </>
                 }
             />
