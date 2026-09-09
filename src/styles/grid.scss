@@ -68,24 +68,24 @@
 .catalog {
     --catalog-gap: 1.3rem;
     --column-max-width: 26.7rem;
-    --column-max-width-v2: 27.9rem;
+    --column-max-width-wider: 27.9rem;
 
-    --item-height: var(--column-max-width);
-    --item-height-v2: 33.5rem;
-    --item-height-v3: 21.8rem;
-    --item-height-v4: 28.5rem;
+    --item-height-base: var(--column-max-width);
+    --item-height-small: 21.8rem;
+    --item-height-medium: 28.5rem;
+    --item-height-large: 33.5rem;
 
     display: flex;
     gap: var(--catalog-gap);
 
     @media (width < $desktop) {
         --column-max-width: 100%;
-        --column-max-width-v2: var(--column-max-width);
+        --column-max-width-wider: var(--column-max-width);
 
-        --item-height: 20rem;
-        --item-height-v2: var(--item-height);
-        --item-height-v3: var(--item-height);
-        --item-height-v4: var(--item-height);
+        --item-height-base: 20rem;
+        --item-height-small: var(--item-height-base);
+        --item-height-medium: var(--item-height-base);
+        --item-height-large: var(--item-height-base);
 
         flex-direction: column;
     }
