@@ -26,17 +26,17 @@
 
 .explore__tour-link {
     max-width: 100%;
-    min-height: var(--item-height);
+    min-height: var(--item-height-base);
 
     @media (width < $desktop) {
         height: auto;
     }
 
     .explore__column:nth-child(2) & {
-        min-height: var(--item-height-v2);
+        min-height: var(--item-height-large);
 
         &:nth-child(2) {
-            min-height: var(--item-height-v3);
+            min-height: var(--item-height-small);
         }
     }
 
@@ -46,8 +46,8 @@
         }
 
         &:nth-child(3) {
-            max-width: var(--column-max-width-v2);
-            min-height: var(--item-height-v4);
+            max-width: var(--column-max-width-wider);
+            min-height: var(--item-height-medium);
         }
 
         &:nth-child(2),
