@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { PinV1, PinDistance, People, Search } from "./vectors";
+import { Pin, PinDistance, People, Search } from "./vectors";
 import "./SearchWidget.scss";
 
 interface SearchItem {
@@ -14,7 +14,7 @@ interface SearchItem {
 
 const searchItems: SearchItem[] = [
     {
-        icon: PinV1,
+        icon: Pin,
         label: "Location",
         id: "location",
         type: "text",

@@ -7,7 +7,7 @@ import {
     Twitter,
     Facebook,
     Instagram,
-    PinV2,
+    PinSmall,
     Email,
     Phone,
 } from "@ui/components/vectors";
@@ -47,7 +47,7 @@ interface ContactLink extends SocialLink {
 
 const contactLinks: ContactLink[] = [
     {
-        icon: PinV2,
+        icon: PinSmall,
         label: "Address:",
         url: "https://www.google.com/maps",
         name: "Lorem",

@@ -1,6 +1,6 @@
 import "./vectors.scss";
 
-export const PinV1 = () => (
+export const Pin = () => (
     <svg
         className="vector-image"
         width="24"
@@ -14,7 +14,7 @@ export const PinV1 = () => (
     </svg>
 );
 
-export const PinV2 = () => (
+export const PinSmall = () => (
     <svg
         className="vector-image"
         width="18"
