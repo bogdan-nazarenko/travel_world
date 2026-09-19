@@ -19,7 +19,7 @@
 }
 
 %link {
-    transition: var(--duration);
+    transition: var(--duration) color;
 
     @include hover-active {
         color: var(--secondary-color);
@@ -27,7 +27,7 @@
 }
 
 %link-invert {
-    transition: var(--duration);
+    transition: var(--duration) color;
 
     @include hover-active {
         color: var(--primary-color);
