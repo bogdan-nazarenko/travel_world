@@ -67,12 +67,12 @@ const Header = () => {
             getComputedStyle(document.documentElement).fontSize
         );
 
-        wrapperRef.current!.style.setProperty(
-            "--header-height",
-            `${headerRef.current.scrollHeight / htmlFontSize}rem`
-        );
-
         requestAnimationFrame(() => {
+            wrapperRef.current!.style.setProperty(
+                "--header-height",
+                `${headerRef.current!.offsetHeight / htmlFontSize}rem`
+            );
+
             alreadyCalled.current = false;
         });
     }, [isDesktop, isMobile]);
