@@ -97,7 +97,7 @@ const Header = () => {
                 />
 
                 <nav
-                    className={`header__nav ${isMobile && isMenuOpen ? "header__nav_open" : ""}`.trim()}
+                    className={`header__nav ${isMenuOpen ? "header__nav_open" : ""}`.trim()}
                     id="page-menu"
                     onTransitionEnd={isMobile ? setMenuFocus : undefined}
                 >
