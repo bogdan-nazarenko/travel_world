@@ -327,6 +327,10 @@
         content: "";
     }
 
+    &::before {
+        left: 0;
+    }
+
     &::after {
         right: 0;
     }
