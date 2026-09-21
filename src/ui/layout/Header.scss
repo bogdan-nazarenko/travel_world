@@ -28,11 +28,12 @@
     .header__nav {
         position: fixed;
         top: 0;
-        left: -100dvw;
+        left: 0;
+        transform: translateX(-100%);
         visibility: hidden;
         z-index: -1;
         transition:
-            left var(--duration),
+            transform var(--duration),
             visibility var(--duration);
         background-color: bisque;
         padding-top: var(--header-height);
@@ -43,7 +44,7 @@
     }
 
     .header__nav_open {
-        left: 0;
+        transform: translateX(0);
         visibility: visible;
     }
 }
