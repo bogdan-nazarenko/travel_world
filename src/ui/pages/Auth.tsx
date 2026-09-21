@@ -184,7 +184,6 @@ const Auth = () => {
 
                                 <div
                                     className={`auth__divider ${isLogin && isDesktop ? "auth__divider_short" : ""}`.trim()}
-                                    role="separator"
                                 >
                                     <span>or</span>
                                 </div>
