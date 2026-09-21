@@ -116,8 +116,9 @@ const Header = () => {
                                                 className="header__link"
                                                 to={url}
                                                 aria-current={
-                                                    url === pathname ||
-                                                    undefined
+                                                    url === pathname
+                                                        ? "page"
+                                                        : undefined
                                                 }
                                                 onClick={
                                                     isMobile
@@ -155,7 +156,9 @@ const Header = () => {
                                             className={`header__auth-link ${modifier}`.trim()}
                                             to={url}
                                             aria-current={
-                                                url === pathname || undefined
+                                                url === pathname
+                                                    ? "page"
+                                                    : undefined
                                             }
                                             onClick={
                                                 isMobile ? closeMenu : undefined

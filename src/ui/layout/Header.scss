@@ -77,7 +77,7 @@
 .header__link {
     @extend %link;
 
-    &[aria-current="true"] {
+    &[aria-current="page"] {
         color: var(--secondary-color);
 
         @include hover-active {
@@ -105,7 +105,7 @@
         padding: 0.8rem 1.5rem;
     }
 
-    &[aria-current="true"] {
+    &[aria-current="page"] {
         background-color: var(--primary-color);
         color: var(--white-color);
 
