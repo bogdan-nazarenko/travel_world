@@ -56,7 +56,9 @@
     @media (width >= $tablet) {
         &:not(:nth-child(3))::after {
             position: absolute;
+            top: 50%;
             right: -0.2rem;
+            transform: translateY(-50%);
             transition: var(--duration);
             background-color: #dddddd;
             width: 0.2rem;
