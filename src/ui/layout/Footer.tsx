@@ -77,7 +77,7 @@ const Footer = () => {
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Commodi, enim.
                     </p>
-                    <div className="footer__social-group">
+                    <div className="footer__social-media">
                         {socialLinks.map((link) => {
                             const { url, name } = link;
                             const Icon = link.icon;
