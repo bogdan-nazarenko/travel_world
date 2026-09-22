@@ -188,7 +188,7 @@ const Auth = () => {
                                     <span>or</span>
                                 </div>
 
-                                <div className="auth__social-group">
+                                <div className="auth__social-media">
                                     <a
                                         className="auth__social-link auth__social-link_google"
                                         href="https://www.google.com/"
