@@ -108,6 +108,7 @@
     text-align: center;
 
     &.primary-title {
+        line-height: 1.2;
         text-transform: uppercase;
 
         @media (width >= $desktop) {
