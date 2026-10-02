@@ -312,8 +312,7 @@
 
     span {
         display: block;
-        position: inherit;
-        top: 0.3rem;
+        transform: translateY(0.3rem);
         margin: 0 auto;
         width: fit-content;
     }
