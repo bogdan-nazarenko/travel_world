@@ -25,6 +25,7 @@ const loginFields: AuthField[] = [
         label: "Password",
         id: "password",
         type: "password",
+        autoComplete: "current-password",
         placeholder: "Enter Password",
     },
 ];
@@ -41,6 +42,7 @@ const registerFields: AuthField[] = [
         label: "Last Name",
         id: "last-name",
         type: "text",
+        autoComplete: "family-name",
         placeholder: "Last Name",
     },
     {
@@ -54,12 +56,14 @@ const registerFields: AuthField[] = [
         label: "Password",
         id: "password",
         type: "password",
+        autoComplete: "new-password",
         placeholder: "Enter Password",
     },
     {
         label: "Mobile Number",
         id: "mobile-number",
         type: "tel",
+        autoComplete: "tel",
         placeholder: "Mobile Number",
     },
 ];
