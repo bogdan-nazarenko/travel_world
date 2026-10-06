@@ -120,14 +120,14 @@ const Header = () => {
                                                         ? "page"
                                                         : undefined
                                                 }
-                                                onClick={
-                                                    isMobile
-                                                        ? closeMenu
-                                                        : undefined
-                                                }
                                                 ref={
                                                     index === 0
                                                         ? linkRef
+                                                        : undefined
+                                                }
+                                                onClick={
+                                                    isMobile
+                                                        ? closeMenu
                                                         : undefined
                                                 }
                                             >
