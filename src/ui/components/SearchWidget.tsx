@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { useNavigate } from "react-router";
 import { Pin, PinDistance, People, Search } from "./vectors";
 import "./SearchWidget.scss";
@@ -41,10 +42,19 @@ const searchItems: SearchItem[] = [
 ];
 
 const SearchWidget = ({ className = "" }: { className?: string }) => {
+    const locationFieldRef = useRef<HTMLInputElement | null>(null);
     const navigate = useNavigate();
 
     function searchByKeys(event: React.SubmitEvent<HTMLFormElement>): void {
         event.preventDefault();
+
+        if (!locationFieldRef.current) return;
+
+        locationFieldRef.current.value = locationFieldRef.current.value.trim();
+
+        event.currentTarget.reportValidity();
+
+        if (!locationFieldRef.current.value) return;
 
         const data = new FormData(event.currentTarget);
         const params = new URLSearchParams();
@@ -85,6 +95,11 @@ const SearchWidget = ({ className = "" }: { className?: string }) => {
                                     max={max}
                                     placeholder={placeholder}
                                     required
+                                    ref={
+                                        id === "location"
+                                            ? locationFieldRef
+                                            : undefined
+                                    }
                                 />
                             </div>
                         </div>
