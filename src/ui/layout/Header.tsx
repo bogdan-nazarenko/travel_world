@@ -11,8 +11,15 @@ const Header = () => {
     const { pathname } = useLocation();
     const isDesktop = useMediaQuery("width >= 1024px");
     const isMobile = useMediaQuery("width < 768px");
+    const [prevMobile, setPrevMobile] = useState(isMobile);
 
     const closeMenu = () => setMenuOpen(false);
+
+    if (prevMobile !== isMobile) {
+        setPrevMobile(isMobile);
+
+        if (!isMobile) closeMenu();
+    }
 
     const isMobileRef = useRef<boolean>(isMobile);
     const isMenuOpenRef = useRef<boolean>(isMenuOpen);
