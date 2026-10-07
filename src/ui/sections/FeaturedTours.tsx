@@ -54,11 +54,11 @@ const FeaturedTours = () => {
                     })}
                 </div>
 
-                {loaded ? (
-                    <div className="featured-tours__notification" role="status">
-                        All tours loaded
-                    </div>
-                ) : (
+                <div className="featured-tours__notification" role="status">
+                    {loaded && "All tours loaded"}
+                </div>
+
+                {!loaded && (
                     <button
                         className="featured-tours__load-button outlined-button"
                         onClick={() => setLoaded(true)}
