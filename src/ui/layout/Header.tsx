@@ -101,6 +101,41 @@ const Header = () => {
                     onClick={isMobile && isMenuOpen ? closeMenu : undefined}
                 />
 
+                {isMobile && (
+                    <button
+                        className="header__menu-button"
+                        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                        aria-controls="page-menu"
+                        aria-expanded={isMenuOpen ? "true" : "false"}
+                        onClick={() => setMenuOpen(!isMenuOpen)}
+                    >
+                        <svg
+                            className="header__menu-icon"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M4 6L20 6"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                            />
+                            <path
+                                d="M4 12L20 12"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                            />
+                            <path
+                                d="M4 18L20 18"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                            />
+                        </svg>
+                    </button>
+                )}
+
                 <nav
                     className={`header__nav ${isMenuOpen ? "header__nav_open" : ""}`.trim()}
                     id="page-menu"
@@ -177,41 +212,6 @@ const Header = () => {
                         </ul>
                     </div>
                 </nav>
-
-                {isMobile && (
-                    <button
-                        className="header__menu-button"
-                        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                        aria-controls="page-menu"
-                        aria-expanded={isMenuOpen ? "true" : "false"}
-                        onClick={() => setMenuOpen(!isMenuOpen)}
-                    >
-                        <svg
-                            className="header__menu-icon"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            aria-hidden="true"
-                        >
-                            <path
-                                d="M4 6L20 6"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                            />
-                            <path
-                                d="M4 12L20 12"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                            />
-                            <path
-                                d="M4 18L20 18"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                            />
-                        </svg>
-                    </button>
-                )}
             </div>
         </header>
     );
