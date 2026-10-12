@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, type TransitionEvent } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation, Link } from "react-router";
 import useMediaQuery from "@utils/responsive";
 import { mainPaths } from "@data/paths";
@@ -82,18 +82,6 @@ const Header = () => {
         });
     }, [isDesktop, isMobile]);
 
-    const linkRef = useRef<HTMLAnchorElement | null>(null);
-
-    function setMenuFocus(event: TransitionEvent): void {
-        if (
-            isMenuOpen &&
-            event.propertyName === "visibility" &&
-            event.target === event.currentTarget
-        ) {
-            linkRef.current?.focus();
-        }
-    }
-
     return (
         <header className="header" ref={headerRef}>
             <div className="header__container container">
@@ -139,12 +127,11 @@ const Header = () => {
                 <nav
                     className={`header__nav ${isMenuOpen ? "header__nav_open" : ""}`.trim()}
                     id="page-menu"
-                    onTransitionEnd={isMobile ? setMenuFocus : undefined}
                 >
                     <div className="header__nav-inner">
                         {(mainPaths.includes(pathname) || isMobile) && (
                             <ul className={"header__list"}>
-                                {mainLinks.map((link, index) => {
+                                {mainLinks.map((link) => {
                                     const { url, name } = link;
 
                                     return (
@@ -158,11 +145,6 @@ const Header = () => {
                                                 aria-current={
                                                     url === pathname
                                                         ? "page"
-                                                        : undefined
-                                                }
-                                                ref={
-                                                    index === 0
-                                                        ? linkRef
                                                         : undefined
                                                 }
                                                 onClick={
