@@ -1,25 +1,24 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useLocation, Link } from "react-router";
 import useMediaQuery from "@utils/responsive";
+import { setMenuOpen } from "@libs/redux";
+import { useAppSelector, useAppDispatch } from "@data/store";
 import { mainPaths } from "@data/paths";
 import { mainLinks, authLinks } from "@data/links";
 import HomeLink from "@ui/components/HomeLink";
 import "./Header.scss";
 
 const Header = () => {
-    const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
     const { pathname } = useLocation();
     const isDesktop = useMediaQuery("width >= 1024px");
     const isMobile = useMediaQuery("width < 768px");
-    const [prevMobile, setPrevMobile] = useState(isMobile);
 
-    const closeMenu = () => setMenuOpen(false);
+    const isMenuOpen = useAppSelector((state) => {
+        return state.app.headerState.isMenuOpen;
+    });
+    const dispatch = useAppDispatch();
 
-    if (prevMobile !== isMobile) {
-        setPrevMobile(isMobile);
-
-        if (!isMobile) closeMenu();
-    }
+    const closeMenu = () => dispatch(setMenuOpen(false));
 
     const isMobileRef = useRef<boolean>(isMobile);
     const isMenuOpenRef = useRef<boolean>(isMenuOpen);
@@ -35,14 +34,26 @@ const Header = () => {
     }, [isMobile, isMenuOpen]);
 
     useEffect(() => {
-        function handler(): void {
-            if (isMobileRef.current && isMenuOpenRef.current) closeMenu();
+        function windowHandler(): void {
+            if (isMobileRef.current && isMenuOpenRef.current) {
+                dispatch(setMenuOpen(false));
+            }
         }
 
-        window.addEventListener("popstate", handler);
+        const mobileMql = window.matchMedia("(width < 768px)");
 
-        return () => window.removeEventListener("popstate", handler);
-    }, []);
+        function mqlHandler(): void {
+            if (!mobileMql.matches) dispatch(setMenuOpen(false));
+        }
+
+        window.addEventListener("popstate", windowHandler);
+        mobileMql.addEventListener("change", mqlHandler);
+
+        return () => {
+            window.removeEventListener("popstate", windowHandler);
+            mobileMql.removeEventListener("change", mqlHandler);
+        };
+    }, [dispatch]);
 
     const wrapperRef = useRef<HTMLDivElement | null>(null);
     const headerRef = useRef<HTMLElement | null>(null);
@@ -84,7 +95,7 @@ const Header = () => {
                         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                         aria-controls="page-menu"
                         aria-expanded={isMenuOpen ? "true" : "false"}
-                        onClick={() => setMenuOpen(!isMenuOpen)}
+                        onClick={() => dispatch(setMenuOpen(!isMenuOpen))}
                     >
                         <svg
                             className="header__menu-icon"
