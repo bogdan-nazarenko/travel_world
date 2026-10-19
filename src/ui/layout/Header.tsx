@@ -34,9 +34,6 @@ const Header = () => {
         return () => window.removeEventListener("popstate", handler);
     }, []);
 
-    const mainRef = useRef<HTMLElement | null>(null);
-    const footerRef = useRef<HTMLElement | null>(null);
-
     useEffect(() => {
         isMobileRef.current = isMobile;
         isMenuOpenRef.current = isMenuOpen;
@@ -45,14 +42,6 @@ const Header = () => {
             "page-layout_non-scrollable",
             isMenuOpen
         );
-
-        if (!mainRef.current && !footerRef.current) {
-            mainRef.current = document.querySelector(".main");
-            footerRef.current = document.querySelector(".footer");
-        }
-
-        mainRef.current!.inert = isMenuOpen;
-        footerRef.current!.inert = isMenuOpen;
     }, [isMobile, isMenuOpen]);
 
     const wrapperRef = useRef<HTMLDivElement | null>(null);
