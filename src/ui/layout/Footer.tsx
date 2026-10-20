@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { useAppSelector } from "@data/store";
 import { mainLinks, authLinks, type NavLink } from "@data/links";
 import { scrollToId } from "@utils/functions";
 import HomeLink from "@ui/components/HomeLink";
@@ -67,8 +68,12 @@ const contactLinks: ContactLink[] = [
 ];
 
 const Footer = () => {
+    const isMenuOpen = useAppSelector((state) => {
+        return state.app.headerState.isMenuOpen;
+    });
+
     return (
-        <footer className="footer">
+        <footer className="footer" inert={isMenuOpen}>
             <div className="footer__container container">
                 <div className="footer__socials">
                     <HomeLink />
