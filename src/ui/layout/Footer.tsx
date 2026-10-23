@@ -153,30 +153,28 @@ const Footer = () => {
                     </ul>
                 </nav>
 
-                <div className="footer__column">
+                <address className="footer__contacts">
                     <span className="footer__title">Contact</span>
-                    <address className="footer__contacts">
-                        <ul className="footer__list">
-                            {contactLinks.map((link) => {
-                                const Icon = link.icon;
-                                const { label, url, name } = link;
+                    <ul className="footer__list">
+                        {contactLinks.map((link) => {
+                            const Icon = link.icon;
+                            const { label, url, name } = link;
 
-                                return (
-                                    <li
-                                        className="footer__list-item footer__list-item_contact"
-                                        key={url}
-                                    >
-                                        <Icon />
-                                        <span>{label}</span>
-                                        <a className="footer__link" href={url}>
-                                            {name}
-                                        </a>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </address>
-                </div>
+                            return (
+                                <li
+                                    className="footer__list-item footer__list-item_contact"
+                                    key={url}
+                                >
+                                    <Icon />
+                                    <span>{label}</span>
+                                    <a className="footer__link" href={url}>
+                                        {name}
+                                    </a>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </address>
             </div>
         </footer>
     );
