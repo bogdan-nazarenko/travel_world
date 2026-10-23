@@ -127,6 +127,7 @@ const Header = () => {
                 <nav
                     className={`header__nav ${isMenuOpen ? "header__nav_open" : ""}`.trim()}
                     id="page-menu"
+                    aria-label="Main menu"
                 >
                     <div className="header__nav-inner">
                         {(mainPaths.includes(pathname) || isMobile) && (
