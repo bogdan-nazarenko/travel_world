@@ -1,14 +1,12 @@
 @use "@styles/abstracts" as *;
 
 .header {
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
     z-index: 1000;
     background-color: var(--white-color);
     padding-right: var(--f-scrollbar-compensate);
     padding-block: 0.5rem;
-    width: 100%;
     overflow: hidden;
     font-weight: 600;
 
