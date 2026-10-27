@@ -10,7 +10,6 @@ import "./Header.scss";
 
 const Header = () => {
     const { pathname } = useLocation();
-    const isDesktop = useMediaQuery("width >= 1024px");
     const isMobile = useMediaQuery("width < 768px");
 
     const isMenuOpen = useAppSelector((state) => {
@@ -55,35 +54,8 @@ const Header = () => {
         };
     }, [dispatch]);
 
-    const wrapperRef = useRef<HTMLDivElement | null>(null);
-    const headerRef = useRef<HTMLElement | null>(null);
-    const alreadyCalled = useRef<boolean>(false);
-
-    useEffect(() => {
-        if (!headerRef.current || alreadyCalled.current) return;
-
-        if (!wrapperRef.current) {
-            wrapperRef.current = headerRef.current.closest(".wrapper");
-        }
-
-        alreadyCalled.current = true;
-
-        const htmlFontSize = parseFloat(
-            getComputedStyle(document.documentElement).fontSize
-        );
-
-        requestAnimationFrame(() => {
-            wrapperRef.current!.style.setProperty(
-                "--header-height",
-                `${headerRef.current!.offsetHeight / htmlFontSize}rem`
-            );
-
-            alreadyCalled.current = false;
-        });
-    }, [isDesktop, isMobile]);
-
     return (
-        <header className="header" ref={headerRef}>
+        <header className="header">
             <div className="header__container container">
                 <HomeLink
                     onClick={isMobile && isMenuOpen ? closeMenu : undefined}
