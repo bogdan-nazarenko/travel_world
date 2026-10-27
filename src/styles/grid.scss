@@ -19,7 +19,7 @@
         align-items: center;
 
         @media (width < $desktop) {
-            height: calc(100dvh - var(--header-height));
+            height: 80dvh;
         }
     }
 }
