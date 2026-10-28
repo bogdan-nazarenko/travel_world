@@ -19,7 +19,11 @@
         align-items: center;
 
         @media (width < $desktop) {
-            height: 80dvh;
+            height: calc(100dvh - 6.4rem);
+        }
+
+        @media (width < $tablet) {
+            height: calc(100dvh - 5.3rem);
         }
     }
 }
